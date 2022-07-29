@@ -1,0 +1,39 @@
+@mixin text($ff, $fw, $fs, $c) {
+  font-family: $ff;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: calc($c / $fs);
+}
+
+@mixin font($fw, $fs, $lh) {
+  //*застосовано до кнопок
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media screen and (min-width: 360px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1340px) {
+    //1300px контенту
+    @content;
+  }
+}

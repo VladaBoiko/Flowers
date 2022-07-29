@@ -1,0 +1,94 @@
+// тут є 3 види кнопки:
+// 1.зелена, 2.прозора, 3.коричнева;
+// із 5 станами:
+// 1.за замовченням, 2.hover, 3.focus, 4.click(active), 5.disabled
+button {
+  // cкидаючі стилі (обов'язoві)
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+
+  //стилізація
+  min-width: 197px;
+  height: 52px;
+  padding: 0 30px;
+  border-radius: 4px;
+
+  font-family: inherit;
+  @include font(400, 18px, calc(22px / 18px));
+  text-align: center;
+
+  //ЗЕЛЕНА кнопка:
+  &.dark {
+    color: var(--dark-theme-text-color);
+    background-color: var(--main-bgc-accent);
+  }
+  // ПРОЗОРА кнопка:
+  &.light {
+    color: var(--main-accent-color);
+    background-color: transparent;
+    border: 1px solid var(--main-accent-color);
+  }
+
+  transition: color var(--main-transition),
+    background-color var(--main-transition), border var(--main-transition);
+
+  &:hover,
+  &:focus {
+    color: var(--dark-theme-text-color);
+    background-color: var(--green-light);
+    border: none;
+  }
+  &:active {
+    color: var(--dark-theme-text-color);
+    background-color: var(--main-accent-color);
+    border: none;
+  }
+
+  &.disabled {
+    color: #c8c8c8;
+    background-color: #dedede;
+    border: none;
+  }
+  // КОРИЧНЕВА кнопка
+  &.header-button {
+    min-width: 166px;
+    height: 32px;
+
+    @include font(700, 10px, calc(12px / 10px));
+
+    @include desktop {
+      height: 37px;
+      @include font(null, 14px, calc(17px / 14px));
+    }
+
+    color: var(--dark-theme-text-color);
+    background-color: #b9956f;
+
+    &:hover,
+    &:focus {
+      background-color: #d2a97e;
+    }
+    &:active {
+      background-color: var(--second-accent-color);
+    }
+    &.disabled {
+      background-color: #f3dcc3;
+    }
+  }
+}
+// СТРІЛКА вправо для кнопок '-->'
+.button-icon {
+  display: inline-block;
+  margin-left: 10px;
+
+  width: 32px;
+  height: 12px;
+
+  //❗️ задавала в глобальних стилях:
+  // svg {
+  //     fill: currentColor;
+  // }
+}

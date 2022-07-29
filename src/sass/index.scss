@@ -1,2 +1,21 @@
-// @import './common';
-// @import './example';
+@import './utils/value';
+@import './vendors/mixin';
+@import './utils/reset';
+@import './utils/global';
+
+// Компоненти
+
+@import './components/header';
+@import './components/hero';
+@import './components/filter';
+@import './components/sp-offer';
+@import './components/day-offer';
+@import './components/roses';
+@import './components/plus-offer';
+@import './components/earlier-watch';
+@import './components/advantages';
+@import './components/about-us';
+@import './components/reviews';
+@import './components/how-its-work';
+@import './components/insta';
+@import './components/footer';
