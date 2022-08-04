@@ -3,9 +3,17 @@
   color: var(--light-theme-title-color);
   & .container {
     overflow: hidden;
-    max-width: 360px;
     padding-top: 25px;
     padding-bottom: 53px;
+    max-width: 360px;
+
+    @include tablet {
+      max-width: 768px;
+    }
+
+    @include desktop {
+      max-width: 1300px;
+    }
   }
 }
 
@@ -19,8 +27,19 @@
 }
 
 .swiper-btn {
-  height: 80px;
-  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 120px;
+  margin: 0 auto;
+
+  &__next {
+    padding: 20px 15px 20px 0;
+  }
+
+  &__prev {
+    padding: 20px 0 20px 15px;
+  }
 }
 
 .swiper-btn__icon {
