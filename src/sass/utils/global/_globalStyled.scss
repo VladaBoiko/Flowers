@@ -16,9 +16,9 @@
   @include tablet {
     max-width: 768px;
   }
-
   @include desktop {
     max-width: 1340px;
+  }
 }
 
 .none {
