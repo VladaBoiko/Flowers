@@ -2,14 +2,6 @@
 // 1.зелена, 2.прозора, 3.коричнева;
 // із 5 станами:
 // 1.за замовченням, 2.hover, 3.focus, 4.click(active), 5.disabled
-button {
-  // cкидаючі стилі (обов'язoві)
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  border: none;
-  cursor: pointer;
-}
 .button {
   //стилізація
   min-width: 197px;
