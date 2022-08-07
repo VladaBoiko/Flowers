@@ -19,16 +19,16 @@
   @include desktop {
     max-width: 1340px;
   }
-}
 
-.none {
-  display: none;
-}
+  .none {
+    display: none;
+  }
 
-.hidden {
-  overflow: hidden;
-}
+  .hidden {
+    overflow: hidden;
+  }
 
-.is-open {
-  opacity: 0;
+  .is-open {
+    opacity: 0;
+  }
 }
