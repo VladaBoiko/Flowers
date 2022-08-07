@@ -1,10 +1,10 @@
 .reviews {
-  background-color: #e5e5e5;
+  background-color: #fffcfa;
   color: var(--light-theme-title-color);
   & .container {
     overflow: hidden;
     padding-top: 25px;
-    padding-bottom: 53px;
+    padding-bottom: 25px;
     max-width: 360px;
 
     @include tablet {
