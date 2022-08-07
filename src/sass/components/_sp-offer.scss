@@ -93,7 +93,6 @@
 
   &__favorite {
     width: 34px;
-    min-width: auto;
     background-color: transparent;
     height: 34px;
     padding: 5px 3px 4px;
@@ -102,13 +101,17 @@
 
     &:hover,
     &:focus {
-      background-color: transparent;
       transform: scale(1.1);
     }
 
     & svg {
       width: 100%;
       height: 100%;
+      fill: none;
+    }
+
+    &--checked svg {
+      fill: var(--red);
     }
   }
 
