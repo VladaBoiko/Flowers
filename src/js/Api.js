@@ -2,9 +2,9 @@ console.log('api.js');
 const axios = require('axios').default;
 
 // https://parceljs.org/features/development/#hot-reloading
-// if (module.hot) {
-//   module.hot.accept();
-// }
+if (module.hot) {
+  module.hot.accept();
+}
 
 axios.defaults.baseURL = 'https://62efe9458d7bc7c2eb8243b2.mockapi.io';
 
