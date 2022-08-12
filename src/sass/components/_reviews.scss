@@ -1,0 +1,84 @@
+.reviews {
+  background-color: #fffcfa;
+  color: var(--light-theme-title-color);
+  & .container {
+    overflow: hidden;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    max-width: 360px;
+
+    @include tablet {
+      max-width: 768px;
+    }
+
+    @include desktop {
+      max-width: 1300px;
+    }
+  }
+}
+
+.reviews__title {
+  margin-bottom: 30px;
+  @include text('Montserrat', 500, 30px, 30px);
+}
+
+.revies-swiper__wrapper {
+  display: flex;
+}
+
+.swiper-btn {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 120px;
+  margin: 0 auto;
+
+  &__next {
+    padding: 20px 15px 20px 0;
+  }
+
+  &__prev {
+    padding: 20px 0 20px 15px;
+  }
+}
+
+.swiper-btn__icon {
+  width: 32px;
+  height: 20px;
+}
+
+.reviews__slide {
+  padding: 30px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reviews__author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.reviews__data {
+  margin-left: 20px;
+}
+
+.reviews__name {
+  @include text('PT Sans', 400, 20px, 26px);
+  margin-bottom: 12px;
+}
+
+.reviews__pic img {
+  width: 100px;
+}
+
+.reviews__rate {
+  width: 120px;
+  height: 24px;
+}
+
+.reviews__text {
+  @include text('PT Sans', 400, 16px, 21px);
+  color: var(--grey);
+  background-color: var(--white);
+}
