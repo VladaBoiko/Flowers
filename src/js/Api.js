@@ -1,3 +1,4 @@
+
 console.log('api.js');
 const axios = require('axios').default;
 
@@ -18,3 +19,6 @@ export const serverData = async () => {
   console.log('🚀 ~ data', data);
   return data;
 };
+
+import axios from 'axios';
+
