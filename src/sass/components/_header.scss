@@ -1,16 +1,27 @@
+#header {
+  overflow: hidden;
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
 // HEADER ONE
 
-#header {
+.header-box-one {
   padding: 10px 0;
 }
 
 .header {
   display: flex;
+  align-items: center;
 }
 
 .header-one {
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  @include desktop {
+    justify-content: center;
+  }
 }
 
 .location {
@@ -31,16 +42,36 @@
 
 .nav {
   margin-left: auto;
+  display: none;
+  @include desktop {
+    display: block;
+  }
 }
 
 .nav-list {
-  display: flex;
-  gap: 27px;
+  @include desktop {
+    display: flex;
+    gap: 27px;
+  }
 }
 
 .nav-list__link,
 .contacts__text {
   @include text('PT Sans', 400, 13px, 17px);
+}
+
+.contacts__text,
+.schedule-list {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+#header .header-button {
+  @media screen and (max-width: 767.9px) {
+    display: none;
+  }
 }
 
 .nav-list__link {
@@ -64,10 +95,16 @@
 }
 
 .contacts {
+  margin-left: 20px;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  margin-left: auto;
+  @include desktop {
+    margin-left: auto;
+    width: auto;
+  }
 }
 
 .schedule-list__text {
@@ -75,13 +112,35 @@
 }
 
 .network-list {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: none;
+  @include desktop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 .network-list__link {
   color: var(--main-bgc-accent);
+}
+
+.header-one__tel {
+  display: flex;
+  align-items: center;
+
+  .tel-list__link {
+    color: var(--light-theme-text-color);
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/header/chevron-down.svg');
+  }
+  @include desktop {
+    display: none;
+  }
 }
 
 .header .header-button {
@@ -93,4 +152,124 @@
 
 .language__text {
   @include text(null, null, 16px, 20px);
+}
+
+// HEADER TWO
+
+.header-box-two {
+  background-color: var(--main-accent-color);
+}
+
+.header-two {
+  padding: 15px 0;
+  justify-content: space-between;
+}
+
+.logo__link {
+  margin-right: 20px;
+}
+
+.logo {
+  width: 134px;
+  height: 31px;
+  @include desktop {
+    width: 200px;
+    height: 47px;
+  }
+}
+
+.tel-list,
+.list-icon {
+  display: flex;
+}
+
+.tel-list {
+  margin-right: 45px;
+
+  @media screen and (max-width: 1339.9px) {
+    display: none;
+  }
+}
+
+.tel-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include text('PT Sans', 700, 16px, 21px);
+  color: var(--dark-theme-text-color);
+  &::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url('../img/header/phone.svg');
+  }
+}
+
+.search {
+  display: none;
+  position: relative;
+  padding: 12px;
+  margin-right: 30px;
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  background-color: transparent;
+  @include text(null, 500, 14px, 17px);
+
+  @include tablet {
+    display: block;
+
+    color: var(--input-text-color);
+  }
+}
+
+.label__search {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    background-image: url('../img/header/lens.svg');
+    width: 22px;
+    height: 22px;
+
+    transform: translateY(-50%);
+  }
+}
+
+.list-icon__elemens {
+  color: var(--dark-theme-text-color);
+}
+
+.list-icon {
+  gap: 15px;
+}
+
+.list-icon__elemens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-icon__icon {
+  stroke: currentColor;
+}
+
+.list-icon__text {
+  display: inline-block;
+}
+
+.search-mobail {
+  padding: 10px;
+
+  @include tablet {
+    display: none;
+  }
+  .search {
+    display: block;
+  }
 }
