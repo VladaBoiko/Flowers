@@ -1,0 +1,137 @@
+.footer__main{
+    padding: 30px 20px;
+    background-color: #03453b;
+}
+.footer__logo{
+width: 134px;
+height: 31px;
+margin-bottom: 30px;
+}
+.footer__tel-item:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.footer__tel-list{
+    float: left;
+    width: 49%;
+}
+.footer__contact-list{
+    float: right;
+    width: 49%;
+}
+.footer__tel-link{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #ebebeb;
+      
+}
+.footer__tel-svg{
+    margin-right: 8px;
+}
+
+.footer__menu-list{
+    float: left;
+    width: 49%;
+}
+.footer__navigation-list{
+    float: right;
+    width: 49%;
+}
+.footer__nav-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footer__menu-link,
+.footer__navigation-link{
+    
+    color: #ebebeb;
+
+    @include text('Montserrat', 400, 14px, 17px);
+}
+.footer__menu-item,
+.footer__navigation-item:not(:last-child){
+    
+    margin-bottom: 10px;
+}
+.footer__contact-item:not(:last-child){
+margin-bottom: 10px;
+}
+.footer__contact-link,
+.footer__contact-text{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #ebebeb;
+}
+.footer__contact-container{
+    color: #dddddd;
+    @include text('Montserrat', 400, 14px, 17px);
+}
+.footer__social-list{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.footer__social-item:not(:last-child){
+    margin-right: 10px;
+}
+.footer__form-title{
+    display: inline-block;
+    width: 256px;
+    margin-bottom: 10px;
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #ebebeb;
+}
+.footer__form{
+    display: flex;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+
+}
+.footer__input{
+    width: 60%;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+   
+}
+.footer__input::placeholder{
+    @include text('Montserrat', 500, 10px, 12px);
+    color: #898989;
+}
+.footer__btn{
+    width: 40%;
+    background-color: #70A5A0;
+    border-radius: 3px;
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #ebebeb;
+    
+}
+.footer__registration,
+.footer__treaty{
+    @include text('Montserrat', 400, 10px, 13px);
+    color: #BABABA;
+    margin-top: 20px;
+}
+.footer__reg-text,
+.footer__treaty-text:not(:last-child){
+    margin-bottom: 5px;
+}
+.footer__team{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #ebebeb;
+    margin-top: 18px;
+}
+.footer__pay-list{
+    padding-top: 12px;
+    padding-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: -15px;
+    margin-top: -11px;
+}
+.footer__pay-item{
+    margin-right: 15px;
+    margin-top: 11px;
+}
