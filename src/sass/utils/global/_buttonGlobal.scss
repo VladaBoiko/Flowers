@@ -10,7 +10,6 @@
   border: none;
   cursor: pointer;
 
-
   //стилізація
   min-width: 197px;
   height: 52px;
@@ -92,4 +91,30 @@
   // svg {
   //     fill: currentColor;
   // }
+}
+
+.header-button {
+  min-width: 166px;
+  height: 32px;
+
+  @include font(700, 10px, calc(12px / 10px));
+
+  @include desktop {
+    height: 37px;
+    @include font(null, 14px, calc(17px / 14px));
+  }
+
+  color: var(--dark-theme-text-color);
+  background-color: #b9956f;
+
+  &:hover,
+  &:focus {
+    background-color: #d2a97e;
+  }
+  &:active {
+    background-color: var(--second-accent-color);
+  }
+  &.disabled {
+    background-color: #f3dcc3;
+  }
 }
