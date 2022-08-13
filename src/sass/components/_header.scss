@@ -1,0 +1,96 @@
+// HEADER ONE
+
+#header {
+  padding: 10px 0;
+}
+
+.header {
+  display: flex;
+}
+
+.header-one {
+  justify-content: center;
+  align-items: center;
+}
+
+.location {
+  padding-left: 7px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.location__text {
+  //   margin: 0 9px;
+  @include text('PT Sans', 400, 14px, 18px);
+}
+
+.location__arrow {
+  transform: rotate(180deg);
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav-list {
+  display: flex;
+  gap: 27px;
+}
+
+.nav-list__link,
+.contacts__text {
+  @include text('PT Sans', 400, 13px, 17px);
+}
+
+.nav-list__link {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-list__link--arrow {
+  &::after {
+    content: '';
+    display: inline-block;
+    border-left: 3.5px solid transparent;
+    border-right: 3.5px solid transparent;
+    border-top: 5px solid #000;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    margin-bottom: 4px;
+  }
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.schedule-list__text {
+  @include text('PT Sans', 700, 12px, 16px);
+}
+
+.network-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.network-list__link {
+  color: var(--main-bgc-accent);
+}
+
+.header .header-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.language__text {
+  @include text(null, null, 16px, 20px);
+}
