@@ -1,6 +1,16 @@
 .footer__main{
+    position: relative;
     padding: 30px 20px;
     background-color:var(--main-accent-color);
+}
+.footer__main::before{
+    content: '';
+    width: 111px;
+    height: 67px;
+    background: url(/src/img/footer/footer-img1.webp);
+    position: absolute;
+    top:0;
+    right: 0;
 }
 .footer__logo{
 width: 134px;
