@@ -2,6 +2,9 @@
     position: relative;
     padding: 30px 20px;
     background-color:var(--main-accent-color);
+    @include desktop{
+        padding: 40px 0px;
+    }
 }
 .footer__main::before{
     content: '';
@@ -26,18 +29,35 @@
 width: 134px;
 height: 31px;
 margin-bottom: 30px;
+@include desktop{
+    width: 200px;
+    height: 47px;
+    margin-bottom: 40px;
+}
 }
 .footer__tel-item:not(:last-child){
     margin-bottom: 20px;
+    @include tablet{
+        margin-bottom: 22px;
+    }
+    @include desktop{
+        margin-bottom: 20px;
+    }
 }
 
 .footer__tel-list{
     float: left;
     width: 49%;
+    @include tablet{
+        width: 20%;
+    }
 }
 .footer__contact-list{
     float: right;
     width: 49%;
+    @include tablet{
+        width: 20%;
+    }
 }
 .footer__tel-link{
     @include text('Montserrat', 500, 14px, 17px);
@@ -61,14 +81,30 @@ margin-bottom: 30px;
 .footer__menu-list{
     float: left;
     width: 49%;
+    
 }
 .footer__navigation-list{
     float: right;
     width: 49%;
+    
+}
+.footer__main-content{
+    @include tablet{
+        position: relative;
+    }
+}
+.footer__float{
+    @media screen and (max-width: 767px){
+        clear: both;
+    }
 }
 .footer__nav-container{
     margin-top: 20px;
     margin-bottom: 20px;
+    @include tablet{
+        max-width: 350px;
+        margin-left: 30%;
+    }
 }
 .footer__menu-link,
 .footer__navigation-link{
