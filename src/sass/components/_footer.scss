@@ -7,10 +7,20 @@
     content: '';
     width: 111px;
     height: 67px;
-    background: url(/src/img/footer/footer-img1.webp);
+    background: url(/src/img/footer/footer-img1.webp) no-repeat;
     position: absolute;
     top:0;
     right: 0;
+    @include tablet{
+        background: url(/src/img/footer/footer-img1-tablet.webp) no-repeat;
+        width: 159px;
+        height: 96px;
+    }
+    @include desktop{
+        background: url(/src/img/footer/footer-img1-desctop.webp) no-repeat;
+        width: 265px;
+        height: 158px;
+    }
 }
 .footer__logo{
 width: 134px;
