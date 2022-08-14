@@ -28,7 +28,7 @@
 .footer__logo{
 width: 134px;
 height: 31px;
-margin-bottom: 30px;
+margin-bottom: 35px;
 @include desktop{
     width: 200px;
     height: 47px;
@@ -49,19 +49,25 @@ margin-bottom: 30px;
     float: left;
     width: 49%;
     @include tablet{
-        width: 20%;
+        width: 25%;
     }
 }
 .footer__contact-list{
     float: right;
     width: 49%;
     @include tablet{
-        width: 20%;
+        width: 25%;
     }
 }
 .footer__tel-link{
     @include text('Montserrat', 500, 14px, 17px);
     color: var(--dark-theme-title-color);
+    @include tablet{
+        @include text('Montserrat', 500, 16px, 20px);
+    }
+    @include desktop{
+        @include text('Montserrat', 500, 18px, 22px);
+    }
     &:hover,
     &:focus {
         text-decoration: underline;
@@ -76,6 +82,9 @@ margin-bottom: 30px;
 }
 .footer__tel-svg{
     margin-right: 8px;
+    @include tablet{
+        margin-right: 11px;
+    }
 }
 
 .footer__menu-list{
@@ -99,10 +108,13 @@ margin-bottom: 30px;
     }
 }
 .footer__nav-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    @media screen and (max-width: 767px){
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
     @include tablet{
-        max-width: 350px;
+        max-width: 300px;
         margin-left: 30%;
     }
 }
@@ -128,17 +140,40 @@ margin-bottom: 10px;
 }
 .footer__contact-link,
 .footer__contact-text{
-    @include text('Montserrat', 500, 14px, 17px);
+    @include text('Montserrat', 400, 14px, 17px);
     color: var(--dark-theme-title-color);
+
+    @include tablet{
+        @include text('Montserrat', 400, 16px, 20px);
+    }
+
+    @include desktop{
+        @include text('Montserrat', 400, 18px, 22px);
+    }
 }
 .footer__contact-container{
     color: #dddddd;
     @include text('Montserrat', 400, 14px, 17px);
+
+    @include tablet{
+        @include text('Montserrat', 400, 16px, 20px);
+    }
+
+    @include desktop{
+        @include text('Montserrat', 400, 18px, 22px);
+    }
 }
 .footer__social-list{
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 20px;
+
+    @media screen and (max-width:767px) {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    @include tablet{
+        margin-bottom: 30px;
+    }
+
 }
 
 .footer__social-link:hover, .footer__social-link:focus{
@@ -152,15 +187,33 @@ margin-bottom: 10px;
 }
 .footer__form-title{
     display: inline-block;
-    width: 256px;
-    margin-bottom: 10px;
+    
+    
     @include text('Montserrat', 500, 14px, 17px);
     color: var(--dark-theme-title-color);
+    @media screen and (max-width:767px) {
+        margin-bottom: 10px;
+        width: 256px;
+    }
+    @include tablet{
+        width: 180px;
+        margin-right: 20px;
+    }
+
+}
+.footer__form-container{
+    @include tablet{
+        display: flex;
+    }
 }
 .footer__form{
+    max-width: 320px;
     display: flex;
     border: 1px solid #C4C4C4;
     border-radius: 4px;
+    @include tablet{
+        max-width: 420px;
+    }
 
 }
 .footer__input{
