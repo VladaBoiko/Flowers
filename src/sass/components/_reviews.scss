@@ -8,11 +8,16 @@
     max-width: 360px;
 
     @include tablet {
+      position: relative;
       max-width: 768px;
+      padding-top: 40px;
+      padding-bottom: 80px;
     }
 
     @include desktop {
-      max-width: 1300px;
+      max-width: 1340px;
+      padding-top: 50px;
+      padding-bottom: 179px;
     }
   }
 }
@@ -20,6 +25,11 @@
 .reviews__title {
   margin-bottom: 30px;
   @include text('Montserrat', 500, 30px, 30px);
+
+  @include tablet {
+    margin-bottom: 30px;
+    @include text('Montserrat', 500, 30px, 30px);
+  }
 }
 
 .revies-swiper__wrapper {
@@ -39,6 +49,12 @@
 
   &__prev {
     padding: 20px 0 20px 15px;
+  }
+
+  @include tablet {
+    position: absolute;
+    top: 25px;
+    right: 7px;
   }
 }
 
