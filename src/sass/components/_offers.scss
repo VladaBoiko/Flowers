@@ -1,5 +1,5 @@
 .offers {
-  background-color: #ebebeb;
+  // background-color: #e5e5e5;
 }
 
 // ======================================
@@ -87,34 +87,37 @@
     }
   }
 
-  &--special,
-  &--recommend {
-    & .container {
-      &::before {
-        content: '';
-        position: absolute;
-        background: url(../img/offer/sp-offer-background.png) 0px 0px no-repeat;
-        width: 480px;
-        height: 810px;
+  @include desktop {
+    &--special,
+    &--recommend {
+      & .container {
+        &::before {
+          content: '';
+          position: absolute;
+          background: url(../img/offer/sp-offer-background.png) 0px 0px
+            no-repeat;
+          width: 480px;
+          height: 810px;
+        }
       }
     }
-  }
 
-  &--special {
-    & .container {
-      &::before {
-        top: 437px;
-        left: 1390px;
+    &--special {
+      & .container {
+        &::before {
+          top: 437px;
+          left: 1390px;
+        }
       }
     }
-  }
 
-  &--recommend {
-    & .container {
-      &::before {
-        top: -255px;
-        left: -560px;
-        transform: scaleX(-1);
+    &--recommend {
+      & .container {
+        &::before {
+          top: -255px;
+          left: -560px;
+          transform: scaleX(-1);
+        }
       }
     }
   }
