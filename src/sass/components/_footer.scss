@@ -1,28 +1,78 @@
 .footer__main{
+    position: relative;
     padding: 30px 20px;
-    background-color: #03453b;
+    background-color:var(--main-accent-color);
+    @include desktop{
+        padding: 40px 0px;
+    }
+}
+.footer__main::before{
+    content: '';
+    width: 111px;
+    height: 67px;
+    background: url(/src/img/footer/footer-img1.webp) no-repeat;
+    position: absolute;
+    top:0;
+    right: 0;
+    @include tablet{
+        background: url(/src/img/footer/footer-img1-tablet.webp) no-repeat;
+        width: 159px;
+        height: 96px;
+    }
+    @include desktop{
+        background: url(/src/img/footer/footer-img1-desctop.webp) no-repeat;
+        width: 265px;
+        height: 158px;
+    }
 }
 .footer__logo{
 width: 134px;
 height: 31px;
 margin-bottom: 30px;
+@include desktop{
+    width: 200px;
+    height: 47px;
+    margin-bottom: 40px;
+}
 }
 .footer__tel-item:not(:last-child){
     margin-bottom: 20px;
+    @include tablet{
+        margin-bottom: 22px;
+    }
+    @include desktop{
+        margin-bottom: 20px;
+    }
 }
 
 .footer__tel-list{
     float: left;
     width: 49%;
+    @include tablet{
+        width: 20%;
+    }
 }
 .footer__contact-list{
     float: right;
     width: 49%;
+    @include tablet{
+        width: 20%;
+    }
 }
 .footer__tel-link{
     @include text('Montserrat', 500, 14px, 17px);
-    color: #ebebeb;
+    color: var(--dark-theme-title-color);
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+      }
       
+}
+.footer__contact-link{
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+      }
 }
 .footer__tel-svg{
     margin-right: 8px;
@@ -31,21 +81,42 @@ margin-bottom: 30px;
 .footer__menu-list{
     float: left;
     width: 49%;
+    
 }
 .footer__navigation-list{
     float: right;
     width: 49%;
+    
+}
+.footer__main-content{
+    @include tablet{
+        position: relative;
+    }
+}
+.footer__float{
+    @media screen and (max-width: 767px){
+        clear: both;
+    }
 }
 .footer__nav-container{
     margin-top: 20px;
     margin-bottom: 20px;
+    @include tablet{
+        max-width: 350px;
+        margin-left: 30%;
+    }
 }
 .footer__menu-link,
 .footer__navigation-link{
     
-    color: #ebebeb;
+    color: var(--dark-theme-title-color);
 
     @include text('Montserrat', 400, 14px, 17px);
+    
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+      }
 }
 .footer__menu-item,
 .footer__navigation-item:not(:last-child){
@@ -58,7 +129,7 @@ margin-bottom: 10px;
 .footer__contact-link,
 .footer__contact-text{
     @include text('Montserrat', 500, 14px, 17px);
-    color: #ebebeb;
+    color: var(--dark-theme-title-color);
 }
 .footer__contact-container{
     color: #dddddd;
@@ -69,6 +140,13 @@ margin-bottom: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.footer__social-link:hover, .footer__social-link:focus{
+    display: block;
+    animation: animate125 1000ms infinite 10ms;
+        
+}
+
 .footer__social-item:not(:last-child){
     margin-right: 10px;
 }
@@ -77,7 +155,7 @@ margin-bottom: 10px;
     width: 256px;
     margin-bottom: 10px;
     @include text('Montserrat', 500, 14px, 17px);
-    color: #ebebeb;
+    color: var(--dark-theme-title-color);
 }
 .footer__form{
     display: flex;
@@ -93,24 +171,33 @@ margin-bottom: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 12px;
+    color: var(--white);
    
 }
 .footer__input::placeholder{
     @include text('Montserrat', 500, 10px, 12px);
-    color: #898989;
+    color: var(--input-text-color);
 }
 .footer__btn{
     width: 40%;
-    background-color: #70A5A0;
+    background-color: var(--green-light);
     border-radius: 3px;
     @include text('Montserrat', 500, 14px, 17px);
-    color: #ebebeb;
-    
+    color: var(--dark-theme-title-color);
+    border: none;
+    transition: background-color var(--main-transition);
+    transition: border var(--main-transition);
+    &:hover,
+    &:focus{
+        background-color: var( --main-accent-color);
+        border: 2px ridge var( --green-light);
+    }
 }
+
 .footer__registration,
 .footer__treaty{
     @include text('Montserrat', 400, 10px, 13px);
-    color: #BABABA;
+    color: var(--grey);
     margin-top: 20px;
 }
 .footer__reg-text,
@@ -119,7 +206,7 @@ margin-bottom: 10px;
 }
 .footer__team{
     @include text('Montserrat', 500, 14px, 17px);
-    color: #ebebeb;
+    color: var(--dark-theme-title-color);
     margin-top: 18px;
 }
 .footer__pay-list{
@@ -135,3 +222,26 @@ margin-bottom: 10px;
     margin-right: 15px;
     margin-top: 11px;
 }
+.footer__pay-link{
+    display: block;
+    transform: scale(1);
+    transition: transform var(--main-transition);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+}
+@keyframes animate125 {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.25);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
