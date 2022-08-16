@@ -10,7 +10,9 @@
         padding-bottom: 100px;
     }
 }
+
 .filter-list {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,10 +22,32 @@
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 20px;
     }
+        &:after {
+            display: none;
+    
+            @include desktop {
+                display: block;
+            }
+            pointer-events: none;
+            position: absolute;
+            top: -50px;
+            right:-420px;
+            content: '';
+            width: 715px;
+            height: 667px;
+            background-image: url(../img/main-page/filter-bg-img.png);
+            background-repeat: no-repeat;
+    
+        }
+    
 }
+
 .filter-item {
+    cursor: pointer;
+    position: relative;
     min-width: 167px;
     min-height: 129px;
+    // z-index: 1;
 
     display: flex;
     flex-direction: column;
@@ -51,6 +75,8 @@
     &:focus {
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     }
+
+    // for 'click'
     // &:active {
     //     background-color: var(--main-bgc-accent);
     //     &>.filter-icon {
@@ -73,3 +99,63 @@
     color: var(--main-accent-color);
 }
 
+// вспливашки: 
+.filter-sub-list {
+    position: absolute;
+    top: 100%;
+    z-index: 50;
+
+    width: 394px;
+    height: 275px;
+
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    @media screen and (max-width: 1339.98px) {
+        &.to-right-tab {
+            left: 0;
+        } 
+        &.to-left-tab {
+            right: 0;
+            transform-origin: top right;
+        }
+    }    
+    transition: transform 400ms linear, opacity 400ms linear;
+    .filter-item:hover &,
+        .filter-item:focus &{
+        opacity: 100%;
+        transform: scale(100%);
+    }
+    
+    padding: 12px;
+    background-color: #fff;
+    @include desktop {
+        width: 462px;
+        height: 275px;
+        padding: 20px 20px 20px 12px;
+        &.to-right-desk {
+            left: 0;
+        }
+        &.to-left-desk {
+            position: absolute;
+            right: 0;
+            transform-origin: top right;
+        }
+    }
+}
+
+.filter-sub-item {
+    padding: 10px;
+    border-bottom: 1px solid #8D8D8D;
+}
+.filter-sub-link {
+    font-family: 'PT sans';
+    @include font(400, 18px, calc(23px /18px));
+    color: var(--black);
+}
