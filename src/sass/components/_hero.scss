@@ -1,0 +1,118 @@
+.hero {
+    position: relative;
+    // padding-top: 179px; // 52 + 65 + 62
+    
+    // @include tablet {
+    //     padding-top: 124px; //52 + 72
+    // }
+    // @include desktop {
+    //     padding-top: 138px; //57 + 81
+    // }
+}
+
+.hero-slide {
+    height: 500px;
+    @include desktop {
+        height: 700px;
+    }
+
+    &:nth-child(1) {
+        background-color: rgb(250, 231, 249);
+        background-image: url(../img/hero/hero-bg-little.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @media (min-device-pixel-ratio: 2), 
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            backgroung-image: url(../img/hero/hero-bg-little-2x.jpg)
+        }
+        @include desktop {
+            background-image: url(../img/hero/hero-bg-desk.jpg);
+            @media (min-device-pixel-ratio: 2),
+                (min-resolution: 192),
+                (min-resolution: 2) {
+                    background-image: url(../img/hero/hero-bg-desk-2x.jpg);
+                }
+        }
+    }
+
+    // &:nth-child(2) {
+    //     background-color: brown;
+    // }
+
+    // &:nth-child(3) {
+    //     background-color: teal;
+    // }
+}
+
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background-color: var(--main-bgc-accent);
+}
+
+//-------------КОНТЕНТ------------
+.hero-content {
+    width: 100%;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    padding-top: 30px;
+
+    @include tablet {
+        padding-top: 98px;
+    }
+
+    @include desktop {
+        padding-top: 200px;
+    }
+    & > .container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 360px;
+        }
+        
+    }
+}
+
+.hero-content-wrap {
+    max-width: 244px;
+
+    @include tablet {
+        max-width: 510px;
+    }
+
+    @include desktop {
+        max-width: 639px;
+    }
+}
+
+.hero-title {
+    @include font(500, 30px, 1);
+    color: var(--main-accent-color);
+    margin-bottom: 20px;
+
+    @include tablet {
+        @include font(null, 36px, 1);
+    }
+
+    @include desktop {
+        @include font(null, 45px, 1);
+    }
+}
+
+.hero-text {
+    @include font(400, 18px, calc(22px / 18px));
+    color: var(--main-accent-color);
+    margin-bottom: 30px;
+
+    @include tablet {
+        @include font(null, 20px, calc(24px / 20px));
+        margin-bottom: 40px;
+        width: 434px;
+    }
+
+    @include desktop {
+        width: inherit;
+    }
+}
