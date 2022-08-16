@@ -1,5 +1,7 @@
 .filter {
+    position: relative;
     display: none;
+
     @include tablet {
         display: block;
     }
@@ -7,7 +9,7 @@
     padding-bottom: 80px;
     @include desktop {
         padding-top: 50px;
-        padding-bottom: 100px;
+        padding-bottom: 270px;
     }
 }
 
@@ -22,24 +24,22 @@
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 20px;
     }
-        &:after {
-            display: none;
-    
-            @include desktop {
-                display: block;
-            }
-            pointer-events: none;
-            position: absolute;
-            top: -50px;
-            right:-420px;
-            content: '';
-            width: 715px;
-            height: 667px;
-            background-image: url(../img/main-page/filter-bg-img.png);
-            background-repeat: no-repeat;
-    
+    &:after {
+        display: none;
+
+        @include desktop {
+            display: block;
         }
-    
+        pointer-events: none;
+        position: absolute;
+        top: -50px;
+        right:-420px;
+        content: '';
+        width: 715px;
+        height: 667px;
+        background-image: url(../img/main-page/filter-bg-img.png);
+        background-repeat: no-repeat;
+    }
 }
 
 .filter-item {
@@ -47,7 +47,6 @@
     position: relative;
     min-width: 167px;
     min-height: 129px;
-    // z-index: 1;
 
     display: flex;
     flex-direction: column;
@@ -126,7 +125,8 @@
             transform-origin: top right;
         }
     }    
-    transition: transform 400ms linear, opacity 400ms linear;
+    transition: transform 400ms linear, 
+        opacity 400ms linear;
     .filter-item:hover &,
         .filter-item:focus &{
         opacity: 100%;
