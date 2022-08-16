@@ -83,8 +83,8 @@
         &::before {
           content: '';
           position: absolute;
-          background: url(../img/offers/offers-background.png) 0px 0px/479px
-            811px no-repeat;
+          background: url(../img/offers/offers-background.png) 0px 0px/100%
+            no-repeat;
           @media screen and (min-device-pixel-ratio: 2),
             (min-resolution: 192px),
             (min-resolution: 2dppx) {
