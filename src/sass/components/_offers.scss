@@ -1,5 +1,14 @@
 .offers {
   padding-top: 350px;
+  &__container {
+    max-width: 360px;
+    @include tablet {
+      max-width: 768px;
+    }
+    @include desktop {
+      max-width: 1340px;
+    }
+  }
 }
 
 // ======================================
@@ -15,13 +24,6 @@
 
   &__container {
     position: relative;
-    max-width: 360px;
-    @include tablet {
-      max-width: 768px;
-    }
-    @include desktop {
-      max-width: 1340px;
-    }
   }
 
   &__title {
