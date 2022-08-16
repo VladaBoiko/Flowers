@@ -1,0 +1,237 @@
+.blog-container {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+}
+
+.blog-section::after {
+  @include desktop {
+    content: '';
+    width: 620px;
+    height: 667px;
+    background: url(../img/blog/first-page/desktop/bg-flower.png) no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../img/blog/first-page/desktop/bg-flower@2x.png);
+    }
+  }
+}
+
+.bg-leaves-right {
+  @include desktop {
+    width: 220px;
+    height: 831px;
+    background: url(../img/blog/first-page/desktop/bg-leaves-right.png)
+      no-repeat;
+    position: absolute;
+    top: 1100px;
+    right: 0;
+    z-index: -1;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../img/blog/first-page/desktop/bg-leaves-right.png);
+    }
+  }
+}
+
+.bg-leaves-left {
+  @include desktop {
+    width: 215px;
+    height: 831px;
+    background: url(../img/blog/first-page/desktop/bg-leaves-left.png) no-repeat;
+    position: absolute;
+    top: 2780px;
+    left: 0;
+    z-index: -1;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../img/blog/first-page/desktop/bg-leaves-left@2x.png);
+    }
+  }
+}
+
+.blog-navigation {
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+}
+
+.main-menu-link,
+.blog-menu-link {
+  transition: text-decoration-line var(--main-transition),
+    text-decoration-thickness var(--main-transition);
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+}
+
+.main-menu-link,
+.menu-separator {
+  @include text(null, 500, 14px, 17px);
+  color: var(--light-theme-text-color);
+}
+
+.blog-menu-link {
+  @include text(null, 500, 14px, 17px);
+  color: var(--grey);
+}
+
+.blog-title {
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+  @include text(null, 500, 30px, 30px);
+
+  @include tablet {
+    @include text(null, 500, 36px, 36px);
+  }
+}
+
+.card-list {
+  margin-bottom: 20px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.card-item {
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  transition: box-shadow var(--main-transition);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.card-item__second {
+  @media screen and (min-width: 768px) and (max-width: 1338px) {
+    grid-column: 1/3;
+  }
+
+  @include desktop {
+    grid-column: 3/5;
+  }
+
+  & .card-content-wrap {
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    @include desktop {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.card-item__second-desktop {
+  @include desktop {
+    grid-column: 1/3;
+  }
+}
+
+.card-content-wrap {
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 5px;
+  @include text(null, 800, 16px, 20px);
+  color: var(--main-accent-color);
+}
+
+.card-text {
+  @include text(null, null, 13px, 17px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 5px;
+}
+
+.card-text__second-card {
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.card-content-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-add-info {
+  @include text(null, null, 14px, 17px);
+  color: var(--main-accent-color);
+}
+
+.card-more {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: var(--main-accent-color);
+  }
+}
+
+.btn-more-card {
+  @include flexCenter;
+  margin-right: auto;
+  margin-left: auto;
+}
