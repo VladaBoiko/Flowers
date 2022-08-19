@@ -159,6 +159,12 @@ section.offer {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  &:hover,
+  &:focus {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow var(--main-transition);
+  }
+
   &__image {
     border-radius: 4px;
 
@@ -201,12 +207,13 @@ section.offer {
     background-color: transparent;
     height: 34px;
     padding: 5px 3px 4px;
-    transform: scale(1);
-    transition: transform var(--main-transition);
+    // transform: scale(1);
+    // transition: transform var(--main-transition);
 
     &:hover,
     &:focus {
-      transform: scale(1.1);
+      // transform: scale(1.1);
+      animation: pulse 1000ms linear infinite;
     }
 
     & svg {
@@ -267,5 +274,19 @@ section.offer {
       background-color: transparent;
       color: #03453b;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.5;
   }
 }
