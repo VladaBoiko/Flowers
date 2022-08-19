@@ -102,6 +102,7 @@ section.offer {
       &::before {
         content: '';
         position: absolute;
+        z-index: -1;
         background: url(../img/offers/offers-background.png) 0px 0px/100%
           no-repeat;
         @media screen and (min-device-pixel-ratio: 2),
