@@ -59,6 +59,10 @@
     margin-bottom: 30px;
   }
 
+  @include desktop {
+    margin-bottom: 11px;
+  }
+
   & img {
     margin-bottom: 10px;
 
