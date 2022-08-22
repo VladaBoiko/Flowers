@@ -197,20 +197,7 @@ margin-bottom: 10px;
 .footer__social-item:not(:last-child){
     margin-right: 10px;
 }
-.footer__social-facebook{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: var(--dark-theme-title-color);
-    &:hover,
-    &:focus{
-        animation: animate125 1000ms infinite 10ms;
-    }
-    
-}
+
 .footer__form-title{
     display: inline-block;
         
