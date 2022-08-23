@@ -1,0 +1,113 @@
+.about-us .container {
+  padding-top: 50px;
+  padding-bottom: 25px;
+  max-width: 360px;
+  @include text('Montserrat', 400, 14px, 18px);
+
+  @include tablet {
+    max-width: 768px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    @include text('Montserrat', 400, 18px, 23px);
+  }
+
+  @include desktop {
+    max-width: 1340px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}
+
+.about-us__title {
+  margin-bottom: 30px;
+  @include text('Montserrat', 500, 30px, 39px);
+  color: var(--main-accent-color);
+
+  @include tablet {
+    @include text('Montserrat', 500, 36px, 47px);
+  }
+}
+
+.about-us__pic {
+  font-size: 0;
+
+  &-second {
+    margin-top: 10px;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      margin-top: 0;
+      position: absolute;
+      right: -310px;
+      top: 0px;
+      width: 950px;
+    }
+  }
+}
+
+.about-us__down-wrap {
+  position: relative;
+}
+
+.about-us__wrap li:nth-child(2n + 1) {
+  margin-bottom: 10px;
+  @include tablet {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 11px;
+  }
+
+  & img {
+    margin-bottom: 10px;
+
+    @include tablet {
+      width: 354px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      width: 610px;
+    }
+  }
+
+  & div:nth-child(2n) {
+    @include tablet {
+      margin-left: 20px;
+    }
+    @include desktop {
+      margin: 0;
+      margin-left: 50px;
+      width: 530px;
+    }
+  }
+}
+
+.about-us__wrap li:nth-child(2n) {
+  display: flex;
+  flex-direction: column-reverse;
+  @include desktop {
+    // flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  & div:nth-child(2n) {
+    @include desktop {
+      width: 610px;
+      margin-right: 50px;
+      padding-top: 40px;
+    }
+  }
+}
+
+.about-us__high-wrap p:not(:last-child),
+.about-us__down-wrap p:not(:last-child) {
+  margin-bottom: 20px;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+}
