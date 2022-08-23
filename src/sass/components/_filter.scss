@@ -154,6 +154,24 @@
 .filter-sub-item {
   padding: 10px;
   border-bottom: 1px solid #8d8d8d;
+
+  &:hover,
+  &:focus {
+      
+      background-color: var(--green-light);
+      border-bottom: none;
+      .filter-sub-link {
+        color: var(--dark-theme-text-color);
+      }
+    }
+
+    // for 'click'
+    // &:active {
+    //   background-color: var(--main-bgc-accent);
+    //   .filter-sub-link {
+    //     color: var(--dark-theme-text-color);
+    //   }
+    // }
 }
 .filter-sub-link {
   font-family: 'PT sans';
