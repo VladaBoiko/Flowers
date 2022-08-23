@@ -1,5 +1,6 @@
 .hero {
     position: relative;
+    max-width: 1920px;
     // padding-top: 179px; // 52 + 65 + 62
     
     // @include tablet {
@@ -8,6 +9,9 @@
     // @include desktop {
     //     padding-top: 138px; //57 + 81
     // }
+    & .container {
+        position: relative;
+    }
 }
 
 .hero-slide {
@@ -15,6 +19,7 @@
     @include desktop {
         height: 700px;
     }
+    text-align: center;
 
     &:nth-child(1) {
         background-color: rgb(250, 231, 249);
@@ -37,13 +42,53 @@
         }
     }
 
-    // &:nth-child(2) {
-    //     background-color: brown;
-    // }
+    &:nth-child(2) {
+        background-color: rgba(199, 61, 61, 0.568);
+        background-image: url(../img/hero/hero-bg-little.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        
+            @media (min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi),
+            (min-resolution: 2dppx) {
+                backgroung-image: url(../img/hero/hero-bg-little-2x.jpg)
+            }
+        
+            @include desktop {
+                background-image: url(../img/hero/hero-bg-desk.jpg);
+        
+                @media (min-device-pixel-ratio: 2),
+                (min-resolution: 192),
+                (min-resolution: 2) {
+                    background-image: url(../img/hero/hero-bg-desk-2x.jpg);
+                }
+            }
+    }
 
-    // &:nth-child(3) {
-    //     background-color: teal;
-    // }
+    &:nth-child(3) {
+        background-color: rgba(150, 206, 252, 0.5);
+        background-image: url(../img/hero/hero-bg-little.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        
+            @media (min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi),
+            (min-resolution: 2dppx) {
+                backgroung-image: url(../img/hero/hero-bg-little-2x.jpg)
+            }
+        
+            @include desktop {
+                background-image: url(../img/hero/hero-bg-desk.jpg);
+        
+                @media (min-device-pixel-ratio: 2),
+                (min-resolution: 192),
+                (min-resolution: 2) {
+                    background-image: url(../img/hero/hero-bg-desk-2x.jpg);
+                }
+            }
+    }
 }
 
 .swiper-pagination-bullet {
@@ -54,6 +99,9 @@
 
 //-------------КОНТЕНТ------------
 .hero-content {
+    position: relative;
+    pointer-events: none;
+    
     width: 100%;
     z-index: 50;
     position: absolute;
@@ -76,6 +124,7 @@
 }
 
 .hero-content-wrap {
+    
     max-width: 244px;
 
     @include tablet {
@@ -115,4 +164,29 @@
     @include desktop {
         width: inherit;
     }
+}
+.hero .button {
+    pointer-events: all;
+}
+
+
+.hero-swiper-container .swiper-pagination-bullet {
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    margin: 0 7px;
+    background-color: transparent;
+    border: 1px solid var(--main-bgc-accent);
+}
+.hero-swiper-container .swiper-pagination-bullet-active {
+    background-color: var(--main-bgc-accent);
+}
+.hero-swiper-container .swiper-pagination {
+    bottom: 36px; 
+    @include desktop {
+        bottom: 46px;
+    }
+}
+.hero-swiper-container .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 7px;
 }
