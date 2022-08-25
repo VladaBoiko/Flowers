@@ -9,6 +9,9 @@
     // @include desktop {
     //     padding-top: 138px; //57 + 81
     // }
+    @media screen and (max-width: 767.98px) {
+        padding-bottom: 97px;
+    }
     & .container {
         position: relative;
     }
@@ -182,6 +185,9 @@
     background-color: var(--main-bgc-accent);
 }
 .hero-swiper-container .swiper-pagination {
+    @media screen and (max-width: 767.98px) {
+        bottom: 132px;
+    }
     bottom: 36px; 
     @include desktop {
         bottom: 46px;
