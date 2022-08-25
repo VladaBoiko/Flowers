@@ -2,10 +2,16 @@
     width: 100%;
     height: 400px;
 }
-.footer__main{
+.footer__bacground-main{
     position: relative;
-    padding: 30px 20px;
     background-color:var(--main-accent-color);
+    
+  
+}
+.footer__main{
+    
+    padding: 30px 0;
+    
     @include desktop{
         padding: 40px 0px;
     }
@@ -28,6 +34,19 @@
         width: 265px;
         height: 158px;
     }
+}
+.footer__main::after{
+    @include desktop{
+        content: '';
+        width: 190px;
+        height: 215px;
+        background: url(/src/img/footer/footer-img2.webp) no-repeat;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+       
+    }
+    
 }
 .footer__logo{
 width: 134px;
@@ -55,6 +74,11 @@ margin-bottom: 35px;
     @include tablet{
         width: 25%;
     }
+   
+}
+
+.footer__main-info{
+    position: relative;
 }
 .footer__contact-list{
     float: right;
@@ -62,7 +86,14 @@ margin-bottom: 35px;
     @include tablet{
         width: 25%;
     }
+    @include desktop{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 29%;
+    }
 }
+
 .footer__tel-link{
     @include text('Montserrat', 500, 14px, 17px);
     color: var(--dark-theme-title-color);
@@ -93,12 +124,12 @@ margin-bottom: 35px;
 
 .footer__menu-list{
     float: left;
-    width: 49%;
+    width: 39%;
     
 }
 .footer__navigation-list{
     float: right;
-    width: 49%;
+    width: 39%;
     
 }
 .footer__main-content{
@@ -111,14 +142,17 @@ margin-bottom: 35px;
         clear: both;
     }
    
+   
 }
 .footer__float-next{
     clear: both;
     @include tablet{
         clear: left;
     }
+    
 }
 .footer__nav-container{
+    
     @media screen and (max-width: 767px){
         margin-top: 20px;
         margin-bottom: 20px;
@@ -128,6 +162,10 @@ margin-bottom: 35px;
         max-width: 300px;
         margin-left: 30%;
     }
+
+    @include desktop{
+        max-width: 425px;
+    }
 }
 .footer__menu-link,
 .footer__navigation-link{
@@ -135,7 +173,9 @@ margin-bottom: 35px;
     color: var(--dark-theme-title-color);
 
     @include text('Montserrat', 400, 14px, 17px);
-    
+    @include desktop{
+        @include text('Montserrat', 400, 16px, 20px);
+    }
     &:hover,
     &:focus {
         text-decoration: underline;
@@ -146,8 +186,11 @@ margin-bottom: 35px;
     
     margin-bottom: 10px;
 }
-.footer__contact-item:not(:last-child){
+.footer__contact-item:not(:last-child){ 
 margin-bottom: 10px;
+@include desktop{
+    margin-bottom: 20px;
+}
 }
 .footer__contact-link,
 .footer__contact-text{
@@ -219,7 +262,7 @@ margin-bottom: 10px;
     }
     @include desktop{
     @include text('Montserrat', 500, 16px, 20px);
-    width: 327px;
+    width: 300px;
     margin-bottom: 10px;
 
     }
@@ -230,6 +273,13 @@ margin-bottom: 10px;
         display: flex;
         margin-top: 35px;
         margin-bottom: 30px;
+    }
+    @include desktop{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+        flex-direction: column;
     }
 }
 .footer__form{
@@ -255,6 +305,7 @@ margin-bottom: 10px;
     @include tablet{
         padding-top: 12px;
         padding-bottom: 12px;
+        width: 65%;
       
     }
    
@@ -287,8 +338,10 @@ margin-bottom: 10px;
     }
 }
 .footer__company__container{
+    position: relative;
     display: flex;
     flex-direction: column-reverse;
+    z-index: 2;
 }
 .footer__company-info{
     @include tablet{
@@ -313,15 +366,26 @@ margin-bottom: 10px;
     color: var(--grey);
     margin-top: 20px;
     @include desktop{
+        display: flex;
+        
         @include text('Montserrat', 400, 13px, 17px);
+        margin-top: -20px;
+        margin-left: -60px;
+        
+       
     }
 }
+
 .footer__reg-text:not(:last-child){
     margin-bottom: 5px;
 };
 .footer__treaty-text:not(:last-child){
     @media screen and (max-width:1339px) {
         margin-bottom: 5px;
+    }
+    @include desktop{
+        margin-right: 47px;
+        
     }
     
 }
@@ -333,8 +397,18 @@ margin-bottom: 10px;
         margin-top: 20px;
     }
 }
-.footer__pay{
+.footer__bacground-pay{
     background-color: #E5E5E5;
+}
+.footer__pay{
+    width: 320px;
+    margin: 0 auto;
+    @include tablet{
+        width: 728px;
+    }
+    @include desktop{
+        width: 1300px;
+    }
 }
 .footer__pay-list{
     padding-top: 12px;
@@ -358,6 +432,10 @@ margin-bottom: 10px;
     @include tablet{
         margin-right: 94px;
         margin-top: 17px;
+    }
+    @include desktop{
+        width: 90px;
+        margin-right: 44px;
     }
 }
 .footer__pay-link{
