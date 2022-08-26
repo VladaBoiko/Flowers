@@ -1,0 +1,67 @@
+.bsp-how-to-buy .container {
+  padding-bottom: 50px;
+}
+
+.bsp-buy-heading {
+  @include text(null, 500, 24px, 31px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+}
+
+.bsp-buy-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 38px;
+  padding-right: 38px;
+  margin-bottom: 30px;
+}
+
+.bsp-buy-number {
+  @include text(null, 400, 48px, 62px);
+  color: var(--main-accent-color);
+  margin-bottom: 5px;
+}
+
+.bsp-buy-bottom {
+  margin-bottom: 20px;
+}
+
+.bsp-buy-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  text-align: center;
+}
+
+.bsp-buy-bottom-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.bsp-buy-bottom-text span {
+  @include text(null, 500, 16px, 21px);
+  color: var(--light-theme-text-color);
+}
+
+.bsp-buy-img {
+  width: 320px;
+  height: 548px;
+  border-radius: 4px;
+}
+
+.bsp-buy-bottom-link {
+  @include text(null, 500, 16px, 21px);
+  color: var(--light-theme-text-color);
+  transition: text-decoration-line var(--main-transition),
+    text-decoration-thickness var(--main-transition);
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+}

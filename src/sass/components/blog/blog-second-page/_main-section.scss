@@ -1,0 +1,29 @@
+.bsp-main-section .container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.bsp-title {
+  @include text(null, 500, 30px, 37px);
+  color: var(--main-accent-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.bsp-title-date {
+  @include text(null, 400, 14px, 17px);
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+}
+
+.bsp-about-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+}
+
+.bsp-about-img {
+  width: 320px;
+  height: 460px;
+  border-radius: 4px;
+}

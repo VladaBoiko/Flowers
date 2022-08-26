@@ -1,0 +1,58 @@
+.bsp-about-us .container {
+  background: var(--main-accent-color);
+  border-radius: 4px;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 70px;
+
+  &:before {
+    content: '';
+    width: 91px;
+    height: 54px;
+    background: url(../img/blog/second-page/mobile/leaves-top.webp) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      width: 182px;
+      height: 109px;
+      background-image: url(../img/blog/second-page/mobile/leaves-top@2x.webp);
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 98px;
+
+    background: url(../img/blog/second-page/mobile/leaves-bottom.webp) no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      width: 180px;
+      height: 197px;
+      background-image: url(../img/blog/second-page/mobile/leaves-bottom@2x.webp);
+    }
+  }
+}
+
+.bsp-bouquet-heading {
+  @include text(null, 500, 20px, 26px);
+  color: var(--dark-theme-title-color);
+  margin-bottom: 20px;
+}
+
+.bsp-bouquet-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--dark-theme-title-color);
+}

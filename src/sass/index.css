@@ -35,7 +35,7 @@ body {
   width: 100%;
   min-height: 100vh;
   color: var(--ligth-theme-text-color);
-  background-color: #FFFCFA;
+  background-color: #fffcfa;
   font-family: Montserrat, sans-serif;
 }
 
@@ -127,7 +127,8 @@ section {
   font-size: 18px;
   line-height: 1.2222222222;
   text-align: center;
-  transition: color var(--main-transition), background-color var(--main-transition), border var(--main-transition);
+  transition: color var(--main-transition),
+    background-color var(--main-transition), border var(--main-transition);
 }
 .button.dark {
   color: var(--dark-theme-text-color);
@@ -138,7 +139,8 @@ section {
   background-color: transparent;
   border: 1px solid var(--main-accent-color);
 }
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   color: var(--dark-theme-text-color);
   background-color: var(--green-light);
   border: none;
@@ -169,7 +171,8 @@ section {
     line-height: 1.2142857143;
   }
 }
-.button.header-button:hover, .button.header-button:focus {
+.button.header-button:hover,
+.button.header-button:focus {
   background-color: #d2a97e;
 }
 .button.header-button:active {
@@ -202,7 +205,8 @@ section {
     line-height: 1.2142857143;
   }
 }
-.header-button:hover, .header-button:focus {
+.header-button:hover,
+.header-button:focus {
   background-color: #d2a97e;
 }
 .header-button:active {
@@ -233,7 +237,7 @@ section {
 
 @media screen and (min-width: 1340px) {
   .blog-section::after {
-    content: "";
+    content: '';
     width: 620px;
     height: 667px;
     background: url(../img/blog/first-page/desktop/bg-flower.png) no-repeat;
@@ -242,7 +246,10 @@ section {
     right: 0;
   }
 }
-@media screen and (min-width: 1340px) and (min-device-pixel-ratio: 2), screen and (min-width: 1340px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1340px) and (min-resolution: 192dpi), screen and (min-width: 1340px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1340px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1340px) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-width: 1340px) and (min-resolution: 192dpi),
+  screen and (min-width: 1340px) and (min-resolution: 2dppx) {
   .blog-section::after {
     background-image: url(../img/blog/first-page/desktop/bg-flower@2x.png);
   }
@@ -352,7 +359,7 @@ section {
 
 .card-title {
   margin-bottom: 5px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 800;
   font-size: 16px;
@@ -361,7 +368,7 @@ section {
 }
 
 .card-text {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -388,7 +395,7 @@ section {
 }
 
 .card-add-info {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -438,7 +445,7 @@ section {
 }
 
 .location__text {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -468,7 +475,7 @@ section {
 
 .nav-list__link,
 .contacts__text {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -481,7 +488,7 @@ section {
 }
 @media screen and (min-width: 768px) {
   .contacts__text,
-.schedule-list {
+  .schedule-list {
     display: block;
   }
 }
@@ -499,7 +506,7 @@ section {
 }
 
 .nav-list__link--arrow::after {
-  content: "";
+  content: '';
   display: inline-block;
   border-left: 3.5px solid transparent;
   border-right: 3.5px solid transparent;
@@ -526,7 +533,7 @@ section {
 }
 
 .schedule-list__text {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -556,11 +563,11 @@ section {
   color: var(--light-theme-text-color);
 }
 .header-one__tel::after {
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url("../img/header/chevron-down.svg");
+  background-image: url('../img/header/chevron-down.svg');
 }
 @media screen and (min-width: 1340px) {
   .header-one__tel {
@@ -623,7 +630,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -631,11 +638,11 @@ section {
   color: var(--dark-theme-text-color);
 }
 .tel-list__link::before {
-  content: "";
+  content: '';
   width: 32px;
   height: 32px;
   display: block;
-  background-image: url("../img/header/phone.svg");
+  background-image: url('../img/header/phone.svg');
 }
 
 .search {
@@ -664,12 +671,12 @@ section {
   position: relative;
 }
 .label__search::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 50%;
   right: 10px;
-  background-image: url("../img/header/lens.svg");
+  background-image: url('../img/header/lens.svg');
   width: 22px;
   height: 22px;
   transform: translateY(-50%);
@@ -754,7 +761,7 @@ section {
   transition: box-shadow var(--main-transition);
 }
 @media screen and (max-width: 1339.98px) {
-  .filter-item:nth-last-child(-n+3) {
+  .filter-item:nth-last-child(-n + 3) {
     width: 229px;
   }
 }
@@ -764,7 +771,8 @@ section {
     grid-row: 1/3;
   }
 }
-.filter-item:hover, .filter-item:focus {
+.filter-item:hover,
+.filter-item:focus {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -776,7 +784,7 @@ section {
 }
 
 .filter-item-text {
-  font-family: "PT sans";
+  font-family: 'PT sans';
   font-size: 18px;
   line-height: 1.2777777778;
   color: var(--main-accent-color);
@@ -854,7 +862,7 @@ section {
   margin-right: auto;
   text-align: center;
   color: var(--main-accent-color);
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-size: 18px;
   line-height: 1.2777777778;
@@ -870,8 +878,9 @@ section {
   text-decoration: underline;
 }
 @media screen and (min-width: 1340px) {
-  .offer--special .container::before, .offer--recommend .container::before {
-    content: "";
+  .offer--special .container::before,
+  .offer--recommend .container::before {
+    content: '';
     position: absolute;
     background: url(../img/offer/sp-offer-background.png) 0px 0px no-repeat;
     width: 480px;
@@ -935,7 +944,7 @@ section {
   padding: 10px;
   border-radius: 4px;
   color: var(--dark-theme-text-color);
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -958,7 +967,8 @@ section {
   transform: scale(1);
   transition: transform var(--main-transition);
 }
-.product__favorite:hover, .product__favorite:focus {
+.product__favorite:hover,
+.product__favorite:focus {
   transform: scale(1.1);
 }
 .product__favorite svg {
@@ -1002,7 +1012,8 @@ section {
   background-color: transparent;
   color: #03453b;
 }
-.product__button-one-click:hover, .product__button-one-click:focus {
+.product__button-one-click:hover,
+.product__button-one-click:focus {
   text-decoration: underline;
   background-color: transparent;
   color: #03453b;
@@ -1036,7 +1047,7 @@ section {
 
 .reviews__title {
   margin-bottom: 30px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -1045,7 +1056,7 @@ section {
 @media screen and (min-width: 768px) {
   .reviews__title {
     margin-bottom: 30px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
@@ -1100,7 +1111,7 @@ section {
 }
 
 .reviews__name {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -1118,7 +1129,7 @@ section {
 }
 
 .reviews__text {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1139,7 +1150,7 @@ section {
 }
 
 .footer__main::before {
-  content: "";
+  content: '';
   width: 111px;
   height: 67px;
   background: url(/src/img/footer/footer-img1.webp) no-repeat;
@@ -1210,7 +1221,7 @@ section {
 }
 
 .footer__tel-link {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1219,7 +1230,7 @@ section {
 }
 @media screen and (min-width: 768px) {
   .footer__tel-link {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -1228,18 +1239,20 @@ section {
 }
 @media screen and (min-width: 1340px) {
   .footer__tel-link {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.2222222222;
   }
 }
-.footer__tel-link:hover, .footer__tel-link:focus {
+.footer__tel-link:hover,
+.footer__tel-link:focus {
   text-decoration: underline;
 }
 
-.footer__contact-link:hover, .footer__contact-link:focus {
+.footer__contact-link:hover,
+.footer__contact-link:focus {
   text-decoration: underline;
 }
 
@@ -1299,13 +1312,14 @@ section {
 .footer__menu-link,
 .footer__navigation-link {
   color: var(--dark-theme-title-color);
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2142857143;
 }
-.footer__menu-link:hover, .footer__menu-link:focus,
+.footer__menu-link:hover,
+.footer__menu-link:focus,
 .footer__navigation-link:hover,
 .footer__navigation-link:focus {
   text-decoration: underline;
@@ -1322,7 +1336,7 @@ section {
 
 .footer__contact-link,
 .footer__contact-text {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1331,8 +1345,8 @@ section {
 }
 @media screen and (min-width: 768px) {
   .footer__contact-link,
-.footer__contact-text {
-    font-family: "Montserrat";
+  .footer__contact-text {
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1341,8 +1355,8 @@ section {
 }
 @media screen and (min-width: 1340px) {
   .footer__contact-link,
-.footer__contact-text {
-    font-family: "Montserrat";
+  .footer__contact-text {
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -1352,7 +1366,7 @@ section {
 
 .footer__contact-container {
   color: #dddddd;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1360,7 +1374,7 @@ section {
 }
 @media screen and (min-width: 768px) {
   .footer__contact-container {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1369,7 +1383,7 @@ section {
 }
 @media screen and (min-width: 1340px) {
   .footer__contact-container {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -1397,10 +1411,11 @@ section {
   }
 }
 
-.footer__social-link:hover, .footer__social-link:focus {
+.footer__social-link:hover,
+.footer__social-link:focus {
   display: block;
   -webkit-animation: animate125 1000ms infinite 10ms;
-          animation: animate125 1000ms infinite 10ms;
+  animation: animate125 1000ms infinite 10ms;
 }
 
 .footer__social-item:not(:last-child) {
@@ -1409,7 +1424,7 @@ section {
 
 .footer__form-title {
   display: inline-block;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1431,7 +1446,7 @@ section {
 }
 @media screen and (min-width: 1340px) {
   .footer__form-title {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -1453,7 +1468,7 @@ section {
   max-width: 320px;
   height: 42px;
   display: flex;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 4px;
 }
 @media screen and (min-width: 768px) {
@@ -1480,7 +1495,7 @@ section {
 }
 
 .footer__input::-moz-placeholder {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -1489,7 +1504,7 @@ section {
 }
 
 .footer__input:-ms-input-placeholder {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -1498,7 +1513,7 @@ section {
 }
 
 .footer__input::placeholder {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -1507,21 +1522,21 @@ section {
 }
 @media screen and (min-width: 768px) {
   .footer__input::-moz-placeholder {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.2142857143;
   }
   .footer__input:-ms-input-placeholder {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.2142857143;
   }
   .footer__input::placeholder {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -1533,7 +1548,7 @@ section {
   width: 137px;
   background-color: var(--green-light);
   border-radius: 3px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1546,21 +1561,22 @@ section {
 @media screen and (min-width: 768px) {
   .footer__btn {
     width: 151px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25;
   }
 }
-.footer__btn:hover, .footer__btn:focus {
+.footer__btn:hover,
+.footer__btn:focus {
   background-color: var(--main-accent-color);
   border: 2px ridge var(--green-light);
 }
 
 .footer__registration,
 .footer__treaty {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -1570,8 +1586,8 @@ section {
 }
 @media screen and (min-width: 1340px) {
   .footer__registration,
-.footer__treaty {
-    font-family: "Montserrat";
+  .footer__treaty {
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -1590,7 +1606,7 @@ section {
 }
 
 .footer__team {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -1605,7 +1621,7 @@ section {
 }
 
 .footer__pay {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 .footer__pay-list {
@@ -1643,11 +1659,13 @@ section {
   transform: scale(1);
   transition: transform var(--main-transition);
 }
-.footer__pay-link:hover, .footer__pay-link:focus {
+.footer__pay-link:hover,
+.footer__pay-link:focus {
   transform: scale(1.1);
 }
 @media screen and (min-width: 768px) {
-  .footer__pay-link:hover, .footer__pay-link:focus {
+  .footer__pay-link:hover,
+  .footer__pay-link:focus {
     transform: scale(1.2);
   }
 }
@@ -1674,4 +1692,4 @@ section {
   100% {
     transform: scale(1);
   }
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

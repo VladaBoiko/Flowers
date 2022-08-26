@@ -1,0 +1,26 @@
+.bsp-store .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.bsp-store-title {
+  @include text(null, 500, 24px, 31px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 30px;
+}
+
+.bsp-store-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+}
+
+.bsp-store-span {
+  font-weight: 600;
+}
+
+.bsp-store-img {
+  width: 320px;
+  height: 280px;
+  border-radius: 4px;
+}

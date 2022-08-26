@@ -82,8 +82,6 @@
 
 .main-menu-link,
 .blog-menu-link {
-  transition: text-decoration-line var(--main-transition),
-    text-decoration-thickness var(--main-transition);
 
   &:hover,
   &:focus {

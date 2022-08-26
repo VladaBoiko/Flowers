@@ -1,0 +1,9 @@
+.bsp-other .container {
+  padding-bottom: 50px;
+}
+
+.bsp-other-title {
+  @include text(null, 500, 30px, 30px);
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+}

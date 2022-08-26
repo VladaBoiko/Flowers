@@ -1,0 +1,137 @@
+.bsp-buy-with .container {
+  padding-bottom: 50px;
+}
+
+.bsp-with-heading {
+  @include text(null, 500, 30px, 30px);
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+}
+
+.bsp-with-list {
+  margin-bottom: 20px;
+}
+
+.bsp-with-item {
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  transition: box-shadow var(--main-transition);
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.bsp-with-img {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.bsp-with-title {
+  @include text(null, 400, 18px, 22px);
+  text-align: center;
+  color: var(--light-theme-text-color);
+  margin-bottom: 5px;
+}
+
+.bsp-with-price {
+  @include text(null, 700, 18px, 22px);
+  text-align: center;
+  color: var(--main-accent-color);
+  margin-bottom: 20px;
+}
+
+.bsp-with-order {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.bsp-with-buy-link {
+  display: block;
+  @include text(null, 400, 18px, 22px);
+  text-align: center;
+  color: var(--main-accent-color);
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+}
+
+.bsp-with-status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  @include text('PT Sans', 700, 14px, 18px);
+  padding: 10px;
+  border-radius: 4px;
+  color: var(--dark-theme-text-color);
+
+  &__bestseller {
+    background-color: var(--second-accent-color);
+  }
+
+  &__new {
+    background-color: var(--main-bgc-accent);
+  }
+
+  &__absent {
+    background-color: var(--green-light);
+  }
+}
+
+.bsp-with-favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  padding: 5px 3px 4px;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    animation: pulse 1000ms linear infinite;
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+  }
+
+  &.checked svg {
+    fill: var(--red);
+  }
+}
+
+.bsp-link-catalog {
+  @include text('PT Sans', 400, 18px, 23px);
+  color: var(--main-accent-color);
+  text-align: center;
+  display: block;
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  & svg {
+    fill: var(--main-accent-color);
+  }
+}
