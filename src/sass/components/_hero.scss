@@ -222,29 +222,60 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    padding: 52px 10px 50px;
 
     .backdrop.is-hidden & {
         transform: translate(-50%, -50%) scale(0.8);
         opacity: 0.7;
     }
-    width: 100%;
+    
+    // @include mobile {
+    //     width: 320px;
+    // }
+    //or:
     @media screen and (min-width: 480px) {
         width: 450px;
     }
 
-    @include desktop {
-        width: 528px;
+    @include tablet {
+        width: 580px;
+        padding: 50px 70px 70px;
     }
-        padding: 30px 40px 40px;
-        background-color: #ffffff;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-        0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-        transition: transform var(--main-transition),
-        opacity var(--main-transition);
+    
+    background-color: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    transition: transform var(--main-transition),
+    opacity var(--main-transition);
+
+    &::before {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 124px;
+        height: 74px;
+        background-image: url(../img/reusable/leaf-top-r-124.png);
+        background-repeat: no-repeat;
+    }
+    &::after {
+        display: block;
+        content: "";
+
+        position: absolute;
+        bottom: 2px;
+        right: 0;
+        transform: rotate(360deg);
+        width: 47px;
+        height: 36px;
+        background-image: url(../img/reusable/blobs-36.png);
+        background-repeat: no-repeat;
+    }
 }
 
 .hero-modal-close-button {
@@ -254,65 +285,75 @@
     width: 40px;
     height: 40px;
     background-color: inherit;
-    fill: var(--main-accent-color);
+    fill: #bababa;
     &:hover,
     &:focus {
         fill: #70a5a0;
+        fill: var(--black);
     }
-    & > svg {
-        fill: inherit;
-    }
+    // & > svg {
+    //     fill: inherit;
+    // }
 }
 
 .hero-modal-title {
-    // font-family: 'PT Sans';
     text-align: center;
     margin-bottom: 20px;
 
-    @include font(500, 30px, 1.2);
+    @include font(500, 24px, calc(31px / 24px));
     color: var(--main-accent-color);
     
-    // @include tablet {
-    //     @include font(null, 36px, 1);
-    // }
-
-    @include desktop {
-        @include font(null, 45px, 1);
+    @include tablet {
+        @include font(null, 36px, calc(47px / 36px));
+        margin-bottom: 30px;
     }
+
+    // @include desktop {
+    //     @include font(null, 45px, 1);
+    // }
 }
 .hero-modal-form-field {
     margin-bottom: 10px;
+    margin-bottom: 15px;
     @include font(500, 18px, calc(22px / 18px));
-    color: var(--main-accent-color);
+    color: var(--grey);
 }
 .hero-modal-label {
     display: block;
     margin-bottom: 5px;
+    &:focus {
+        border: 1px solid var(--main-accent-color);
+
+        color: var(--main-accent-color);
+    }
 }
 .hero-modal-input {
     width: 100%;
     height: 40px;
-    padding: 5px 10px;
+    height: 50px;
+    padding: 16px 17px;
     border: 1px solid #bababa;
     border-radius: 2px;
     outline: none;
-    &:focus {
-        border: 2px solid var(--main-accent-color);
-    }
 }
 .hero-modal-user-text {
     resize: none;
 
     width: 100%;
-    height: 120px;
+    height: 150px;
     margin-bottom: 20px;
+    
+    @include tablet {
+        margin-bottom: 30px;
+    }
+    
     padding: 10px;
     
     border: 1px solid #bababa;
     border-radius: 2px;
     outline: none;
     &:focus {
-        border: 2px solid var(--main-accent-color);
+        border: 1px solid var(--main-accent-color);
     }
     &::placeholder {
         color: #bababa;
@@ -320,6 +361,7 @@
 }
 
 .hero-modal .button {
+    width: 100%;
     display: block;
-    margin: 0 auto;
+    // margin: 0 auto;
 }

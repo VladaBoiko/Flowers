@@ -232,6 +232,9 @@
 
 
 <!-- хрест -->
+<symbol id="icon-x" viewBox="0 0 33 32">
+<path fill="none" stroke="#bababa" style="stroke: var(--color3, #bababa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="0.8" d="M21.369 11.2l-9.6 9.6M11.769 11.2l9.6 9.6"></path>
+</symbol>
 <symbol id="cross-icon" viewBox="0 0 32 32">
 <path d="M23.733 10.304l-1.504-1.504-5.963 5.963-5.963-5.963-1.504 1.504 5.963 5.963-5.963 5.963 1.504 1.504 5.963-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.963z"></path>
 </symbol>
