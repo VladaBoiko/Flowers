@@ -1,0 +1,17 @@
+.favorites {
+  margin-top: 30px;
+
+  & .container {
+  }
+
+  &__button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &--centered {
+      display: block;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

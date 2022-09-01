@@ -1,0 +1,13 @@
+@import './utils/value';
+@import './vendors/mixin';
+@import './utils/reset';
+@import './utils/global';
+
+// Компоненти
+
+@import './components/header';
+
+@import './components/offers';
+@import './components/favorites-section';
+
+@import './components/footer';

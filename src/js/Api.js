@@ -1,24 +1,12 @@
-
-console.log('api.js');
 const axios = require('axios').default;
 
-// https://parceljs.org/features/development/#hot-reloading
-if (module.hot) {
-  module.hot.accept();
-}
-
-axios.defaults.baseURL = 'https://62efe9458d7bc7c2eb8243b2.mockapi.io';
-
-export async function methodName(...arg) {
-  body;
-}
+const instance = axios.create({
+  baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
+});
 
 export const serverData = async () => {
-  const response = await axios.get('/12');
+  const response = await instance.get('/products');
   const data = await response.data;
   console.log('🚀 ~ data', data);
   return data;
 };
-
-import axios from 'axios';
-

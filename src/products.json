@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Букет «Щастя»",
+    "description": "description 1",
+    "price": 77,
+    "image": "https://i.postimg.cc/nsYNz7M6/VAL-8182-1200-1.jpg[/img",
+    "id": "1",
+    "status": "Хіт продажів",
+    "section": "Пропозиція дня"
+  },
+  {
+    "name": "Букет «Щастя»",
+    "description": "description 1",
+    "price": 77,
+    "image": "https://i.postimg.cc/k6Jzt4bD/VAL-8182-1200-2.jpg",
+    "id": "2",
+    "status": "Новинка",
+    "section": "Пропозиція дня"
+  }
+]
