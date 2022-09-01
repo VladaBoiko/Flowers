@@ -1,0 +1,126 @@
+.bsp-main-section {
+  position: relative;
+
+  &::after {
+    @media screen and (max-width: 1339px) {
+      display: none;
+    }
+
+    @include desktop {
+      content: '';
+      width: 715px;
+      height: 667px;
+      background: url(../img/blog/first-page/desktop/bg-flower.png) no-repeat;
+      position: absolute;
+      top: 0px;
+      right: -95px;
+      z-index: -1;
+    }
+  }
+}
+
+.bsp-main-section .container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  @include desktop {
+    padding-top: 30px;
+  }
+}
+
+.bsp-title {
+  @include text(null, 500, 30px, 37px);
+  color: var(--main-accent-color);
+  text-transform: uppercase;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+
+  @include tablet {
+    @include font(500, 36px, 44px);
+    width: 560px;
+  }
+
+  @include desktop {
+    @include font(500, 64px, 78px);
+    width: 620px;
+  }
+}
+
+.bsp-title-date {
+  @include text(null, 400, 14px, 17px);
+  color: var(--main-accent-color);
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
+
+.bsp-main-top-wrap {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+}
+
+.bsp-about {
+  @include tablet {
+    display: flex;
+  }
+}
+
+.bsp-about-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+
+  @include desktop {
+    @include font(400, 20px, 26px);
+  }
+}
+
+.bsp-about-img {
+  width: 320px;
+  height: 460px;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 354px;
+    height: 460px;
+    margin-left: 20px;
+  }
+
+  @include desktop {
+    width: 420px;
+    height: 460px;
+    margin-left: 60px;
+  }
+}
+
+.bg-leaves-right__second {
+  @include desktop {
+    width: 220px;
+    height: 831px;
+    background: url(../img/blog/first-page/desktop/bg-leaves-right.png)
+      no-repeat;
+    position: absolute;
+    top: 670px;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.bg-leaves-left__second {
+  @include desktop {
+    width: 215px;
+    height: 831px;
+    background: url(../img/blog/first-page/desktop/bg-leaves-left.png) no-repeat;
+    position: absolute;
+    top: 2450px;
+    left: 0;
+    z-index: -1;
+  }
+}

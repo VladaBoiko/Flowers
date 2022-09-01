@@ -1,0 +1,157 @@
+.bsp-how-to-buy .container {
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    padding-bottom: 100px;
+  }
+}
+
+.bsp-buy-heading {
+  @include text(null, 500, 24px, 31px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+}
+
+.bsp-buy-wrap {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.bsp-buy-wrap__top,
+.bsp-buy-wrap__bottom {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    padding-left: 38px;
+    padding-right: 38px;
+    margin-bottom: 30px;
+  }
+}
+
+.bsp-buy-wrap__top {
+  @include tablet {
+    width: 685px;
+  }
+
+  @include desktop {
+    width: 514px;
+    margin-right: 20px;
+  }
+}
+
+.bsp-buy-wrap__bottom {
+  @include tablet {
+    width: 704px;
+  }
+
+  @include desktop {
+    width: 535px;
+    margin-bottom: 0;
+  }
+}
+
+.bsp-buy-number {
+  @include text(null, 400, 48px, 62px);
+  color: var(--main-accent-color);
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 5px;
+  }
+
+  @include tablet {
+    margin-right: 20px;
+    font-size: 96px;
+    line-height: 1.3;
+  }
+}
+
+.bsp-buy-bottom {
+  margin-bottom: 20px;
+}
+
+.bsp-buy-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  text-align: center;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: start;
+  }
+}
+
+.bsp-buy-bottom-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
+
+.bsp-buy-bottom-text span {
+  color: var(--light-theme-text-color);
+  font-weight: 500;
+}
+
+.bsp-buy-bottom-wrap {
+  @include tablet {
+    display: flex;
+  }
+}
+
+.bsp-buy-img {
+  width: 320px;
+  height: 548px;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 349px;
+    height: 548px;
+    margin-left: 25px;
+  }
+
+  @include desktop {
+    width: 420px;
+    margin-left: 60px;
+  }
+}
+
+.bsp-buy-bottom-link {
+  @include text(null, 500, 16px, 21px);
+  color: var(--light-theme-text-color);
+  transition: text-decoration-line var(--main-transition),
+    text-decoration-thickness var(--main-transition);
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+}
