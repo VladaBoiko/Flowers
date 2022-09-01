@@ -15,8 +15,36 @@
             <div class="hero-content-wrap">
                 <h1 class="hero-title">Даруємо красу та гарний настрій вашій домівці</h1>
                 <p class="hero-text">Спеціально для вас – швидка доставка і чудові ціни</p>
-                <button type="button" class="button dark">Замовити букет</button>
+                <button type="button" class="button dark" data-hero-modal-open>Замовити букет</button>
             </div>
         </div>
     </div>
 </section>
+<div class="backdrop is-hidden" data-hero-modal>
+    <div class="container">
+        <div class="hero-modal modal">
+            <button type="button" class="modal-close-button" data-hero-modal-close>
+                <svg class="modal-close-icon" width="40" height="40">
+                    <use href="./img/symbol-defs.svg#cross-icon"></use>
+                </svg>
+            </button>
+            <p class="modal-title hero-modal-title">Залиште свої
+            дані, ми вам передзвонимо</p>
+            <form class="hero-modal-form">
+                <div class="hero-modal-form-field">
+                    <label for="name" class="hero-modal-label">Ім'я</label>
+                    <input type="text" name="name" id="name" class="hero-modal-input"  required>
+                </div>
+                <div class="hero-modal-form-field">
+                    <label for="tel" class="hero-modal-label">Телефон</label>
+                    <input type="text" name="tel" id="tel" class="hero-modal-input" required>
+                </div>
+                <div class="hero-modal-form-field">
+                    <label for="user-text" class="hero-modal-label">Коментар</label>
+                    <textarea name="user-text" id="user-text" class="hero-modal-user-text" placeholder="Введіть текст"></textarea>
+                </div>
+                <button type="submit" class="button dark">Відправити</button>
+            </form>
+        </div>
+    </div>
+</div>
