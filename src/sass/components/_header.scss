@@ -1,9 +1,5 @@
 #header {
   overflow: hidden;
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-  }
 }
 
 // HEADER ONE
@@ -55,9 +51,23 @@
   }
 }
 
+.nav-list__link {
+  color: var(--light-theme-text-color);
+}
+
 .nav-list__link,
-.contacts__text {
+.contacts__text,
+.nav-list__link-menu {
   @include text('PT Sans', 400, 13px, 17px);
+}
+
+.nav-list__link-menu {
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--drop-down-menu-color);
+  }
 }
 
 .contacts__text,
@@ -78,6 +88,8 @@
   position: relative;
   display: flex;
   align-items: flex-end;
+
+  transition: color 250ms linear;
 }
 
 .nav-list__link--arrow {
@@ -91,7 +103,50 @@
     height: 0;
     margin-left: 5px;
     margin-bottom: 4px;
+
+    transform: rotate(0);
+
+    transition: transform 250ms linear;
   }
+}
+
+.nav-list__elemrnts {
+  position: relative;
+}
+
+.drop-down-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 20px 10px;
+
+  border-radius: 4px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: #fff;
+  transform-origin: 0 0;
+  transform: scaleY(0);
+  // transform: translateY(-100%);
+
+  transition: transform 250ms linear, opacity 250ms linear;
+
+  &--flex {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.nav-list__elemrnts:hover .drop-down-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: scaleY(1);
+}
+
+.nav-list__elemrnts:hover .nav-list__link--arrow::after {
+  transform: rotate(180deg);
 }
 
 .contacts {
@@ -195,7 +250,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include text('PT Sans', 700, 16px, 21px);
+  @include text('PT Sans', 700, 15px, 21px);
   color: var(--dark-theme-text-color);
   &::before {
     content: '';
@@ -219,9 +274,14 @@
   @include text(null, 500, 14px, 17px);
 
   @include tablet {
+    width: 358px;
     display: block;
 
     color: var(--input-text-color);
+  }
+
+  @include desktop {
+    width: 398px;
   }
 }
 
@@ -238,6 +298,16 @@
     height: 22px;
 
     transform: translateY(-50%);
+
+    @include tablet {
+      right: 40px;
+    }
+  }
+}
+
+.header-two .label__search::after {
+  @media screen and (max-width: 767.9px) {
+    display: none;
   }
 }
 
@@ -253,6 +323,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 32px;
+  height: 32px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--second-accent-color);
+  }
+}
+
+.list-icon__elemens:nth-child(2) {
+  &::after {
+    right: 3px;
+  }
+}
+
+.list-icon__elemens:last-child {
+  width: auto;
+  &::after {
+    display: none;
+  }
 }
 
 .list-icon__icon {
@@ -261,6 +359,8 @@
 
 .list-icon__text {
   display: inline-block;
+
+  @include text('PT Sans', 400, 14px, 18px);
 }
 
 .search-mobail {
