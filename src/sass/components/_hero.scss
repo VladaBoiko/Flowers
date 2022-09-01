@@ -198,7 +198,6 @@
 //------------HERO MODAL----------------------
 
 .hero-modal-form-field {
-    margin-bottom: 10px;
     margin-bottom: 15px;
     @include font(500, 18px, calc(22px / 18px));
     color: var(--grey);
@@ -210,7 +209,7 @@
 .hero-modal-input {
     width: 100%;
     height: 40px;
-    padding: 16px 10px;
+    padding: 10px;
     border: 1px solid var(--grey);
     border-radius: 2px;
     outline: none;
