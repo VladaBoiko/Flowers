@@ -206,20 +206,20 @@
 .hero-modal-label {
     display: block;
     margin-bottom: 5px;
-    &:focus {
-        border: 1px solid var(--main-accent-color);
-
-        color: var(--main-accent-color);
-    }
 }
 .hero-modal-input {
     width: 100%;
     height: 40px;
-    height: 50px;
-    padding: 16px 17px;
-    border: 1px solid #bababa;
+    padding: 16px 10px;
+    border: 1px solid var(--grey);
     border-radius: 2px;
     outline: none;
+    transition: border var(--main-transition);
+    &:hover,
+    &:focus {
+        border: 1px solid var(--main-accent-color);
+        
+    }
 }
 .hero-modal-user-text {
     resize: none;
@@ -227,21 +227,21 @@
     width: 100%;
     height: 150px;
     margin-bottom: 20px;
+    padding: 10px;
     
+    border: 1px solid var(--grey);
+    border-radius: 2px;
+    outline: none;
+
     @include tablet {
         margin-bottom: 30px;
     }
-    
-    padding: 10px;
-    
-    border: 1px solid #bababa;
-    border-radius: 2px;
-    outline: none;
+    &:hover,
     &:focus {
         border: 1px solid var(--main-accent-color);
     }
     &::placeholder {
-        color: #bababa;
+        color: var(--grey);
     }
 }
 

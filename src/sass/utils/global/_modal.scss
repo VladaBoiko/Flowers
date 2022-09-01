@@ -1,5 +1,5 @@
 .backdrop {
-    z-index: 200;
+    z-index: 500;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,6 +24,7 @@
     left: 50%;
     width: 100%;
     padding: 50px 10px;
+    overflow: hidden;
 
     background-color: var(--white);
     border-radius: 4px;
@@ -67,13 +68,18 @@
         content: "";
 
         position: absolute;
-        bottom: 2px;
-        right: 0;
-        transform: rotate(360deg);
-        width: 47px;
-        height: 36px;
-        background-image: url(../img/reusable/blobs-36.png);
+        bottom: -8px;
+        right: 2px;
+        width: 45px;
+        height: 47px;
+        background-image: url(../img/reusable/blobs.png);
         background-repeat: no-repeat;
+        @include tablet {
+            bottom: -2px;
+            right: 0;
+            width: 45px;
+            height: 50px;
+        }
     }
 }
 
@@ -102,7 +108,6 @@
 
     @include tablet {
         @include font(null, 36px, calc(47px / 36px));
-        margin-bottom: 30px;
     }
 }
 .modal-text {
@@ -114,4 +119,7 @@
     @include tablet {
         @include font(null, 24px, calc(31px / 24px));
     }
+}
+.no-scroll {
+    overflow: hidden;
 }
