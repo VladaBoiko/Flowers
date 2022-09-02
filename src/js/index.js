@@ -1,4 +1,18 @@
-import { serverData } from './api';
+// import { serverData } from './fetch-api';
+
+const axios = require('axios').default;
+
+const instance = axios.create({
+  baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
+});
+
+// export
+const serverData = async params => {
+  const response = await instance.get(`/products/?${params}`);
+  const data = await response.data;
+  return data;
+};
+// =========================================================================
 
 const refs = {
   offerSpecial: document.querySelector('.offer--special .offer__list'),
@@ -7,31 +21,45 @@ const refs = {
   offerPlus: document.querySelector('.offer--plus .offer__list'),
 };
 
+const sections = {
+  offerSpecial: 'Спеціальна пропозиція',
+  dayOffer: 'Пропозиція дня',
+  recommendOffer: 'Рекомендуємо троянди',
+  offerPlus: 'З квітами купують',
+};
+
 renderData();
 
 async function renderData() {
   try {
-    const data = await serverData();
-    let markup = createMarkup(data);
-    refs.offerSpecial.insertAdjacentHTML('beforeend', markup);
-    markup = createMarkup(data);
-    refs.dayOffer.insertAdjacentHTML('beforeend', markup);
-    markup = createMarkup(data);
-    refs.recommendOffer.insertAdjacentHTML('beforeend', markup);
-    markup = createMarkup(data);
-    refs.offerPlus.insertAdjacentHTML('beforeend', markup);
+    await queryAndRender('offerSpecial');
+    await queryAndRender('dayOffer');
+    await queryAndRender('recommendOffer');
+    await queryAndRender('offerPlus');
   } catch (error) {
     console.log(error);
   }
 }
 
-function createMarkup(data) {
+async function queryAndRender(sectiоn) {
+  const searchParams = new URLSearchParams({
+    filter: sections[sectiоn],
+  }).toString();
+  console.log(searchParams);
+  console.log(refs[sectiоn]);
+  const data = await serverData(searchParams);
   console.log(data);
+  let markup = createMarkup(data);
+  refs[sectiоn].insertAdjacentHTML('beforeend', markup);
+}
+
+function createMarkup(data) {
   return data
     .map(
       ({ id, name, image, description, price }) => `
      <li class="offer-list__item product">
-        <a href="./product-${id}" class="product__link">
+        /* <a href="./product-${id}" class="product__link"> */
+        <a href="" class="product__link">
           <img
             loading="lazy"
             src="${image}"
@@ -66,15 +94,3 @@ function createMarkup(data) {
     )
     .join('');
 }
-
-// https://postimg.cc/pyd3Wmv6 ][img]https://i.postimg.cc/pyd3Wmv6/VAL-8182-1200-3.jpg
-
-// https://postimg.cc/RJqYXDGB [img]https://i.postimg.cc/RJqYXDGB/VAL-8182-1200-4.jpg
-
-// https://postimg.cc/dk5XRY26 ][img]https://i.postimg.cc/dk5XRY26/VAL-8182-1200-5.jpg
-
-// https://postimg.cc/Cd6XzwLL ][img]https://i.postimg.cc/Cd6XzwLL/VAL-8182-1200-6.jpg
-
-// https://postimg.cc/ykg5R2kh ][img]https://i.postimg.cc/ykg5R2kh/VAL-8182-1200-7.jpg
-
-// https://postimg.cc/0bT40ZwT ][img]https://i.postimg.cc/0bT40ZwT/VAL-8182-1200-8.jpg
