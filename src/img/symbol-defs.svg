@@ -232,8 +232,8 @@
 
 
 <!-- хрест -->
-<symbol id="cross-icon" viewBox="0 0 32 32">
-<path fill="none" stroke="#bababa" style="stroke: var(--color16, #bababa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="0.8" d="M20.8 11.2l-9.6 9.6M11.2 11.2l9.6 9.6"></path>
+<symbol id="cross-icon" viewBox="0 0 33 32">
+<path d="M21.369 11.2l-9.6 9.6M11.769 11.2l9.6 9.6"></path>
 </symbol>
 <!-- секція "ПЕРЕВАГИ" -->
 <symbol id="icon-feature-6" viewBox="0 0 32 32">
