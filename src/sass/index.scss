@@ -9,11 +9,6 @@
 @import './components/hero';
 @import './components/filter';
 @import './components/offers';
-// @import './components/sp-offer';
-// @import './components/day-offer';
-// @import './components/roses';
-// @import './components/plus-offer';
-// @import './components/earlier-watch';
 @import './components/advantages';
 @import './components/about-us';
 @import './components/reviews';
@@ -21,6 +16,11 @@
 @import './components/insta';
 @import './components/footer';
 
+@import './components/catalog';
+@import './vendors/spollers';
+@import './components/favorites';
+
+// =========================================
 @import './components/blog/blog-first-page';
 @import './components/blog/blog-second-page/main-section';
 @import './components/blog/blog-second-page/blog-about-us';

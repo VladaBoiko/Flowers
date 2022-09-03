@@ -1,0 +1,46 @@
+.catalog__container {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+}
+
+.catalog___section {
+  position: relative;
+}
+
+.catalog__title {
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+  @include text(null, 500, 30px, 30px);
+
+  @include tablet {
+    @include text(null, 500, 36px, 36px);
+  }
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  @include tablet {
+    gap: 20px;
+  }
+
+  &__item {
+    @include tablet {
+      max-width: 354px;
+    }
+    @include desktop {
+      max-width: 310px;
+    }
+  }
+}
