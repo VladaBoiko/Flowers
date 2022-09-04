@@ -27,8 +27,26 @@
   margin-bottom: 20px;
 }
 
-.payment li {
-  list-style: ;
+.payment__online {
+  margin-bottom: 30px;
+}
+.payment__online li,
+.payment__delivery li {
+  position: relative;
+}
+
+.payment__online li::before,
+.payment__delivery li::before {
+  position: absolute;
+  top: 3px;
+  left: -23px;
+  content: '';
+  background: url('/src/img/list.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 15px;
+  height: 15px;
 }
 
 .payment__list {
@@ -165,5 +183,56 @@
 }
 
 .payment__online {
+  padding-left: 8px;
   padding-top: 190px;
+}
+
+.payment__online ul,
+.payment__delivery ul {
+  padding-left: 8px;
+}
+
+.payment__delivery-text {
+  margin-bottom: 10px;
+}
+
+.payment__delivery,
+.payment__return {
+  margin-bottom: 30px;
+}
+
+.payment__security {
+  margin-bottom: 50px;
+  & p {
+    margin-bottom: 20px;
+  }
+}
+
+.payment__example {
+  margin-bottom: 15px;
+  @include text('Montserrat', 600, 20px, 24px);
+  color: var(--light-theme-text-color);
+}
+
+.payment__important {
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 300px;
+  background-color: var(--main-accent-color);
+  background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'),
+    url('/src/img/payment/3.png'), url('/src/img/payment/4.png');
+  background-repeat: no-repeat;
+  background-size: 91px, 32px, 35px, 71px;
+  background-position: top 0 left 0, top 10px left 120px, top 130px right 5px,
+    bottom 0 right 0;
+  border-radius: 4px;
+  & p {
+    width: 300px;
+    margin: 0 auto;
+    @include text('Montserrat', 600, 16px, 19.5px);
+    color: var(--dark-theme-text-color);
+    padding-top: 20px;
+  }
 }
