@@ -1,0 +1,18 @@
+.payment__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.payment__list li {
+  width: calc((100% - 50px) / 3);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+}
+
+.payment__list a {
+  font-size: 0;
+}
