@@ -1,5 +1,10 @@
 .payment .container {
+  padding-top: 20px;
+  padding-bottom: 50px;
   max-width: 360px;
+  @include text('Montserrat', 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
   @include tablet {
     max-width: 768px;
   }
@@ -7,6 +12,23 @@
   @include desktop {
     max-width: 1340px;
   }
+}
+
+.payment h2 {
+  margin-bottom: 30px;
+
+  @include text('Montserrat', 500, 30px, 30px);
+  color: var(--main-accent-color);
+}
+
+.payment h3 {
+  @include text('Montserrat', 600, 24px, 31px);
+  color: var(--main-accent-color);
+  margin-bottom: 20px;
+}
+
+.payment li {
+  list-style: ;
 }
 
 .payment__list {
@@ -63,4 +85,85 @@
       height: 50px;
     }
   }
+}
+
+.payment__pay-wrap {
+  display: flex;
+  justify-content: space-between;
+  & li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc((100% - 25px) / 2);
+    height: 120px;
+    border: 1px solid #ae8646;
+    & svg {
+      width: 120px;
+      height: 120px;
+    }
+    & img {
+      width: 120px;
+    }
+  }
+}
+
+.payment__nav-main a {
+  @include text('Montserrat', 500, 14px, 17px);
+  color: var(--light-theme-text-color);
+}
+
+.payment__nav-pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include text('Montserrat', 500, 14px, 17px);
+  color: var(--input-text-color);
+}
+
+.payment__nav-list {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.payment__main-info {
+  margin-bottom: 11px;
+}
+
+.payment__main-text {
+  margin-bottom: 10px;
+}
+
+.payment__wrap-svg {
+  margin-bottom: 20px;
+  & p {
+    @include text('Montserrat', 600, 20px, 24px);
+    color: var(--light-theme-text-color);
+    margin-bottom: 9px;
+  }
+}
+
+.payment__attention {
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(
+    90.26deg,
+    #1e736b 3.42%,
+    #0e725a 39.16%,
+    #003934 100.07%
+  );
+  border-radius: 4px;
+  & p {
+    width: 300px;
+    margin: 0 auto;
+    @include text('Montserrat', 600, 16px, 19.5px);
+    color: var(--dark-theme-text-color);
+    padding-top: 20px;
+  }
+}
+
+.payment__online {
+  padding-top: 190px;
 }
