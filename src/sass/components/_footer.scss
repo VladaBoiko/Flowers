@@ -400,46 +400,44 @@ margin-bottom: 10px;
 .footer__bacground-pay{
     background-color: #E5E5E5;
 }
-.footer__pay{
-    width: 320px;
-    margin: 0 auto;
-    @include tablet{
-        width: 728px;
-    }
-    @include desktop{
-        width: 1300px;
-    }
-}
+
 .footer__pay-list{
-    padding-top: 12px;
-    padding-bottom: 18px;
     display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  
+    justify-content: space-between;
+    align-items: center;
+  
+   @media screen and (max-width:767px) {
+    
     flex-wrap: wrap;
-    flex-direction: row;
-    margin-right: -15px;
-    margin-top: -11px;
-    @include tablet{
-        padding-left: 30px;
-        padding-top: 15px;
-        padding-bottom: 20px;
-        margin-right: -94px;
-        margin-top: -17px;
-    }
+   
+    margin-right: -2%;
+  
+   }
+   @include tablet{
+    justify-content: space-between;
+    align-items: center;
 }
+}
+
 .footer__pay-item{
-    margin-right: 15px;
-    margin-top: 11px;
-    @include tablet{
-        margin-right: 94px;
-        margin-top: 17px;
-    }
-    @include desktop{
-        width: 90px;
-        margin-right: 44px;
-    }
+    @media screen and (max-width:767px) {
+        width: 17%;
+        height: 50px;
+        
+        margin-right: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+       }
+  
 }
 .footer__pay-link{
     display: block;
+    
     transform: scale(1);
     transition: transform var(--main-transition);
 
