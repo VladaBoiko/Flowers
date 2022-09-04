@@ -1,32 +1,159 @@
-.catalog__container {
-  position: relative;
-  padding-top: 20px;
-  padding-bottom: 50px;
+.catalog {
+  // .catalog__container
+  &__container {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 50px;
 
-  @include tablet {
-    padding-bottom: 80px;
+    @include tablet {
+      padding-bottom: 80px;
+    }
+
+    @include desktop {
+      padding-top: 30px;
+      padding-bottom: 100px;
+    }
   }
+  // .catalog__title
+  &__title {
+    color: var(--main-accent-color);
+    margin-bottom: 30px;
+    @include text(null, 500, 30px, 30px);
 
-  @include desktop {
-    padding-top: 30px;
-    padding-bottom: 100px;
+    @include tablet {
+      @include text(null, 500, 36px, 36px);
+    }
+  }
+  // .catalog__layout
+  &__layout {
+    display: flex;
+    gap: 50px;
+  }
+  // .catalog__sidebar
+  &__sidebar {
+    flex-basis: 280px;
+    flex-shrink: 0;
+  }
+  // .catalog__filter
+  &__filter {
+  }
+  // .catalog__content
+  &__content {
+    flex-basis: 970px;
+    flex-shrink: 0;
+  }
+  // .catalog__sort-title
+  &__sort-title {
+  }
+  // .catalog__sort-btn
+  &__sort-btn {
+    // .catalog__sort-btn--rating
+    &--rating {
+    }
+    // .catalog__sort-btn--price
+    &--price {
+    }
+  }
+  // .catalog__list
+  &__list {
+  }
+  // .catalog__btn
+  &__btn {
   }
 }
+.filter-catalog {
+  & button {
+    border: none;
+  }
+  // .filter__clear-all
+  &__clear-all-btn {
+    position: relative;
+    padding: 11px 11px 11px 44px;
+    margin-bottom: 4px;
+    background-color: transparent;
+    @include text(null, null, 14px, 18px);
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      width: 18.8px;
+      height: 1px;
+      background-color: var(--grey);
+    }
 
-.catalog___section {
-  position: relative;
-}
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
 
-.catalog__title {
-  color: var(--main-accent-color);
-  margin-bottom: 30px;
-  @include text(null, 500, 30px, 30px);
+    &:hover:before,
+    &:focus:before,
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--green-light);
+    }
+  }
+  // .filter__group
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  // .filter__title
+  &__title {
+    position: relative;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: inherit;
+    @include font(null, 18px, calc(22px / 18px));
+    text-align: left;
 
-  @include tablet {
-    @include text(null, 500, 36px, 36px);
+    color: var(--dark-theme-text-color);
+    background: var(--main-bgc-accent) url('../img/catalog/filters-decor.svg') 65% 100% no-repeat;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      display: block;
+      right: 10px;
+      top: 50%;
+      width: 14px;
+      height: 1.5px;
+      background-color: var(--dark-theme-text-color);
+    }
+    &::after {
+      transform: rotate(0deg) scale(0.5);
+      transition: transform var(--main-transition);
+    }
+
+    &._spoller-active {
+      &::after {
+        transform: rotate(90deg) scale(1);
+      }
+    }
+  }
+  // .filter__body
+  &__body {
+    padding-top: 15px;
+  }
+  // .filter__item
+  &__item {
+    display: block;
+  }
+  // .filter__checkbox
+  &__checkbox {
   }
 }
-
 .catalog-list {
   display: flex;
   flex-wrap: wrap;
@@ -35,6 +162,7 @@
     gap: 20px;
   }
 
+  // .catalog-list__item
   &__item {
     @include tablet {
       max-width: 354px;
@@ -43,4 +171,50 @@
       max-width: 310px;
     }
   }
+}
+.product {
+  // .product__link
+  &__link {
+  }
+  // .product__image
+  &__image {
+  }
+  // .product__overlay
+  &__overlay {
+  }
+  // .product__status
+  &__status {
+  }
+  // .product__favorite
+  &__favorite {
+  }
+  // .product__content
+  &__content {
+  }
+  // .product__text
+  &__text {
+  }
+  // .product__price
+  &__price {
+  }
+  // .product__button
+  &__button {
+  }
+  // .product__button-one-click
+  &__button-one-click {
+  }
+}
+.hit {
+}
+.button {
+}
+.dark {
+}
+.new {
+}
+.checked {
+}
+.absent {
+}
+.light {
 }
