@@ -1,0 +1,227 @@
+.organization-main{
+    padding-bottom: 50px;
+    position: relative;
+    @include tablet{
+        padding-bottom: 80px;
+    }
+    @include desktop{
+        padding-bottom: 100px;
+       
+    }
+}
+.organization-nav-link,
+.organization-separator{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: var(--light-theme-text-color);
+}
+.organization-nav-link-second{
+    color: var(--grey);
+}
+.container__new{
+    @include desktop{
+        width: 1300px;
+    }
+}
+.organization-main::after{
+    @include desktop{
+        content: '';
+        width: 715px;
+        height: 649px;
+        background: url(/src/img/organization/flowers.webp) no-repeat;
+        position: absolute;
+        top: 18px;
+        right: -95px;
+        z-index: -1;
+       
+    }
+}
+.organization-main::before{
+    @include desktop{
+        content: '';
+        width: 189px;
+        height: 811px;
+        background: url(/src/img/organization/list.webp) no-repeat;
+        position: absolute;
+        bottom: 68px;
+        left: 0;
+        z-index: -1;
+       
+    }
+}
+.organization-nav{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    @include desktop{
+        padding-top: 30px;
+    }
+}
+
+.organization__main-title{
+    @include text('Montserrat', 500, 30px, 30px);
+    color: var( --main-accent-color);
+    margin-bottom: 20px;
+    @include tablet{
+        @include text('Montserrat', 500, 36px, 36px);
+        margin-bottom: 30px;
+    }
+}
+.organization__container{
+    display: flex;
+}
+.organization__text{
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var( --main-accent-color);
+    margin-bottom: 20px;
+    @include tablet{
+        margin-bottom: 30px;
+    }
+    @include desktop{
+        @include text('Montserrat', 400, 24px, 31px);
+        margin-bottom: 50px;
+    }
+}
+.organization__bold{
+    @include text('Montserrat', 600, 16px, 21px);
+    @include desktop{
+        @include text('Montserrat', 600, 24px, 31px);
+    }
+}
+.organization__title{
+    width: 75%;
+    @include text('Montserrat', 600, 24px, 31px);
+    color: var(--light-theme-text-color);
+    margin-bottom: 10px;
+    @include tablet{
+        margin-bottom: 20px;
+    }
+}
+.organization__title-color{
+    color: var( --main-accent-color);
+    margin-top: 30px;
+    @include desktop{
+        margin-top: 100px;
+    }
+}
+.organization__item{
+    display: flex;
+    position: relative;
+    padding-left: 20px;
+    
+    
+}
+
+.organization__svg{
+    position: absolute;
+    top: 3px;
+    left:0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    @include tablet{
+        margin-right: 15px;
+    }
+}
+.organization__item:not(:last-child){
+    margin-bottom: 10px;
+    @include desktop{
+        margin-bottom: 15px;
+    }
+}
+
+.organization__item-text{
+    display: block;
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var(--light-theme-text-color);
+    @include desktop{
+        @include text('Montserrat', 400, 20px, 26px);
+    }
+}
+.organization__info-text{
+    display: block;
+    width: 354px;
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var(--light-theme-text-color);
+    @include desktop{
+        @include text('Montserrat', 400, 20px, 26px);
+    }
+}
+.organization__contact-text{
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var(--main-accent-color);
+    @include desktop{
+        @include text('Montserrat', 400, 20px, 26px);
+    }
+}
+.organization__info-list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 26px;
+   
+}
+.organization__info-item{
+    display: flex;
+}
+.organization__info-item:not(:last-child){
+         margin-bottom: 16px;
+      
+}
+.organization__contact-text-first{
+    margin-right: 23px;
+    @include desktop{
+        margin-right: 38px;
+    }
+}
+.organization__contact-text-second{
+    margin-right: 45px;
+    @include desktop{
+        margin-right: 67px;
+    }
+}
+.organization__tel-svg{
+    margin-right: 8px;
+}
+.organization__tel-list{
+    @include tablet{
+        display: flex;
+    }
+}
+.organization__tel-item:not(:last-child){
+    @include mobile{
+        margin-bottom: 11px;
+    }
+    @include tablet{
+        margin-right: 8px;
+    }
+}
+.organization__tel-link{
+    @include text('Montserrat', 700, 16px, 21px);
+    color: var(--light-theme-text-color);
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+      }
+}
+.organization__skype-link{
+    color: var(--light-theme-text-color);
+    @include text('Montserrat', 500, 16px, 21px);
+    @include desktop{
+        @include text('Montserrat', 500, 20px, 26px);
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+      }
+}
+.organization__image{
+    @media screen and (max-width: 1339px){
+        display: none;
+    }
+}
+.organization__img{
+    width: 530px;
+    height: 100%;
+    margin-left: 20px;
+}
