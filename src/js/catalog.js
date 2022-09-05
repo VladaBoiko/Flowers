@@ -1,25 +1,16 @@
-// import { APIGetData } from './fetch-cards';
-const axios = require('axios').default;
+import { APIGetData } from './fetch-cards';
+// const axios = require('axios').default;
 
-const instance = axios.create({
-  baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
-});
+// const instance = axios.create({
+//   baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
+// });
 
-const APIGetData = {
-  async getData(params) {
-    const response = await instance.get(`/products/?${params}`);
-    const data = await response.data;
-    return data;
-  },
-};
-
-// const filterData = {
-//   category: [],
-//   sort: [],
-//   color: [],
-//   amount: [],
-//   size: [],
-//   form: [],
+// const APIGetData = {
+//   async getData(params) {
+//     const response = await instance.get(`/products/?${params}`);
+//     const data = await response.data;
+//     return data;
+//   },
 // };
 
 const refs = {
@@ -28,45 +19,27 @@ const refs = {
   catalogList: document.querySelector('.catalog-list'),
 };
 
+renderData(refs.catalogList);
+
 refs.form.reset();
 
 refs.resetFormBtn.addEventListener('click', () => refs.form.reset());
 
 refs.form.addEventListener('change', () => {
-  console.log(getChececkedCheckBox());
+  clearData(refs.catalogList);
+  renderData(refs.catalogList, getChececkedCheckBox().join('|'));
 });
 
 function getChececkedCheckBox() {
-  // [...refs.form].map(el => {
-  //   if (el.nodeName === 'INPUT' && el.checked) {
-  //     const param = el.parentElement.parentElement.previousElementSibling.textContent;
-  //     const value = el.nextElementSibling.textContent;
-  //     console.log(value);
-  //     switch (param) {
-  //       case 'Категорія':
-  //         filterData.category.indexOf(value) === -1 && filterData.category.push(value);
-  //         break;
-  //       case 'Вид':
-  //         filterData.sort.indexOf(value) === -1 && filterData.sort.push(value);
-  //         break;
-
-  //       default:
-  //         break;
-  //     }
-  //   }
-  // });
   return [...refs.form].reduce((acc, el) => {
     if (el.nodeName === 'INPUT' && el.checked) {
       const value = el.nextElementSibling.textContent;
-      console.log(acc, el);
-      return acc.indexOf(value) === -1 ? [...acc, value] : [...acc];
+      return [...acc, value];
+    } else {
+      return [...acc];
     }
-  });
+  }, []);
 }
-
-// =====================
-
-renderData(refs.catalogList, filterData);
 
 async function renderData(selector, params) {
   try {
@@ -76,15 +49,15 @@ async function renderData(selector, params) {
   }
 }
 
-async function queryAndRender(list, params) {
+async function queryAndRender(list, params = '') {
   console.log(params);
   const searchParams = new URLSearchParams({
     filter: params,
     p: 1,
     l: 3,
   }).toString();
-
-  const data = await APIGetData.getData((searchParams = ''));
+  console.log(searchParams);
+  const data = await APIGetData.getData(searchParams);
   const markup = createMarkup(data);
   list.insertAdjacentHTML('beforeend', markup);
 }
@@ -129,4 +102,8 @@ function createMarkup(data) {
     `
     )
     .join('');
+}
+
+function clearData(list) {
+  list.innerHTML = '';
 }
