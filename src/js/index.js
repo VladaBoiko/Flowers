@@ -1,4 +1,4 @@
-// import { serverData } from './fetch-api';
+// import { APIGetData } from './fetch-cards';
 
 const axios = require('axios').default;
 
@@ -6,11 +6,12 @@ const instance = axios.create({
   baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
 });
 
-// export
-const serverData = async params => {
-  const response = await instance.get(`/products/?${params}`);
-  const data = await response.data;
-  return data;
+const APIGetData = {
+  async getData(params) {
+    const response = await instance.get(`/products/?${params}`);
+    const data = await response.data;
+    return data;
+  },
 };
 // =========================================================================
 
@@ -45,10 +46,7 @@ async function queryAndRender(sectiоn) {
   const searchParams = new URLSearchParams({
     filter: sections[sectiоn],
   }).toString();
-  console.log(searchParams);
-  console.log(refs[sectiоn]);
-  const data = await serverData(searchParams);
-  console.log(data);
+  const data = await APIGetData.getData(searchParams);
   let markup = createMarkup(data);
   refs[sectiоn].insertAdjacentHTML('beforeend', markup);
 }
