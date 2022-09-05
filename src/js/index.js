@@ -1,19 +1,5 @@
-// import { APIGetData } from './fetch-cards';
-
-const axios = require('axios').default;
-
-const instance = axios.create({
-  baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
-});
-
-const APIGetData = {
-  async getData(params) {
-    const response = await instance.get(`/products/?${params}`);
-    const data = await response.data;
-    return data;
-  },
-};
-// =========================================================================
+import { APIGetData } from './fetch-cards';
+import { createMarkup, clearData } from './catalog/markup';
 
 const refs = {
   offerSpecial: document.querySelector('.offer--special .offer__list'),
@@ -47,48 +33,6 @@ async function queryAndRender(sectiоn) {
     filter: sections[sectiоn],
   }).toString();
   const data = await APIGetData.getData(searchParams);
-  let markup = createMarkup(data);
+  const markup = createMarkup(data);
   refs[sectiоn].insertAdjacentHTML('beforeend', markup);
-}
-
-function createMarkup(data) {
-  return data
-    .map(
-      ({ id, name, image, description, price }) => `
-     <li class="offer-list__item product">
-        /* <a href="./product-${id}" class="product__link"> */
-        <a href="" class="product__link">
-          <img
-            loading="lazy"
-            src="${image}"
-            alt="${name}"
-            class="product__image"
-            width="290"
-            height="250"
-          />
-          <div class="product__overlay">
-            <p class="product__status hit">Xіт продажів</p>
-            <button type="button" class="product__favorite">
-              <svg width="28" height="25">
-                <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-              </svg>
-            </button>
-          </div>
-          <div class="product__content">
-            <p class="product__text">
-              ${name}
-            </p>
-            <p class="product__price">${price} у.о.</p>
-            <button type="button" class="product__button button dark">
-              Замовити
-            </button>
-            <button type="button" class="product__button-one-click">
-              Придбати в 1 клік
-            </button>
-          </div>
-        </a>
-      </li>
-    `
-    )
-    .join('');
 }
