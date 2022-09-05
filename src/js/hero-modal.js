@@ -1,3 +1,5 @@
+import { heroSwiper } from "./hero-slider";
+
 const refs = {
   openModalBtn: document.querySelector("[data-hero-modal-open]"),
   closeModalBtn: document.querySelector("[data-hero-modal-close]"),
@@ -6,7 +8,6 @@ const refs = {
   body: document.querySelector("body"),
 }
 
-
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
@@ -14,12 +15,15 @@ refs.backdrop.addEventListener('click', onBackdropClick);
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
   refs.body.classList.add('show-modal');
+  refs.openModalBtn.classList.add("is-active");
+  heroSwiper.autoplay.stop();
 }
 
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   refs.body.classList.remove('show-modal');
-  refs.body.classList.remove('show-modal');
+  refs.openModalBtn.classList.remove("is-active");
+  heroSwiper.autoplay.start();
 }
 
 function onBackdropClick(evt) {
@@ -31,5 +35,5 @@ function onBackdropClick(evt) {
 function onEscKeyPress(evt) {
   if (evt.code === 'Escape') {
     onCloseModal();
-  }
+ }
 }
