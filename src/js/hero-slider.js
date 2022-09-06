@@ -5,11 +5,11 @@ new Swiper('.hero-swiper-container', {
         el: '.swiper-pagination',
         clickable: true,
     },
-    // autoplay: {
-    //     delay: 3000,
-    //     stopOnLastSlide: false,
-    //     disableOnInteraction: false,
-    // },
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+    },
 
     speed: 3000,
 });
