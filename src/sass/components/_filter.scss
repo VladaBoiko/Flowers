@@ -76,7 +76,6 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   }
 
-  // for 'click'
   &.is-active {
       background-color: var(--main-bgc-accent);
       &>.filter-icon {
@@ -101,19 +100,18 @@
 
 // вспливашки:
 .filter-sub-list {
+  margin-bottom: -5px;
   position: absolute;
   top: 100%;
   z-index: 50;
 
   width: 394px;
-  height: 275px;
+  padding: 12px;
+  background-color: #fff;
 
-  display: grid;
-  grid-column-gap: 30px;
-  grid-row-gap: 5px;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   opacity: 0;
   transform: scale(0);
@@ -128,19 +126,16 @@
     }
   }
   transition: transform 400ms linear, opacity 400ms linear;
-  // .filter-item:hover &,
-  // .filter-item:focus & {
-  //   opacity: 100%;
-  //   transform: scale(100%);
-  // }
+  
+  &.is-active {
+    opacity: 100%;
+    transform: scale(100%);
+  }
 
-
-  padding: 12px;
-  background-color: #fff;
   @include desktop {
     width: 462px;
-    height: 275px;
     padding: 20px 20px 20px 12px;
+
     &.to-right-desk {
       left: 0;
     }
@@ -153,19 +148,26 @@
 }
 
 .filter-sub-item {
-  padding: 10px;
+  height: 43px;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-right: 2px 2px 2px 10px;
   border-bottom: 1px solid #8d8d8d;
+
+  @include desktop {
+    width: 200px;
+  }
 
   &:hover,
   &:focus {
-      
       background-color: var(--green-light);
-      border-bottom: none;
       .filter-sub-link {
         color: var(--dark-theme-text-color);
       }
     }
-
+    
     // for 'click'
     // &.is-active {
     //   background-color: var(--main-bgc-accent);
@@ -178,6 +180,5 @@
   font-family: 'PT sans';
   @include font(400, 18px, calc(23px / 18px));
   color: var(--black);
+  width: 100%;
 }
-
-
