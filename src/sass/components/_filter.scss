@@ -28,6 +28,7 @@
     }
   }
 }
+
 .filter-list {
   position: relative;
   display: flex;
@@ -41,8 +42,8 @@
   }
 }
 	
-
 .filter-item {
+  cursor: pointer;
   position: relative;
   min-width: 167px;
   min-height: 129px;
@@ -75,23 +76,26 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   }
 
-  // for 'click'
-  // &:active {
-  //     background-color: var(--main-bgc-accent);
-  //     &>.filter-icon {
-  //         fill: var(--dark-theme-title-color);
-  //     }
-  //     &>.filter-item-text {
-  //         color: var(--dark-theme-title-color);
-  //     }
-  // }
+  &.is-active {
+    z-index: 5;
+      background-color: var(--main-bgc-accent);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+      &>.filter-icon {
+          fill: var(--dark-theme-title-color);
+      }
+      &>.filter-item-text {
+          color: var(--dark-theme-title-color);
+      }
+  }
 }
+
 .filter-icon {
   width: 56px;
   height: 56px;
   margin-bottom: 10px;
   fill: var(--second-accent-color);
 }
+
 .filter-item-text {
   font-family: 'PT sans';
   @include font(null, 18px, calc(23px / 18px));
@@ -100,19 +104,18 @@
 
 // вспливашки:
 .filter-sub-list {
+  margin-bottom: -5px;
   position: absolute;
   top: 100%;
   z-index: 50;
 
   width: 394px;
-  height: 275px;
+  padding: 12px;
+  background-color: #fff;
 
-  display: grid;
-  grid-column-gap: 30px;
-  grid-row-gap: 5px;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   opacity: 0;
   transform: scale(0);
@@ -127,19 +130,16 @@
     }
   }
   transition: transform 400ms linear, opacity 400ms linear;
-  .filter-item:hover &,
-  .filter-item:focus & {
+  
+  &.is-active {
     opacity: 100%;
     transform: scale(100%);
   }
 
-
-  padding: 12px;
-  background-color: #fff;
   @include desktop {
     width: 462px;
-    height: 275px;
     padding: 20px 20px 20px 12px;
+
     &.to-right-desk {
       left: 0;
     }
@@ -152,31 +152,37 @@
 }
 
 .filter-sub-item {
-  padding: 10px;
+  width: 170px;
+  height: 43px;
+  margin-bottom: 5px;
   border-bottom: 1px solid #8d8d8d;
+
+  @include desktop {
+    width: 200px;
+  }
 
   &:hover,
   &:focus {
-      
       background-color: var(--green-light);
-      border-bottom: none;
       .filter-sub-link {
         color: var(--dark-theme-text-color);
       }
     }
-
+    
     // for 'click'
-    // &:active {
+    // &.is-active {
     //   background-color: var(--main-bgc-accent);
     //   .filter-sub-link {
     //     color: var(--dark-theme-text-color);
     //   }
     // }
 }
+
 .filter-sub-link {
+  display: block;
+  padding: 10px;
+  
   font-family: 'PT sans';
   @include font(400, 18px, calc(23px / 18px));
   color: var(--black);
 }
-
-
