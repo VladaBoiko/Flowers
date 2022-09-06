@@ -1,19 +1,15 @@
+import getKey from './getKey';
+
 const statuses = {
   hit: 'Xіт продажу',
   absent: 'Немає в наявності',
   new: 'Новинка',
 };
 
-function getKeyStatus(status) {
-  let keyStatus = '';
-  Object.entries(statuses).map(el => (el[1] === status ? (keyStatus = el[0]) : ''));
-  return keyStatus;
-}
-
 export const createMarkup = data => {
   return data
     .map(({ id, name, image, price, status }) => {
-      const keyStatus = getKeyStatus(status);
+      const keyStatus = getKey(status, statuses);
       return `<li class="offer-list__item product">
         <a href="./product-${id}" class="product__link">
           <img
