@@ -41,7 +41,7 @@
     background-color: var(--green-light);
     border: none;
   }
-  &:active {
+  &.is-active {
     color: var(--dark-theme-text-color);
     background-color: var(--main-accent-color);
     border: none;
@@ -71,7 +71,7 @@
     &:focus {
       background-color: #d2a97e;
     }
-    &:active {
+    &.is-active {
       background-color: var(--second-accent-color);
     }
     &.disabled {
