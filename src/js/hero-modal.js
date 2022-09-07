@@ -3,7 +3,6 @@ import { heroSwiper } from "./hero-slider";
 const refs = {
   openModalBtn: document.querySelector("[data-hero-modal-open]"),
   closeModalBtn: document.querySelector("[data-hero-modal-close]"),
-  modal: document.querySelector('.hero-modal'),
   backdrop: document.querySelector('.js-hero-backdrop'),
   body: document.querySelector("body"),
 }
@@ -35,5 +34,6 @@ function onBackdropClick(evt) {
 function onEscKeyPress(evt) {
   if (evt.code === 'Escape') {
     onCloseModal();
- }
+    refs.openModalBtn.blur();
+  }
 }

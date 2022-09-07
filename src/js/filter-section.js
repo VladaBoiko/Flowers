@@ -4,7 +4,6 @@ function onFilterItemClick(evt) {
     const activeFilterItem = document.querySelector('[data-filter-item].is-active');
     const activeDropdownList = document.querySelector('[data-filter-item].is-active>ul');
     
-    
     if (!evt.target.closest('[data-filter-item]')) {
         if (activeFilterItem) {
             switchFilterState(activeFilterItem);
