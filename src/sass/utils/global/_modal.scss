@@ -44,8 +44,8 @@ body.show-modal .modal {
     transition: transform var(--main-transition),
         opacity var(--main-transition); 
 
-    @include mobile {
-        width: 320px;
+    @media screen and (min-width: 375px) {
+        width: 375px;
     }
     @media screen and (min-width: 480px) {
         width: 450px;
@@ -54,6 +54,7 @@ body.show-modal .modal {
         width: 580px;
         padding: 50px 70px;
     }
+    
     &::before {
         display: block;
         content: "";
