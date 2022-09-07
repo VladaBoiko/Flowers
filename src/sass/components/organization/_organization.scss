@@ -149,8 +149,10 @@
 .organization__contact-text{
     @include text('Montserrat', 400, 16px, 21px);
     color: var(--main-accent-color);
+    margin-right: 23px;
     @include desktop{
         @include text('Montserrat', 400, 20px, 26px);
+        margin-right: 38px;
     }
 }
 .organization__info-list{
@@ -166,18 +168,8 @@
          margin-bottom: 16px;
       
 }
-.organization__contact-text-first{
-    margin-right: 23px;
-    @include desktop{
-        margin-right: 38px;
-    }
-}
-.organization__contact-text-second{
-    margin-right: 45px;
-    @include desktop{
-        margin-right: 67px;
-    }
-}
+
+
 .organization__tel-svg{
     margin-right: 8px;
 }
@@ -203,18 +195,7 @@
         text-decoration: underline;
       }
 }
-.organization__skype-link{
-    color: var(--light-theme-text-color);
-    @include text('Montserrat', 500, 16px, 21px);
-    @include desktop{
-        @include text('Montserrat', 500, 20px, 26px);
-    }
 
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-      }
-}
 .organization__image{
     @media screen and (max-width: 1339px){
         display: none;
