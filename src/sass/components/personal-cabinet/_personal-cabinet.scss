@@ -1,0 +1,129 @@
+.personal-cabinet {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid;
+    @include tablet {
+        padding-bottom: 80px;
+    }
+    @include desktop {
+        padding-top: 77px;
+        padding-bottom: 100px;
+    }
+    &>.container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 450px;
+        }
+    }
+}
+
+.pers-cab-menu-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 184px;
+    margin-left: auto; //
+    margin-bottom: 20px;
+    @include font(500, 16px, 1);
+    color: var(--main-bgc-accent);
+    background-color: inherit;
+}
+.pers-cab-menu-close-icon {
+    stroke: var(--grey);
+    transition: stroke var(--main-transition);
+    
+    .pers-cab-menu-close-btn:hover &,
+    .pers-cab-menu-close-btn:focus & {
+        stroke: var(--light-theme-text-color);
+    }
+}
+
+
+
+.pers-cab-title {
+    // display: none;
+    margin-bottom: 30px;
+    @include desktop {
+        display: block;
+        margin-bottom: 64px;
+    }
+    @include font(500, 36px, 1);
+    color: var(--light-theme-title-color);
+    
+}
+// .pers-cab-main {
+//     display: flex;
+// }
+
+// .pers-cab-menu {
+//     margin: 0 auto;
+//     @media screen and (min-width: 375px) {
+//             width: 375px;
+//     }
+
+//     @media screen and (min-width: 480px) {
+//         width: 450px;
+//     }
+// }
+// .pers-cab-menu-list {
+    // @media screen and (min-width: 375px) {
+    //         width: 375px;
+    //     }
+    
+    //     @media screen and (min-width: 480px) {
+    //         width: 450px;
+    //     }
+// }
+
+.pers-cab-menu-item {
+    position: relative;
+    width: 320px;
+    @include tablet {
+        width: 728px;
+    }
+    @include desktop {
+        width: 310px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2px;
+    }
+    background-color: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    
+}
+
+.pers-cab-menu-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    stroke: var(--main-accent-color);
+}
+
+.pers-cab-menu-link {
+    display: inline-block;
+    padding: 18px 15px 18px 53px;
+    width: 100%;
+
+    font-family: 'PT sans';
+    @include font(400, 18px, calc(23px / 18px));
+    color: var(--black);
+    transition: color var(--main-transition);
+
+    &:hover,
+    &:focus {
+        color: var(--main-accent-color);
+    }
+}
+
+// ----------CONTENT----------------------
+.pers-cab-content {
+    display: none;
+    @include desktop {
+        display: block;
+    }
+}
