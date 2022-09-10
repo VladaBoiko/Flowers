@@ -41,36 +41,69 @@
             <div class="pers-cab-content">
                 <form class="pers-cab-form">
                     <!-- 1 -->
-                    <div class="form-group" role="group">
-                        <p>Особиста інформація</p>
+                    <div class="pers-form-group" role="group">
+                        <p class="pers-form-group-title">Особиста інформація</p>
                         <!-- photo -->
                         <label for="name"></label>
-                        <input type="text" name="user-name" id="name">
+                        <input 
+                            type="text" 
+                            name="user-name" 
+                            id="name" 
+                            class="pers-form-input" 
+                            placeholder="ПІБ">
                         <label for="birth-date"></label>
-                        <input type="text" name="user-birth-date" id="birthdate">
+                        <input 
+                            type="text" 
+                            name="user-birth-date" 
+                            id="birthdate" 
+                            class="pers-form-input" 
+                            placeholder="Дата народження">
             
-                        <p>Стать</p>
+                        <p class="pers-form-group-text">Стать</p>
                         <label for=""><input type="checkbox">Чоловіча</label>
                         <label for=""><input type="checkbox">Жіноча</label>
                     </div>
             
                     <!-- 2 -->
-                    <div class="form-group" role="group">
-                        <p>Локація і час</p>
-            
+                    <div class="pers-form-group" role="group">
+                        <p class="pers-form-group-title">Локація і час</p>
+                        <label for=""></label>
+                        <input 
+                            type="text" 
+                            class="pers-form-input"
+                            placeholder="Місто проживання">
+                        <label for=""></label>
+                        <input 
+                            type="text" 
+                            class="pers-form-input"
+                            placeholder="Мова">
+                        <label for=""></label>
+                        <input 
+                            type="text" 
+                            class="pers-form-input"
+                            placeholder="Часовий пояс">
                     </div>
             
                     <!-- 3 -->
-                    <div class="form-group" role="group">
-                        <p>Контактні дані</p>
+                    <div class="pers-form-group" role="group">
+                        <p class="pers-form-group-title">Контактні дані</p>
                         <label for=""></label>
-                        <input type="text" placeholder="Номер телефону">
+                        <input 
+                            type="text" 
+                            class="pers-form-input" 
+                            placeholder="Номер телефону">
                         <label for=""></label>
-                        <input type="text" placeholder="Пароль">
+                        <input 
+                            type="text" 
+                            class="pers-form-input" 
+                            placeholder="Пароль">
                         <label for=""></label>
-                        <input type="text" placeholder="Електронна пошта">
+                        <input 
+                            type="text" 
+                            class="pers-form-input" 
+                            placeholder="Електронна пошта">
                     </div>
-                    <button type="submit">Зберегти зміни</button>
+                    <button type="submit" class="button dark">Зберегти зміни</button>
                 </form>
             </div>
         </div>

@@ -122,8 +122,71 @@
 
 // ----------CONTENT----------------------
 .pers-cab-content {
-    display: none;
-    @include desktop {
+    // display: none;
+    // @include desktop {
         display: block;
+    // }
+}
+// .pers-cab-form {}
+
+.pers-form-group {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+
+    background-color: var(--white);
+
+    @include tablet {
+        padding-right: 61px;
+        padding-left: 30px;
     }
+    @include desktop {
+        padding-right: 40px;
+    }
+}
+.pers-form-group-title {
+    @include font(600, 20px, calc(26px / 20px)); //the same
+    color: var(--main-accent-color);
+    margin-bottom: 15px;
+    @include desktop {
+        margin-bottom: 20px;
+    }
+}
+
+.pers-form-group-text {// mt?
+    @include font(null, 18px, calc(22px / 18px)); //the same
+    color: var(--black);
+    margin-bottom: 10px; //the same
+}
+
+.pers-form-input {
+    width: 100%;
+    height: 50px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    padding: 16px;
+    padding-left: 18px;
+
+    @include font(400, 14px, calc(17px / 14px));
+    color: var(--black);
+
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+
+
+    &::placeholder {
+        color: var(--grey);
+    }
+}
+
+.pers-cab-form .button{
+    //370 + 40 + 40
+    // @media screen and (max-width: 767.98px) {
+    //     display: block;
+    //     max-width: 370px;
+    //     margin: 0 auto;
+    // }
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
 }
