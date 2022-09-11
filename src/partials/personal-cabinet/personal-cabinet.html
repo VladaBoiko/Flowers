@@ -1,111 +1,156 @@
 <section class="personal-cabinet">
     <div class="container">
-        <button type="button" class="pers-cab-menu-close-btn">Згорнути меню
+
+        <h1 class="visually-hidden">Особистий кабінет</h1>
+        <!-- не чіпай h1 -->
+
+
+        <h2 class="pers-cab-title-desk">Особистий кабінет</h2>
+        <button type="button" class="pers-cab-menu-btn open-btn" data-pers-menu-open-btn>Меню Особистого кабінета
             <svg class="pers-cab-menu-close-icon" width="40" height="40">
-                <use href="./img/symbol-defs.svg#cross-icon"></use>
+                <use href="./img/symbol-defs.svg#burger-menu-icon"></use>
             </svg>
         </button>
-        <h1 class="pers-cab-title">Особистий кабінет</h1>
-        
+
         <div class="pers-cab-main">
-            <div class="pers-cab-menu">
-                <!-- випадашка -->
-                <ul class="pers-cab-menu-list">
-                    <li class="pers-cab-menu-item">
-                        <svg class="pers-cab-menu-icon" width="28" height="28">
-                            <use href="./img/symbol-defs.svg#user-icon"></use>
-                        </svg>
-                        <a href="" class="pers-cab-menu-link">Профіль</a>
-                    </li>
-                    <li class="pers-cab-menu-item">
-                        <svg class="pers-cab-menu-icon" width="28" height="28">
-                            <use href="./img/symbol-defs.svg#shopping-bag-icon"></use>
-                        </svg>
-                        <a href="" class="pers-cab-menu-link">Замовлення</a>
-                    </li>
-                    <li class="pers-cab-menu-item">
-                        <svg class="pers-cab-menu-icon" width="28" height="28">
-                            <use href="./img/symbol-defs.svg#bell-icon"></use>
-                        </svg>
-                        <a href="" class="pers-cab-menu-link">Повідомлення</a>
-                    </li>
-                    <li class="pers-cab-menu-item">
-                        <svg class="pers-cab-menu-icon" width="28" height="28">
-                            <use href="./img/symbol-defs.svg#wish-icon"></use>
-                        </svg>
-                        <a href="" class="pers-cab-menu-link">Вибране</a>
-                    </li>
-                </ul>
-            </div>
+            <div class="pers-cab-menu-wrap is-hidden" data-pers-menu>
+                <button type="button" class="pers-cab-menu-btn close-btn" data-pers-menu-close-btn>Згорнути меню
+                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
+                        <use href="./img/symbol-defs.svg#cross-icon"></use>
+                    </svg>
+                </button>
+                <h1 class="pers-cab-title-menu">Особистий кабінет</h1>
             
-            <div class="pers-cab-content">
-                <form class="pers-cab-form">
-                    <!-- 1 -->
-                    <div class="pers-form-group" role="group">
-                        <p class="pers-form-group-title">Особиста інформація</p>
-                        <!-- photo -->
-                        <label for="name"></label>
-                        <input 
-                            type="text" 
-                            name="user-name" 
-                            id="name" 
-                            class="pers-form-input" 
-                            placeholder="ПІБ">
-                        <label for="birth-date"></label>
-                        <input 
-                            type="text" 
-                            name="user-birth-date" 
-                            id="birthdate" 
-                            class="pers-form-input" 
-                            placeholder="Дата народження">
-            
-                        <p class="pers-form-group-text">Стать</p>
-                        <label for=""><input type="checkbox">Чоловіча</label>
-                        <label for=""><input type="checkbox">Жіноча</label>
-                    </div>
-            
-                    <!-- 2 -->
-                    <div class="pers-form-group" role="group">
-                        <p class="pers-form-group-title">Локація і час</p>
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input"
-                            placeholder="Місто проживання">
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input"
-                            placeholder="Мова">
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input"
-                            placeholder="Часовий пояс">
-                    </div>
-            
-                    <!-- 3 -->
-                    <div class="pers-form-group" role="group">
-                        <p class="pers-form-group-title">Контактні дані</p>
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input" 
-                            placeholder="Номер телефону">
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input" 
-                            placeholder="Пароль">
-                        <label for=""></label>
-                        <input 
-                            type="text" 
-                            class="pers-form-input" 
-                            placeholder="Електронна пошта">
-                    </div>
-                    <button type="submit" class="button dark">Зберегти зміни</button>
-                </form>
-            </div>
+                <!-- <div class="pers-cab-main"> -->
+                <div class="pers-cab-menu">
+                    <!-- випадашка -->
+                    <ul class="pers-cab-menu-list">
+                        <li class="pers-cab-menu-item">
+                            <a href="" class="pers-cab-menu-link">
+                                <svg class="pers-cab-menu-icon" width="28" height="28">
+                                    <use href="./img/symbol-defs.svg#user-icon"></use>
+                                </svg>Профіль</a>
+                        </li>
+                        <li class="pers-cab-menu-item">
+                            
+                            <a href="" class="pers-cab-menu-link">
+                                <svg class="pers-cab-menu-icon" width="28" height="28">
+                                    <use href="./img/symbol-defs.svg#shopping-bag-icon"></use>
+                                </svg>
+                                Замовлення</a>
+                        </li>
+                        <li class="pers-cab-menu-item">
+                            
+                            <a href="" class="pers-cab-menu-link">
+                                <svg class="pers-cab-menu-icon" width="28" height="28">
+                                    <use href="./img/symbol-defs.svg#bell-icon"></use>
+                                </svg>
+                                Повідомлення</a>
+                        </li>
+                        <li class="pers-cab-menu-item">
+                            <a href="" class="pers-cab-menu-link">
+                                <svg class="pers-cab-menu-icon" width="28" height="28">
+                                    <use href="./img/symbol-defs.svg#wish-icon"></use>
+                                </svg>
+                                Вибране</a>
+                        </li>
+                    </ul>
+                </div>
+            <!-- </div> -->
         </div>
+            <!-- end pers-cab-menu-wrap -->
+            
+        <div class="pers-cab-content">
+            <form class="pers-cab-form">
+                <!-------------------- 1 --------------------------->
+                <div class="pers-form-group" role="group">
+                    <p class="pers-form-group-title">Особиста інформація</p>
+                    <!-- photo -->
+                    <div class="all-form-content-flex-wrapper">
+                        <div class="pers-photo">
+                            <svg class="pers-photo-icon">
+                                <use href="./img/symbol-defs.svg#camera-icon"></use>
+                            </svg>
+                        </div>
+                        <div class="pers-flex-wrapper">
+                            <!-- -------simple input----- -->
+                            <div class="input-wrapper">
+                                <label for="pers-name"></label>
+                                <input type="text" name="user-name" id="pers-name" class="pers-form-input" placeholder="ПІБ">
+                                <label for="pers-birth-date"></label>
+                                <input type="text" name="user-birth-date" id="pers-birth-date" class="pers-form-input"
+                                    placeholder="Дата народження">
+                            </div>
+        
+                            <!-- RADIO BUTTON -->
+                            <div class="pers-radio-wrapper">
+                                <p class="pers-form-group-text">Стать</p>
+                                <input type="radio" name="gender" id="pers-radio-male" value="male"
+                                    class="pers-radio-input visually-hidden">
+                                <label for="pers-radio-male" class="pers-radio-label">Чоловіча</label>
+                                <input type="radio" name="gender" id="pers-radio-female" value="female"
+                                    class="pers-radio-input visually-hidden">
+                                <label for="pers-radio-female" class="pers-radio-label">Жіноча</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-------------------- 2 ----------------------->
+        
+                <div class="pers-form-group" role="group">
+                    <p class="pers-form-group-title">Локація і час</p>
+                    <div class="input-grid-wrap">
+                        <label for="pers-location" class="flex-item">
+                            <input type="text" class="pers-form-input" placeholder="Місто проживання" id="pers-location">
+                        </label>
+                        
+                        
+                        <label for="pers-lang" class="flex-item">
+                            <input type="text" class="pers-form-input" placeholder="Мова" id="pers-lang">
+                        </label>
+                        
+                        
+                        <label for="pers-timezone" class="flex-item">
+                            <input type="text" class="pers-form-input" placeholder="Часовий пояс" id="pers-timezone">
+                        </label>
+                        
+                        
+                        <div class="wrap-for-call" class="flex-item">
+                            <p class="for-call-text">Період для дзвінків</p>
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <!--------------------- 3 ------------------------->
+                <div class="pers-form-group" role="group">
+                    <p class="pers-form-group-title">Контактні дані</p>
+                    <div class="input-grid-wrap">
+                        <label for="pers-number">
+                            <input type="text" class="pers-form-input" placeholder="Номер телефону" id="pers-number">
+                        </label>
+                        
+                        <label for="pers-password">
+                            <input type="text" class="pers-form-input" placeholder="Пароль" id="pers-password">
+                        </label>
+                        
+                        <label for="pers-mail">
+                            <input type="text" class="pers-form-input" placeholder="Електронна пошта" id="pers-mail">
+                        </label>
+                        
+                    </div>
+                </div>
+                <button type="submit" class="button dark">Зберегти зміни</button>
+            </form>
+        </div> 
+            <!-- end of content -->
+        </div>
+    </div> 
+<!-- container end  -->
+
+        
+            
+            
     </div>
 </section>

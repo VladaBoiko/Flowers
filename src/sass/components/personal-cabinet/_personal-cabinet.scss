@@ -1,4 +1,5 @@
 .personal-cabinet {
+    position: relative;
     padding-top: 30px;
     padding-bottom: 50px;
     border-bottom: 1px solid;
@@ -15,110 +16,44 @@
         }
     }
 }
+.pers-cab-title-desk {
+    display: none;
+    
+    @include desktop {
+        display: block;
+        margin-bottom: 64px;
+        @include font(500, 36px, 1); // the same
+        color: var(--light-theme-title-color);
+    }
+}
 
-.pers-cab-menu-close-btn {
+.pers-cab-main {
+    @include desktop {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.pers-cab-menu-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    width: 184px;
+    // width: 184px;//with cross
+    max-width: 331px;
     margin-left: auto; //
     margin-bottom: 20px;
     @include font(500, 16px, 1);
     color: var(--main-bgc-accent);
     background-color: inherit;
-}
-.pers-cab-menu-close-icon {
-    stroke: var(--grey);
-    transition: stroke var(--main-transition);
-    
-    .pers-cab-menu-close-btn:hover &,
-    .pers-cab-menu-close-btn:focus & {
-        stroke: var(--light-theme-text-color);
-    }
-}
-
-
-
-.pers-cab-title {
-    // display: none;
-    margin-bottom: 30px;
+     
     @include desktop {
-        display: block;
-        margin-bottom: 64px;
+        display: none;
     }
-    @include font(500, 36px, 1);
-    color: var(--light-theme-title-color);
-    
-}
-// .pers-cab-main {
-//     display: flex;
-// }
-
-// .pers-cab-menu {
-//     margin: 0 auto;
-//     @media screen and (min-width: 375px) {
-//             width: 375px;
-//     }
-
-//     @media screen and (min-width: 480px) {
-//         width: 450px;
-//     }
-// }
-// .pers-cab-menu-list {
-    // @media screen and (min-width: 375px) {
-    //         width: 375px;
-    //     }
-    
-    //     @media screen and (min-width: 480px) {
-    //         width: 450px;
-    //     }
-// }
-
-.pers-cab-menu-item {
-    position: relative;
-    width: 320px;
-    @include tablet {
-        width: 728px;
-    }
-    @include desktop {
-        width: 310px;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: 2px;
-    }
-    background-color: var(--white);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
     
 }
 
-.pers-cab-menu-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 28px;
-    height: 28px;
-    stroke: var(--main-accent-color);
-}
 
-.pers-cab-menu-link {
-    display: inline-block;
-    padding: 18px 15px 18px 53px;
-    width: 100%;
-
-    font-family: 'PT sans';
-    @include font(400, 18px, calc(23px / 18px));
-    color: var(--black);
-    transition: color var(--main-transition);
-
-    &:hover,
-    &:focus {
-        color: var(--main-accent-color);
-    }
-}
 
 // ----------CONTENT----------------------
 .pers-cab-content {
@@ -152,10 +87,66 @@
     }
 }
 
-.pers-form-group-text {// mt?
+.pers-form-group-text {
+    margin-top: 15px; // mt?*
     @include font(null, 18px, calc(22px / 18px)); //the same
     color: var(--black);
     margin-bottom: 10px; //the same
+}
+
+.pers-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+    background-color: var(--dark-theme-text-color);
+    @include desktop {
+        margin-right: 15px;
+    }
+}
+
+.pers-photo-icon {
+    stroke: var(--main-accent-color);
+    width: 40px;
+    height: 40px;
+}
+
+.all-form-content-flex-wrapper {
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        // justify-content: space-between;
+    }
+}
+.pers-flex-wrapper {
+    @include tablet {
+        display: flex;
+        // justify-content: space-between;
+    }
+    // @media screen and (min-width: 768px) and (max-width: 1339.98px) {
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+
+}
+.input-wrapper {
+    @include desktop {
+        width: 440px;
+    }
+}
+.input-grid-wrap {
+    display: grid;
+    grid-row-gap: 10px;
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+    }
 }
 
 .pers-form-input {
@@ -173,11 +164,72 @@
     border: 1px solid var(--grey);
     border-radius: 4px;
 
+    @include tablet {
+        width: 440px;
+    }
+    // @include desktop {
+    //     &:nth-child(2n + 1) {
+    //         margin-right: 15px;
+    //     }
+    // }
 
     &::placeholder {
         color: var(--grey);
     }
 }
+
+.pers-radio-wrapper {
+    @include tablet {
+        margin-left: 95px;
+    }
+    @include desktop {
+        margin-left: 15px;
+        // margin-right: auto;
+    }
+}
+.pers-radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include font(400, 14px, calc(17px / 14px));
+    color: var(--black);
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    
+}
+
+.pers-radio-label::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+
+    border-radius: 50%;
+    border: 1px solid var(--grey);
+
+    .pers-radio-input:focus+&, 
+    .pers-radio-input:checked+& {
+        border: 1px solid var(--main-accent-color);
+    }
+}
+// warn ⚠️
+.wrap-for-call {
+    height: 29px;
+    // margin-top: 10px;
+    @include desktop {
+        width: 440px;
+        border: 1px solid var(--grey);
+        height: 50px;
+    }
+}
+.for-call-text {
+    @include font(500, 12px, calc(15px / 12px));
+    color: var(--main-accent-color);
+} 
 
 .pers-cab-form .button{
     //370 + 40 + 40
@@ -190,3 +242,26 @@
     margin: 0 auto;
     max-width: 320px;
 }
+
+.all-form-content-flex-wrapper-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+// .pers-form-group-2 {
+//     background-color: #fff;
+//     outline: auto;
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 20px;
+//     &>.pers-form-group-title {
+//         width: 100%;
+//     }
+// }
+// .pers-location {
+
+//     width: 0;
+//     height: 0;
+// }
