@@ -1,5 +1,6 @@
 import { APIGetData } from './fetch-cards';
-import { createMarkup, clearData } from './catalog/markup';
+import { handleFavorite } from './favoriteHandle';
+import { createMarkup } from './catalog/markup';
 
 const refs = {
   offerSpecial: document.querySelector('.offer--special .offer__list'),
@@ -23,6 +24,7 @@ async function renderData() {
     await queryAndRender('dayOffer');
     await queryAndRender('recommendOffer');
     await queryAndRender('offerPlus');
+    handleFavorite();
   } catch (error) {
     console.log(error);
   }

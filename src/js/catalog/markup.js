@@ -1,3 +1,4 @@
+import { loadFromLocalStorage } from '../localStorage';
 import getKey from './getKey';
 
 const statuses = {
@@ -6,11 +7,14 @@ const statuses = {
   new: 'Новинка',
 };
 
+const favoriteList = loadFromLocalStorage('Favorites');
+// console.log(favoriteList);
+
 export const createMarkup = data => {
   return data
     .map(({ id, name, image, price, status }) => {
       const keyStatus = getKey(status, statuses);
-      return `<li class="offer-list__item product">
+      return `<li class="offer-list__item product" id="${id}">
         <a href="./product-${id}" class="product__link">
           <img
             loading="lazy"
@@ -22,9 +26,9 @@ export const createMarkup = data => {
           />
           <div class="product__overlay">
             <p class="product__status ${keyStatus}">${status}</p>
-            <button type="button" class="product__favorite">
+            <button type="button" class="product__favorite ${isFav(id)}">
               <svg width="28" height="25">
-                <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
+                <use href="./symbol-defs.b7ce9de3.svg#icon-empty-heart"></use>
               </svg>
             </button>
           </div>
@@ -50,3 +54,7 @@ export const createMarkup = data => {
 export const clearData = list => {
   list.innerHTML = '';
 };
+
+function isFav(id) {
+  return favoriteList.indexOf(id) === -1 ? '' : 'checked';
+}

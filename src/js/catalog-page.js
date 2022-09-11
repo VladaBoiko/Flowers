@@ -1,5 +1,7 @@
 import { APIGetData } from './fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
+import { handleFavorite } from './favoriteHandle';
+
 import getKey from './catalog/getKey';
 
 const refs = {
@@ -47,9 +49,10 @@ const catalogData = {
     this.page = 1;
     this.params = '';
   },
-  renderData() {
+  async renderData() {
     try {
-      queryAndRender({ selector: this.selector, params: this.params, page: this.page, limit: this.limit });
+      await queryAndRender({ selector: this.selector, params: this.params, page: this.page, limit: this.limit });
+      handleFavorite();
     } catch (error) {
       console.log(error);
     }
@@ -80,8 +83,6 @@ function getChececkedCheckBox() {
 }
 
 async function queryAndRender({ selector, params = '', page, limit }) {
-  // console.log(params);
-
   const searchParams = new URLSearchParams({
     filter: params,
     p: page,

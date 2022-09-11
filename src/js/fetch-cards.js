@@ -10,4 +10,11 @@ export const APIGetData = {
     const data = await response.data;
     return data;
   },
+
+  async getDataByID(id) {
+    const response = await instance.get(`/products/`, { params: { id: id } });
+
+    const data = await response.data;
+    return data;
+  },
 };
