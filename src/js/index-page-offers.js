@@ -1,5 +1,5 @@
-import { APIGetData } from './fetch-cards';
-import { handleFavorite } from './favoriteHandle';
+import { APIGetData } from './catalog/fetch-cards';
+import { handleFavorite } from './catalog/favoriteHandle';
 import { createMarkup } from './catalog/markup';
 
 const refs = {

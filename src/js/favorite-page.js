@@ -1,7 +1,8 @@
-import { APIGetData } from './fetch-cards';
+import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
-import { handleFavorite } from './favoriteHandle';
-import { loadFromLocalStorage } from './localStorage';
+import { render } from './catalog/render';
+import { handleFavorite } from './catalog/favoriteHandle';
+import { loadFromLocalStorage } from './catalog/localStorage';
 
 const refs = {
   titleWrapper: document.querySelector('.offer__title-wrapper'),
@@ -27,12 +28,23 @@ if (favotireListFromLocalStorage === 'undefined' || favotireListFromLocalStorage
   const listFavProducts = favotireListFromLocalStorage.map(async id => {
     try {
       const product = await APIGetData.getDataByID(id);
-      console.log(product);
       return product;
     } catch {
       console.log('error');
     }
   });
+  Promise.all(listFavProducts)
+    .then(result => {
+      return result;
+    })
+    .then(result => {
+      console.log('result', result);
+      const markup = createMarkup(result);
+      console.log('1', markup);
+      // console.log('2', result);
+      render(refs.list, result);
+    })
+    .catch(console.error);
 }
 
 // ========================================================================================

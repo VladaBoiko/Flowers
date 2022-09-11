@@ -1,4 +1,4 @@
-import { loadFromLocalStorage } from '../localStorage';
+import { loadFromLocalStorage } from './localStorage';
 import getKey from './getKey';
 
 const statuses = {

@@ -1,6 +1,7 @@
-import { APIGetData } from './fetch-cards';
+import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
-import { handleFavorite } from './favoriteHandle';
+import { render } from './catalog/render';
+import { handleFavorite } from './catalog/favoriteHandle';
 
 import getKey from './catalog/getKey';
 
@@ -91,7 +92,7 @@ async function queryAndRender({ selector, params = '', page, limit }) {
   // console.log(searchParams);
   const data = await APIGetData.getData(searchParams);
   const markup = createMarkup(data);
-  selector.insertAdjacentHTML('beforeend', markup);
+  render(selector, markup);
 }
 
 refs.form.reset();
