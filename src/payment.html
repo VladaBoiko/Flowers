@@ -1,10 +1,29 @@
-<section class="payment">
+<!DOCTYPE html>
+<html lang="uk-UA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gvozdika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <include src="./partials/index/header.html"></include>
+
+    <main>
+        <section class="payment">
   <div class="container">
     <ul class="payment__nav-list">
       <li class="payment__nav-main"><a href="index.html">Головна /</a></li>
       <li class="payment__nav-pay">Оплата</li>
     </ul>
-    <div class="payment__main-info">
+    <div clas="payment__info-wrap">
+      <div class="payment__main-info">
       <h2>Оплата</h2>
       <p class="payment__main-text">
         Ви можете оплатити замовлення карткою − онлайн або при отриманні у
@@ -16,10 +35,10 @@
         PrivatPay. Щоб отримати замовлення, оплачене онлайн, потрібно надати
         документ, який посвідчує особу.
       </p>
-    </div>
-    <div class="payment__wrap-svg">
-      <p>Ми приймаємо оплату:</p>
-      <ul class="payment__list">
+      </div>
+      <div class="payment__wrap-svg">
+        <p>Ми приймаємо оплату:</p>
+        <ul class="payment__list">
         <li>
           <a href="" class="footer__pay-link">
             <svg
@@ -130,7 +149,8 @@
             </svg>
           </a>
         </li>
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <div class="payment__attention">
@@ -142,6 +162,7 @@
     </div>
     <div class="payment__online">
       <h3>Щоб оплатити замовлення онлайн:</h3>
+      <div class="payment__online-wrap">
       <ul>
         <li>Додайте товар у кошик і перейдіть до оформлення замовлення.</li>
         <li>Виберіть спосіб оплати Оплатити зараз карткою Visa/Mastercard.</li>
@@ -155,6 +176,7 @@
           підтвердити оплату.
         </li>
       </ul>
+      <img class="payment__online-svg" src="./img/payment/frame.svg" alt="" ></div>
     </div>
     <div class="payment__delivery">
       <h3>Оплата при доставці кур'єром</h3>
@@ -184,7 +206,21 @@
             особистому кабінеті. Паперовий чек в такому випадку не надається.
           </li>
         </ul>
-        <img src="#" alt="" />
+         <picture class="payment__pic">
+         <source srcset= "./img/payment/card-desk-1x.jpg 1x, ./img/payment/card-desk-2x.jpg 2x" media="(min-width:1340px)">
+        </source>
+        <source srcset= "./img/payment/card-desk-1x.webp 1x, ./img/payment/card-desk-2x.webp 2x" media="(min-width:1340px)">
+       </source>
+        <source srcset= "./img/payment/card-tab-1x.jpg 1x, ./img/payment/card-tab-2x.jpg 2x" media="(min-width:768px)">
+        </source>
+        <source srcset= "./img/payment/card-tab-1x.webp 1x, ./img/payment/card-tab-2x.webp 2x" media="(min-width:768px)">
+       </source>
+       <source srcset= "./img/payment/card-mob-1x.jpg 1x, ./img/payment/card-mob-2x.jpg 2x" media="(min-width:360px)">
+       </source>
+        <source srcset= "./img/payment/card-mob-1x.webp 1x, ./img/payment/card-mob-2x.webp 2x" media="(min-width:360px)">
+       </source>
+       <img class="payment__pic-first" src="./img/payment/card-desk-2x.jpg" alt="банківська картка" loading="lazy">
+       </picture>
       </div>
     </div>
     <div class="payment__return">
@@ -199,13 +235,16 @@
       </p>
     </div>
     <div class="payment__security">
+    <div class="payment__security-text">
       <h3>Безпека проведення платежів</h3>
-      <p>
+      <p class="payment__security-main-text main-text">
         Передача даних здійснюється окремим каналом із застосуванням сучасних
         методів шифрування. При цьому виключається будь-яка можливість
-        перехоплення конфіденційної інформації. Дані передаються у зашифрованому
+        перехоплення конфіденційної інформації.</p> 
+        <p>
+        Дані передаються у зашифрованому
         вигляді та зберігаються лише на спеціалізованому сервері.
-      </p>
+      </p></div>
       <div>
         <p class="payment__example">Приклад чеку</p>
         <picture class="payment__check">
@@ -220,38 +259,54 @@
 
     <div class="payment__important">
       <p>Важливо:</p>
-      <p>
+      <p class="payment__important-main-text">
         Після здійснення оплати з використанням банківської картки необхідно
         зберігати отримані карт-чеки (підтвердження про оплату, отримані в
         Інтернет-магазині) для звірки з випискою з карт-рахунку (з метою
         підтвердження вчинених операцій у разі виникнення спірних ситуацій).
       </p>
     </div>
-    <div>
+    <div class="payment__decor">
       <h3>Оформлення квітів</h3>
+      <div class="payment__decor-wrap">
+        <div>
       <p>
         Досвідчений флорист може додатково оформити квіти за Вашим бажанням, для
         цього ми маємо у своєму розпорядженні різноманітні пакувальні та
-        флористичні матеріали. Вартість даної послуги обговорюється окремо, її
-        розмір залежить від побажань замовника. Букети з троянд, представлені на
+        флористичні матеріали.</p> <p>Вартість даної послуги обговорюється окремо, її
+        розмір залежить від побажань замовника.</p><p> Букети з троянд, представлені на
         акціях (15 або 25 штук) зв'язуються стрічкою, упаковка (крафт папір,
         матова плівка, флізелін, сітка або целофан та ін) обійдеться у суму від
         десяти гривень.
-      </p>
-      <img src="#" alt="" />
+      </p></div>
+      <picture>
+         <source srcset= "./img/payment/decor-desk-1x.jpg 1x, ./img/payment/decor-desk-2x.jpg 2x" media="(min-width:1340px)">
+        </source>
+        <source srcset= "./img/payment/decor-desk-1x.webp 1x, ./img/payment/decor-desk-2x.webp 2x" media="(min-width:1340px)">
+       </source>
+        <source srcset= "./img/payment/decor-tab-1x.jpg 1x, ./img/payment/decor-tab-2x.jpg 2x" media="(min-width:768px)">
+        </source>
+        <source srcset= "./img/payment/decor-tab-1x.webp 1x, ./img/payment/decor-tab-2x.webp 2x" media="(min-width:768px)">
+       </source>
+       <source srcset= "./img/payment/decor-mob-1x.jpg 1x, ./img/payment/decor-mob-2x.jpg 2x" media="(min-width:360px)">
+       </source>
+        <source srcset= "./img/payment/decor-mob-1x.webp 1x, ./img/payment/decor-mob-2x.webp 2x" media="(min-width:360px)">
+       </source>
+       <img class="payment__decor-pic" src="./img/payment/decor-desk-2x.jpg" alt="банківська картка" loading="lazy">
+       </picture></div>
     </div>
-    <div>
+    <div class="payment__other">
       <h3>Інше</h3>
       <p>
         Ми гарантуємо, що вся надана вами інформація конфіденційна та не
         підлягає передачі третім особам. При заповненні спеціальної форми
         замовлення вказуйте максимально точну адресу, включаючи номер будинку,
         корпус, під'їзд, код до під'їзду, поверх, назву фірми, номер офісу, ім'я
-        та прізвище одержувача і т.д. Постарайтеся також залишити номер
+        та прізвище одержувача і т.д.</p> <p>Постарайтеся також залишити номер
         телефону, щоб наш кур'єр міг зв'язатися з вами в разі необхідності: якщо
         одержувача не виявиться за вказаною адресою, кур'єр за погодженням із
         замовником може залишити букет консьєржці або сусідам. Повторна доставка
-        обійдеться в 30 гривень. В окремих випадках ми залишаємо за собою право
+        обійдеться в 30 гривень. </p><p>В окремих випадках ми залишаємо за собою право
         заміни кольорів або пакувальних матеріалів на еквівалентні або більш
         дорогі (за наш рахунок), з обов'язковою умовою збереження загального
         виду та кінцевої вартості букета.
@@ -259,8 +314,7 @@
     </div>
   </div>
 </section>
-
-<section class="offer offer--plus">
+ <section class="offer offer--plus">
   <div class="offer__container container">
     <h2 class="offer__title">З квітами купляють</h2>
 
@@ -403,3 +457,8 @@
     </a>
   </div>
 </section>
+
+    </main>
+    <include src="./partials/index/footer.html"></include>
+  </body>
+</html>
