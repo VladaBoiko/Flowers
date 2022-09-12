@@ -2,7 +2,7 @@ import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';
-import data from '../products.json';
+// import data from '../products.json';
 
 import getKey from './catalog/getKey';
 
@@ -12,7 +12,6 @@ const refs = {
   catalogList: document.querySelector('.catalog-list'),
 };
 
-// =====================================================================
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),
   className: 'hidden',
@@ -41,6 +40,7 @@ const filterWords = {
 };
 
 const catalogData = {
+  data: [],
   selector: refs.catalogList,
   filterParams: {},
   page: 1,
@@ -54,14 +54,79 @@ const catalogData = {
   },
   async renderData() {
     try {
-      // const data = await APIGetData.getData();
+      this.data = await APIGetData.getData();
+      const filterKeys = Object.keys(filterWords);
+      if (Object.keys(this.filterParams).length) {
+        const filterByCategory = this.data.filter(card => {
+          if (this.filterParams[filterKeys[0]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[0]].includes(card[filterKeys[0]]);
+        });
 
-      // console.log(filterData(data, this.filterParams));
+        const filterByType = filterByCategory.filter(card => {
+          if (this.filterParams[filterKeys[1]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[1]].includes(card[filterKeys[1]]);
+        });
 
-      
+        const filterByColor = filterByType.filter(card => {
+          if (this.filterParams[filterKeys[2]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[2]].includes(card[filterKeys[2]]);
+        });
 
-      // const filteredData = filterProducts(data, refs.catalogList);
-      // const markup = createMarkup(filteredData);
+        const filterByAmount = filterByColor.filter(card => {
+          if (this.filterParams[filterKeys[3]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[3]].includes(card[filterKeys[3]]);
+        });
+
+        const filterBySize = filterByAmount.filter(card => {
+          if (this.filterParams[filterKeys[4]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[4]].includes(card[filterKeys[4]]);
+        });
+
+        const filterByForm = filterBySize.filter(card => {
+          if (this.filterParams[filterKeys[5]].length === 0) {
+            return true;
+          }
+          return this.filterParams[filterKeys[5]].includes(card[filterKeys[5]]);
+        });
+
+        console.log(filterKeys[6], this.filterParams[filterKeys[6]]);
+
+        const filterByPrice = filterByForm.filter(card => {
+          if (this.filterParams[filterKeys[6]].length === 0) {
+            return true;
+          }
+
+          let cardPriceRange = '';
+          if (card.price < 30) {
+            cardPriceRange = 'до 30';
+          } else if (card.price >= 30 && card.price < 45) {
+            cardPriceRange = '30 - 45';
+          } else if (card.price >= 45 && card.price < 65) {
+            cardPriceRange = '45 - 65';
+          } else if (card.price >= 65 && card.price < 80) {
+            cardPriceRange = '65 - 80';
+          } else if (card.price >= 80) {
+            cardPriceRange = 'від 80';
+          }
+
+          return this.filterParams[filterKeys[6]].includes(cardPriceRange);
+        });
+
+        this.data = filterByPrice;
+      }
+
+      const markup = createMarkup(this.data);
+      render(refs.catalogList, markup);
       // refs.catalogList.insertAdjacentHTML('beforeend', markup);
       handleFavorite();
     } catch (error) {
@@ -76,30 +141,6 @@ const catalogData = {
     // }
   },
 };
-
-function filterData(data, filterParams) {
-  const filter = Object.entries(filterParams);
-  if (!filter.length) {
-    return;
-  }
-  const result = data
-    .filter(el => filterCheck(filter[0][1], el[filter[0][0]]))
-    .filter(el => filterCheck(filter[1][1], el[filter[1][0]]))
-    .filter(el => filterCheck(filter[2][1], el[filter[2][0]]))
-    .filter(el => filterCheck(filter[3][1], el[filter[3][0]]))
-    .filter(el => filterCheck(filter[4][1], el[filter[4][0]]))
-    .filter(el => filterCheck(filter[5][1], el[filter[5][0]]))
-    .filter(el => filterCheck(filter[6][1], el[filter[6][0]]));
-
-  return result;
-}
-
-function filterCheck(arr, el) {
-  if (!arr.length) {
-    return true;
-  }
-  return arr.includes(el);
-}
 
 function getChececkedCheckBox() {
   const filterData = {
@@ -117,25 +158,12 @@ function getChececkedCheckBox() {
       const value = el.nextElementSibling.textContent;
 
       const key = getKey(param, filterWords);
-
-      filterData[key].indexOf(value) === -1 && filterData[key].push(value);
+      const valueFormat = key === 'amount' || key === 'size' ? Number.parseInt(value) : value;
+      filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
     }
   });
   return filterData;
-  // return `(${filterData.category.join('|')})`;
 }
-
-// async function queryAndRender({ selector, params = '', page, limit }) {
-//   const searchParams = new URLSearchParams({
-//     filter: params,
-//     p: page,
-//     l: limit,
-//   }).toString();
-//   // console.log(searchParams);
-//   const data = await APIGetData.getData(searchParams);
-//   const markup = createMarkup(data);
-//   render(selector, markup);
-// }
 
 refs.form.reset();
 catalogData.renderData();
@@ -153,9 +181,9 @@ refs.form.addEventListener('change', () => {
   catalogData.renderData();
 });
 
-loadMoreBtn.element.addEventListener('click', () => {
-  loadMoreBtn.disable();
-  catalogData.incrementPage();
-  catalogData.renderData();
-  loadMoreBtn.enable();
-});
+// loadMoreBtn.element.addEventListener('click', () => {
+//   loadMoreBtn.disable();
+//   catalogData.incrementPage();
+//   catalogData.renderData();
+//   loadMoreBtn.enable();
+// });

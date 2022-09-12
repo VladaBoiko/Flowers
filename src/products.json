@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Букет «Щастя» 1",
     "description": "description 1",
-    "price": 77,
+    "price": 25,
     "image": "https://i.postimg.cc/nsYNz7M6/VAL-8182-1200-1.jpg[/img",
     "status": "Xіт продажу",
     "section": "Спеціальна пропозиція",
@@ -26,16 +26,16 @@
     "rating": 5.5,
     "category": "Троянди",
     "sort": "Українські троянди",
-    "color": "Червоний",
+    "color": "Жовтий",
     "amount": 21,
     "size": 150,
-    "form": "Кругла"
+    "form": "Сердечком... ;)"
   },
   {
     "id": "3",
     "name": "Букет «Щастя» 3",
     "description": "description ",
-    "price": 120,
+    "price": 35,
     "image": "https://i.postimg.cc/pyd3Wmv6/VAL-8182-1200-3.jpg",
     "status": "Немає в наявності",
     "section": "З квітами купують",
@@ -77,7 +77,7 @@
     "color": "Червоний",
     "amount": 21,
     "size": 70,
-    "form": "Кругла"
+    "form": "Квадратиком... ;)"
   },
   {
     "id": "6",
@@ -92,7 +92,7 @@
     "sort": "Українські троянди",
     "color": "Червоний",
     "amount": 21,
-    "size": 70,
+    "size": 65,
     "form": "Кругла"
   },
   {
@@ -105,9 +105,9 @@
     "section": "Пропозиція дня",
     "rating": 5.8,
     "category": "Букети",
-    "sort": "Українські троянди",
+    "sort": "Кенійські троядни",
     "color": "Червоний",
-    "amount": 21,
+    "amount": 101,
     "size": 70,
     "form": "Кругла"
   },
@@ -115,15 +115,15 @@
     "id": "8",
     "name": "Букет «Щастя» 8",
     "description": "description ",
-    "price": 60,
+    "price": 120,
     "image": "https://i.postimg.cc/0bT40ZwT/VAL-8182-1200-8.jpg",
     "status": "Новинка",
     "section": "Рекомендуємо троянди",
     "rating": 5.8,
     "category": "Монобукети",
-    "sort": "Українські троянди",
+    "sort": "Троянди із Еквадору і Колумбії",
     "color": "Червоний",
-    "amount": 21,
+    "amount": 121,
     "size": 70,
     "form": "Кругла"
   }
