@@ -61,13 +61,38 @@ main .payment {
   margin-bottom: 30px;
 }
 
+.payment__details {
+  margin-bottom: 30px;
+  @include desktop {
+    margin-bottom: 50px;
+  }
+  & ul {
+    margin-top: 20px;
+    padding-left: 24px;
+  }
+
+  & li:not(:last-child) {
+    margin-bottom: 5px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 .payment__online li,
-.payment__delivery li {
+.payment__delivery li,
+.payment__details li {
   position: relative;
+
+  @include desktop {
+    padding-left: 7px;
+  }
 }
 
 .payment__online li::before,
-.payment__delivery li::before {
+.payment__delivery li::before,
+.payment__details li::before {
   position: absolute;
   top: 3px;
   left: -23px;
@@ -78,6 +103,10 @@ main .payment {
   display: block;
   width: 15px;
   height: 15px;
+
+  @include desktop {
+    top: 5px;
+  }
 }
 
 .payment__list {
@@ -115,7 +144,7 @@ main .payment {
 }
 
 .payment__svg {
-  @include tablet {
+  @media screen and (min-width: 768px) and (max-width: 1339.5px) {
     &--google,
     &--western {
       width: 60px;
@@ -190,8 +219,11 @@ main .payment {
   align-items: center;
 }
 
-div.payment__info-wrap {
-  margin-bottom: 20px;
+.payment__info-wrap {
+  @include desktop {
+    display: flex;
+    margin-bottom: 56px;
+  }
 }
 
 .payment__main-info {
@@ -202,16 +234,26 @@ div.payment__info-wrap {
   }
 
   @include desktop {
+    width: 640px;
     margin-bottom: 0;
+    margin-right: 120;
   }
 }
 
 .payment__main-text {
   margin-bottom: 10px;
+  @include desktop {
+    margin-bottom: 20px;
+  }
 }
 
 .payment__wrap-svg {
   margin-bottom: 20px;
+
+  @include desktop {
+    width: 480px;
+  }
+
   & p {
     @include text('Montserrat', 600, 20px, 24px);
     color: var(--light-theme-text-color);
@@ -224,14 +266,14 @@ div.payment__info-wrap {
 
   @include desktop {
     margin-bottom: 0;
+    padding-top: 54px;
   }
 }
 
 .payment__attention {
-  left: 0;
   position: absolute;
   display: block;
-  width: 100%;
+  width: 360px;
   background: linear-gradient(
     90.26deg,
     #1e736b 3.42%,
@@ -239,6 +281,15 @@ div.payment__info-wrap {
     #003934 100.07%
   );
   border-radius: 4px;
+
+  @include tablet {
+    width: 768px;
+  }
+
+  @include desktop {
+    width: 1300px;
+  }
+
   & p {
     width: 300px;
     margin: 0 auto;
@@ -264,6 +315,9 @@ div.payment__info-wrap {
 
   & ul {
     padding-left: 24px;
+    @include desktop {
+      padding-top: 20px;
+    }
   }
 
   & li:not(:last-child) {
@@ -275,6 +329,10 @@ div.payment__info-wrap {
 
   @include tablet {
     padding-top: 170px;
+  }
+
+  @include desktop {
+    padding-top: 150px;
   }
 
   &-svg {
@@ -306,6 +364,13 @@ div.payment__info-wrap {
     margin-bottom: 50px;
   }
 
+  @include desktop {
+    & div {
+      margin-right: 20px;
+    }
+    display: flex;
+  }
+
   & ul {
     padding-left: 24px;
     margin-bottom: 30px;
@@ -334,10 +399,8 @@ div.payment__info-wrap {
 .payment__security {
   margin-bottom: 50px;
 
-  &-text {
-    @include tablet {
-      margin-right: 20px;
-    }
+  @include tablet {
+    justify-content: space-between;
   }
 
   & p {
@@ -350,6 +413,7 @@ div.payment__info-wrap {
   }
 
   @include tablet {
+    width: 689px;
     display: flex;
     & p {
       margin-bottom: 0;
@@ -362,8 +426,18 @@ div.payment__info-wrap {
     }
   }
 
+  @include desktop {
+    width: 1015px;
+  }
+
   &-main-text.main-text {
     margin-bottom: 25px;
+  }
+
+  &-text {
+    @include desktop {
+      width: 638px;
+    }
   }
 }
 
@@ -379,10 +453,9 @@ div.payment__info-wrap {
 }
 
 .payment__important {
-  left: 0;
   position: absolute;
   display: block;
-  width: 100%;
+  width: 360px;
   padding: 56px 0 50px 0;
   background-color: var(--main-accent-color);
   background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'),
@@ -393,24 +466,41 @@ div.payment__info-wrap {
     bottom 0 right 0;
   border-radius: 4px;
 
+  @include tablet {
+    width: 768px;
+  }
+
+  @include desktop {
+    width: 1300px;
+  }
+
   & p {
     max-width: 321px;
     margin: 0 auto;
+    color: var(--dark-theme-text-color);
 
     @include tablet {
       max-width: 685px;
+    }
+
+    @include desktop {
+      max-width: 805px;
     }
   }
 
   & p:first-child {
     margin-bottom: 20px;
     @include text('Montserrat', 600, 16px, 19.5px);
-    color: var(--dark-theme-text-color);
+    @include desktop {
+      @include text('Montserrat', 500, 36px, 47px);
+    }
   }
 
   &-main-text {
     @include text('Montserrat', 400, 16px, 20.8px);
-    color: var(--dark-theme-text-color);
+    @include desktop {
+      @include text('Montserrat', 400, 20px, 26px);
+    }
   }
 }
 
@@ -435,6 +525,10 @@ div.payment__info-wrap {
 
   @include tablet {
     padding-top: 270px;
+  }
+
+  @include desktop {
+    padding-top: 330px;
   }
 
   &-pic {
@@ -475,4 +569,14 @@ div.payment__info-wrap {
 
 .payment__other p:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.payment {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: url(../../dist/offers-background.b71ba6b1.png) 0px 0px/100%
+    no-repeat;
+  width: 222px;
+  height: 810px;
 }
