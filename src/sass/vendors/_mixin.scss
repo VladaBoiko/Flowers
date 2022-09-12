@@ -12,7 +12,12 @@
   font-size: $fs;
   line-height: $lh;
 }
-
+@mixin fontSecond($fw, $fs, $lh) {
+  //*застосовано до кнопок
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: calc($lh/$fs);
+}
 @mixin flexCenter {
   display: flex;
   justify-content: center;

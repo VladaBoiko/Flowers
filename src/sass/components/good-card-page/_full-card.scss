@@ -1,0 +1,213 @@
+// .full-card {
+// }
+// .container {
+// }
+// .blog-navigation {
+// }
+// .main-menu-link {
+// }
+// .menu-separator {
+// }
+// .blog-menu-link {
+// }
+.card-title {
+  @include fontSecond(500, 24px, 29px);
+  color: var(--main-accent-color);
+  margin-bottom: 10px;
+}
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.stars-icon {
+  width: 120px;
+  height: 24px;
+}
+.reviews-quantity {
+  @include fontSecond(400, 13px, 16px);
+  color: #bababa;
+}
+.arrow-icon {
+  height: 20px;
+  width: 10px;
+  margin-right: 10px;
+}
+.size-word {
+  margin-right: 10px;
+}
+// .size-item {
+// }
+.item-size {
+  @include fontSecond(500, 15px, 13px);
+  color: var(--main-accent-color);
+  display: flex;
+  align-items: center;
+}
+.good-card-img {
+  margin-bottom: 10px;
+}
+.delivery-info {
+  @include fontSecond(400, 14px, 17px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 10px;
+  span {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+.choice {
+  .size {
+    margin-bottom: 20px;
+  }
+  .size-title {
+    @include fontSecond(500, 16px, 20px);
+    color: var(--main-accent-color);
+    margin-bottom: 10px;
+  }
+  .size-choose {
+    display: flex;
+    gap: 20px;
+  }
+  .size-item {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+  .first {
+    @include fontSecond(400, 12px, 15px);
+    color: var(--main-accent-color);
+  }
+  .second {
+    @include fontSecond(400, 12px, 15px);
+    color: var(--second-accent-color);
+    text-transform: uppercase;
+    span {
+      margin-left: 3px;
+    }
+  }
+}
+
+.quantity {
+  margin-bottom: 20px;
+}
+.quantity-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+  @include fontSecond(500, 16px, 20px);
+  color: var(--main-accent-color);
+}
+.quantity-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 23%;
+  padding: 8px 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+// .quantity-target {
+// }
+.height-rose {
+  margin-bottom: 20px;
+}
+.height-list {
+  display: flex;
+  gap: 10px;
+  @include fontSecond(500, 16px, 20px);
+  color: var(--main-accent-color);
+}
+.height-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 27px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+// .height-target {
+// }
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.amount {
+  @include fontSecond(500, 36px, 44px);
+  color: var(--second-accent-color);
+  text-transform: uppercase;
+  span {
+    margin-left: 5px;
+  }
+}
+.amount-discaunt {
+  @include fontSecond(400, 20px, 24px);
+  text-decoration-line: line-through;
+  color: #bababa;
+  text-transform: uppercase;
+}
+.heart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  transition: all var(--main-transition);
+  &:hover,
+  &:focus {
+    background: #dbdada;
+  }
+}
+.heart-icon {
+  width: 20px;
+  height: 18px;
+  stroke: #03453b;
+  fill: #ffffff;
+  .heart-btn:active & {
+    stroke: rgb(204, 115, 115);
+    fill: rgb(204, 115, 115);
+  }
+}
+.heart-btn-active {
+  stroke: rgb(204, 115, 115);
+  fill: rgb(204, 115, 115);
+}
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  .button.dark {
+    background-color: var(--main-accent-color);
+    margin-bottom: 5px;
+    &:hover,
+    &:focus {
+      background-color: #043b33;
+    }
+  }
+}
+// .descr-title {
+// }
+// .flower-description {
+// }
+// .other-specific {
+// }
+// .components-list {
+// }
+// .components-item {
+// }
+// .social {
+// }
+// .social-list {
+// }
+// .social-item {
+// }
+// .social-item__link{}
