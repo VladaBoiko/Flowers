@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 export const APIGetData = {
-  async getData(params) {
+  async getData(params = '') {
     const response = await instance.get(`/products/?${params}`);
     const data = await response.data;
     return data;

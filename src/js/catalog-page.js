@@ -2,6 +2,7 @@ import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';
+import data from '../products.json';
 
 import getKey from './catalog/getKey';
 
@@ -11,6 +12,7 @@ const refs = {
   catalogList: document.querySelector('.catalog-list'),
 };
 
+// =====================================================================
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),
   className: 'hidden',
@@ -40,7 +42,7 @@ const filterWords = {
 
 const catalogData = {
   selector: refs.catalogList,
-  params: '',
+  filterParams: {},
   page: 1,
   limit: 10,
   incrementPage() {
@@ -48,17 +50,56 @@ const catalogData = {
   },
   resetPage() {
     this.page = 1;
-    this.params = '';
+    this.filterParams = {};
   },
   async renderData() {
     try {
-      await queryAndRender({ selector: this.selector, params: this.params, page: this.page, limit: this.limit });
+      // const data = await APIGetData.getData();
+
+      // console.log(filterData(data, this.filterParams));
+
+      
+
+      // const filteredData = filterProducts(data, refs.catalogList);
+      // const markup = createMarkup(filteredData);
+      // refs.catalogList.insertAdjacentHTML('beforeend', markup);
       handleFavorite();
     } catch (error) {
       console.log(error);
     }
+
+    // try {
+    //   await queryAndRender({ selector: this.selector, params: this.params, page: this.page, limit: this.limit });
+    //   handleFavorite();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   },
 };
+
+function filterData(data, filterParams) {
+  const filter = Object.entries(filterParams);
+  if (!filter.length) {
+    return;
+  }
+  const result = data
+    .filter(el => filterCheck(filter[0][1], el[filter[0][0]]))
+    .filter(el => filterCheck(filter[1][1], el[filter[1][0]]))
+    .filter(el => filterCheck(filter[2][1], el[filter[2][0]]))
+    .filter(el => filterCheck(filter[3][1], el[filter[3][0]]))
+    .filter(el => filterCheck(filter[4][1], el[filter[4][0]]))
+    .filter(el => filterCheck(filter[5][1], el[filter[5][0]]))
+    .filter(el => filterCheck(filter[6][1], el[filter[6][0]]));
+
+  return result;
+}
+
+function filterCheck(arr, el) {
+  if (!arr.length) {
+    return true;
+  }
+  return arr.includes(el);
+}
 
 function getChececkedCheckBox() {
   const filterData = {
@@ -80,34 +121,35 @@ function getChececkedCheckBox() {
       filterData[key].indexOf(value) === -1 && filterData[key].push(value);
     }
   });
-  return `(${filterData.category.join('|')})`;
+  return filterData;
+  // return `(${filterData.category.join('|')})`;
 }
 
-async function queryAndRender({ selector, params = '', page, limit }) {
-  const searchParams = new URLSearchParams({
-    filter: params,
-    p: page,
-    l: limit,
-  }).toString();
-  // console.log(searchParams);
-  const data = await APIGetData.getData(searchParams);
-  const markup = createMarkup(data);
-  render(selector, markup);
-}
+// async function queryAndRender({ selector, params = '', page, limit }) {
+//   const searchParams = new URLSearchParams({
+//     filter: params,
+//     p: page,
+//     l: limit,
+//   }).toString();
+//   // console.log(searchParams);
+//   const data = await APIGetData.getData(searchParams);
+//   const markup = createMarkup(data);
+//   render(selector, markup);
+// }
 
 refs.form.reset();
-catalogData.renderData(refs.catalogList);
+catalogData.renderData();
 
 refs.resetFormBtn.addEventListener('click', () => {
   catalogData.resetPage();
   refs.form.reset();
-  catalogData.renderData(refs.catalogList);
+  catalogData.renderData();
 });
 
 refs.form.addEventListener('change', () => {
   clearData(refs.catalogList);
   catalogData.resetPage();
-  catalogData.params = getChececkedCheckBox();
+  catalogData.filterParams = getChececkedCheckBox();
   catalogData.renderData();
 });
 

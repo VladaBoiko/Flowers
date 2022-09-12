@@ -15,26 +15,39 @@ const sections = {
   recommendOffer: 'Рекомендуємо троянди',
   offerPlus: 'З квітами купують',
 };
+console.log(Array.from(sections));
 
 renderData();
 
 async function renderData() {
   try {
-    await queryAndRender('offerSpecial');
-    await queryAndRender('dayOffer');
-    await queryAndRender('recommendOffer');
-    await queryAndRender('offerPlus');
+    const data = await APIGetData.getData();
+
+    for (section in sections) {
+      const filteredData = filterProductsBySection(data, sections[section]);
+      const markup = createMarkup(filteredData);
+      refs[section].insertAdjacentHTML('beforeend', markup);
+    }
+
+    // await queryAndRender('offerSpecial');
+    // await queryAndRender('dayOffer');
+    // await queryAndRender('recommendOffer');
+    // await queryAndRender('offerPlus');
     handleFavorite();
   } catch (error) {
     console.log(error);
   }
 }
 
-async function queryAndRender(sectiоn) {
-  const searchParams = new URLSearchParams({
-    filter: sections[sectiоn],
-  }).toString();
-  const data = await APIGetData.getData(searchParams);
-  const markup = createMarkup(data);
-  refs[sectiоn].insertAdjacentHTML('beforeend', markup);
+// async function queryAndRender(sectiоn) {
+//   const searchParams = new URLSearchParams({
+//     filter: sections[sectiоn],
+//   }).toString();
+//   const data = await APIGetData.getData(searchParams);
+//   const markup = createMarkup(data);
+//   refs[sectiоn].insertAdjacentHTML('beforeend', markup);
+// }
+
+function filterProductsBySection(data, section) {
+  return data.filter(card => card.section === section);
 }
