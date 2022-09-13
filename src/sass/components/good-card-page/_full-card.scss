@@ -194,16 +194,37 @@
     }
   }
 }
-// .descr-title {
-// }
-// .flower-description {
-// }
+.descr-title {
+  @include fontSecond(500, 20px, 20px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 15px;
+}
+.flower-description {
+  @include fontSecond(400, 16px, 20px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 22px;
+}
+.flower-icon {
+  width: 42px;
+  height: 42px;
+}
+.ingridients-title {
+  @include fontSecond(500, 20px, 20px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
 // .other-specific {
 // }
-// .components-list {
-// }
-// .components-item {
-// }
+.components-list {
+  @include fontSecond(400, 18px, 22px);
+  color: var(--black);
+}
+.components-item {
+  display: flex;
+  justify-content: space-between;
+}
 // .social {
 // }
 // .social-list {
