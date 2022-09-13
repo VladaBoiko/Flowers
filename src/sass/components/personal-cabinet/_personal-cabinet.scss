@@ -28,7 +28,7 @@
     }
 }
 
-.pers-cab-main {
+.pers-cab-main { //забезпечує flex для секції на desktop
     @include desktop {
         display: flex;
         gap: 20px;
@@ -50,12 +50,15 @@
     @include desktop {
         display: none;
     }
+    // &.is-hidden {
+    //     display: none;
+    // }
 }
 
 
 
 // ----------CONTENT----------------------
-// .pers-cab-content {   // for desk flex
+// .pers-cab-content {   // сюди встаыляти контент через js
 //     // display: none;
 //     // @include desktop {
 //         display: block;
