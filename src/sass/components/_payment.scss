@@ -1,3 +1,16 @@
+.payment {
+  @include desktop {
+    position: absolute;
+    z-index: -1;
+    background: url(../../dist/offers-background.b71ba6b1.png) 0px 0px/100%
+      no-repeat;
+    background-size: 222px 810px;
+    background-position: right top 690px;
+    // width: 222px;
+    // height: 810px;}
+  }
+}
+
 main .payment {
   position: relative;
 }
@@ -569,16 +582,4 @@ main .payment {
 
 .payment__other p:not(:last-child) {
   margin-bottom: 20px;
-}
-
-.payment {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  background: url(../../dist/offers-background.b71ba6b1.png) 0px 0px/100%
-    no-repeat;
-  background-size: 222px 810px;
-  background-position: right top 690px;
-  // width: 222px;
-  // height: 810px;
 }
