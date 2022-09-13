@@ -64,7 +64,7 @@
             <form class="pers-cab-form" data-pers-info>
                 <!-------------------- 1 --------------------------->
                 <div class="pers-form-group" role="group" aria-labelledby="user-personal-data">
-                    <p class="pers-form-group-title">Особиста інформація</p>
+                    <p id="user-personal-data" class="pers-form-group-title">Особиста інформація</p>
                     <!-- photo -->
                     <div class="first-form-content-wrap-desk">
                         <!-- <input type="file"> -->
@@ -80,7 +80,7 @@
                                     <input type="text" name="user-name" class="pers-form-input" placeholder="ПІБ">
                                 </label>
                                 <label class="pers-label">
-                                    <input type="text" name="user-birth-date"class="pers-form-input" placeholder="Дата народження">
+                                    <input type="text" name="user-birth-date" class="pers-form-input" placeholder="Дата народження">
                                 </label>
                             </div>
         
@@ -101,7 +101,7 @@
                 <!-------------------- 2 ----------------------->
         
                 <div class="pers-form-group" role="group" aria-labelledby="user-availability-data">
-                    <p class="pers-form-group-title">Місцезнаходження і час</p>
+                    <p id="user-availability-data" class="pers-form-group-title">Місцезнаходження і час</p>
                     <div class="input-grid-wrap">
                         <label class="local-label">
                             <input type="text" class="pers-form-input" placeholder="Місто проживання">
@@ -116,16 +116,15 @@
                         </label>
                         
                         
-                        <div class="wrap-for-call" class="">
+                        <div class="wrap-for-call">
                             <p class="for-call-text">Період для дзвінків</p>
                             <div class="pers-time-flex">
-                                <label for="time-from" class="pers-time-label">З
-                                    <input type="text" class="pers-time-input" placeholder="12:00" 
-                                    list="time">
+                                <label class="pers-time-label">З
+                                    <input type="text" class="pers-time-input" placeholder="12:00">
                                 </label>
                                 
                                 <!-- <input type="time" id="time-from" class="pers-time-input visually-hidden"> -->
-                                <label for="time-to" class="pers-time-label">до
+                                <label class="pers-time-label">до
                                     <input type="text" class="pers-time-input" placeholder="15:00">
                                 </label>
                                 
@@ -138,7 +137,7 @@
         
                 <!--------------------- 3 ------------------------->
                 <div class="pers-form-group" role="group" aria-labelledby="user-contact-data">
-                    <p class="pers-form-group-title">Контактні дані</p>
+                    <p id="user-contact-data" class="pers-form-group-title">Контактні дані</p>
                     <div class="input-grid-wrap">
                         <label for="pers-number">
                             <input type="tel" class="pers-form-input" placeholder="Номер телефону" id="pers-number">
@@ -161,7 +160,7 @@
         </div> 
             <!-- end of content -->
         </div>
-    </div> 
+    <!-- </div>  -->
 <!-- container end  -->
 
         
