@@ -18,9 +18,35 @@
     <include src="./partials/index/header.html"></include>
 
     <main>
-        <include src="./partials/personal-cabinet/main.html"></include>
-        <!-- <include src="./partials/personal-cabinet/personal-orders.html"></include> -->
-        <!-- <include src="./partials/personal-cabinet/personal-notification.html"></include> -->
+        <section class="personal-cabinet">
+            <div class="container">
+        
+                <h1 class="visually-hidden">Особистий кабінет</h1>
+        
+                <h2 class="pers-cab-title-desk">Особистий кабінет</h2>
+                <button type="button" class="pers-cab-menu-btn open-btn" data-open>Меню Особистого кабінета
+                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
+                        <use href="./img/symbol-defs.svg#burger-menu-icon"></use>
+                    </svg>
+                </button>
+                <button type="button" class="pers-cab-menu-btn close-btn ">Згорнути меню
+                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
+                        <use href="./img/symbol-defs.svg#cross-icon"></use>
+                    </svg>
+                </button>
+        
+                <div class="pers-cab-main">
+                    <include src="./partials/personal-cabinet/menu-wrapper.html"></include>
+                    
+                    <div class="pers-cab-content">
+                        <include src="./partials/personal-cabinet/profile.html"></include>
+                        <include src="./partials/personal-cabinet/personal-orders.html"></include>
+                        <include src="./partials/personal-cabinet/personal-notification.html"></include>
+                        <include src="./partials/personal-cabinet/personal-favorites.html"></include>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <include src="./partials/index/footer.html"></include>
