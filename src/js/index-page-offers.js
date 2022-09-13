@@ -15,7 +15,6 @@ const sections = {
   recommendOffer: 'Рекомендуємо троянди',
   offerPlus: 'З квітами купують',
 };
-console.log(Array.from(sections));
 
 renderData();
 
@@ -25,6 +24,8 @@ async function renderData() {
 
     for (section in sections) {
       const filteredData = filterProductsBySection(data, sections[section]);
+      console.log(filteredData);
+
       const markup = createMarkup(filteredData);
       refs[section].insertAdjacentHTML('beforeend', markup);
     }
@@ -35,5 +36,13 @@ async function renderData() {
 }
 
 function filterProductsBySection(data, section) {
-  return data.filter(card => card.section === section);
+  console.log(section);
+  const filteredData = [...data].filter(card => card.section === section).sort((a, b) => b.rating - a.rating);
+  if (section === 'З квітами купують' && filteredData.length > 4) {
+    return filteredData.slice(0, 4);
+  }
+  if (filteredData.length > 8) {
+    return filteredData.slice(0, 8);
+  }
+  return filteredData;
 }

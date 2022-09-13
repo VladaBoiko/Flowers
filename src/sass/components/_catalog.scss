@@ -1,4 +1,29 @@
 .catalog {
+  @include desktop {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      background: url(../img/offers/offers-background.png) 0px 0px/100% no-repeat;
+      @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192px), (min-resolution: 2dppx) {
+        background-image: url(../img/offers/offers-background@2x.png);
+      }
+      width: 222px;
+      height: 810px;
+    }
+    &::before {
+      top: 75%;
+      left: 0px;
+      transform: scaleX(-1);
+    }
+    &::after {
+      top: 25%;
+      right: 0px;
+    }
+  }
   &__container {
     position: relative;
     padding-top: 20px;
