@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector("#form"),t=document.querySelector('input[type="file"]');function n(e){var n=new FileReader,r=document.querySelectorAll(".file-img");n.onload=function(t){r[e].innerHTML="<img src='".concat(t.target.result,"' alt='photo'/>")},n.readAsDataURL(t.files[e])}t.addEventListener("change",(function(){for(var e=0;e<t.files.length;e+=1)n(e)})),e.addEventListener("submit",(function(e){e.preventDefault()}))}();
+//# sourceMappingURL=reviews.89ec35f5.js.map
