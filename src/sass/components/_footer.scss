@@ -464,7 +464,7 @@ margin-bottom: 10px;
     }
   }
   #myBtn {
-    display: none; /* Hidden by default */
+    display: none;
     transition: color 250ms linear;
     @include desktop{
         display: block;

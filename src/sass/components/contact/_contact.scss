@@ -1,0 +1,280 @@
+.contact-nav-link,
+.contact-separator{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: var(--light-theme-text-color);
+}
+.contact-nav-link-second{
+    color: var(--grey);
+}
+
+.contact__main-title{
+    @include text('Montserrat', 500, 30px, 30px);
+    color: var( --main-accent-color);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    @include tablet{
+        @include text('Montserrat', 500, 36px, 36px);
+        margin-bottom: 50px;
+    }
+}
+.contact__title{
+    display: block;
+    width: 160px;
+    @include text('Montserrat', 600, 20px, 26px);
+    color: var( --main-accent-color);
+    @media screen and (max-width: 767px){
+        margin-bottom: 16px;
+    }
+    @include desktop{
+        @include text('Montserrat', 600, 24px, 31px);
+    }
+}
+.contact__phone{
+    display: flex;
+}
+.contact__phone-text{
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var( --main-accent-color);
+    margin-right: 23px;
+    @include desktop{
+        margin-right: 38px;
+    }
+}
+.contact__tel-svg{
+    margin-right: 8px;
+}
+.contact__tel-link{
+    @include text('PT Sans', 700, 16px, 21px);
+    color: var(--light-theme-text-color);
+    
+    @include desktop{
+        @include text('PT Sans', 700, 20px, 26px);
+    }
+}
+.contact__tel-item:not(:last-child){
+    @media screen and (max-width: 767px){
+        margin-bottom: 11px;
+    }
+    @include tablet{
+        margin-right: 8px;
+    }
+}
+.contact__tel-list{
+    padding-bottom: 20px;
+    @include tablet{
+        display: flex;
+        padding-bottom: 30px;
+    }
+    
+}
+.contact__main{
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.contact__part{
+    @include tablet{
+        width: 545px;
+    }
+    @include desktop{
+        width: 970px;
+    }
+}
+.contact__text{
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var(--light-theme-text-color);
+    @include desktop{
+        @include text('Montserrat', 400, 20px, 26px);
+    }
+}
+.contact__text-one{
+    margin-bottom: 20px;
+}
+.contact__map{
+    width: 100%;
+    height: 534px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    @include tablet{
+        margin-bottom: 80px;
+    }
+    @include desktop{
+        margin-bottom: 100px;
+    }
+}
+.contact__form-main{
+    display: flex;
+    flex-direction: column;
+}
+.contact__form-input{
+    display: block;
+    height: 50px;
+    margin-bottom: 15px;
+    padding-left: 17px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    background-color: transparent;
+}
+.contact__form-textarea{
+    display: block;
+    height: 205px;
+    padding-left: 17px;
+    padding-top: 17px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+.contact__form-input::placeholder,
+.contact__form-textarea::placeholder{
+    @include text('Montserrat', 500, 14px, 17px);
+    color: #CFCFCF;
+}
+.contact__checkbox{
+    display: flex;
+    align-items: flex-start;
+}
+.contact__checkbox-text{
+    // display: block;
+    @include text('Montserrat', 400, 14px, 18px);
+    color: var(--light-theme-text-color);
+    margin-left: 15px;
+ 
+    @media screen and (max-width: 767px){
+        width: 270px;
+    }
+
+}
+
+.contact__checkbox-span{
+    display: inline-block;
+    color: var(--main-accent-color);
+    border-bottom: 1px dashed var(--light-theme-text-color);
+    
+                       
+   
+}
+.contact__btn-send {
+    
+    display: inline-block;
+    padding: 0;
+    margin-top: 20;
+    margin-bottom: 50px;
+    border: none;
+    cursor: pointer;
+  
+   
+    min-width: 197px;
+    height: 52px;
+    padding: 0 30px;
+    border-radius: 4px;
+  
+    font-family: inherit;
+    @include font(400, 18px, calc(22px / 18px));
+    text-align: center;
+  @include tablet{
+    margin-bottom: 80px;
+  }
+  @include desktop{
+    margin-bottom: 100px;
+  }
+   
+    &.dark {
+      color: var(--dark-theme-text-color);
+      background-color: var(--main-bgc-accent);
+    }
+    transition: color var(--main-transition),
+    background-color var(--main-transition), border var(--main-transition);
+
+  &:hover,
+  &:focus {
+    color: var(--dark-theme-text-color);
+    background-color: var(--green-light);
+    border: none;
+  }
+ 
+}
+.contact-title-two{
+    @include text('Montserrat', 600, 24px, 31px);
+    color: var( --main-accent-color);
+    @media screen and (max-width: 767px){
+        margin-bottom: 20px;
+    }
+}
+.contact__reg-text{
+    @include text('Montserrat', 400, 16px, 21px);
+    color: var(--light-theme-text-color);
+    @include desktop{
+        @include text('Montserrat', 400, 20px, 26px);
+    }
+}
+.contact__reg-text:not(:last-child){
+    margin-bottom: 15px;
+}
+.contact__registration{
+    margin-bottom: 50px;
+    @include tablet{
+        margin-bottom: 80px;
+    }
+    @include desktop{
+        margin-bottom: 100px;
+    }
+}
+.contact{
+    position: relative;
+}
+.contact::after{
+    @include desktop{
+        content: '';
+        width: 225px;
+        height: 811px;
+        background: url(/src/img/contact/list-two.webp) no-repeat;
+        position: absolute;
+        top: 269px;
+        right: 0px;
+        z-index: -1;
+       
+    }
+}
+
+.contact-bacground::after{
+    @include desktop{
+        content: '';
+        width: 715px;
+        height: 649px;
+        background: url(/src/img/contact/flowers.webp) no-repeat;
+        position: absolute;
+        top: 18px;
+        right: -95px;
+        z-index: -2;
+       
+    }
+}
+// .contact::after{
+//     @include desktop{
+//         content: '';
+//         width: 225px;
+//         height: 811px;
+//         background: url(/src/img/contact/list-two.webp) no-repeat;
+//         position: absolute;
+//         top: 269px;
+//         right: 0px;
+//         z-index: -1;
+       
+//     }
+// }
+
+.contact::before{
+    @include desktop{
+        content: '';
+        width:215px;
+        height: 811px;
+        background: url(/src/img/contact/list.webp) no-repeat;
+        position: absolute;
+        top: 987px;
+        left: 0;
+        z-index: -1;
+       
+    }
+}
