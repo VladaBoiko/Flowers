@@ -2,10 +2,11 @@
   @include desktop {
     position: absolute;
     z-index: -1;
-    background: url(../../dist/offers-background.b71ba6b1.png) 0px 0px/100%
-      no-repeat;
+    background: url(../../dist/offers-background.b71ba6b1.png),
+      url(../img/payment/flowerBackGround.png);
     background-size: 222px 810px;
-    background-position: right top 690px;
+    background-position: right top 690px, left top 2623px;
+    background-repeat: no-repeat;
     // width: 222px;
     // height: 810px;}
   }
