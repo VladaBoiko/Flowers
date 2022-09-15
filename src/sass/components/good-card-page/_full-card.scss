@@ -10,6 +10,24 @@
 // }
 // .blog-menu-link {
 // }
+@include tablet {
+  .wrapper-tablet {
+    display: flex;
+    &.bottom {
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+  .wrapper-info {
+    margin-left: 20px;
+  }
+  .wrapper-activities {
+    flex-basis: 50%;
+  }
+  .wrapper-description {
+    flex-basis: 50%;
+  }
+}
 .card-title {
   @include fontSecond(500, 24px, 29px);
   color: var(--main-accent-color);
@@ -20,6 +38,24 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 22px;
+  &.tablet {
+    display: none;
+  }
+  @include tablet {
+    &.tablet {
+      display: flex;
+      justify-content: start;
+      .stars-icon {
+        margin-right: 10px;
+      }
+      .reviews-quantity {
+        margin-right: 10px;
+      }
+    }
+    &.mobile {
+      display: none;
+    }
+  }
 }
 .stars-icon {
   width: 120px;
@@ -47,6 +83,20 @@
 }
 .good-card-img {
   margin-bottom: 10px;
+  &.tablet {
+    display: none;
+  }
+  @include tablet {
+    &.tablet {
+      display: block;
+      margin-bottom: 20px;
+    }
+    &.mobile {
+      display: none;
+    }
+    width: 354px;
+    // height: 325px;
+  }
 }
 .delivery-info {
   @include fontSecond(400, 14px, 17px);
@@ -55,6 +105,18 @@
   span {
     font-weight: 600;
     text-transform: uppercase;
+  }
+  &.tablet {
+    display: none;
+  }
+  @include tablet {
+    &.tablet {
+      display: block;
+      margin-bottom: 20px;
+    }
+    &.mobile {
+      display: none;
+    }
   }
 }
 .choice {
@@ -164,7 +226,10 @@
   transition: all var(--main-transition);
   &:hover,
   &:focus {
-    background: #dbdada;
+    .heart-icon {
+      stroke: rgb(204, 115, 115);
+      fill: rgb(204, 115, 115);
+    }
   }
 }
 .heart-icon {
@@ -185,9 +250,16 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  @include tablet {
+    margin: 0;
+  }
   .button.dark {
     background-color: var(--main-accent-color);
     margin-bottom: 5px;
+    transition: all var(--main-transition);
+    @include tablet {
+      margin-bottom: 10px;
+    }
     &:hover,
     &:focus {
       background-color: #043b33;
@@ -219,6 +291,10 @@
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid rgb(24, 53, 43);
+  @include tablet {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 }
 .components-list {
   @include fontSecond(400, 18px, 22px);
@@ -246,6 +322,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all var(--main-transition);
   &.tictok {
     padding: 9px 10px;
     background-color: black;
@@ -265,6 +342,10 @@
       #1b2af0 83%,
       #002aff 88%
     );
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
   }
 }
 
