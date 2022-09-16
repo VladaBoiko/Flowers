@@ -28,7 +28,6 @@
     position: relative;
     padding-top: 20px;
     padding-bottom: 50px;
-
     @include tablet {
       padding-bottom: 80px;
     }
@@ -39,6 +38,7 @@
     }
   }
   &__title {
+    position: relative;
     color: var(--main-accent-color);
     margin-bottom: 30px;
     @include text(null, 500, 30px, 30px);
@@ -48,51 +48,72 @@
     }
   }
   &__layout {
-    display: flex;
-    gap: 50px;
+    position: relative;
+    @include desktop {
+      display: flex;
+      gap: 50px;
+      &::before {
+        content: '';
+        position: absolute;
+        right: -405px;
+        top: -154px;
+        z-index: 1;
+
+        background-image: url(../img/catalog/bg-flower.svg);
+        background-repeat: no-repeat;
+        width: 715px;
+        height: 667px;
+
+        pointer-events: none;
+      }
+    }
   }
+
   &__sidebar {
     flex-basis: 280px;
     flex-shrink: 0;
+    @media screen and (max-width: 1339.98px) {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      max-width: 320px;
+      height: 100%;
+      padding: 32px;
+      background-color: #fff;
+      z-index: 2;
+      transform: translateX(-120%);
+      transition: transform 250ms ease-in-out;
+      &.is-filter-open {
+        // transform: translateX(0);
+        transform: translateX(0);
+        overflow: auto;
+      }
+    }
+  }
+  &__backdrop {
+    display: none;
+  }
+  &__sidebar.is-filter-open + &__backdrop {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // pointer-events: none;
+    background-color: #00000080;
+    opacity: 1;
   }
   &__filter {
   }
   &__content {
-    flex-basis: 970px;
-    flex-shrink: 0;
+    @include desktop {
+      flex-basis: 970px;
+      flex-shrink: 0;
+    }
   }
-  &__sort-title {
-    @include font(null, 18px, calc(22px / 18px));
-    color: var(--light-theme-title-color);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  &__sort-btn {
-    color: var(--light-theme-title-color);
-    background-color: transparent;
-    @include text(null, null, 14px, 18px);
 
-    &--rating {
-      margin-left: 30px;
-    }
-    &--price {
-      margin-left: 15px;
-      padding-right: 12px;
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        right: 0;
-        bottom: 50%;
-        width: 6px;
-        height: 10px;
-        transform: translateY(50%);
-        background: url('../img/catalog/arrow.svg') center center/100% no-repeat;
-      }
-    }
-  }
   &__list {
     margin-bottom: 30px;
   }
@@ -222,6 +243,9 @@
 .catalog-list {
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 766.98px) {
+    justify-content: center;
+  }
   gap: 10px;
   @include tablet {
     gap: 20px;
@@ -240,4 +264,96 @@
 
 .hidden {
   display: none;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__sort-title {
+    @include font(null, 18px, calc(22px / 18px));
+    color: var(--light-theme-title-color);
+  }
+  &__sort-btn {
+    color: var(--light-theme-title-color);
+    background-color: transparent;
+    @include text(null, null, 14px, 18px);
+
+    &--rating {
+      margin-left: 5px;
+      @include tablet {
+        margin-left: 30px;
+      }
+    }
+    &--price {
+      margin-left: 5px;
+      @include tablet {
+        margin-left: 15px;
+      }
+      padding-right: 12px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        bottom: 50%;
+        width: 6px;
+        height: 10px;
+        transform: translateY(50%);
+        background: url('../img/catalog/arrow.svg') center center/100% no-repeat;
+      }
+    }
+  }
+}
+
+.filter-toggle {
+  width: 100%;
+  margin-bottom: 20px;
+  @include desktop {
+    display: none;
+  }
+}
+
+.filter-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  color: var(--light-theme-title-color);
+  background-color: transparent;
+  @include text(null, null, 14px, 18px);
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    width: 18.8px;
+    height: 3px;
+    background-color: var(--grey);
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+  &:hover:before,
+  &:focus:before,
+  &:hover:after,
+  &:focus:after {
+    background-color: var(--green-light);
+  }
+  @include desktop {
+    display: none;
+  }
 }

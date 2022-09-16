@@ -9,7 +9,8 @@
     <h1 class="catalog__title">Каталог</h1>
 
     <div class="catalog__layout">
-      <aside class="catalog__sidebar">
+      <aside class="catalog__sidebar" data-filter>
+        <button data-filter-btn="close" class="filter-close-button"></button>
         <form data-spollers class="catalog__filter filter-catalog">
           <button type="button" class="filter-catalog__clear-all-btn">Скинути все</button>
           <div class="filter-catalog__group">
@@ -241,12 +242,21 @@
           </div>
         </form>
       </aside>
+      <div class="catalog__backdrop" data-filter-backdrop></div>
 
+      <button
+        class="button dark filter-toggle"
+        data-filter-btn="open"
+        aria-expanded="false"
+        aria-controls="menu-filter"
+      >
+        Фільтр
+      </button>
       <div class="catalog__content">
-        <div class="catalog__sort-title">
-          Сорутвання:
-          <button type="button" class="catalog__sort-btn catalog__sort-btn--rating">за популярністю</button>
-          <button type="button" class="catalog__sort-btn catalog__sort-btn--price">по ціні</button>
+        <div class="catalog__actions actions">
+          <span class="actions__sort-title">Сорутвання:</span>
+          <button type="button" class="actions__sort-btn actions__sort-btn--rating">за популярністю</button>
+          <button type="button" class="actions__sort-btn actions__sort-btn--price">по ціні</button>
         </div>
         <ul class="catalog__list catalog-list"></ul>
         <button type="button" class="catalog__btn button light">Дивитись ще</button>

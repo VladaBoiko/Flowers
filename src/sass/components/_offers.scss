@@ -80,7 +80,11 @@ section.offer {
     }
     margin-bottom: 30px;
   }
-
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
   &__list--fav {
     margin-bottom: 20px;
     @include tablet {
