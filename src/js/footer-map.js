@@ -302,7 +302,7 @@ function initMap() {
         map: myMap,
         // animation: google.maps.Animation.BOUNCE,
         title: "Gvozdika",
-        // icon: './src/img/footer/mark.png'
+        icon: './src/img/footer/mark.png'
         // icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
         
         
@@ -315,7 +315,7 @@ function initMap() {
 // second map 
        const myMap2 = new google.maps.Map(document.getElementById("map2"), opt);
    
-    const marker2 = new google.maps.Marker({
+        const marker2 = new google.maps.Marker({
         
         position: pos,
         map: myMap2,
