@@ -136,7 +136,6 @@
     align-items: flex-start;
 }
 .contact__checkbox-text{
-    // display: block;
     @include text('Montserrat', 400, 14px, 18px);
     color: var(--light-theme-text-color);
     margin-left: 15px;
