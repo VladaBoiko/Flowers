@@ -1,0 +1,67 @@
+.personal-cabinet {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid;
+
+    @include tablet {
+        padding-bottom: 80px;
+    }
+
+    @include desktop {
+        padding-top: 77px;
+        padding-bottom: 100px;
+    }
+
+    &>.container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 450px;
+            padding: 0;
+        }
+    }
+}
+
+.pers-cab-title-desk {
+    display: none;
+
+    @include desktop {
+        display: block;
+        margin-bottom: 64px;
+        @include font(500, 36px, 1);
+        color: var(--light-theme-title-color);
+    }
+}
+
+.pers-cab-main {
+    @include desktop {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.pers-cab-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 331px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    @include font(500, 16px, 1);
+    color: var(--main-bgc-accent);
+    background-color: inherit;
+
+    @include desktop {
+        display: none;
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+.pers-cab-content-wrap { 
+    @include desktop {
+        width: 970px;
+    }
+}
