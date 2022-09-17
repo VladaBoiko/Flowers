@@ -24,12 +24,12 @@
                 <h1 class="visually-hidden">Особистий кабінет</h1>
         
                 <h2 class="pers-cab-title-desk">Особистий кабінет</h2>
-                <button type="button" class="pers-cab-menu-btn open-btn" data-open>Меню Особистого кабінета
+                <button type="button" class="pers-cab-menu-btn" data-open-menu-btn>Меню Особистого кабінета
                     <svg class="pers-cab-menu-close-icon" width="40" height="40">
                         <use href="./img/symbol-defs.svg#burger-menu-icon"></use>
                     </svg>
                 </button>
-                <button type="button" class="pers-cab-menu-btn close-btn ">Згорнути меню
+                <button type="button" class="pers-cab-menu-btn is-hidden" data-close-menu-btn>Згорнути меню
                     <svg class="pers-cab-menu-close-icon" width="40" height="40">
                         <use href="./img/symbol-defs.svg#cross-icon"></use>
                     </svg>
@@ -38,11 +38,12 @@
                 <div class="pers-cab-main">
                     <include src="./partials/personal-cabinet/menu-wrapper.html"></include>
                     
-                    <div class="pers-cab-content">
+                    
+                    <div class="pers-cab-content-wrap" data-content-wrap>
                         <include src="./partials/personal-cabinet/profile.html"></include>
-                        <include src="./partials/personal-cabinet/personal-orders.html"></include>
-                        <include src="./partials/personal-cabinet/personal-notification.html"></include>
-                        <include src="./partials/personal-cabinet/personal-favorites.html"></include>
+                        <include src="./partials/personal-cabinet/orders.html"></include>
+                        <include src="./partials/personal-cabinet/notification.html"></include>
+                        <include src="./partials/personal-cabinet/favorites.html"></include>
                     </div>
                 </div>
             </div>

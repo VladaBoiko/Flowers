@@ -1,37 +1,41 @@
-<div class="pers-cab-menu-wrap">
-
-    <p class="pers-cab-menu-title">Особистий кабінет</p>
-
-    <div class="pers-cab-menu">
-        <!-- випадашка -->
+<div class="pers-cab-menu-wrap is-hidden" data-personal-menu>
+    
+    <div class="container">
+        <p class="pers-cab-menu-title">Особистий кабінет</p>
+        
         <ul class="pers-cab-menu-list">
             <li class="pers-cab-menu-item">
-                <a href="" class="pers-cab-menu-link">
+                <button type="button" class="pers-cab-menu-button currentBtn" data-pers-btn>
                     <svg class="pers-cab-menu-icon" width="28" height="28">
                         <use href="./img/symbol-defs.svg#user-icon"></use>
-                    </svg>Профіль</a>
+                    </svg>
+                    Профіль
+                </button>
             </li>
             <li class="pers-cab-menu-item">
-                <a href="./partials/personal-cabinet/orders.html" class="pers-cab-menu-link">
+                <button type="button" class="pers-cab-menu-button" data-order-btn>
                     <svg class="pers-cab-menu-icon" width="28" height="28">
                         <use href="./img/symbol-defs.svg#shopping-bag-icon"></use>
                     </svg>
-                    Замовлення</a>
+                    Замовлення
+                </button>
             </li>
             <li class="pers-cab-menu-item">
-
-                <a href="./partials/personal-cabinet/notification.html" class="pers-cab-menu-link">
+        
+                <button type="button" class="pers-cab-menu-button" data-notif-btn>
                     <svg class="pers-cab-menu-icon" width="28" height="28">
                         <use href="./img/symbol-defs.svg#bell-icon"></use>
                     </svg>
-                    Повідомлення</a>
+                    Повідомлення
+                </button>
             </li>
             <li class="pers-cab-menu-item">
-                <a href="./partials/personal-cabinet/favorites.html" class="pers-cab-menu-link">
+                <button type="button" class="pers-cab-menu-button" data-fav-btn>
                     <svg class="pers-cab-menu-icon" width="28" height="28">
                         <use href="./img/symbol-defs.svg#wish-icon"></use>
                     </svg>
-                    Вибране</a>
+                    Обране
+                </button>
             </li>
         </ul>
     </div>
