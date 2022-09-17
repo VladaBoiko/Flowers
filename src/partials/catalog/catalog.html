@@ -9,560 +9,257 @@
     <h1 class="catalog__title">Каталог</h1>
 
     <div class="catalog__layout">
-      <aside class="catalog__sidebar">
-        <div data-spollers class="catalog__filter filter">
-          <button type="button" class="filter__clear-all">Скинути все</button>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Категорія</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Букети
+      <aside class="catalog__sidebar" data-filter>
+        <button data-filter-btn="close" class="filter-close-button"></button>
+        <form data-spollers class="catalog__filter filter-catalog">
+          <button type="button" class="filter-catalog__clear-all-btn">Скинути все</button>
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title _spoller-active">Категорія</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" name="bouquets" type="checkbox" name="filter" />
+                <span>Букети</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Троянди
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Троянди</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Монобукети
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Монобукети</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Зрізані квіти
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Зрізані квіти</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Весільні букети
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Весільні букети</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Вуличні рослини
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Вуличні рослини</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Подарунки
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Подарунки</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Подарунки
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Подарунки</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Цукерки
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Цукерки</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Повітряні кульки
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Повітряні кульки</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Кімнатні рослини
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Кімнатні рослини</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Композиції
-              </label>
-            </div>
-          </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Вид</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Українські троянди
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Троянди із Еквадору і Колумбії
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Кенійські троядни
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Кущові троядни
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Піоновидні троянди
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Кущові піоновидні троянди
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Троянди Девіда Остіна
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Пелюстки троянд
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Крупні бутони
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Композиції</span>
               </label>
             </div>
           </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Колір</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Червоний
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Вид</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Українські троянди</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Жовтий
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Троянди із Еквадору і Колумбії</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Фіолетовий
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Кенійські троядни</span>
               </label>
-            </div>
-          </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Кількість</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                121 троянда
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Кущові троядни</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                101 троянда
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Піоновидні троянди</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                65 троянд
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Кущові піоновидні троянди</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                55 троянд
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Троянди Девіда Остіна</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                51 троянда
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Пелюстки троянд</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                45 троянд
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                41 троянда
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                35 троянд
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                31 троянда
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                25 троянд
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                21 троянда
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Крупні бутони</span>
               </label>
             </div>
           </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Розмір</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                170 см
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Колір</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Червоний</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                150 см
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Жовтий</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                90 см
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                70 см
-              </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                50 см
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Фіолетовий</span>
               </label>
             </div>
           </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Форма букету</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Круглий
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Кількість</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>121 троянда</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Сердечком... ;)
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>101 троянда</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                Квадратиком... ;)
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>65 троянд</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>55 троянд</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>51 троянда</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>45 троянд</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>41 троянда</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>35 троянд</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>31 троянда</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>25 троянд</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>21 троянда</span>
               </label>
             </div>
           </div>
-          <div class="filter__group">
-            <button type="button" data-spoller class="filter__title">Ціна</button>
-            <div class="filter__body">
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                до 30
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Розмір</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>170 см</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                30 - 45
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>150 см</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                45 - 65
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>90 см</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                65 - 80
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>70 см</span>
               </label>
-              <label class="filter__item">
-                <input class="filter__checkbox" type="checkbox" name="filter" />
-                від 80
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>50 см</span>
               </label>
             </div>
           </div>
-        </div>
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Форма букету</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Кругла</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Сердечком... ;)</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>Квадратиком... ;)</span>
+              </label>
+            </div>
+          </div>
+          <div class="filter-catalog__group">
+            <button type="button" data-spoller class="filter-catalog__title">Ціна</button>
+            <div class="filter-catalog__body">
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>до 30</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>30 - 45</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>45 - 65</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>65 - 80</span>
+              </label>
+              <label class="filter-catalog__item">
+                <input class="filter-catalog__checkbox visually-hidden" type="checkbox" name="filter" />
+                <span>від 80</span>
+              </label>
+            </div>
+          </div>
+        </form>
       </aside>
+      <div class="catalog__backdrop" data-filter-backdrop></div>
 
+      <button
+        class="button dark filter-toggle"
+        data-filter-btn="open"
+        aria-expanded="false"
+        aria-controls="menu-filter"
+      >
+        Фільтр
+      </button>
       <div class="catalog__content">
-        <div class="catalog__sort-title">
-          Сорутвання:
-          <button type="button" class="catalog__sort-btn catalog__sort-btn--rating">за популярністю</button>
-          <button type="button" class="catalog__sort-btn catalog__sort-btn--price">по ціні</button>
+        <div class="catalog__actions actions">
+          <span class="actions__sort-title">Сорутвання:</span>
+          <button type="button" class="actions__sort-btn actions__sort-btn--rating">за популярністю</button>
+          <button type="button" class="actions__sort-btn actions__sort-btn--price">по ціні</button>
         </div>
-        <ul class="catalog__list catalog-list">
-          <li class="catalog-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status hit">Xіт продажів</p>
-                <button type="button" class="product__favorite">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="catalog-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status new">Новинка</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="catalog-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status absent">Немає в наявності</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="catalog-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status hit">Xіт продажів</p>
-                <button type="button" class="product__favorite">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status hit">Xіт продажів</p>
-                <button type="button" class="product__favorite">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status new">Новинка</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status absent">Немає в наявності</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status hit">Xіт продажів</p>
-                <button type="button" class="product__favorite">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status new">Новинка</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status absent">Немає в наявності</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status new">Новинка</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-          <li class="offer-list__item product">
-            <a href="" class="product__link">
-              <img
-                loading="lazy"
-                src="./img/offers/VAL_8182_1200_1.jpg"
-                alt="Букет квітів"
-                class="product__image"
-                width="290"
-                height="250"
-              />
-              <div class="product__overlay">
-                <p class="product__status absent">Немає в наявності</p>
-                <button type="button" class="product__favorite checked">
-                  <svg width="28" height="25">
-                    <use href="./img/symbol-defs.svg#icon-empty-heart"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="product__content">
-                <p class="product__text">Букет «Щастя» - дуже красивий. Дівчатам подобається.</p>
-                <p class="product__price">125 у.о.</p>
-                <button type="button" class="product__button button dark">Замовити</button>
-                <button type="button" class="product__button-one-click">Придбати в 1 клік</button>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <button type="button" class="catalog__btn button light">Дивитист ще</button>
+        <ul class="catalog__list catalog-list"></ul>
+        <button type="button" class="catalog__btn button light">Дивитись ще</button>
       </div>
     </div>
   </div>
