@@ -15,7 +15,7 @@ const refs = {
 }
 
 refs.openMenuBtn.addEventListener('click', openMobMenu);
-refs.closeMenuBtn.addEventListener('click', onCloseMenuBtn)
+refs.closeMenuBtn.addEventListener('click', onCloseMenuBtn);
 refs.menu.addEventListener('click', onMenuList);
 
 let currentContent = document.querySelector('.pers-current-js');
@@ -45,7 +45,7 @@ function isNewContent(newContent) {
 }
 
 function changeCurrentContent(newContent) {
-    currentContent.classList.remove('pers-current-js')
+    currentContent.classList.remove('pers-current-js');
     currentContent.classList.add('visually-hidden');
 
     currentContent = newContent;
