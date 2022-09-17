@@ -42,7 +42,7 @@ if (favotireListFromLocalStorage === 'undefined' || favotireListFromLocalStorage
       const markup = createMarkup(result);
       console.log('1', markup);
       // console.log('2', result);
-      render(refs.list, result);
+      render(refs.list, markup);
     })
     .catch(console.error);
 }

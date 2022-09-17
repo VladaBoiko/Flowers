@@ -2,6 +2,7 @@ import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';
+import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 // import data from '../products.json';
 
 import getKey from './catalog/getKey';
@@ -99,8 +100,6 @@ const catalogData = {
           return this.filterParams[filterKeys[5]].includes(card[filterKeys[5]]);
         });
 
-        console.log(filterKeys[6], this.filterParams[filterKeys[6]]);
-
         const filterByPrice = filterByForm.filter(card => {
           if (this.filterParams[filterKeys[6]].length === 0) {
             return true;
@@ -129,6 +128,7 @@ const catalogData = {
       render(refs.catalogList, markup);
       // refs.catalogList.insertAdjacentHTML('beforeend', markup);
       handleFavorite();
+      handleWatchedHistory();
     } catch (error) {
       console.log(error);
     }

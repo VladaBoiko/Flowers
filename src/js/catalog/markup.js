@@ -1,12 +1,12 @@
 import { loadFromLocalStorage } from './localStorage';
 import getKey from './getKey';
+import icons from '../../img/catalog/icon-fav.svg';
 
 const statuses = {
   hit: 'Xіт продажу',
   absent: 'Немає в наявності',
   new: 'Новинка',
 };
-
 const favoriteList = loadFromLocalStorage('Favorites');
 // console.log(favoriteList);
 
@@ -28,7 +28,7 @@ export const createMarkup = data => {
             <p class="product__status ${keyStatus}">${status}</p>
             <button type="button" class="product__favorite ${isFav(id)}">
               <svg width="28" height="25">
-                <use href="./symbol-defs.b7ce9de3.svg#icon-empty-heart"></use>
+                <use href="${icons}#icon-fav"></use>
               </svg>
             </button>
           </div>

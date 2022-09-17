@@ -1,6 +1,6 @@
 import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
 
-const keyFav = 'Favorites';
+const key = 'Favorites';
 
 export function handleFavorite() {
   const favoriteBtns = document.querySelectorAll('.product__favorite');
@@ -11,17 +11,17 @@ export function handleFavorite() {
       const productID = favoriteBtn.closest('.product').id;
 
       if (productID) {
-        const savedListFav = loadFromLocalStorage(keyFav);
+        const savedListFav = loadFromLocalStorage(key);
 
         if (savedListFav === 'undefined') {
           const newListFav = [productID];
-          saveToLocalStorage(keyFav, newListFav);
+          saveToLocalStorage(key, newListFav);
         } else if (savedListFav.indexOf(productID) === -1) {
           savedListFav.push(productID);
-          saveToLocalStorage(keyFav, savedListFav);
+          saveToLocalStorage(key, savedListFav);
         } else {
           savedListFav.splice(savedListFav.indexOf(productID), 1);
-          saveToLocalStorage(keyFav, savedListFav);
+          saveToLocalStorage(key, savedListFav);
         }
       }
 
