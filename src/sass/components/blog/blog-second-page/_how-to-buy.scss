@@ -129,6 +129,8 @@
 .bsp-buy-img {
   width: 320px;
   height: 548px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 4px;
 
   @include tablet {
@@ -146,8 +148,7 @@
 .bsp-buy-bottom-link {
   @include text(null, 500, 16px, 21px);
   color: var(--light-theme-text-color);
-  transition: text-decoration-line var(--main-transition),
-    text-decoration-thickness var(--main-transition);
+  transition: text-decoration-line var(--main-transition), text-decoration-thickness var(--main-transition);
 
   &:hover,
   &:focus {

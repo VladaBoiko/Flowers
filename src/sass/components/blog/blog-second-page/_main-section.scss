@@ -28,7 +28,7 @@
   }
 }
 
-.bsp-title {
+.page-title {
   @include text(null, 500, 30px, 37px);
   color: var(--main-accent-color);
   text-transform: uppercase;
@@ -48,7 +48,7 @@
   }
 }
 
-.bsp-title-date {
+.page-title-date {
   @include text(null, 400, 14px, 17px);
   color: var(--main-accent-color);
 
@@ -57,7 +57,7 @@
   }
 }
 
-.bsp-main-top-wrap {
+.section-main-top-wrap {
   @include tablet {
     display: flex;
     justify-content: space-between;
@@ -66,16 +66,27 @@
   }
 }
 
-.bsp-about {
+.page-about {
   @include tablet {
     display: flex;
   }
+
+  & div {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
 }
 
-.bsp-about-text {
+.page-about-text {
   @include text(null, 400, 16px, 21px);
   color: var(--light-theme-text-color);
-  margin-bottom: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 
   @include desktop {
     @include font(400, 20px, 26px);
@@ -85,6 +96,8 @@
 .bsp-about-img {
   width: 320px;
   height: 460px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 4px;
 
   @include tablet {
@@ -104,8 +117,7 @@
   @include desktop {
     width: 220px;
     height: 831px;
-    background: url(../img/blog/first-page/desktop/bg-leaves-right.png)
-      no-repeat;
+    background: url(../img/blog/first-page/desktop/bg-leaves-right.png) no-repeat;
     position: absolute;
     top: 670px;
     right: 0;
