@@ -1,6 +1,6 @@
 import Swiper from 'swiper/swiper-bundle';
 
-const heroSwiper = new Swiper('.hero-swiper-container', {
+export const heroSwiper = new Swiper('.hero-swiper-container', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
