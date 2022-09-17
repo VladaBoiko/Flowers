@@ -1,0 +1,72 @@
+.what-to-do .container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  @include desktop {
+    padding-top: 50px;
+  }
+}
+
+.blog-section-title {
+  @include text(null, 500, 24px, 31px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 30px;
+
+  @include tablet {
+    font-size: 36px;
+  }
+}
+
+.blog-section-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
+  &:not(:last-child) {
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
+
+.what-to-do-img {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: block;
+    width: 420px;
+    height: 751px;
+  }
+}
+
+.what-wrap__external {
+  @include tablet {
+    display: flex;
+  }
+}
+
+.what-wrap__internal {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
+  @include desktop {
+    margin-right: 20px;
+  }
+}
