@@ -1,17 +1,17 @@
 const refs = {
     openMenuBtn: document.querySelector('[data-open-menu-btn]'),
     closeMenuBtn: document.querySelector('[data-close-menu-btn]'),
-    menu: document.querySelector('[data-personal-menu]'), //for mobile
+    menu: document.querySelector('[data-personal-menu]'),
     
     profileBtn: document.querySelector('[data-pers-btn]'),
     ordersBtn: document.querySelector('[data-order-btn]'),
     notifBtn: document.querySelector('[data-notif-btn]'),
     favBtn: document.querySelector('[data-fav-btn]'),
 
-    profile: document.querySelector('#profile'),
-    orders: document.querySelector('#pers-orders'),
-    notif: document.querySelector('#pers-notif'),
-    fav: document.querySelector('#pers-fav'),
+    profile: document.querySelector('[data-profile]'),
+    orders: document.querySelector('[data-pers-orders]'),
+    notif: document.querySelector('[data-pers-notif]'),
+    fav: document.querySelector('[data-pers-fav]'),
 }
 
 refs.openMenuBtn.addEventListener('click', openMobMenu);
