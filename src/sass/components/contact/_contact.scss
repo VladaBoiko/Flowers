@@ -221,12 +221,10 @@
       color: var(--dark-theme-text-color);
       background-color: var(--main-bgc-accent);
     }
-    transition: color var(--main-transition),
-    background-color var(--main-transition), border var(--main-transition);
+    transition: background-color var(--main-transition), border var(--main-transition);
 
   &:hover,
   &:focus {
-    color: var(--dark-theme-text-color);
     background-color: var(--green-light);
     border: none;
   }
