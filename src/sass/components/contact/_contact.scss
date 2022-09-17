@@ -1,5 +1,5 @@
 .contact-nav-link,
-.contact-separator{
+        .contact-separator{
     @include text('Montserrat', 500, 14px, 17px);
     color: var(--light-theme-text-color);
 }
