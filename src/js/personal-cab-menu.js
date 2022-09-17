@@ -22,40 +22,26 @@ let currentContent = document.querySelector('.pers-current-js');
 let currentBtn = document.querySelector('.currentBtn');
  
 function onMenuList(evt) {
-
-    if (evt.target === refs.profileBtn) {
-        isCurrent(refs.profile);
-        isNotEqual(refs.profile, refs.profileBtn);
-        return;
-    }
-    if (evt.target === refs.ordersBtn) {
-        isCurrent(refs.orders);
-        isNotEqual(refs.orders, refs.ordersBtn);
-        return;
-    }
-    if (evt.target === refs.notifBtn) {
-        isCurrent(refs.notif);
-        isNotEqual(refs.notif, refs.notifBtn);
-        return;
-    }
-    if (evt.target === refs.favBtn) {
-        isCurrent(refs.fav);
-        isNotEqual(refs.fav, refs.favBtn);
-        return;
-    }
+    onMenuItem(evt, refs.profile, refs.profileBtn);
+    onMenuItem(evt, refs.orders, refs.ordersBtn);
+    onMenuItem(evt, refs.notif, refs.notifBtn);
+    onMenuItem(evt, refs.fav, refs.favBtn);
 }
 
-function isCurrent(contentName) {
-    if (contentName.classList.contains('pers-current-js')) {
+function onMenuItem(evt, newContent, newBtn) {
+    if (isNotNewButton(evt, newBtn) || isNewContent(newContent)) {
         return;
     }
+    changeCurrentContent(newContent);
+    changeCurrentBtn(newBtn);
 }
 
-function isNotEqual(contentName, btnName) {
-    if (currentContent !== contentName) {
-        changeCurrentContent(contentName);
-        changeCurrentBtn(btnName);
-    }
+function isNotNewButton(evt, newBtn) {
+    return evt.target !== newBtn;
+}
+
+function isNewContent(newContent) {
+    return currentContent === newContent;
 }
 
 function changeCurrentContent(newContent) {
@@ -73,7 +59,6 @@ function changeCurrentBtn(newCurrentBtn) {
     currentBtn = newCurrentBtn;
     newCurrentBtn.classList.add('currentBtn');
 }
-
 
 function openMobMenu() {
     currentContent.classList.add('visually-hidden');
