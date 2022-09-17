@@ -1,6 +1,10 @@
 .bsp-other .container {
   padding-bottom: 50px;
 
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
+
   @include tablet {
     padding-bottom: 80px;
   }

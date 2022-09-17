@@ -47,6 +47,8 @@
 .bsp-store-img {
   width: 320px;
   height: 280px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 4px;
 
   @include tablet {
