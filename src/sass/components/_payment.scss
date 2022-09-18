@@ -1,7 +1,6 @@
 .payment {
   @include desktop {
     position: absolute;
-    z-index: -1;
     background: url(../../dist/offers-background.b71ba6b1.png),
       url(../img/payment/flowerBackGround.png);
     background-size: 222px 810px;
@@ -285,9 +284,11 @@ main .payment {
 }
 
 .payment__attention {
+  left: 50%;
   position: absolute;
   display: block;
   width: 360px;
+  margin-left: -180px;
   background: linear-gradient(
     90.26deg,
     #1e736b 3.42%,
@@ -298,10 +299,12 @@ main .payment {
 
   @include tablet {
     width: 768px;
+    margin-left: -384px;
   }
 
   @include desktop {
     width: 1300px;
+    margin-left: -650px;
   }
 
   & p {
@@ -379,10 +382,11 @@ main .payment {
   }
 
   @include desktop {
-    & div {
-      margin-right: 20px;
-    }
     display: flex;
+    justify-content: space-between;
+    & div {
+      width: 860px;
+    }
   }
 
   & ul {
@@ -469,6 +473,8 @@ main .payment {
 .payment__important {
   position: absolute;
   display: block;
+  left: 50%;
+  margin-left: -180px;
   width: 360px;
   padding: 56px 0 50px 0;
   background-color: var(--main-accent-color);
@@ -482,10 +488,12 @@ main .payment {
 
   @include tablet {
     width: 768px;
+    margin-left: -364px;
   }
 
   @include desktop {
     width: 1300px;
+    margin-left: -650px;
   }
 
   & p {
@@ -572,10 +580,14 @@ main .payment {
   &-wrap {
     @include tablet {
       display: flex;
+      justify-content: space-between;
     }
     & div {
       @include tablet {
-        margin-right: 25px;
+        width: 425px;
+      }
+      @include desktop {
+        width: 635px;
       }
     }
   }
