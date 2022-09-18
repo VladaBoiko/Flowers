@@ -3,6 +3,8 @@ import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
+import { filterBy } from './catalog/filter';
+
 // import data from '../products.json';
 
 import getKey from './catalog/getKey';
@@ -57,13 +59,16 @@ const catalogData = {
     try {
       this.data = await APIGetData.getData();
       const filterKeys = Object.keys(filterWords);
+
       if (Object.keys(this.filterParams).length) {
+        console.log(filterBy(data), this.filterParams[filterKeys[0]], filterKeys[0]);
         const filterByCategory = this.data.filter(card => {
           if (this.filterParams[filterKeys[0]].length === 0) {
             return true;
           }
           return this.filterParams[filterKeys[0]].includes(card[filterKeys[0]]);
         });
+        console.log(filterByCategory);
 
         const filterByType = filterByCategory.filter(card => {
           if (this.filterParams[filterKeys[1]].length === 0) {
