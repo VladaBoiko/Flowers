@@ -421,6 +421,12 @@ main .payment {
     justify-content: space-between;
   }
 
+  &-text {
+    @include tablet {
+      width: 428px;
+    }
+  }
+
   & p {
     margin-bottom: 20px;
   }
@@ -431,8 +437,8 @@ main .payment {
   }
 
   @include tablet {
-    width: 689px;
     display: flex;
+
     & p {
       margin-bottom: 0;
     }
@@ -444,24 +450,37 @@ main .payment {
     }
   }
 
-  @include desktop {
-    width: 1015px;
-  }
-
   &-main-text.main-text {
     margin-bottom: 25px;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &-secondary-text {
+    display: none;
+    @include desktop {
+      display: block;
+    }
   }
 
   &-text {
     @include desktop {
-      width: 638px;
+      width: 738px;
     }
   }
 }
 
-.payment__check-img {
-  width: 245px;
-  height: 176px;
+.payment__safety-img {
+  font-size: 0;
+  display: block;
+  width: 100%;
+  @include tablet {
+    width: 280px;
+  }
+  @include desktop {
+    width: 550px;
+  }
 }
 
 .payment__example {
@@ -488,7 +507,7 @@ main .payment {
 
   @include tablet {
     width: 768px;
-    margin-left: -364px;
+    margin-left: -384px;
   }
 
   @include desktop {
