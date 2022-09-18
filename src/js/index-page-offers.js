@@ -1,8 +1,14 @@
 import { APIGetData } from './catalog/fetch-cards';
+import { filterBySection, sections } from './catalog/filter';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
+
+import { heroSwiper } from './hero-slider';
+import { reviewsSwiper } from './reviews-slider';
+heroSwiper.enabled = true;
+reviewsSwiper.enabled = true;
 
 const refs = {
   offerSpecial: document.querySelector('.offer--special .offer__list'),
@@ -10,14 +16,6 @@ const refs = {
   recommendOffer: document.querySelector('.offer--recommend .offer__list'),
   offerPlus: document.querySelector('.offer--plus .offer__list'),
   earlierWatched: document.querySelector('.offer--earlier-watched .offer__list'),
-};
-
-const sections = {
-  offerSpecial: 'Спеціальна пропозиція',
-  dayOffer: 'Пропозиція дня',
-  recommendOffer: 'Рекомендуємо троянди',
-  offerPlus: 'З квітами купують',
-  earlierWatched: 'Раніше переглянуто',
 };
 
 const earlierWatchedList = loadFromLocalStorage('EarlierWatched');
@@ -29,12 +27,11 @@ async function renderData() {
     const data = await APIGetData.getData();
 
     for (section in sections) {
-      let filteredData = null;
-      if (sections[section] !== sections.earlierWatched) {
-        filteredData = filterProducts(data, sections[section]);
-      } else {
-        filteredData = filterProducts(data, sections[section], earlierWatchedList);
-      }
+      const filteredData =
+        sections[section] !== sections.earlierWatched
+          ? filterBySection(data, sections[section])
+          : filterBySection(data, sections[section], earlierWatchedList);
+
       const markup = createMarkup(filteredData);
       refs[section].insertAdjacentHTML('beforeend', markup);
     }
@@ -43,20 +40,4 @@ async function renderData() {
   } catch (error) {
     console.log(error);
   }
-}
-
-function filterProducts(data, section, otherData) {
-  let filteredData = [];
-  if (section !== sections.earlierWatched) {
-    filteredData = [...data].filter(card => card.section === section).sort((a, b) => b.rating - a.rating);
-  } else if (otherData) {
-    filteredData = [...data].filter(card => otherData.indexOf(card.id) > -1).sort((a, b) => b.rating - a.rating);
-  }
-  if (filteredData && section === sections.earlierWatched && filteredData.length > 4) {
-    return filteredData.slice(0, 4);
-  }
-  if (filteredData && filteredData.length > 8) {
-    return filteredData.slice(0, 8);
-  }
-  return filteredData;
 }

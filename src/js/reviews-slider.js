@@ -1,5 +1,5 @@
 import Swiper from 'swiper/swiper-bundle';
-new Swiper('.revies-swiper__container', {
+export const reviewsSwiper = new Swiper('.revies-swiper__container', {
   navigation: {
     nextEl: '.swiper-btn__next',
     prevEl: '.swiper-btn__prev',
