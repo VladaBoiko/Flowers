@@ -199,6 +199,9 @@
 .for-call-text {
     @include font(500, 12px, calc(15px / 12px));
     color: var(--main-accent-color);
+    @include tablet {
+        @include font(500, 14px, calc(17px / 14px));
+    }
 }
 
 .pers-time-flex-wrap {
