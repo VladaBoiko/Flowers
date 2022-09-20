@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Gvozdika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./sass/index.scss" />
+</head>
+
+<body>
+    <include src="./partials/index/header.html"></include>
+
+    <main>
+        <section class="personal-cabinet">
+            <div class="container">
+        
+                <h1 class="visually-hidden">Особистий кабінет</h1>
+        
+                <h2 class="pers-cab-title-desk">Особистий кабінет</h2>
+                <button type="button" class="pers-cab-menu-btn" data-open-menu-btn>Меню Особистого кабінета
+                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
+                        <use href="./img/symbol-defs.svg#burger-menu-icon"></use>
+                    </svg>
+                </button>
+                <button type="button" class="pers-cab-menu-btn is-hidden" data-close-menu-btn>Згорнути меню
+                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
+                        <use href="./img/symbol-defs.svg#cross-icon"></use>
+                    </svg>
+                </button>
+        
+                <div class="pers-cab-main">
+                    <include src="./partials/personal-cabinet/menu-wrapper.html"></include>
+                    
+                    
+                    <div class="pers-cab-content-wrap" data-content-wrap>
+                        <include src="./partials/personal-cabinet/profile.html"></include>
+                        <include src="./partials/personal-cabinet/orders.html"></include>
+                        <include src="./partials/personal-cabinet/notification.html"></include>
+                        <include src="./partials/personal-cabinet/favorites.html"></include>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <include src="./partials/index/footer.html"></include>
+
+    <script src="./js/personal-cab-menu.js" type="module"></script>
+</body>
+
+</html>

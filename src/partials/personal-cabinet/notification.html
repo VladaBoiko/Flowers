@@ -1,0 +1,51 @@
+<div class="pers-notification visually-hidden" data-pers-notif>
+
+    <form class="pers-notif-form">
+        <div class="notif-form-inner-wrap">
+            <p class="pers-content-title">
+                Налаштування повідомлень
+            </p>
+            <div class="notif-form-flex-tab">
+                <div class="notif-form-group" role="group" aria-labelledby="way-to-get-notif">
+                    <p class="notif-text" id="way-to-get-notif">Спосіб отримання</p>
+            
+                    <input 
+                        type="checkbox" 
+                        name="way-to-get" 
+                        value="viber" 
+                        id="pers-viber"
+                        class="visually-hidden">
+                    <label for="pers-viber" class="pers-notif-label">Viber</label>
+            
+                    <input type="checkbox" name="way-to-get" value="whats-app" id="whats-app" class="visually-hidden">
+                    <label for="whats-app" class="pers-notif-label">WhatsApp</label>
+            
+                    <input type="checkbox" name="way-to-get" value="telegram" id="telegram" class="visually-hidden">
+                    <label for="telegram" class="pers-notif-label">Telegram</label>
+            
+                    <input type="checkbox" name="way-to-get" value="mail" id="mail" class="visually-hidden">
+                    <label for="mail" class="pers-notif-label">Електронна пошта</label>
+                </div>
+                <div class="notif-form-group" role="group" aria-labelledby="type-of-notif">
+                    <p class="notif-text" id="type-of-notif">Активні повідомлення</p>
+
+                    <input 
+                        type="checkbox" 
+                        name="active-notif" 
+                        value="promotions-and-discounts" 
+                        id="promotions-and-discounts"
+                        class="visually-hidden">
+                    <label for="promotions-and-discounts" class="pers-notif-label">Акції та зниджки</label>
+            
+                    <input type="checkbox" name="active-notif" value="order-notif" id="order-notif" class="visually-hidden">
+                    <label for="order-notif" class="pers-notif-label">Повідомлення про замовлення</label>
+            
+                </div>
+            </div>
+        </div>
+        <div class="pers-button-wrap">
+            <button type="submit" class="button dark">Зберегти налаштування</button>
+        </div>
+    </form>
+    
+</div>

@@ -1,3 +1,4 @@
+
 .shop{
     position: relative;
 }
@@ -28,171 +29,160 @@
     }
 }
 .shop-nav-link,
-.shop-separator{
-    @include text('Montserrat', 500, 14px, 17px);
-    color: var(--light-theme-text-color);
+.shop-separator {
+  @include text('Montserrat', 500, 14px, 17px);
+  color: var(--light-theme-text-color);
 }
-.shop-nav-link-second{
-    color: var(--grey);
-}
-
-.shop-nav{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    @include tablet{
-        margin-bottom: 30px;
-    }
-    @include desktop{
-       margin-top: 30px;
-    }
+.shop-nav-link-second {
+  color: var(--grey);
 }
 
-.shop__main-title{
-    @include text('Montserrat', 500, 30px, 30px);
-    color: var( --main-accent-color);
+.shop-nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include tablet {
     margin-bottom: 30px;
-    @include tablet{
-        @include text('Montserrat', 500, 36px, 36px);
-                         
-    }
+  }
+  @include desktop {
+    margin-top: 30px;
+  }
 }
-.shop__title{
-    @include text('Montserrat', 600, 24px, 31px);
-    color: var( --main-accent-color);
-    margin-bottom: 20px;   
-    @include tablet{
-        width: 530px;
-    }
+
+.shop__main-title {
+  @include text('Montserrat', 500, 30px, 30px);
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+  @include tablet {
+    @include text('Montserrat', 500, 36px, 36px);
+  }
 }
-.shop__title-start{
-    @include desktop{
-        display: none;
-    }
-}
-.shop__title-finish{
-    @media screen and (max-width: 1339px) {
-        display: none;
-    }
-}
-.shop__title-two{
-    @include text('Montserrat', 500, 24px, 31px);
-    color: var( --green-light);
-    margin-bottom: 15px;
-    margin-top: 10px;
-    @include tablet{
-        margin-top: 15px;
-    }
-    @include desktop{
-        margin-top: 30px;
-    }
-}
-.shop__part{
-    @include tablet{
-        display: flex;
-        justify-content:space-between;
-    }
-    
-}
-.shop__part-two{
-    @include desktop{
-        display: flex;
-        justify-content:space-between;
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-}
-.shop__text-block{
-    @include desktop{
-        width: 640px;
-    }
-}
-.shop__text-first{
-    @include tablet{
-        width: 50%;
-       
-    }
-   @include desktop{
+.shop__title {
+  @include text('Montserrat', 600, 24px, 31px);
+  color: var(--main-accent-color);
+  margin-bottom: 20px;
+  @include tablet {
     width: 530px;
-   }
+  }
 }
-.shop__text-two{
-    @include desktop{
-        padding-top: 24px;
-    }
+.shop__title-start {
+  @include desktop {
+    display: none;
+  }
 }
-.shop__text-first > .shop__text:not(:last-child){
+.shop__title-finish {
+  @media screen and (max-width: 1339px) {
+    display: none;
+  }
+}
+.shop__title-two {
+  @include text('Montserrat', 500, 24px, 31px);
+  color: var(--green-light);
+  margin-bottom: 15px;
+  margin-top: 10px;
+  @include tablet {
+    margin-top: 15px;
+  }
+  @include desktop {
+    margin-top: 30px;
+  }
+}
+.shop__part {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.shop__part-two {
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+.shop__text-block {
+  @include desktop {
+    width: 640px;
+  }
+}
+.shop__text-first {
+  @include tablet {
+    width: 50%;
+  }
+  @include desktop {
+    width: 530px;
+  }
+}
+.shop__text-two {
+  @include desktop {
+    padding-top: 24px;
+  }
+}
+.shop__text-first > .shop__text:not(:last-child) {
+  margin-bottom: 20px;
+}
+.shop__text-two .shop__text:not(:last-child) {
+  margin-bottom: 20px;
+}
+.shop__text {
+  display: block;
+  @include text('Montserrat', 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
+  @include desktop {
+    @include text('Montserrat', 400, 20px, 26px);
+    // margin-bottom: 30px;
+  }
+}
+.shop__text-span {
+  @include text('Montserrat', 500, 16px, 21px);
+  @include desktop {
+    @include text('Montserrat', 500, 20px, 26px);
+  }
+}
+.shop__image {
+  @media screen and (max-width: 767px) {
     margin-bottom: 20px;
-   
+    margin-top: 20px;
+  }
 }
-.shop__text-two .shop__text:not(:last-child){
-    margin-bottom: 20px;
-   
-}
-.shop__text{
-    display: block;
-    @include text('Montserrat', 400, 16px, 21px);
-    color: var(--light-theme-text-color);
-    
-    @include desktop{
-        @include text('Montserrat', 400, 20px, 26px);
-        // margin-bottom: 30px;
-    }
-}
-.shop__text-span{
-    @include text('Montserrat', 500, 16px, 21px);
-    @include desktop{
-        @include text('Montserrat', 500, 20px, 26px);
-    }
-}
-.shop__image{
-    @media screen and (max-width: 767px){
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    
-}
-.shop__image-two{
-    @media screen and (max-width: 767px){
-        display: none;
-    }
-    @media screen and (max-width: 1339px){
-        margin-top: 50px;
-        margin-bottom: 10px;
-    }
-  
-   
+.shop__image-two {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (max-width: 1339px) {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
 }
 
-.shop__btn{
-    display: inline-block;
-    padding: 0;
-    margin-bottom: 50px;
-    border: none;
-    cursor: pointer;
-  
-    
-    min-width: 197px;
-    height: 52px;
-    padding: 0 30px;
-    border-radius: 4px;
-  
-    font-family: inherit;
-    @include font(400, 18px, calc(22px / 18px));
-    text-align: center;
-  
-   
-      color: var(--dark-theme-text-color);
-      background-color: var(--main-bgc-accent);
+.shop__btn {
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 50px;
+  border: none;
+  cursor: pointer;
 
-      transition: background-color var(--main-transition), border var(--main-transition);
-      @include tablet{
-        margin-bottom: 80px;
-      }
+  min-width: 197px;
+  height: 52px;
+  padding: 0 30px;
+  border-radius: 4px;
+
+  font-family: inherit;
+  @include font(400, 18px, calc(22px / 18px));
+  text-align: center;
+
+  color: var(--dark-theme-text-color);
+  background-color: var(--main-bgc-accent);
+
+  transition: background-color var(--main-transition), border var(--main-transition);
+  @include tablet {
+    margin-bottom: 80px;
+  }
 
   &:hover,
   &:focus {
     background-color: var(--green-light);
     border: none;
   }
-
 }
