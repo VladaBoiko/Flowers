@@ -1,8 +1,7 @@
 .payment {
   @include desktop {
     position: absolute;
-    background: url(../../dist/offers-background.b71ba6b1.png),
-      url(../img/payment/flowerBackGround.png);
+    background: url(../../dist/offers-background.b71ba6b1.png), url(../img/payment/flowerBackGround.png);
     background-size: 222px 810px;
     background-position: right top 690px, left top 2623px;
     background-repeat: no-repeat;
@@ -110,7 +109,7 @@ main .payment {
   top: 3px;
   left: -23px;
   content: '';
-  background: url('/src/img/list.svg');
+  // background: url();
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -289,12 +288,7 @@ main .payment {
   display: block;
   width: 360px;
   margin-left: -180px;
-  background: linear-gradient(
-    90.26deg,
-    #1e736b 3.42%,
-    #0e725a 39.16%,
-    #003934 100.07%
-  );
+  background: linear-gradient(90.26deg, #1e736b 3.42%, #0e725a 39.16%, #003934 100.07%);
   border-radius: 4px;
 
   @include tablet {
@@ -497,12 +491,11 @@ main .payment {
   width: 360px;
   padding: 56px 0 50px 0;
   background-color: var(--main-accent-color);
-  background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'),
-    url('/src/img/payment/3.png'), url('/src/img/payment/4.png');
+  background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'), url('/src/img/payment/3.png'),
+    url('/src/img/payment/4.png');
   background-repeat: no-repeat;
   background-size: 91px, 32px, 35px, 71px;
-  background-position: top 0 left 0, top 10px left 120px, top 130px right 5px,
-    bottom 0 right 0;
+  background-position: top 0 left 0, top 10px left 120px, top 130px right 5px, bottom 0 right 0;
   border-radius: 4px;
 
   @include tablet {
