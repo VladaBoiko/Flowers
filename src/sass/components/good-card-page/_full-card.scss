@@ -27,11 +27,44 @@
   .wrapper-description {
     flex-basis: 50%;
   }
+  .wrapper-activities.desktop {
+    display: none;
+  }
+}
+.heart-btn.desktop {
+  display: none;
+}
+@include desktop {
+  .heart-btn.tablet {
+    display: none;
+  }
+  .heart-btn.desktop {
+    display: block;
+  }
+  .wrapper-activities.desktop {
+    display: block;
+  }
+  .wrapper-info {
+    margin: 0;
+  }
+  .wrapper-activities.tablet {
+    display: none;
+  }
+  .wrapper-desktop.right {
+    margin-left: 20px;
+    // &.bottom {
+    //   flex-direction: row-reverse;
+    //   gap: 20px;
+    // }
+  }
 }
 .card-title {
   @include fontSecond(500, 24px, 29px);
   color: var(--main-accent-color);
   margin-bottom: 10px;
+  @include desktop {
+    @include fontSecond(500, 36px, 44px);
+  }
 }
 .card-stats {
   display: flex;
@@ -97,6 +130,9 @@
     width: 354px;
     // height: 325px;
   }
+  @include desktop {
+    width: 640px;
+  }
 }
 .delivery-info {
   @include fontSecond(400, 14px, 17px);
@@ -127,6 +163,9 @@
     @include fontSecond(500, 16px, 20px);
     color: var(--main-accent-color);
     margin-bottom: 10px;
+    @include desktop {
+      @include fontSecond(500, 18px, 22px);
+    }
   }
   .size-choose {
     display: flex;
@@ -141,6 +180,9 @@
   .first {
     @include fontSecond(400, 12px, 15px);
     color: var(--main-accent-color);
+    @include desktop {
+      @include fontSecond(400, 18px, 22px);
+    }
   }
   .second {
     @include fontSecond(400, 12px, 15px);
@@ -148,6 +190,9 @@
     text-transform: uppercase;
     span {
       margin-left: 3px;
+    }
+    @include desktop {
+      @include fontSecond(400, 18px, 22px);
     }
   }
 }
@@ -169,6 +214,9 @@
   align-items: center;
   flex-basis: 23%;
   padding: 8px 20px;
+  @include desktop {
+    padding: 10px 39px;
+  }
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -192,6 +240,9 @@
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
+  @include desktop {
+    padding: 10px 21px;
+  }
 }
 // .height-target {
 // }
@@ -252,6 +303,9 @@
   margin-bottom: 20px;
   @include tablet {
     margin: 0;
+  }
+  @include desktop {
+    display: flex;
   }
   .button.dark {
     background-color: var(--main-accent-color);
