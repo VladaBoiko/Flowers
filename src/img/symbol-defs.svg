@@ -200,6 +200,13 @@
 <symbol id="user-icon" viewBox="0 0 32 32">
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M25.143 27.429v-2.413c0-1.28-0.512-2.507-1.423-3.412s-2.146-1.413-3.434-1.413h-9.714c-1.288 0-2.524 0.508-3.434 1.413s-1.423 2.132-1.423 3.412v2.413M20.286 10.54c0 2.665-2.175 4.825-4.857 4.825s-4.857-2.16-4.857-4.825c0-2.665 2.175-4.825 4.857-4.825s4.857 2.16 4.857 4.825z"></path>
 </symbol>
+<symbol id="burger-menu-icon" viewBox="0 0 32 32">
+<path fill="none" stroke="#00554e" style="stroke: var(--color3, #00554e)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M8.8 16h14.4M8.8 11.2h14.4M8.8 20.8h14.4"></path>
+</symbol>
+<symbol id="camera-icon" viewBox="0 0 32 32">
+<path fill="none" stroke="#03453b" style="stroke: var(--color3, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.2" d="M24.8 21.6c0 0.424-0.169 0.831-0.469 1.131s-0.707 0.469-1.131 0.469h-14.4c-0.424 0-0.831-0.169-1.131-0.469s-0.469-0.707-0.469-1.131v-8.8c0-0.424 0.169-0.831 0.469-1.131s0.707-0.469 1.131-0.469h3.2l1.6-2.4h4.8l1.6 2.4h3.2c0.424 0 0.831 0.169 1.131 0.469s0.469 0.707 0.469 1.131v8.8z"></path>
+<path fill="none" stroke="#03453b" style="stroke: var(--color3, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.2" d="M16 20c1.767 0 3.2-1.433 3.2-3.2s-1.433-3.2-3.2-3.2c-1.767 0-3.2 1.433-3.2 3.2s1.433 3.2 3.2 3.2z"></path>
+</symbol>
 
 
 <symbol id="map" viewBox="0 0 32 32">
