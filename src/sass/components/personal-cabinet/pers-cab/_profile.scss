@@ -40,10 +40,8 @@
     }
 }
 
-.pers-photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.pers-img {
+    display: block;
 
     width: 80px;
     height: 80px;
@@ -51,6 +49,9 @@
 
     border-radius: 50%;
     background-color: var(--dark-theme-text-color);
+    background-image: url('../img/personal-cabinet/camera.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 
     @include desktop {
         margin-right: 15px;
