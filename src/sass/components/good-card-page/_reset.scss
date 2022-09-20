@@ -1,0 +1,54 @@
+// -------------------------скидання стилів по брейкам
+@include tablet {
+  .wrapper-tablet {
+    display: flex;
+    &.bottom {
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+  .wrapper-info {
+    margin-left: 20px;
+  }
+  .wrapper-activities {
+    flex-basis: 50%;
+  }
+  .wrapper-description {
+    flex-basis: 50%;
+  }
+  .wrapper-activities.desktop {
+    display: none;
+  }
+}
+@include desktop {
+  .wrapper-description {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper-tablet {
+    &.bottom {
+      flex-direction: column;
+    }
+  }
+}
+@include desktop {
+  .heart-btn.tablet {
+    display: none;
+  }
+  .heart-btn.desktop {
+    display: block;
+    margin-left: 25px;
+  }
+  .wrapper-activities.desktop {
+    display: block;
+  }
+  .wrapper-info {
+    margin: 0;
+  }
+  .wrapper-activities.tablet {
+    display: none;
+  }
+  .wrapper-desktop.right {
+    margin-left: 20px;
+  }
+}
