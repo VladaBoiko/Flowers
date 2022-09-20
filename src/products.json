@@ -1,199 +1,131 @@
 [
   {
+    "id": "1",
     "name": "Букет «Щастя» 1",
     "description": "description 1",
-    "price": 77,
-    "image": "https://i.postimg.cc/nsYNz7M6/VAL-8182-1200-1.jpg[/img",
-    "id": "1",
-    "status": "Хіт продажів",
-    "section": "Пропозиція дня",
+    "price": 25,
+    "image": "https://i.postimg.cc/nsYNz7M6/VAL-8182-1200-1.jpg",
+    "status": "Xіт продажу",
+    "section": "Спеціальна пропозиція",
     "rating": 5,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда кремова", "3шт"],
-      "carnation": ["Гвоздика", "3шт"],
-      "lisianthus": ["Лізіантус", "3шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Червоний",
+    "amount": 21,
+    "size": 170,
+    "form": "Кругла"
   },
   {
+    "id": "2",
     "name": "Букет «Щастя» 2",
     "description": "description 2",
     "price": 80,
     "image": "https://i.postimg.cc/k6Jzt4bD/VAL-8182-1200-2.jpg",
-    "id": "2",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.5,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда рожева", "2шт"],
-      "carnation": ["Хризантема", "2шт"],
-      "lisianthus": ["Маттіола", "2шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Жовтий",
+    "amount": 21,
+    "size": 150,
+    "form": "Сердечком... ;)"
   },
   {
+    "id": "3",
     "name": "Букет «Щастя» 3",
     "description": "description ",
-    "price": 120,
+    "price": 35,
     "image": "https://i.postimg.cc/pyd3Wmv6/VAL-8182-1200-3.jpg",
-    "id": "3",
-    "status": "Новинка",
-    "section": "Пропозиція дня",
+    "status": "Немає в наявності",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда кремова", "3шт"],
-      "carnation": ["Гвоздика", "3шт"],
-      "lisianthus": ["Лізіантус", "3шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Червоний",
+    "amount": 21,
+    "size": 90,
+    "form": "Кругла"
   },
   {
+    "id": "4",
     "name": "Букет «Щастя» 4",
     "description": "description ",
     "price": 60,
     "image": "https://i.postimg.cc/RJqYXDGB/VAL-8182-1200-4.jpg",
-    "id": "4",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда рожева", "2шт"],
-      "carnation": ["Хризантема", "2шт"],
-      "lisianthus": ["Маттіола", "2шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Червоний",
+    "amount": 21,
+    "size": 70,
+    "form": "Кругла"
   },
   {
+    "id": "5",
     "name": "Букет «Щастя» 5",
     "description": "description ",
     "price": 60,
     "image": "https://i.postimg.cc/dk5XRY26/VAL-8182-1200-5.jpg",
-    "id": "5",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда кремова", "3шт"],
-      "carnation": ["Гвоздика", "3шт"],
-      "lisianthus": ["Лізіантус", "3шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Червоний",
+    "amount": 21,
+    "size": 70,
+    "form": "Квадратиком... ;)"
   },
   {
+    "id": "6",
     "name": "Букет «Щастя» 6",
     "description": "description ",
     "price": 60,
     "image": "https://i.postimg.cc/Cd6XzwLL/VAL-8182-1200-6.jpg",
-    "id": "6",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда рожева", "2шт"],
-      "carnation": ["Хризантема", "2шт"],
-      "lisianthus": ["Маттіола", "2шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Троянди",
+    "sort": "Українські троянди",
+    "color": "Червоний",
+    "amount": 21,
+    "size": 65,
+    "form": "Кругла"
   },
   {
+    "id": "7",
     "name": "Букет «Щастя» 7",
     "description": "description ",
     "price": 60,
     "image": "https://i.postimg.cc/ykg5R2kh/VAL-8182-1200-7.jpg",
-    "id": "7",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда кремова", "3шт"],
-      "carnation": ["Гвоздика", "3шт"],
-      "lisianthus": ["Лізіантус", "3шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Букети",
+    "sort": "Кенійські троядни",
+    "color": "Червоний",
+    "amount": 101,
+    "size": 70,
+    "form": "Кругла"
   },
   {
     "id": "8",
+    "name": "Букет «Щастя» 8",
+    "description": "description ",
+    "price": 120,
+    "image": "https://i.postimg.cc/0bT40ZwT/VAL-8182-1200-8.jpg",
     "status": "Новинка",
-    "section": "Пропозиція дня",
+    "section": "Спеціальна пропозиція",
     "rating": 5.8,
-    "params": {
-      "category": "Троянди",
-      "sort": "Українська троядна",
-      "color": "Червоний",
-      "amount": 21,
-      "size": 70,
-      "form": "Кругла"
-    },
-    "contain": {
-      "cream-rose": ["Троянда рожева", "2шт"],
-      "carnation": ["Хризантема", "2шт"],
-      "lisianthus": ["Маттіола", "2шт"]
-    },
-    "pistachio": ["Додатки", "Фісташка"],
-    "package": ["Упакування", "Фетр, крафт, плівка, стрічка"]
+    "category": "Монобукети",
+    "sort": "Троянди із Еквадору і Колумбії",
+    "color": "Червоний",
+    "amount": 121,
+    "size": 70,
+    "form": "Кругла"
   },
   {
     "id": "9",
