@@ -1,0 +1,64 @@
+.bsp-store .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.bsp-store-title {
+  @include text(null, 500, 24px, 31px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 30px;
+
+  @include tablet {
+    font-size: 36px;
+  }
+
+  @include desktop {
+    max-width: 1050px;
+  }
+}
+
+.bsp-store-wrap {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 460px;
+    width: 640px;
+    margin: -15px;
+  }
+}
+
+.bsp-store-text {
+  @include text(null, 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+  margin-bottom: 20px;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 15px;
+  }
+}
+
+.bsp-store-span {
+  font-weight: 600;
+}
+
+.bsp-store-img {
+  width: 320px;
+  height: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 728px;
+    height: 280px;
+  }
+
+  @include desktop {
+    width: 1300px;
+    height: 500px;
+    margin-top: 30px;
+  }
+}

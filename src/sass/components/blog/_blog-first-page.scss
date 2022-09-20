@@ -3,6 +3,10 @@
   padding-top: 20px;
   padding-bottom: 50px;
 
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
+
   @include tablet {
     padding-bottom: 80px;
   }
@@ -13,6 +17,10 @@
   }
 }
 
+.blog-section {
+  position: relative;
+}
+
 .blog-section::after {
   @include desktop {
     content: '';
@@ -20,16 +28,9 @@
     height: 667px;
     background: url(../img/blog/first-page/desktop/bg-flower.png) no-repeat;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: -95px;
     z-index: -1;
-
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(../img/blog/first-page/desktop/bg-flower@2x.png);
-    }
   }
 }
 
@@ -37,19 +38,11 @@
   @include desktop {
     width: 220px;
     height: 831px;
-    background: url(../img/blog/first-page/desktop/bg-leaves-right.png)
-      no-repeat;
+    background: url(../img/blog/first-page/desktop/bg-leaves-right.png) no-repeat;
     position: absolute;
     top: 1100px;
     right: 0;
     z-index: -1;
-
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(../img/blog/first-page/desktop/bg-leaves-right.png);
-    }
   }
 }
 
@@ -62,13 +55,6 @@
     top: 2780px;
     left: 0;
     z-index: -1;
-
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(../img/blog/first-page/desktop/bg-leaves-left@2x.png);
-    }
   }
 }
 
@@ -82,9 +68,6 @@
 
 .main-menu-link,
 .blog-menu-link {
-  transition: text-decoration-line var(--main-transition),
-    text-decoration-thickness var(--main-transition);
-
   &:hover,
   &:focus {
     text-decoration-line: underline;

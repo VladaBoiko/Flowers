@@ -1,0 +1,29 @@
+.bsp-other .container {
+  padding-bottom: 50px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    padding-bottom: 100px;
+  }
+}
+
+.bsp-other-title {
+  @include text(null, 500, 30px, 30px);
+  color: var(--main-accent-color);
+  margin-bottom: 30px;
+
+  @include tablet {
+    font-size: 36px;
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}

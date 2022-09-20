@@ -102,15 +102,15 @@
 
 //-------------КОНТЕНТ------------
 .hero-content {
-    position: relative;
-    pointer-events: none;
-    
-    width: 100%;
-    z-index: 50;
     position: absolute;
     top: 0;
+    left: 0;
+    z-index: 50;
+    
+    width: 100%;
     padding-top: 30px;
-
+    pointer-events: none;
+    
     @include tablet {
         padding-top: 98px;
     }
@@ -127,13 +127,10 @@
 }
 
 .hero-content-wrap {
-    
     max-width: 244px;
-
     @include tablet {
         max-width: 510px;
     }
-
     @include desktop {
         max-width: 639px;
     }
@@ -168,10 +165,12 @@
         width: inherit;
     }
 }
+
 .hero .button {
     pointer-events: all;
 }
 
+//--------SLIDER SETTINGS-------------------
 
 .hero-swiper-container .swiper-pagination-bullet {
     opacity: 1;
@@ -181,9 +180,11 @@
     background-color: transparent;
     border: 1px solid var(--main-bgc-accent);
 }
+
 .hero-swiper-container .swiper-pagination-bullet-active {
     background-color: var(--main-bgc-accent);
 }
+
 .hero-swiper-container .swiper-pagination {
     @media screen and (max-width: 767.98px) {
         bottom: 132px;
@@ -193,6 +194,68 @@
         bottom: 46px;
     }
 }
+
 .hero-swiper-container .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 7px;
+}
+
+//------------HERO MODAL----------------------
+
+.hero-modal-form-field {
+    margin-bottom: 15px;
+    @include font(500, 18px, calc(22px / 18px));
+    color: var(--grey);
+}
+
+.hero-modal-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hero-modal-input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+
+    border: 1px solid var(--grey);
+    border-radius: 2px;
+    outline: none;
+    transition: border var(--main-transition);
+
+    &:hover,
+    &:focus {
+        color: var(--main-accent-color);
+        border: 1px solid var(--main-accent-color);
+    }
+}
+
+.hero-modal-user-text {
+    resize: none;
+
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+    border: 1px solid var(--grey);
+    border-radius: 2px;
+    outline: none;
+
+    @include tablet {
+        margin-bottom: 30px;
+    }
+
+    &:hover,
+    &:focus {
+        border: 1px solid var(--main-accent-color);
+    }
+    
+    &::placeholder {
+        color: var(--grey);
+    }
+}
+
+.hero-modal .button {
+    width: 100%;
+    display: block;
 }

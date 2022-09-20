@@ -1,0 +1,9 @@
+.delivery-section .container {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  @include desktop {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
