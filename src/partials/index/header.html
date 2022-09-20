@@ -7,34 +7,40 @@
             <use href="./img/symbol-defs.svg#map"></use>
           </svg>
           <p class="location__text">Київ</p>
-          <svg class="location__arrow" width="10" height="10">
+          <!-- <svg class="location__arrow" width="10" height="10">
             <use href="./img/symbol-defs.svg#icon-up-arrow-svgrepo-com"></use>
-          </svg>
+          </svg> -->
         </div>
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-list__elemrnts">
-              <a class="nav-list__link nav-list__link--arrow" href="#"
-                >Про магазин</a
-              >
+              <a class="nav-list__link nav-list__link--arrow" href="#">Про магазин</a>
+              <a class="nav-list__link-menu drop-down-menu" href="./organization.html">Організаціям</a>
             </li>
             <li class="nav-list__elemrnts">
-              <a
-                class="nav-list__link nav-list__link--arrow"
-                href="./payment.html"
-                >Доставка</a
-              >
+              <a class="nav-list__link nav-list__link--arrow" href="#">Доставка</a>
+
+              <ul class="drop-down-menu drop-down-menu--flex">
+                <li>
+                  <a class="nav-list__link-menu" href="#">Оплата</a>
+                </li>
+                <li>
+                  <a class="nav-list__link-menu" href="#">Гарантії</a>
+                </li>
+                <li>
+                  <a class="nav-list__link-menu" href="#">Повернення</a>
+                </li>
+              </ul>
             </li>
             <li class="nav-list__elemrnts">
               <a class="nav-list__link" href="./blog-first-page.html">Блог</a>
             </li>
             <li class="nav-list__elemrnts">
-              <a class="nav-list__link" href="#">Відгуки</a>
+              <a class="nav-list__link" href="./reviews.html">Відгуки</a>
             </li>
             <li class="nav-list__elemrnts">
-              <a class="nav-list__link nav-list__link--arrow" href="#"
-                >Контакти</a
-              >
+              <a class="nav-list__link nav-list__link--arrow" href="#">Контакти</a>
+              <a class="nav-list__link-menu drop-down-menu" href="#">Допомога</a>
             </li>
           </ul>
         </nav>
@@ -42,14 +48,10 @@
           <a class="contacts__text" href="#">Доставка</a>
           <ul class="schedule-list">
             <li class="schedule-list__elemnts">
-              <p class="schedule-list__text">
-                Пн &mdash; Пт 8.00 &mdash; 22.00
-              </p>
+              <p class="schedule-list__text">Пн &mdash; Пт 8.00 &mdash; 22.00</p>
             </li>
             <li class="schedule-list__elemnts">
-              <p class="schedule-list__text">
-                Сб &mdash; Вс 10.00 &mdash; 22.00
-              </p>
+              <p class="schedule-list__text">Сб &mdash; Нд 10.00 &mdash; 22.00</p>
             </li>
           </ul>
           <ul class="network-list">
@@ -78,21 +80,17 @@
 
           <div class="header-one__tel">
             <a class="tel-list__link" href="tel:+380661234567">+380661234567</a>
-            <a class="none tel-list__link" href="tel:+380631234567"
-              >+380631234567</a
-            >
-            <a class="none tel-list__link" href="tel:+380671234567"
-              >+380671234567</a
-            >
+            <a class="none tel-list__link" href="tel:+380631234567">+380631234567</a>
+            <a class="none tel-list__link" href="tel:+380671234567">+380671234567</a>
           </div>
 
-          <a class="header-button" href="#">Постійним клієнтам</a>
-          <p class="language__text">
+          <a class="header-button" href="#">Оптовим покупцям</a>
+          <!-- <p class="language__text">
             UA
             <svg class="location__arrow" width="10" height="10">
               <use href="./img/symbol-defs.svg#icon-up-arrow-svgrepo-com"></use>
             </svg>
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -100,7 +98,7 @@
   <div class="header-box-two">
     <div class="container">
       <div class="header header-two">
-        <a class="logo__link" href="#">
+        <a class="logo__link" href="./index.html">
           <svg class="logo">
             <use href="./img/symbol-defs.svg#logo"></use>
           </svg>
@@ -109,45 +107,47 @@
         <ul class="tel-list">
           <li class="tel-list__elements">
             <a class="tel-list__link" href="tel:+380661234567">
-              +380661234567
+              (066)-123-45-67
+              <!-- +380661234567 -->
             </a>
           </li>
           <li class="tel-list__elements">
             <a class="tel-list__link" href="tel:+380631234567">
-              +380631234567
+              (063)-123-45-67
+              <!-- +380631234567 -->
             </a>
           </li>
           <li class="tel-list__elements">
             <a class="tel-list__link" href="tel:+380671234567">
-              +380671234567
+              (067)-123-45-67
+              <!-- +380671234567 -->
             </a>
           </li>
         </ul>
         <label class="label__search">
-          <input
-            id="search"
-            class="search"
-            type="text"
-            name="search"
-            placeholder="Знайти букет..."
-          />
+          <input id="search" class="search" type="text" name="search" placeholder="Знайти букет..." />
         </label>
 
         <ul class="list-icon">
           <li class="list-icon__elemens">
-            <svg class="list-icon__icon" width="28" height="28">
-              <use href="./img/symbol-defs.svg#user-icon"></use>
-            </svg>
+            <a href="#" class="list-icon__link">
+              <svg class="list-icon__icon" width="28" height="28">
+                <use href="./img/symbol-defs.svg#user-icon"></use>
+              </svg>
+            </a>
           </li>
           <li class="list-icon__elemens">
-            <svg class="list-icon__icon" width="28" height="28">
-              <use href="./img/symbol-defs.svg#wish-icon"></use>
-            </svg>
+            <a href="./favorites.html" class="list-icon__link"
+              ><svg class="list-icon__icon" width="28" height="28">
+                <use href="./img/symbol-defs.svg#wish-icon"></use></svg
+            ></a>
           </li>
           <li class="list-icon__elemens">
-            <svg class="list-icon__icon" width="28" height="28">
-              <use href="./img/symbol-defs.svg#shopping-bag-icon"></use>
-            </svg>
+            <a href="#" class="list-icon__link"
+              ><svg class="list-icon__icon" width="28" height="28">
+                <use href="./img/symbol-defs.svg#shopping-bag-icon"></use></svg
+            ></a>
+
             <p class="list-icon__text">Пусто</p>
           </li>
         </ul>
@@ -157,12 +157,7 @@
   <div class="search-mobail">
     <div class="container">
       <label class="label__search">
-        <input
-          class="search"
-          type="text"
-          name="search"
-          placeholder="Знайти букет..."
-        />
+        <input class="search" type="text" name="search" placeholder="Знайти букет..." />
       </label>
     </div>
   </div>

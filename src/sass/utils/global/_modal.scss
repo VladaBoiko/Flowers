@@ -1,0 +1,127 @@
+body.show-modal {
+    overflow: hidden;
+
+    & .backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
+        overflow: hidden;
+    }
+}
+body.show-modal .modal {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+ 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--main-transition),
+        visibility var(--main-transition);   
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 50px 10px;
+    overflow: hidden;
+
+    background-color: var(--white);
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.7;
+
+    transition: transform var(--main-transition),
+        opacity var(--main-transition); 
+
+    @media screen and (min-width: 375px) {
+        width: 375px;
+    }
+    @media screen and (min-width: 480px) {
+        width: 450px;
+    }
+    @include tablet {
+        width: 580px;
+        padding: 50px 70px;
+    }
+    
+    &::before {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 124px;
+        height: 74px;
+        background-image: url(../img/reusable/leaf-top-left-124.png);
+        background-repeat: no-repeat;
+    }
+
+    &::after {
+        display: block;
+        content: "";
+
+        position: absolute;
+        bottom: -8px;
+        right: 2px;
+        width: 45px;
+        height: 47px;
+        background-image: url(../img/reusable/blobs.png);
+        background-repeat: no-repeat;
+        @include tablet {
+            bottom: -2px;
+            right: 0;
+            width: 45px;
+            height: 50px;
+        }
+    }
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: inherit;
+    transition: stroke var(--main-transition);
+
+    stroke: var(--grey);
+    &:hover,
+    &:focus {
+        stroke: var(--light-theme-text-color);
+    }
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include font(500, 24px, calc(31px / 24px));
+    color: var(--main-accent-color);
+
+    @include tablet {
+        @include font(null, 36px, calc(47px / 36px));
+    }
+}
+.modal-text {
+    text-align: center;
+
+    @include font(400, 16px, calc(21px / 16px));
+    color: var(--main-accent-color);
+
+    @include tablet {
+        @include font(null, 24px, calc(31px / 24px));
+    }
+}
