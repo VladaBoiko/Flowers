@@ -1,29 +1,32 @@
-.shop {
-  position: relative;
+
+.shop{
+    position: relative;
 }
-.shop::after {
-  @include desktop {
-    content: '';
-    width: 715px;
-    height: 649px;
-    // background: url(../img/shop/list.webp) no-repeat;
-    position: absolute;
-    top: 18px;
-    right: -95px;
-    z-index: -3;
-  }
+.shop::after{
+    @include desktop{
+        content: '';
+        width: 715px;
+        height: 649px;
+        background: url(/src/img/shop/shop-flowers.webp) no-repeat;
+        position: absolute;
+        top: 18px;
+        right: -95px;
+        z-index: -3;
+       
+    }
 }
-.shop::before {
-  @include desktop {
-    content: '';
-    width: 219px;
-    height: 811px;
-    // background: url(../img/shop/list.webp) no-repeat;
-    position: absolute;
-    top: 623px;
-    right: 0;
-    z-index: -1;
-  }
+.shop::before{
+    @include desktop{
+        content: '';
+        width: 219px;
+        height: 811px;
+        background: url(/src/img/shop/shop-list.webp) no-repeat;
+        position: absolute;
+        top: 623px;
+        right: 0;
+        z-index: -1;
+       
+    }
 }
 .shop-nav-link,
 .shop-separator {
