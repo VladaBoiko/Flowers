@@ -1,0 +1,27 @@
+.result {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 10px;
+  @include desktop {
+    justify-content: start;
+    margin-bottom: 20px;
+  }
+}
+.amount {
+  @include fontSecond(500, 36px, 44px);
+  color: var(--second-accent-color);
+  text-transform: uppercase;
+  span {
+    margin-left: 5px;
+  }
+}
+.amount-discaunt {
+  @include fontSecond(400, 20px, 24px);
+  text-decoration-line: line-through;
+  color: #bababa;
+  text-transform: uppercase;
+  @include desktop {
+    margin-left: 15px;
+  }
+}
