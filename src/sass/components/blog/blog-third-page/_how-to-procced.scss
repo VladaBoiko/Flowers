@@ -1,0 +1,42 @@
+.how-to-proceed .container {
+  position: relative;
+  padding-bottom: 30px;
+
+  @include desktop {
+    padding-bottom: 50px;
+  }
+}
+
+.how-to-proceed__text-wrap {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 420px 420px 420px;
+  }
+}
+
+.text-wrap__wrapper {
+  @include desktop {
+    grid-column: 2/3;
+  }
+}
+
+.how-to-proceed-img {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include desktop {
+    margin-top: 0;
+    width: 588px;
+    height: 404px;
+    position: absolute;
+    bottom: 50px;
+    left: -168px;
+  }
+}

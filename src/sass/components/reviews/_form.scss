@@ -1,0 +1,103 @@
+main {
+  padding: 30px 0 100px 0;
+}
+
+.link-nav {
+  @include text(null, 500, 14px, 17px);
+  color: var(--light-theme-title-color);
+
+  &--active {
+    color: var(--grey);
+  }
+}
+
+.title {
+  margin-top: 30px;
+
+  @include font(500, 36px, null);
+  color: var(--main-accent-color);
+}
+
+.assessment-box {
+  margin-top: 31px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.assessment__text {
+  @include text(null, 400, 18px, 22px);
+}
+
+.star-list {
+  display: flex;
+}
+
+.star-list__icon {
+  color: #fff;
+
+  cursor: pointer;
+
+  &--active {
+    color: #ffc549;
+  }
+}
+
+.form {
+  margin-top: 15px;
+}
+
+.form__label {
+  display: block;
+  max-width: 750px;
+  margin-bottom: 10px;
+}
+
+.form__input,
+.textarea {
+  width: 100%;
+  outline: none;
+
+  padding: 16px 17px 17px;
+  height: 50px;
+
+  border: 1px solid #bababa;
+  border-radius: 4px;
+
+  background-color: #fffcfa;
+}
+
+.textarea {
+  height: 134px;
+  resize: none;
+}
+
+.file-img {
+  display: inline-flex;
+  width: 60px;
+  height: 70px;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url('../img/reviews/Group.jpg');
+
+  border: 1px solid #bababa;
+  border-radius: 4px;
+
+  &:not(:last-child) {
+    margin-right: 6px;
+  }
+}
+
+.file-text {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+
+  @include text(null, 400, 14px, 17px);
+  color: var(--grey);
+}
+
+.button-form {
+  display: block;
+  margin-top: 30px;
+}

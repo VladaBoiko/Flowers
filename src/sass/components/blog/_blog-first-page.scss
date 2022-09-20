@@ -3,6 +3,10 @@
   padding-top: 20px;
   padding-bottom: 50px;
 
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+  }
+
   @include tablet {
     padding-bottom: 80px;
   }
@@ -34,8 +38,7 @@
   @include desktop {
     width: 220px;
     height: 831px;
-    background: url(../img/blog/first-page/desktop/bg-leaves-right.png)
-      no-repeat;
+    background: url(../img/blog/first-page/desktop/bg-leaves-right.png) no-repeat;
     position: absolute;
     top: 1100px;
     right: 0;
