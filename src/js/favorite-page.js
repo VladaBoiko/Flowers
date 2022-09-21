@@ -3,6 +3,7 @@ import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { loadFromLocalStorage } from './catalog/localStorage';
+import { filterById } from './catalog/filter';
 
 const refs = {
   titleWrapper: document.querySelector('.offer__title-wrapper'),
@@ -25,28 +26,21 @@ if (favotireListFromLocalStorage === 'undefined' || favotireListFromLocalStorage
   addClass(refs.titleWrapper.children[1], 'hidden');
   addClass(refs.btn, 'favorites__button--centered');
 
-  const listFavProducts = favotireListFromLocalStorage.map(async id => {
-    try {
-      const product = await APIGetData.getDataByID(id);
-      return product;
-    } catch {
-      console.log('error');
-    }
-  });
-  Promise.all(listFavProducts)
-    .then(result => {
-      return result;
-    })
-    .then(result => {
-      console.log('result', result);
-      const markup = createMarkup(result);
-      console.log('1', markup);
-      // console.log('2', result);
-      render(refs.list, markup);
-    })
-    .catch(console.error);
+  renderData();
 }
 
+async function renderData() {
+  try {
+    const data = await APIGetData.getData();
+    console.log(data);
+    filteredData = filterById(data, favotireListFromLocalStorage);
+    console.log(filteredData);
+    const markup = createMarkup(filteredData);
+    render(refs.list, markup);
+  } catch (error) {
+    console.log(error);
+  }
+}
 // ========================================================================================
 
 function addClass(element, cssClass) {

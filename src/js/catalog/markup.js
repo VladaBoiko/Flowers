@@ -15,7 +15,7 @@ export const createMarkup = data => {
     .map(({ id, name, image, price, status }) => {
       const keyStatus = getKey(status, statuses);
       return `<li class="offer-list__item product" id="${id}">
-        <a href="./product-${id}" class="product__link">
+        <a href="./good-card.html" class="product__link">
           <img
             loading="lazy"
             src="${image}"

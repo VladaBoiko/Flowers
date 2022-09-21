@@ -1,9 +1,8 @@
 import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
-import { handleFavorite } from './catalog/favoriteHandle';
-import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { filterData, filterWords } from './catalog/filter';
+import { smoothScroll } from './catalog/smoothScroll';
 
 import { reviewsSwiper } from './reviews-slider';
 
@@ -44,8 +43,6 @@ const catalogData = {
       const markup = createMarkup(slicedData);
 
       render(refs.catalogList, markup);
-      handleFavorite();
-      handleWatchedHistory();
     } catch (error) {
       console.log(error);
     }
@@ -89,10 +86,11 @@ refs.resetFormBtn.addEventListener('click', () => {
 
 refs.form.addEventListener('change', () => {
   clearData(refs.catalogList);
-
   catalogData.resetPage();
   catalogData.filterParams = getCheckedCheckBox();
   catalogData.renderData();
+  loadMoreBtn.show();
+  loadMoreBtn.enable();
 });
 
 const loadMoreBtn = {
@@ -121,13 +119,14 @@ loadMoreBtn.element.addEventListener('click', () => {
   } else {
     loadMoreBtn.enable();
   }
+  smoothScroll(refs.catalogList);
 });
 
 function sliceData(data, page, offset) {
   const totalPages = data.length / offset;
   const start = page * offset - offset;
   const end = start + offset;
-  console.log('start', start, 'end', end, 'page', page, 'totalPages', totalPages);
+
   if (data.length > offset) {
     if (page < totalPages) {
       return data.slice(start, end);
