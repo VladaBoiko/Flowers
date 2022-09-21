@@ -7,8 +7,8 @@ export const heroSwiper = new Swiper('.hero-swiper-container', {
   },
   autoplay: {
     delay: 3000,
-    stopOnLastSlide: false,
-    disableOnInteraction: false,
+    // stopOnLastSlide: false,
+    // disableOnInteraction: false,
   },
   speed: 3000,
   loop: true,
