@@ -15,7 +15,7 @@ export const filterWords = {
   form: 'Форма букету',
   price: 'Ціна',
 };
-
+let filteredData = [];
 export const filterData = (data, filterParams) => {
   const filterKeys = Object.keys(filterWords);
 
@@ -74,7 +74,7 @@ export const filterById = (data, idList) =>
   (filteredData = [...data].filter(card => idList.indexOf(card.id) > -1).sort((a, b) => b.rating - a.rating));
 
 export const filterBySection = (data, section, otherData) => {
-  let filteredData = [];
+  // let filteredData = [];
 
   if (section !== sections.earlierWatched) {
     filteredData = [...data].filter(card => card.section === section).sort((a, b) => b.rating - a.rating);
