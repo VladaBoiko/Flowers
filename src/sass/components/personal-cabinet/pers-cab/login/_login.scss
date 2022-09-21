@@ -5,6 +5,9 @@
         flex-direction: column;
         align-items: center;
     }
+    &.is-hidden {
+        display: none;
+    }
 }
 
 .login-title {

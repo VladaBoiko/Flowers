@@ -1,7 +1,7 @@
-<section class="pers-login">
+<section class="pers-login" data-login-section>
     <div class="container">
         <h2 class="login-title">Вхід до особистого кабинету</h2>
-        <form class="login-form">
+        <form class="login-form" data-login-form>
             <div class="login-row-wrap">
                 <label class="login-label">
                     <input type="text" class="pers-form-input" placeholder="Введіть телефон або електронну пошту" required>
@@ -22,8 +22,8 @@
         </form>
     </div>
 </section>
-<!--  js-hero-backdrop -->
-<div class="backdrop js-reg-backdrop" data-hero-modal>
+
+<div class="backdrop js-reg-backdrop">
     <div class="container">
         <div class="reg-modal modal">
             <button type="button" class="modal-close-button" data-reg-modal-close>
@@ -33,14 +33,55 @@
             </button>
             <p class="modal-title">Реєстрація</p>
 
-            <form class="reg-modal-form">
+            <form class="reg-modal-form" data-signup-form>
                 <div class="reg-input-wrap">
-                    <label><input type="text" class="pers-form-input" placeholder="Введіть ім’я користувача"></label>
-                    <label><input type="password" class="pers-form-input" placeholder="Введіть пароль"></label>
-                    <label><input type="password" class="pers-form-input" placeholder="Підтвердьте пароль"></label>
-                    <label><input type="text" class="pers-form-input" placeholder="ПІБ"></label>
-                    <label><input type="mail" class="pers-form-input" placeholder="Електронна пошта"></label>
-                    <label><input type="text" class="pers-form-input" placeholder="Карта клієнта"></label>
+                    <label>
+                        <input 
+                            type="text"
+                            name="user-nickname"
+                            class="pers-form-input" 
+                            placeholder="Введіть ім’я користувача" 
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="password" 
+                            name="user-pass"
+                            class="pers-form-input" 
+                            placeholder="Введіть пароль" 
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="password"
+                            name="confirm-user-pass" 
+                            class="pers-form-input" 
+                            placeholder="Підтвердьте пароль"
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="text"
+                            name="user-name" 
+                            class="pers-form-input" 
+                            placeholder="ПІБ" 
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="mail" 
+                            name="user-mail"
+                            class="pers-form-input" 
+                            placeholder="Електронна пошта" 
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="text"
+                            name="user-client-card" 
+                            class="pers-form-input" 
+                            placeholder="Карта клієнта">
+                    </label>
                 </div>
                 
                 <button type="submit" class="button dark">Зареєструватися</button>
