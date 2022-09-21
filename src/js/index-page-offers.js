@@ -28,16 +28,16 @@ renderData();
 async function renderData() {
   try {
     const data = await APIGetData.getData();
-    console.log(data);
-    // for (const offerSection in sections) {
-    //   const filteredData =
-    //     sections[offerSection] !== sections.earlierWatched
-    //       ? filterBySection(data, sections[offerSection])
-    //       : filterBySection(data, sections[offerSection], earlierWatchedList);
 
-    //   const markup = createMarkup(filteredData);
-    //   refs[offerSection].insertAdjacentHTML('beforeend', markup);
-    // }
+    for (const offerSection in sections) {
+      const filteredData =
+        sections[offerSection] !== sections.earlierWatched
+          ? filterBySection(data, sections[offerSection])
+          : filterBySection(data, sections[offerSection], earlierWatchedList);
+      console.log(filteredData);
+      const markup = createMarkup(filteredData);
+      refs[offerSection].insertAdjacentHTML('beforeend', markup);
+    }
     handleFavorite();
     handleWatchedHistory();
   } catch (error) {
