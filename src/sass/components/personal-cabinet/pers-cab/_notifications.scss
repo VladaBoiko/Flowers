@@ -33,10 +33,13 @@
 
 .pers-notif-label {
     display: flex;
+    cursor: pointer;
+    
     @include font(400, 14px, calc(18px / 14px));
     color: var(--light-theme-text-color);
     padding-top: 5px;
     padding-bottom: 5px;
+    
     &::before {
         display: block;
         content: "";
@@ -45,8 +48,12 @@
         margin-right: 15px;
         border: 1px solid var(--main-accent-color);
         border-radius: 4px;
+        transition: scale var(--main-transition);
 
-        .notif-form-group input:focus+&,
+        .notif-form-group input:focus+& {
+            scale: 1.2;
+        }
+
         .notif-form-group input:checked+& {
             background-image: url(../img/personal-cabinet/check.svg);
             background-repeat: no-repeat;

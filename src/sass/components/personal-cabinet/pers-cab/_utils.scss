@@ -1,0 +1,68 @@
+.pers-content-title {
+    @include font(600, 20px, calc(26px / 20px));
+    color: var(--main-accent-color);
+}
+
+// --------rectangular-input---------------
+
+.pers-form-input {
+    width: 100%;
+    height: 50px;
+    padding: 16px 17px;
+
+    @include font(400, 14px, calc(17px / 14px));
+    color: var(--black);
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+
+    @include tablet {
+        width: 440px;
+    }
+
+    &::placeholder {
+        color: var(--grey);
+    }
+}
+
+//-------submit-btn-------------
+
+.pers-button-wrap {
+    @media screen and (max-width: 767.98px) {
+        padding: 0 20px;
+    }
+}
+
+.pers-button-wrap>.button {
+    display: block;
+    width: 100%;
+
+    @include tablet {
+        width: 300px;
+        margin-right: auto;
+    }
+
+    @include desktop {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+// ----------for password security/close-eye-icon------
+
+label.close-eye-inside {
+    &>input {
+        padding: 16px 41px 16px 17px;
+    }
+}
+label.close-eye-inside {
+    position: relative;
+
+    & .pwd-input-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 9px;
+        stroke: var(--light-theme-text-color);
+        fill: none;
+    }
+}

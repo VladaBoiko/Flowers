@@ -40,6 +40,13 @@
     }
 }
 
+.pers-cab-menu-list {
+    margin-bottom: 60px;
+    @include desktop {
+        margin-bottom: 100px;
+    }
+}
+
 .pers-cab-menu-item {
     position: relative;
 
@@ -57,6 +64,39 @@
         width: 310px;
     }
 }
+
+.pers-drop-up {
+    position: absolute;
+    top: -100%;
+    left: 34px;
+
+    width: 194px;
+    height: 56px;
+    padding: 10px 30px 10px 20px;
+
+    font-family: 'PT sans';
+    @include font(400, 14px, calc(18px / 14px));
+    color: var(--main-bgc-accent);
+    background: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+
+    opacity: 0;
+    scale: 0.8;
+    pointer-events: none;
+
+    transition: opacity var(--main-transition), scale var(--main-transition);
+}
+
+.pers-cab-menu-item {
+    @include desktop {
+        &:first-child>button:hover+.pers-drop-up {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+}
+
 
 .pers-cab-menu-button {
     display: inline-block;
@@ -78,7 +118,6 @@
     &.currentBtn {
         background-color: var(--main-accent-color);
         color: var(--dark-theme-text-color);
-        // z-index: 5;
         .pers-cab-menu-icon {
             stroke: var(--dark-theme-text-color);
         }
@@ -96,4 +135,60 @@
     stroke: var(--main-accent-color);
     pointer-events: none;
     transition: stroke 250ms linear;
+}
+
+.pers-cab-menu-item {
+    &:first-child>button {
+        @include desktop {
+            &::before {
+                position: absolute;
+                top: 15px;
+                left: 28px;
+        
+                display: block;
+                content: "";
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background-color: var(--second-accent-color);
+                z-index: 50;
+            }
+        }
+    }
+}
+
+
+// -----------bonus-box--------
+
+.user-bonus {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    max-width: 320px;
+
+    padding: 9px 15px;
+
+    font-family: 'PT sans';
+    @include font(null, 16px, calc(21px / 16px));
+    color: var(--main-accent-color);
+    
+    background-color: var(--white);
+    border: 1px solid var(--main-accent-color);
+    border-radius: 4px;
+
+    @include tablet {
+        width: 310px;
+    }
+}
+
+.user-bonus-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.user-bonus-value {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

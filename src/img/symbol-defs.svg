@@ -207,7 +207,18 @@
 <path fill="none" stroke="#03453b" style="stroke: var(--color3, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.2" d="M24.8 21.6c0 0.424-0.169 0.831-0.469 1.131s-0.707 0.469-1.131 0.469h-14.4c-0.424 0-0.831-0.169-1.131-0.469s-0.469-0.707-0.469-1.131v-8.8c0-0.424 0.169-0.831 0.469-1.131s0.707-0.469 1.131-0.469h3.2l1.6-2.4h4.8l1.6 2.4h3.2c0.424 0 0.831 0.169 1.131 0.469s0.469 0.707 0.469 1.131v8.8z"></path>
 <path fill="none" stroke="#03453b" style="stroke: var(--color3, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.2" d="M16 20c1.767 0 3.2-1.433 3.2-3.2s-1.433-3.2-3.2-3.2c-1.767 0-3.2 1.433-3.2 3.2s1.433 3.2 3.2 3.2z"></path>
 </symbol>
-
+<symbol id="eye-off-icon" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1" d="M17.696 17.696c-0.22 0.236-0.485 0.425-0.779 0.556s-0.612 0.202-0.934 0.207c-0.322 0.006-0.642-0.053-0.941-0.174s-0.57-0.3-0.798-0.528-0.408-0.499-0.528-0.798c-0.121-0.299-0.18-0.619-0.174-0.941s0.076-0.64 0.207-0.934c0.131-0.294 0.32-0.559 0.556-0.779M7.2 7.2l17.6 17.6M20.752 20.752c-1.368 1.042-3.033 1.62-4.752 1.648-5.6 0-8.8-6.4-8.8-6.4 0.995-1.854 2.375-3.475 4.048-4.752l9.504 9.504zM14.32 9.792c0.551-0.129 1.114-0.193 1.68-0.192 5.6 0 8.8 6.4 8.8 6.4-0.486 0.908-1.065 1.764-1.728 2.552l-8.752-8.76z"></path>
+</symbol>
+<symbol id="database-icon" viewBox="0 0 32 32">
+<path fill="none" stroke="#03453b" style="stroke: var(--color1, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M16 12.8c3.976 0 7.2-1.075 7.2-2.4s-3.224-2.4-7.2-2.4c-3.976 0-7.2 1.075-7.2 2.4s3.224 2.4 7.2 2.4z"></path>
+<path fill="none" stroke="#03453b" style="stroke: var(--color1, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M23.2 16c0 1.328-3.2 2.4-7.2 2.4s-7.2-1.072-7.2-2.4"></path>
+<path fill="none" stroke="#03453b" style="stroke: var(--color1, #03453b)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M8.8 10.4v11.2c0 1.328 3.2 2.4 7.2 2.4s7.2-1.072 7.2-2.4v-11.2"></path>
+</symbol>
+<symbol id="coin-star-icon" viewBox="0 0 32 32">
+<path fill="#70a5a0" style="fill: var(--color1, #70a5a0)" d="M31.238 16c0 8.626-6.993 15.619-15.619 15.619s-15.619-6.993-15.619-15.619c0-8.626 6.993-15.619 15.619-15.619s15.619 6.993 15.619 15.619z"></path>
+<path fill="#ebebeb" style="fill: var(--color2, #ebebeb)" d="M15.621 6.629l2.104 6.476h6.809l-5.508 4.002 2.104 6.476-5.508-4.002-5.508 4.002 2.104-6.476-5.508-4.002h6.809l2.104-6.476z"></path>
+</symbol>
 
 <symbol id="map" viewBox="0 0 32 32">
 <path d="M16 0c-7.146 0-12.959 5.813-12.959 12.959 0 2.949 0.966 5.725 2.794 8.030 2.367 2.984 9.25 10.071 9.542 10.371l0.622 0.64 0.622-0.64c0.292-0.3 7.177-7.388 9.545-10.373 1.826-2.303 2.792-5.079 2.792-8.028 0-7.146-5.813-12.959-12.959-12.959zM24.807 19.908c-1.906 2.403-7.024 7.749-8.807 9.598-1.783-1.849-6.899-7.194-8.804-9.596-1.582-1.995-2.418-4.399-2.418-6.951 0-6.188 5.035-11.223 11.223-11.223s11.223 5.035 11.223 11.223c0 2.553-0.835 4.956-2.416 6.949z"></path>

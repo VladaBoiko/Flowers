@@ -18,40 +18,17 @@
     <include src="./partials/index/header.html"></include>
 
     <main>
-        <section class="personal-cabinet">
-            <div class="container">
-        
-                <h1 class="visually-hidden">Особистий кабінет</h1>
-        
-                <h2 class="pers-cab-title-desk">Особистий кабінет</h2>
-                <button type="button" class="pers-cab-menu-btn" data-open-menu-btn>Меню
-                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
-                        <use href="./img/symbol-defs.svg#burger-menu-icon"></use>
-                    </svg>
-                </button>
-                <button type="button" class="pers-cab-menu-btn is-hidden" data-close-menu-btn>Згорнути меню
-                    <svg class="pers-cab-menu-close-icon" width="40" height="40">
-                        <use href="./img/symbol-defs.svg#cross-icon"></use>
-                    </svg>
-                </button>
-        
-                <div class="pers-cab-main">
-                    <include src="./partials/personal-cabinet/menu-wrapper.html"></include>
-                    
-                    <div class="pers-cab-content-wrap" data-content-wrap>
-                        <include src="./partials/personal-cabinet/profile.html"></include>
-                        <include src="./partials/personal-cabinet/orders.html"></include>
-                        <include src="./partials/personal-cabinet/notification.html"></include>
-                        <include src="./partials/personal-cabinet/favorites.html"></include>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <include src="./partials/personal-cabinet/login-registration/login-reg.html"></include>
+        <include src="./partials/personal-cabinet/main/structure.html"></include>
     </main>
 
     <include src="./partials/index/footer.html"></include>
 
-    <script src="./js/personal-cab-menu.js" type="module"></script>
+
+    <script src="./js/personal-cabinet/personal-cab-menu.js" type="module"></script>
+    <script src="./js/personal-cabinet/registration-modal.js" type="module"></script>
+    <script src="./js/personal-cabinet/login-into-cabinet.js" type="module"></script>
+    
 </body>
 
 </html>

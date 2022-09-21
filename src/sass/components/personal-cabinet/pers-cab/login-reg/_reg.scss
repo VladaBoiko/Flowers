@@ -1,0 +1,14 @@
+.reg-input-wrap {
+    display: grid;
+    grid-row-gap: 5px;
+    margin-bottom: 20px;
+
+    @include tablet {
+        grid-row-gap: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+.reg-modal-form button {
+    width: 100%;
+}
