@@ -29,14 +29,14 @@ async function renderData() {
   try {
     const data = await APIGetData.getData();
 
-    for (section in sections) {
+    for (offerSection in sections) {
       const filteredData =
-        sections[section] !== sections.earlierWatched
-          ? filterBySection(data, sections[section])
-          : filterBySection(data, sections[section], earlierWatchedList);
+        sections[offerSection] !== sections.earlierWatched
+          ? filterBySection(data, sections[offerSection])
+          : filterBySection(data, sections[offerSection], earlierWatchedList);
 
       const markup = createMarkup(filteredData);
-      refs[section].insertAdjacentHTML('beforeend', markup);
+      refs[offerSection].insertAdjacentHTML('beforeend', markup);
     }
     handleFavorite();
     handleWatchedHistory();
