@@ -1,12 +1,14 @@
 .pers-login {
     padding: 50px 0px;
+
+    &.is-hidden {
+        display: none;
+    }
+
     &>.container {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    &.is-hidden {
-        display: none;
     }
 }
 
@@ -77,51 +79,6 @@
     &.pers-form-input {
         margin-bottom: 10px;
     }
-    // &:first-of-type {
-    //     &>.pers-form-input {
-    //         margin-bottom: 10px;
-    //     }
-    // }
-    // &:last-of-type {
-    //     &>.pers-form-input {
-    //         position: relative;
-    //         margin-bottom: 8px;
-    //         @include tablet {
-    //             margin-bottom: 10px;
-    //         }
-    //         // &::after {
-    //         //     display: block;
-    //         //     content: "";
-
-    //         //     position: absolute;
-    //         //     // top: 9px;
-    //         //     // right: 9px;
-    //         //     width: 32px;
-    //         //     height: 32px;
-    //         //     background-image: url(../img/personal-cabinet/eye-off.svg);
-    //         //     // background-repeat: no-repeat;
-    //         // }
-    //     }
-    // }
-}
-
-.login-form .pers-form-input {
-    position: relative;
-
-    &::after {
-        display: block;
-        content: "";
-
-        position: absolute;
-        top: 9px;
-        right: 9px;
-        width: 32px;
-        height: 32px;
-        background-color: aqua;
-        // background-image: url(../img/personal-cabinet/eye-off.svg);
-        // background-image: url(../img/symbol-defs.svg#eye-off-icon);
-        // background-repeat: no-repeat;
-    }
 }
 
 .login-row-wrap {
@@ -129,6 +86,7 @@
     grid-row-gap: 10px;
     margin-bottom: 10px;
 }
+
 .login-flex-wrap {
     display: flex;
     align-items: center;
@@ -170,8 +128,12 @@
         margin-right: 15px;
         border: 1px solid var(--main-accent-color);
         border-radius: 4px;
-
-        .login-check-wrap>input:focus+&,
+        transition: scale var(--main-transition);
+        
+        .login-check-wrap>input:focus+& {
+            scale: 1.2;
+        }
+    
         .login-check-wrap>input:checked+& {
             background-image: url(../img/personal-cabinet/check.svg);
             background-repeat: no-repeat;
@@ -181,7 +143,6 @@
 }
 
 .login-btn {
-    // display: block;
     width: 100%;
     &:not(:last-child) {
         margin-bottom: 5px;

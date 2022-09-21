@@ -1,5 +1,4 @@
-
-@import './pers-cab/utilit';
+@import './pers-cab/utils';
 @import './pers-cab/structure';
 
 @import './pers-cab/menu';
@@ -8,5 +7,5 @@
 @import './pers-cab/notifications';
 @import './pers-cab/favorites';
 
-@import './pers-cab/login/login';
-@import './pers-cab/login/reg';
+@import './pers-cab/login-reg/login';
+@import './pers-cab/login-reg/reg';
