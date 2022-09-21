@@ -87,9 +87,9 @@
     padding: 16px;
     padding-left: 18px;
 
-    &:not(:last-child) {
-        margin-bottom: 10px;
-    }
+    // &:not(:last-child) {
+    //     margin-bottom: 10px;
+    // }
 
     @include font(400, 14px, calc(17px / 14px));
     color: var(--black);

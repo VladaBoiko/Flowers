@@ -6,10 +6,16 @@
                 <label class="login-label">
                     <input type="text" class="pers-form-input" placeholder="Введіть телефон або електронну пошту" required>
                 </label>
-                <label class="login-label">
-                    <input type="password" class="pers-form-input" placeholder="Введіть пароль" required>
+                <label class="login-label close-eye-inside">
+                    <input type="password" class="pers-form-input" 
+                    placeholder="Введіть пароль" required>
+                    <svg class="pass-input-icon" width="32" height="32">
+                        <use href="./img/symbol-defs.svg#eye-off-icon"></use>
+                    </svg>
                 </label>
             </div>
+
+
             <div class="login-flex-wrap">
                 <a href="">Забули пароль?</a>
                 <div class="login-check-wrap">
@@ -43,21 +49,27 @@
                             placeholder="Введіть ім’я користувача" 
                             required>
                     </label>
-                    <label>
+                    <label class="close-eye-inside">
                         <input 
                             type="password" 
                             name="user-pass"
-                            class="pers-form-input" 
+                            class="pers-form-input close-eye" 
                             placeholder="Введіть пароль" 
                             required>
+                            <svg class="pass-input-icon" width="32" height="32">
+                                <use href="./img/symbol-defs.svg#eye-off-icon"></use>
+                            </svg>
                     </label>
-                    <label>
+                    <label class="close-eye-inside">
                         <input 
                             type="password"
                             name="confirm-user-pass" 
                             class="pers-form-input" 
                             placeholder="Підтвердьте пароль"
                             required>
+                            <svg class="pass-input-icon" width="32" height="32">
+                                <use href="./img/symbol-defs.svg#eye-off-icon"></use>
+                            </svg>
                     </label>
                     <label>
                         <input 

@@ -25,3 +25,23 @@
         margin-left: auto;
     }
 }
+
+// ----------for password security/close-eye-icon------
+
+label.close-eye-inside {
+    &>input {
+        padding: 16px 41px 16px 18px;
+    }
+}
+label.close-eye-inside {
+    position: relative;
+
+    & .pass-input-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 9px;
+        stroke: var(--light-theme-text-color);
+        fill: none;
+    }
+}

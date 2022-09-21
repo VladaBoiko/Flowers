@@ -9,20 +9,24 @@
     }
 }
 
-.pers-form-input {
-    position: relative;
+
+.pers-form-input.login-input {
     &::after {
-            display: block;
-            content: "";
-    
-            position: absolute;
-            // top: 9px;
-            // right: 9px;
-            width: 32px;
-            height: 32px;
-            background-image: url(../img/personal-cabinet/eye-off.svg);
-            // background-repeat: no-repeat;
-        }
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        width: 32px;
+        height: 32px;
+        background-color: aqua;
+        background-image: url(../img/personal-cabinet/eye-off.svg);
+        // stroke: var(--light-theme-text-color);
+        // fill: var(--light-theme-text-color);
+        // background-repeat: no-repeat;
+        fill: none;
+    }
 }
 
 .reg-modal-form button {
