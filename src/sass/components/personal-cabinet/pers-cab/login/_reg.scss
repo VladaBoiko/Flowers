@@ -1,0 +1,30 @@
+.reg-input-wrap {
+    display: grid;
+    grid-row-gap: 5px;
+    margin-bottom: 20px;
+
+    @include tablet {
+        grid-row-gap: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+.pers-form-input {
+    position: relative;
+    &::after {
+            display: block;
+            content: "";
+    
+            position: absolute;
+            // top: 9px;
+            // right: 9px;
+            width: 32px;
+            height: 32px;
+            background-image: url(../img/personal-cabinet/eye-off.svg);
+            // background-repeat: no-repeat;
+        }
+}
+
+.reg-modal-form button {
+    width: 100%;
+}

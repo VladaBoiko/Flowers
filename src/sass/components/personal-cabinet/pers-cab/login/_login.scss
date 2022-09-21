@@ -21,11 +21,11 @@
 }
 
 .login-form {
-    outline: auto;
     position: relative;
 
     padding: 70px 10px;
     background-color: var(--white);
+    overflow: hidden;
 
     @media screen and (min-width: 375px) {
         width: 375px;
@@ -42,7 +42,7 @@
 
         position: absolute;
         top: 0px;
-        left: 0px;
+        left: 1px;
         width: 124px;
         height: 74px;
         background-image: url(../img/reusable/leaf-top-left-124.png);
@@ -62,7 +62,7 @@
         background-repeat: no-repeat;
 
         @include tablet {
-            bottom: 0;
+            bottom: -2px;
             right: 0;
             width: 45px;
             height: 50px;
@@ -71,43 +71,67 @@
 }
 
 .login-form>label {
-    &:first-of-type {
-        &>.pers-form-input {
-            margin-bottom: 10px;
-        }
+    &.pers-form-input {
+        margin-bottom: 10px;
     }
-    &:last-of-type {
-        &>.pers-form-input {
-            position: relative;
-            margin-bottom: 8px;
-            @include tablet {
-                margin-bottom: 10px;
-            }
-            &::after {
-                display: block;
-                content: "";
+    // &:first-of-type {
+    //     &>.pers-form-input {
+    //         margin-bottom: 10px;
+    //     }
+    // }
+    // &:last-of-type {
+    //     &>.pers-form-input {
+    //         position: relative;
+    //         margin-bottom: 8px;
+    //         @include tablet {
+    //             margin-bottom: 10px;
+    //         }
+    //         // &::after {
+    //         //     display: block;
+    //         //     content: "";
 
-                position: absolute;
-                top: 9px;
-                right: 9px;
-                width: 32px;
-                height: 32px;
-                background-image: url(../img/personal-cabinet/eye-off.svg);
-                // background-repeat: no-repeat;
-            }
-        }
+    //         //     position: absolute;
+    //         //     // top: 9px;
+    //         //     // right: 9px;
+    //         //     width: 32px;
+    //         //     height: 32px;
+    //         //     background-image: url(../img/personal-cabinet/eye-off.svg);
+    //         //     // background-repeat: no-repeat;
+    //         // }
+    //     }
+    // }
+}
+
+.login-form .pers-form-input {
+    position: relative;
+
+    &::after {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        width: 32px;
+        height: 32px;
+        background-color: aqua;
+        // background-image: url(../img/personal-cabinet/eye-off.svg);
+        // background-image: url(../img/symbol-defs.svg#eye-off-icon);
+        // background-repeat: no-repeat;
     }
 }
 
+.login-row-wrap {
+    display: grid;
+    grid-row-gap: 10px;
+    margin-bottom: 10px;
+}
 .login-flex-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 40px;
-    @include tablet {
-            margin-bottom: 30px;
-        }
+    margin-bottom: 30px;
 }
 
 .login-flex-wrap>a {
@@ -152,7 +176,7 @@
 }
 
 .login-btn {
-    display: block;
+    // display: block;
     width: 100%;
     &:not(:last-child) {
         margin-bottom: 5px;
