@@ -127,6 +127,8 @@
     &:not(:last-child) {
         margin-bottom: 5px;
     }
+
+    cursor: pointer;
 }
 
 .pers-radio-label::before {

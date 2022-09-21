@@ -65,6 +65,39 @@
     }
 }
 
+.pers-drop-up {
+    position: absolute;
+    top: -100%;
+    left: 34px;
+
+    width: 194px;
+    height: 56px;
+    padding: 10px 30px 10px 20px;
+
+    font-family: 'PT sans';
+    @include font(400, 14px, calc(18px / 14px));
+    color: var(--main-bgc-accent);
+    background: var(--white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+
+    opacity: 0;
+    scale: 0.8;
+    pointer-events: none;
+
+    transition: opacity var(--main-transition), scale var(--main-transition);
+}
+
+.pers-cab-menu-item {
+    @include desktop {
+        &:first-child>button:hover+.pers-drop-up {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+}
+
+
 .pers-cab-menu-button {
     display: inline-block;
     padding: 18px 15px 18px 53px;
@@ -103,6 +136,27 @@
     pointer-events: none;
     transition: stroke 250ms linear;
 }
+
+.pers-cab-menu-item {
+    &:first-child>button {
+        @include desktop {
+            &::before {
+                position: absolute;
+                top: 15px;
+                left: 28px;
+        
+                display: block;
+                content: "";
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                background-color: var(--second-accent-color);
+                z-index: 50;
+            }
+        }
+    }
+}
+
 
 // -----------bonus-box--------
 

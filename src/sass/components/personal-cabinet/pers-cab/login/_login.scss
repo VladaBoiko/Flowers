@@ -156,6 +156,8 @@
     @include font(400, 12px, calc(16px / 12px));
     color: var(--light-theme-text-color);
 
+    cursor: pointer;
+
     @include tablet {
         @include font(400, 14px, calc(18px / 14px));
     }
