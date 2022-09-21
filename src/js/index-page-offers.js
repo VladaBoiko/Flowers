@@ -29,7 +29,7 @@ async function renderData() {
   try {
     const data = await APIGetData.getData();
 
-    for (offerSection in sections) {
+    for (const offerSection in sections) {
       const filteredData =
         sections[offerSection] !== sections.earlierWatched
           ? filterBySection(data, sections[offerSection])
