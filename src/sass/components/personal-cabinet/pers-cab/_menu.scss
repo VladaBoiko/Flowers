@@ -40,6 +40,13 @@
     }
 }
 
+.pers-cab-menu-list {
+    margin-bottom: 60px;
+    @include desktop {
+        margin-bottom: 100px;
+    }
+}
+
 .pers-cab-menu-item {
     position: relative;
 
@@ -95,4 +102,39 @@
     stroke: var(--main-accent-color);
     pointer-events: none;
     transition: stroke 250ms linear;
+}
+
+// -----------bonus-box--------
+
+.user-bonus {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    max-width: 320px;
+
+    padding: 9px 15px;
+
+    font-family: 'PT sans';
+    @include font(null, 16px, calc(21px / 16px));
+    color: var(--main-accent-color);
+    
+    background-color: var(--white);
+    border: 1px solid var(--main-accent-color);
+    border-radius: 4px;
+
+    @include tablet {
+        width: 310px;
+    }
+}
+
+.user-bonus-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.user-bonus-value {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
