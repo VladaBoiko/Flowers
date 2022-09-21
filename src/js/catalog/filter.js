@@ -70,13 +70,16 @@ export const filterByPrice = (data, filterParam) =>
     return filterParam.includes(cardPriceRange) > 0;
   });
 
+export const filterById = (data, idList) =>
+  (filteredData = [...data].filter(card => idList.indexOf(card.id) > -1).sort((a, b) => b.rating - a.rating));
+
 export const filterBySection = (data, section, otherData) => {
   let filteredData = [];
 
   if (section !== sections.earlierWatched) {
     filteredData = [...data].filter(card => card.section === section).sort((a, b) => b.rating - a.rating);
   } else if (otherData) {
-    filteredData = [...data].filter(card => otherData.indexOf(card.id) > -1).sort((a, b) => b.rating - a.rating);
+    filteredData = filterById(data, otherData);
   }
 
   if (filteredData && section === sections.earlierWatched && filteredData.length > 4) {
