@@ -11,4 +11,5 @@ export const heroSwiper = new Swiper('.hero-swiper-container', {
     disableOnInteraction: false,
   },
   speed: 3000,
+  loop: true,
 });
