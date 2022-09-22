@@ -8,7 +8,7 @@
   @include tablet {
     max-width: 768px;
     padding-top: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 
   @include desktop {
@@ -18,6 +18,17 @@
 }
 
 .delivery {
+  @include desktop {
+    &::before {
+      top: 140px;
+      z-index: 0;
+    }
+    background: url(../../dist/offers-background.b71ba6b1.png);
+    background-size: 222px 810px;
+    background-position: right top 720px;
+    background-repeat: no-repeat;
+  }
+
   &__title {
     margin-bottom: 30px;
 
@@ -26,6 +37,13 @@
 
     @include tablet {
       @include text('Montserrat', 500, 36px, 36px);
+    }
+
+    &--country {
+      margin-bottom: 20px;
+      @include tablet {
+        @include text('Montserrat', 600, 18px, 20px);
+      }
     }
   }
 
@@ -36,6 +54,49 @@
   &__secondary-text {
     padding-top: 530px;
     margin-bottom: 20px;
+
+    @include tablet {
+      padding-top: 320px;
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      padding-top: 320px;
+    }
+  }
+
+  &__wrap-bg--text {
+    text-align: center;
+    padding: 50px 20px 56px 20px;
+    @include desktop {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    & p {
+      padding: 12px;
+      @include tablet {
+        width: calc((100% - 15px) / 2);
+      }
+    }
+    & p:not(:last-child) {
+      margin: 0 auto;
+      margin-bottom: 12px;
+      @include tablet {
+        margin: 0;
+      }
+    }
+    & p:last-child {
+      margin: 0 auto;
+      @include tablet {
+        margin: 0;
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
   }
 
   &__wrap-bg {
@@ -48,17 +109,6 @@
     background-color: var(--main-accent-color);
     border-radius: 4px;
 
-    &--text {
-      text-align: center;
-      padding: 50px 20px 56px 20px;
-      & p {
-        padding: 12px;
-      }
-      & p:not(:last-child) {
-        margin-bottom: 12px;
-      }
-    }
-
     &::before {
       z-index: 2;
       content: '';
@@ -68,9 +118,22 @@
       height: 100%;
       background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'), url('/src/img/payment/3.png'),
         url('/src/img/payment/4.png');
-      background-size: 135px, 32px, 35px, 73px;
+      background-size: 135px, 32px, 30px, 73px, 32px;
       background-repeat: no-repeat;
       background-position: top 0 left 0, top 0 right 48px, bottom 10px right 127px, bottom 0 right 0;
+      @include tablet {
+        background-position: top 0 left 0, top 0 right 48px, bottom 10px right 200px, bottom 0 right 0,
+          top 90px left 79px;
+        background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'), url('/src/img/payment/3.png'),
+          url('/src/img/payment/4.png'), url('/src/img/payment/2.png');
+      }
+      @include desktop {
+        background-size: 166px, 30px, 30px, 160px, 32px;
+        background-position: top 0 left 0, top 120px right 120px, bottom 10px right 200px, bottom 0 right 0,
+          top 90px left 79px;
+        background-image: url('/src/img/payment/1.png'), url('/src/img/payment/2.png'), url('/src/img/payment/3.png'),
+          url('/src/img/payment/4.png'), url('/src/img/payment/2.png');
+      }
     }
 
     @include tablet {
@@ -79,20 +142,22 @@
     }
 
     @include desktop {
-      width: 1300px;
-      margin-left: -650px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin: 0;
     }
 
     & p {
-      max-width: 321px;
-      margin: 0 auto;
       color: var(--dark-theme-text-color);
       font-weight: normal;
       border: 3px solid var(--border-color);
       border-radius: 4px;
 
       @include tablet {
-        max-width: 685px;
+        // max-width: 685px;
+        // width: calc(100% / 2);
+        margin: 0;
       }
 
       @include desktop {
@@ -106,7 +171,7 @@
   }
 
   &__list {
-    padding: 0;
+    padding: 0 0 0 24px;
   }
 }
 
@@ -114,5 +179,8 @@
   margin-bottom: 20px;
   &-wrap {
     margin-bottom: 30px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
   }
 }
