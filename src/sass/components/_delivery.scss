@@ -1,6 +1,6 @@
 .delivery .container {
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   max-width: 360px;
   @include text('Montserrat', 400, 16px, 21px);
   color: var(--light-theme-text-color);
@@ -8,7 +8,7 @@
   @include tablet {
     max-width: 768px;
     padding-top: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
   }
 
   @include desktop {
