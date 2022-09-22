@@ -1,0 +1,43 @@
+.delivery .container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  max-width: 360px;
+  @include text('Montserrat', 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+
+  @include tablet {
+    max-width: 768px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  @include desktop {
+    max-width: 1340px;
+    @include text('Montserrat', 400, 20px, 26px);
+  }
+}
+
+.delivery {
+  &__title {
+    margin-bottom: 30px;
+
+    @include text('Montserrat', 500, 30px, 30px);
+    color: var(--main-accent-color);
+
+    @include tablet {
+      @include text('Montserrat', 500, 36px, 36px);
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__secondary-text {
+    padding-top: 400px;
+  }
+}
+
+.delivery__text {
+  margin-bottom: 20px;
+}

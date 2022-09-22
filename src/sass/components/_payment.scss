@@ -206,7 +206,7 @@ main .payment {
   }
 }
 
-.payment__nav-main {
+.page__nav-main {
   margin-right: 3px;
   display: flex;
   align-items: center;
@@ -218,7 +218,7 @@ main .payment {
   }
 }
 
-.payment__nav-pay {
+.page__nav-text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,7 +226,7 @@ main .payment {
   color: var(--input-text-color);
 }
 
-.payment__nav-list {
+.page__nav-list {
   display: flex;
   margin-bottom: 30px;
   align-items: center;
@@ -484,7 +484,7 @@ main .payment {
   color: var(--light-theme-text-color);
 }
 
-.payment__important {
+.wrap-background {
   position: absolute;
   display: block;
   left: 50%;
