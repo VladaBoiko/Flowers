@@ -50,8 +50,12 @@ th {
     padding-bottom: 10px;
 }
 
-td {
+.orders-first td {
     padding-top: 20px;
+}
+
+td {
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -71,6 +75,7 @@ th.pers-orders-text {
     
         &:nth-child(4) {
             width: 143px;
+            width: 160px; //ukr
         }
     }
     text-align: left;
@@ -83,4 +88,34 @@ td.pers-orders-text {
         gap: 5px;
     }
     
+}
+
+// ----------order-state
+.order-state {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &::after {
+        display: block;
+        content: "";
+        width: 11px;
+        height: 11px;
+        border-radius: 2px;
+        margin-left: 10px;
+    }
+    
+    &.pay-expected::after {
+        background-color: #BEDEF5;
+    }
+    &.sent::after {
+        background-color: #48B8AC;
+    }
+    &.cancel::after {
+        background-color: #F04438;
+    }
+
+    &.del::after {
+        background-color: #0B7A6A;
+    }
 }
