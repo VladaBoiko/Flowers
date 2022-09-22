@@ -42,7 +42,7 @@
     &--country {
       margin-bottom: 20px;
       @include tablet {
-        @include text('Montserrat', 600, 18px, 20px);
+        @include text('Montserrat', 600, 20px, 21px);
       }
     }
   }
@@ -155,8 +155,6 @@
       border-radius: 4px;
 
       @include tablet {
-        // max-width: 685px;
-        // width: calc(100% / 2);
         margin: 0;
       }
 
@@ -169,6 +167,7 @@
   &__places {
     @include desktop {
       display: flex;
+      justify-content: space-between;
     }
   }
 
@@ -178,6 +177,29 @@
 
   &__list {
     padding: 0 0 0 24px;
+    margin: 0;
+  }
+
+  &__pic {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 530px;
+    }
+  }
+
+  &__places-wrap {
+    @include desktop {
+      & p:last-child {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__places-text {
+    @include desktop {
+      width: 749px;
+    }
   }
 }
 
