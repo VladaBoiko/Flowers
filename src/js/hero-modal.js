@@ -2,7 +2,7 @@ export const heroModal = heroSwiper => {
   const refs = {
     openModalBtn: document.querySelector('[data-hero-modal-open]'),
     closeModalBtn: document.querySelector('[data-hero-modal-close]'),
-    backdrop: document.querySelector('.js-hero-backdrop'),
+    backdrop: document.querySelector('[data-hero-modal]'),
     body: document.querySelector('body'),
   };
 
