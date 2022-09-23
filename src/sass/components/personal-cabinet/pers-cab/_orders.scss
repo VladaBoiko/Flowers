@@ -9,6 +9,12 @@
     }
 }
 
+.orders-for-mob {
+    @include tablet {
+        display: none;
+    }
+}
+
 table {
     border-collapse: collapse;
 }
@@ -105,7 +111,8 @@ td.pers-orders-text {
     height: 50px;
 }
 
-.pers-orders-prod>.span-text {
+// .pers-orders-prod>.span-text
+.span-text {
     @include font(400, 10px, calc(12px / 10px));
     color: var(--grey);
 }
@@ -138,3 +145,41 @@ td.pers-orders-text {
         background-color: #0B7A6A;
     }
 }
+
+// //////////////////////////////////////
+
+.order-wrap {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+    &:not(:first-child) {
+        padding-top: 20px;
+    }
+}
+
+.table-mob>.for-table-title{
+    width: 91px;
+    &.br {
+        width: 100%;
+    }
+}
+
+.b4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.with-flex {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.t-inner {
+    text-align: right;
+}
+
+
+
