@@ -1,96 +1,10 @@
 <div class="pers-orders" data-pers-orders>
     <!--  visually-hidden -->
-    <table class="pers-orders-table">
-        <caption class="pers-content-title">Ваші замовлення</caption>
-        <div class="orders-for-mob">
-            <include src="./partials/personal-cabinet/main/components/mob-orders/mob-orders.html"></include>
-        </div>
-        <thead>
-            <tr class="pers-orders-header">
-                <th class="pers-orders-text">Замовлення</th>
-                <th class="pers-orders-text">Товари</th>
-                <th class="pers-orders-text">Сума</th>
-                <th class="pers-orders-text">Статус</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="pers-orders-data orders-first">
-                <td class="pers-orders-text order-bold">№54А8963<span class="pers-orders-text order-light">28.03.2021</span></td>
-                <td>
-                    <div class="pers-orders-prod">
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-1.jpg 1x, 
-                            ./img/personal-cabinet/orders/order-1-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-1.jpg" alt="">
-                        </picture>
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-2.jpg 1x, 
-                            ./img/personal-cabinet/orders/order-2-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-2.jpg" alt="">
-                        </picture>
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-3.jpg 1x, 
-                            ./img/personal-cabinet/orders/order-3-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-3.jpg" alt="">
-                        </picture>
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-4.jpg 1x, 
-                            ./img/personal-cabinet/orders/order-4-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-4.jpg" alt="">
-                        </picture>
-                        <span class="span-text">Ще + 5 товарів</span>
-                    </div>
-                </td>
-                <td class="pers-orders-text order-price order-bold">60625 UAH</td>
-                <td class="pers-orders-text order-light"><div class="order-state pay-expected">Очікування оплати</div></td>
-            </tr>
-            <tr class="pers-orders-data">
-                <td class="pers-orders-text order-bold">№54А8963<span class="pers-orders-text order-light">28.03.2021</span></td>
-                <td>
-                    <div class="pers-orders-prod">
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-3.jpg 1x, 
-                                ./img/personal-cabinet/orders/order-3-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-3.jpg" alt="">
-                        </picture>
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-4.jpg 1x, 
-                                ./img/personal-cabinet/orders/order-4-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-4.jpg" alt="">
-                        </picture>
-                    </div>
-                </td>
-                <td class="pers-orders-text order-price order-bold">4000 UAH</td>
-                <td class="pers-orders-text order-light"><div class="order-state sent">Відправлено</div></td>
-            </tr>
-            <tr class="pers-orders-data">
-                <td class="pers-orders-text order-bold">№54А8963<span class="pers-orders-text order-light">28.03.2021</span></td>
-                <td>
-                    <div class="pers-orders-prod">
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-5.jpg 1x, 
-                            ./img/personal-cabinet/orders/order-5-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-5.jpg" alt="">
-                        </picture>
-                    </div>
-                </td>
-                <td class="pers-orders-text order-price order-bold">312 UAH</td>
-                <td class="pers-orders-text order-ligh"><div class="order-state cancel">Відмінено</div></td>
-            </tr>
-            <tr class="pers-orders-data">
-                <td class="pers-orders-text order-bold">№54А8963<span class="pers-orders-text order-light">28.03.2021</span></td>
-                <td>
-                    <div class="pers-orders-prod">
-                        <picture>
-                            <source srcset="./img/personal-cabinet/orders/order-6.jpg 1x, 
-                                ./img/personal-cabinet/orders/order-6-2x.jpg 2x">
-                            <img src="./img/personal-cabinet/orders/order-6.jpg" alt="">
-                        </picture>
-                    </div>
-                </td>
-                <td class="pers-orders-text order-price order-bold">1187 UAH</td>
-                <td class="pers-orders-text order-light"><div class="order-state del">Доставлено</div></td>
-            </tr>
-        </tbody>
-    </table>
+    <p class="pers-content-title">Ваші замовлення</p>
+    <div class="orders-for-small">
+        <include src="./partials/personal-cabinet/main/components/orders-adaptives/orders-small.html"></include>
+    </div>
+    <div class="orders-for-big">
+        <include src="./partials/personal-cabinet/main/components/orders-adaptives/orders-big.html"></include>
+    </div>
 </div>

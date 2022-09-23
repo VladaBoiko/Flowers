@@ -4,67 +4,63 @@
     background-color: var(--white);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
+
     @include tablet {
         padding: 30px 0px 30px 30px;
     }
-}
 
-.orders-for-mob {
-    @include tablet {
-        display: none;
+    @include desktop {
+        padding-right: 30px;
     }
 }
 
-table {
-    border-collapse: collapse;
-}
-
 .pers-orders .pers-content-title {
-    text-align: left;
     margin-bottom: 20px;
-
     @include tablet {
         margin-bottom: 34px;
     }
 }
 
-th {
-    &:not(:last-child) {
-        padding-right: 21px;
-        @include desktop {
-            padding-right: 88px;
-        }
+.orders-for-small {
+   @include tablet {
+        display: none;
+    } 
+}
+
+.orders-for-big {
+    display: none;
+    @include tablet {
+        display: block;
     }
+}
+// --------mob-logic------------
+
+.one-order-mob {
+    border-bottom: 1px solid #EEEEEE;
+
+    &:not(:first-child) {
+        padding-top: 20px;
+    }
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     padding-bottom: 10px;
-}
 
-tr.pers-orders-header {
-    border-bottom: 1px solid #EEEEEE;
-}
+    &:nth-child(2) {
+        display: block;
 
-th.pers-orders-text {
-    text-align: left;
-
-    @include tablet {
-        &:nth-child(1) {
-            width: 80px;
-        }
-
-        &:nth-child(2) {
-            width: 309px;
-        }
-
-        &:nth-child(3) {
-            width: 91px;
-        }
-
-        &:nth-child(4) {
-            width: 143px;
-            width: 160px; //ukr
+        .pers-orders-text {
+            margin-bottom: 10px;
         }
     }
 }
+
+// ------------------------------
+// ----------inner-content-styling---------
 
 .pers-orders-text {
     @include font(400, 14px, calc(17px / 14px));
@@ -80,47 +76,28 @@ th.pers-orders-text {
     }
 }
 
-tr.pers-orders-data {
-    border-bottom: 1px solid #EEEEEE;
-}
-
-.orders-first td {
-    padding-top: 20px;
-}
-
-td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .pers-orders-prod {
     display: flex;
     align-items: center;
 }
 
-td.pers-orders-text {
-    &:first-child {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-}
 
 .pers-orders img {
     width: 50px;
     height: 50px;
 }
 
-// .pers-orders-prod>.span-text
-.span-text {
+.pers-orders-prod>.span-text {
     @include font(400, 10px, calc(12px / 10px));
     color: var(--grey);
+    margin-left: 10px;
 }
 
 .order-state {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    align-content: start;
 
     &::after {
         display: block;
@@ -134,9 +111,11 @@ td.pers-orders-text {
     &.pay-expected::after {
         background-color: #BEDEF5;
     }
+
     &.sent::after {
         background-color: #48B8AC;
     }
+
     &.cancel::after {
         background-color: #F04438;
     }
@@ -146,40 +125,84 @@ td.pers-orders-text {
     }
 }
 
-// //////////////////////////////////////
+// -------------orders-big-styling
 
-.order-wrap {
+.pers-orders-header {
     display: grid;
+    grid-template-columns: 80px 300px 80px 160px;
+    grid-column-gap: 21px;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE;
+
+    @include desktop {
+        grid-column-gap: 88px;
+    }
+}
+
+.pers-orders-header>li {
+    &:last-child {
+        text-align: right;
+    }
+}
+
+.single-order {
+    display: grid;
+    grid-template-columns: 80px 300px 80px 160px;
+    grid-column-gap: 21px;
     grid-row-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
+
+    padding-top: 10px;
     padding-bottom: 20px;
     border-bottom: 1px solid #EEEEEE;
-    &:not(:first-child) {
+
+    &:first-child {
         padding-top: 20px;
     }
-}
 
-.table-mob>.for-table-title{
-    width: 91px;
-    &.br {
-        width: 100%;
+    @include desktop {
+        grid-column-gap: 88px;
     }
 }
 
-.b4 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.single-order>li {
+    &:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
-.with-flex {
+.order-wrap>li {
     display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-}
-
-.t-inner {
-    text-align: right;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
+
+// //////////////////////////////////////
+// for mob previous version:
+
+// .order-wrap-mob {
+//     display: grid;
+//     grid-row-gap: 10px;
+//     grid-template-columns: repeat(2, 1fr);
+//     padding-bottom: 20px;
+//     border-bottom: 1px solid #EEEEEE;
+//     &:not(:first-child) {
+//         padding-top: 20px;
+//     }
+// }
+
+// .b4 {
+//     grid-column-start: 1;
+//     grid-column-end: 3;
+// }
+
+// .with-flex {
+//     display: flex;
+//     justify-content: flex-end;
+//     gap: 5px;
+// }
 
