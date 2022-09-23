@@ -1,13 +1,11 @@
 .payment {
   @include desktop {
     position: absolute;
-    // background: url(../../dist/offers-background.b71ba6b1.png), url(../img/payment/flowerBackGround.png);
+    background: url(../../dist/offers-background.b71ba6b1.png), url(../img/payment/flowerBackGround.png);
 
     background-size: 222px 810px;
     background-position: right top 690px, left top 2623px;
     background-repeat: no-repeat;
-    // width: 222px;
-    // height: 810px;}
   }
 }
 
@@ -34,7 +32,8 @@ main .payment {
   }
 }
 
-.payment {
+.payment,
+.delivery {
   @include desktop {
     &::before {
       content: '';
@@ -206,7 +205,7 @@ main .payment {
   }
 }
 
-.payment__nav-main {
+.page__nav-main {
   margin-right: 3px;
   display: flex;
   align-items: center;
@@ -218,7 +217,7 @@ main .payment {
   }
 }
 
-.payment__nav-pay {
+.page__nav-text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,7 +225,7 @@ main .payment {
   color: var(--input-text-color);
 }
 
-.payment__nav-list {
+.page__nav-list {
   display: flex;
   margin-bottom: 30px;
   align-items: center;
@@ -484,7 +483,7 @@ main .payment {
   color: var(--light-theme-text-color);
 }
 
-.payment__important {
+.wrap-background {
   position: absolute;
   display: block;
   left: 50%;
