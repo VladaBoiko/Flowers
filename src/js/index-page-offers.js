@@ -34,7 +34,6 @@ async function renderData() {
         sections[offerSection] !== sections.earlierWatched
           ? filterBySection(data, sections[offerSection])
           : filterBySection(data, sections[offerSection], earlierWatchedList);
-      console.log(filteredData);
       const markup = createMarkup(filteredData);
       refs[offerSection].insertAdjacentHTML('beforeend', markup);
     }
