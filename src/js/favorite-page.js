@@ -32,9 +32,7 @@ if (favotireListFromLocalStorage === 'undefined' || favotireListFromLocalStorage
 async function renderData() {
   try {
     const data = await APIGetData.getData();
-    console.log(data);
-    filteredData = filterById(data, favotireListFromLocalStorage);
-    console.log(filteredData);
+    const filteredData = filterById(data, favotireListFromLocalStorage);
     const markup = createMarkup(filteredData);
     render(refs.list, markup);
   } catch (error) {

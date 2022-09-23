@@ -5,13 +5,13 @@ import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
 
-import { heroSwiper } from './hero-slider';
-import { reviewsSwiper } from './reviews-slider';
-import { heroModal } from './hero-modal';
+// import { heroSwiper } from './hero-slider';
+// import { reviewsSwiper } from './reviews-slider';
+// import { heroModal } from './hero-modal';
 
-heroSwiper.enabled = true;
-reviewsSwiper.enabled = true;
-heroModal(heroSwiper);
+// heroSwiper.enabled = true;
+// reviewsSwiper.enabled = true;
+// heroModal(heroSwiper);
 
 const refs = {
   offerSpecial: document.querySelector('.offer--special .offer__list'),
@@ -34,7 +34,6 @@ async function renderData() {
         sections[offerSection] !== sections.earlierWatched
           ? filterBySection(data, sections[offerSection])
           : filterBySection(data, sections[offerSection], earlierWatchedList);
-      console.log(filteredData);
       const markup = createMarkup(filteredData);
       refs[offerSection].insertAdjacentHTML('beforeend', markup);
     }
