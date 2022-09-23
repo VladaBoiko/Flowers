@@ -23,10 +23,13 @@
       top: 140px;
       z-index: 0;
     }
-    background: url(../../dist/offers-background.b71ba6b1.png);
+    background: url(../img/offers/offers-background.png);
     background-size: 222px 810px;
     background-position: right top 720px;
     background-repeat: no-repeat;
+    @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192px), (min-resolution: 2dppx) {
+      background-image: url(../img/offers/offers-background@2x.png);
+    }
   }
 
   &__title {
