@@ -29,7 +29,7 @@ function onMenuList(evt) {
 }
 
 function onMenuItem(evt, newContent, newBtn) {
-    if (isNotNewButton(evt, newBtn) || isNewContent(newContent)) {
+    if (isNotNewButton(evt, newBtn)) {
         return;
     }
     changeCurrentContent(newContent);
@@ -38,10 +38,6 @@ function onMenuItem(evt, newContent, newBtn) {
 
 function isNotNewButton(evt, newBtn) {
     return evt.target !== newBtn;
-}
-
-function isNewContent(newContent) {
-    return currentContent === newContent;
 }
 
 function changeCurrentContent(newContent) {

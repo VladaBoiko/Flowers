@@ -12,8 +12,7 @@ refs.regForm.addEventListener('submit', goToUserCab);
 function goToUserCab(evt) {
     evt.preventDefault();
     refs.loginSection.classList.add('is-hidden');
-    refs.personalCab.style.display = "block";
-
+    refs.personalCab.classList.remove('is-hidden');
     isMadalOpen(refs.body.classList);
 }
 
