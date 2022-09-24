@@ -1,0 +1,138 @@
+.reviews {
+  padding: 50px 0 100px 0;
+}
+
+.filter-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-title {
+  @include text(null, 400, 18px, 22px);
+  color: var(--light-theme-text-color);
+}
+
+.filter-list {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-list__text {
+  cursor: pointer;
+  @include text(null, 400, 14px, 17px);
+  color: var(--light-theme-title-color);
+
+  &--active {
+    text-decoration: underline;
+  }
+}
+
+.reviews-box {
+  padding-top: 10px;
+}
+
+.reviews-list {
+  display: grid;
+  gap: 5px;
+}
+
+.reviews-list__elements {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  @include tablet {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 767.9px) {
+    margin: 0 auto;
+  }
+}
+
+.user-photo {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+
+  @include text(null, 500, 24px, 29px);
+  text-transform: uppercase;
+  background-color: #96c8ed;
+}
+
+.reviews-box__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include tablet {
+    flex-wrap: nowrap;
+  }
+}
+
+.reviews-list-box {
+  width: 230px;
+  @include tablet {
+    width: 629px;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 100%;
+  }
+}
+
+.reviews-box__name {
+  @include text('PT Sans', 400, 20px, 26px);
+  color: var(--light-theme-text-color);
+}
+
+.reviews-box__date {
+  margin-left: auto;
+  @include text(null, 400, 14px, 17px);
+  color: var(--main-accent-color);
+
+  @include tablet {
+    margin-left: 50px;
+  }
+}
+
+.reviews-box__stars {
+  margin-top: 5px;
+  display: flex;
+
+  @include tablet {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
+
+.reviews-box__stars-icon {
+  color: #fff;
+  &--active {
+    color: rgb(255, 197, 73);
+  }
+}
+
+.reviews-box__text {
+  margin-top: 20px;
+  @include text('PT Sans', 400, 16px, 21px);
+  color: var(--light-theme-text-color);
+}
+
+.reviews-box-list__photo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.reviews-box-list__elements {
+  margin-top: 20px;
+  width: 95px;
+}
+
+.reviews-box-list__photo {
+  cursor: pointer;
+}
