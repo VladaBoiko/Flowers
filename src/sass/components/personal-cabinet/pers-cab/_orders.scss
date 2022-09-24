@@ -33,7 +33,6 @@
         display: block;
     }
 }
-// --------mob-logic------------
 
 .one-order-mob {
     border-bottom: 1px solid #EEEEEE;
@@ -43,7 +42,7 @@
     }
 }
 
-.order-row {
+.order-param-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,9 +57,6 @@
         }
     }
 }
-
-// ------------------------------
-// ----------inner-content-styling---------
 
 .pers-orders-text {
     @include font(400, 14px, calc(17px / 14px));
@@ -125,8 +121,6 @@
     }
 }
 
-// -------------orders-big-styling
-
 .pers-orders-header {
     display: grid;
     grid-template-columns: 80px 300px 80px 160px;
@@ -146,7 +140,7 @@
     }
 }
 
-.single-order {
+.pers-single-order {
     display: grid;
     grid-template-columns: 80px 300px 80px 160px;
     grid-column-gap: 21px;
@@ -165,44 +159,10 @@
     }
 }
 
-.single-order>li {
+.pers-single-order>li {
     &:first-child {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 }
-
-.order-wrap>li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-
-// //////////////////////////////////////
-// for mob previous version:
-
-// .order-wrap-mob {
-//     display: grid;
-//     grid-row-gap: 10px;
-//     grid-template-columns: repeat(2, 1fr);
-//     padding-bottom: 20px;
-//     border-bottom: 1px solid #EEEEEE;
-//     &:not(:first-child) {
-//         padding-top: 20px;
-//     }
-// }
-
-// .b4 {
-//     grid-column-start: 1;
-//     grid-column-end: 3;
-// }
-
-// .with-flex {
-//     display: flex;
-//     justify-content: flex-end;
-//     gap: 5px;
-// }
-
