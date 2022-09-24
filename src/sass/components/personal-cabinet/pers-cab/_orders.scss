@@ -34,9 +34,9 @@
     }
 }
 
-.one-order-mob {
+.pers-orders .single-order-mob {
     border-bottom: 1px solid #EEEEEE;
-
+    padding-bottom: 20px;
     &:not(:first-child) {
         padding-top: 20px;
     }
@@ -47,11 +47,19 @@
     align-items: center;
     justify-content: space-between;
 
-    padding-bottom: 10px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &:nth-child(1) {
+        .order-bold {
+            display: flex;
+            gap: 5px;
+        }
+    }
 
     &:nth-child(2) {
         display: block;
-
         .pers-orders-text {
             margin-bottom: 10px;
         }

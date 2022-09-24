@@ -22,22 +22,25 @@
     }
 }
 
-.pers-form-group-title {
-    @include font(600, 20px, calc(26px / 20px)); //the same
-    color: var(--main-accent-color);
+.pers-form-group .pers-content-title {
     margin-bottom: 15px;
-
     @include desktop {
         margin-bottom: 20px;
     }
 }
 
-.first-form-content-flex-wrap-desk {
+// .first-form-content-flex-wrap-desk 
+.pers-first-form-wrap-desk {
     @include desktop {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
     }
+}
+
+.pers-photo>label {
+    display: block;
+    width: 80px;
 }
 
 .pers-img {
@@ -59,18 +62,14 @@
     }
 }
 
-.pers-photo>label {
-    display: block;
-    width: 80px;
-}
-
 .pers-photo-icon {
     stroke: var(--main-accent-color);
     width: 40px;
     height: 40px;
 }
 
-.pers-flex-wrap-tab {
+// .pers-flex-wrap-tab
+.pers-first-form-wrap-tab {
     @include tablet {
         display: flex;
     }
@@ -85,7 +84,6 @@
     }
 }
 
-
 // ---------------radio-buttons------------
 
 .pers-radio-wrapper {
@@ -98,9 +96,17 @@
     }
 }
 
+.pers-form-group-text {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    @include font(null, 18px, calc(22px / 18px));
+    color: var(--black);
+}
+
 .pers-radio-label {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     @include font(400, 14px, calc(17px / 14px));
     color: var(--black);
@@ -108,8 +114,6 @@
     &:not(:last-child) {
         margin-bottom: 5px;
     }
-
-    cursor: pointer;
 }
 
 .pers-radio-label::before {
@@ -125,17 +129,10 @@
     .pers-radio-input:focus+&,
     .pers-radio-input:checked+& {
         border: 1px solid var(--main-accent-color);
-        background-image: url(/src/img/personal-cabinet/Radiobutton.svg);
+        background-image: url(../img/personal-cabinet/radiobutton.svg);
         background-repeat: no-repeat;
         background-position: center;
     }
-}
-
-.pers-form-group-text {
-    margin-top: 15px;
-    @include font(null, 18px, calc(22px / 18px)); //the same
-    color: var(--black);
-    margin-bottom: 10px;
 }
 
 // -----------------2-nd form group----------
@@ -178,13 +175,13 @@
     padding-right: 30px;
 }
 
-.wrap-for-call {
+.pers-form-group .wrap-for-call {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.for-call-text {
+.pers-form-group .for-call-text {
     @include font(500, 12px, calc(15px / 12px));
     color: var(--main-accent-color);
     @include tablet {
