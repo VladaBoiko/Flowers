@@ -1,7 +1,7 @@
 const refs = {
   openModalBtn: document.querySelector("[data-reg-modal-open]"),
   closeModalBtn: document.querySelector("[data-reg-modal-close]"),
-  backdrop: document.querySelector('.js-reg-backdrop'),
+  backdrop: document.querySelector("[data-reg-modal]"),
   body: document.querySelector("body"),
 }
 

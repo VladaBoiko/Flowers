@@ -1,9 +1,7 @@
 <form class="pers-cab-form pers-current-js" data-profile>
-    <!-------------------- 1 --------------------------->
     <div class="pers-form-group" role="group" aria-labelledby="user-personal-data">
-        <p class="pers-form-group-title" id="user-personal-data" >Особиста інформація</p>
-        
-        <div class="first-form-content-flex-wrap-desk">
+        <p class="pers-content-title" id="user-personal-data" >Особиста інформація</p>
+        <div class="pers-first-form-wrap-desk">
             <div class="pers-photo">
                 <label>
                     <input 
@@ -14,8 +12,7 @@
                     <span class="pers-img"></span>
                 </label>
             </div>
-
-            <div class="pers-flex-wrap-tab">
+            <div class="pers-first-form-wrap-tab">
                 <div class="input-col-wrap">
                     <label class="pers-label">
                         <input 
@@ -32,7 +29,6 @@
                             placeholder="Дата народження">
                     </label>
                 </div>
-
                 <div class="pers-radio-wrapper">
                     <p class="pers-form-group-text">Стать</p>
                     <input 
@@ -52,13 +48,9 @@
                 </div>
             </div>
         </div>
-        
     </div>
-
-    <!-------------------- 2 ----------------------->
-
     <div class="pers-form-group" role="group" aria-labelledby="user-availability-data">
-        <p class="pers-form-group-title" id="user-availability-data" >Місцезнаходження і час</p>
+        <p class="pers-content-title" id="user-availability-data" >Місцезнаходження і час</p>
         <div class="input-grid-wrap">
             <label class="local-label">
                 <input 
@@ -81,7 +73,6 @@
                     class="pers-form-input" 
                     placeholder="Часовий пояс">
             </label>
-
             <div class="wrap-for-call">
                 <p class="for-call-text">Період для дзвінків</p>
                 <div class="pers-time-flex-wrap">
@@ -103,41 +94,35 @@
             </div>
         </div>
     </div>
-
-    <!--------------------- 3 ------------------------->
     <div class="pers-form-group" role="group" aria-labelledby="user-contacts-data">
-        <p class="pers-form-group-title" id="user-contacts-data" >Контактні дані</p>
+        <p class="pers-content-title" id="user-contacts-data" >Контактні дані</p>
         <div class="input-grid-wrap">
-            <label for="pers-number">
+            <label>
                 <input 
                     type="tel" 
                     name="user-tel"
                     class="pers-form-input" 
-                    placeholder="Номер телефону" 
-                    id="pers-number">
+                    placeholder="Номер телефону">
             </label>
-            <label for="pers-mail">
+            <label>
                 <input 
                     type="email"
                     name="user-mail" 
                     class="pers-form-input" 
-                    placeholder="Електронна пошта" 
-                    id="pers-mail">
+                    placeholder="Електронна пошта">
             </label>
-            <label for="pers-password">
+            <label>
                 <input 
                     type="password"
                     name="user-pwd" 
                     class="pers-form-input" 
-                    placeholder="Пароль" 
-                    id="pers-password"
+                    placeholder="Пароль"
                     minlength="6"
                     maxlength="10">
             </label>
         </div>
     </div>
-
     <div class="pers-button-wrap">
-        <button type="submit" class="button dark">Зберегти зміни</button>
+        <button type="submit" class="button dark" data-profile-form-btn>Зберегти зміни</button>
     </div>
 </form>
