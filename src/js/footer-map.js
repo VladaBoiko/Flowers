@@ -302,10 +302,9 @@ function initMap() {
         map: myMap,
         // animation: google.maps.Animation.BOUNCE,
         title: "Gvozdika",
-        icon: './src/img/footer/mark.png'
+        // icon: './src/img/footer/mark.png'
         // icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-        
-        
+            
        
        });
        marker.addListener('click', function(){
@@ -323,8 +322,7 @@ function initMap() {
         title: "Gvozdika",
         // icon: './src/img/footer/mark.png'
         // icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-        
-        
+             
        
        });
        marker2.addListener('click', function(){
