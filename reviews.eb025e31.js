@@ -1,0 +1,2 @@
+const e=document.querySelectorAll(".star-list__icon");for(let n=0;n<e.length;n+=1)e[n].addEventListener("mouseenter",(()=>t(n)));function t(t){for(let n=0;n<=t;n+=1)e[n].classList.add("star-list__icon--active");for(const t of e)t.addEventListener("click",o),t.addEventListener("mouseleave",n)}function n(){for(let t=0;t<e.length;t+=1)e[t].classList.remove("star-list__icon--active");o()}function o(){for(const t of e)t.removeEventListener("mouseleave",n)}
+//# sourceMappingURL=reviews.eb025e31.js.map
