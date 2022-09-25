@@ -126,9 +126,9 @@ section.offer {
         content: '';
         position: absolute;
         z-index: -1;
-        background: url(../img/offers/offers-background.png) 0px 0px/100% no-repeat;
+        background: url(../img/reusable/bg-leafs.png) 0px 0px/100% no-repeat;
         @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192px), (min-resolution: 2dppx) {
-          background-image: url(../img/offers/offers-background@2x.png);
+          background-image: url(../img/reusable/bg-leafs@2x.png);
         }
         width: 222px;
         height: 810px;
