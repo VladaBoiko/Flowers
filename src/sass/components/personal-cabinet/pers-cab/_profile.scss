@@ -1,211 +1,212 @@
 .pers-form-group {
-    padding: 30px 20px;
-    margin-bottom: 20px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
 
-    border-radius: 4px;
-    background-color: var(--white);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 
-    @include tablet {
-        padding-right: 61px;
-        padding-left: 30px;
-        margin-bottom: 25px;
+  @include tablet {
+    padding-right: 61px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+  }
+
+  @include desktop {
+    padding-right: 40px;
+    margin-bottom: 30px;
+
+    &:nth-child(2) {
+      padding-bottom: 44px;
     }
-
-    @include desktop {
-        padding-right: 40px;
-        margin-bottom: 30px;
-
-        &:nth-child(2) {
-            padding-bottom: 44px;
-        }
-    }
+  }
 }
 
 .pers-form-group .pers-content-title {
-    margin-bottom: 15px;
-    @include desktop {
-        margin-bottom: 20px;
-    }
+  margin-bottom: 15px;
+  @include desktop {
+    margin-bottom: 20px;
+  }
 }
 
+// .first-form-content-flex-wrap-desk
 .pers-first-form-wrap-desk {
-    @include desktop {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
 
-.pers-photo>label {
-    display: block;
-    width: 80px;
+.pers-photo > label {
+  display: block;
+  width: 80px;
 }
 
 .pers-img {
-    display: block;
-    cursor: pointer;
+  display: block;
+  cursor: pointer;
 
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 
-    border-radius: 50%;
-    background-color: var(--dark-theme-text-color);
-    background-image: url('../img/personal-cabinet/camera.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+  border-radius: 50%;
+  background-color: var(--dark-theme-text-color);
+  background-image: url('../img/personal-cabinet/camera.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 
-    @include desktop {
-        margin-right: 15px;
-    }
+  @include desktop {
+    margin-right: 15px;
+  }
 }
 
 .pers-photo-icon {
-    stroke: var(--main-accent-color);
-    width: 40px;
-    height: 40px;
+  stroke: var(--main-accent-color);
+  width: 40px;
+  height: 40px;
 }
 
 .pers-first-form-wrap-tab {
-    @include tablet {
-        display: flex;
-    }
+  @include tablet {
+    display: flex;
+  }
 }
 
 .input-col-wrap {
-    display: grid;
-    grid-row-gap: 10px;
+  display: grid;
+  grid-row-gap: 10px;
 
-    @include desktop {
-        width: 440px;
-    }
+  @include desktop {
+    width: 440px;
+  }
 }
 
 .pers-radio-wrapper {
-    @include tablet {
-        margin-left: 95px;
-    }
+  @include tablet {
+    margin-left: 95px;
+  }
 
-    @include desktop {
-        margin-left: 15px;
-    }
+  @include desktop {
+    margin-left: 15px;
+  }
 }
 
 .pers-form-group-text {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    @include font(null, 18px, calc(22px / 18px));
-    color: var(--black);
+  margin-top: 15px;
+  margin-bottom: 10px;
+  @include font(null, 18px, calc(22px / 18px));
+  color: var(--black);
 }
 
 .pers-radio-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
-    @include font(400, 14px, calc(17px / 14px));
-    color: var(--black);
+  @include font(400, 14px, calc(17px / 14px));
+  color: var(--black);
 
-    &:not(:last-child) {
-        margin-bottom: 5px;
-    }
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
 }
 
 .pers-radio-label::before {
-    content: "";
-    display: block;
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 
-    border-radius: 50%;
-    border: 1px solid var(--grey);
+  border-radius: 50%;
+  border: 1px solid var(--grey);
 
-    .pers-radio-input:focus+&,
-    .pers-radio-input:checked+& {
-        border: 1px solid var(--main-accent-color);
-        background-image: url(../img/personal-cabinet/radiobutton.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+  .pers-radio-input:focus + &,
+  .pers-radio-input:checked + & {
+    border: 1px solid var(--main-accent-color);
+    background-image: url(../img/personal-cabinet/Radiobutton.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .input-grid-wrap {
-    display: grid;
-    grid-row-gap: 10px;
+  display: grid;
+  grid-row-gap: 10px;
 
-    @include desktop {
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 20px;
-    }
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+  }
 }
 
 .local-label {
-    position: relative;
+  position: relative;
 
-    @include tablet {
-        width: 440px;
-    }
+  @include tablet {
+    width: 440px;
+  }
 
-    &::after {
-        position: absolute;
-        top: 42%;
-        right: 16px;
-        content: '';
+  &::after {
+    position: absolute;
+    top: 42%;
+    right: 16px;
+    content: '';
 
-        display: block;
-        border-left: 5.5px solid transparent;
-        border-right: 5.5px solid transparent;
-        border-top: 7px solid var(--light-theme-text-color);
-        width: 0;
-        height: 0;
+    display: block;
+    border-left: 5.5px solid transparent;
+    border-right: 5.5px solid transparent;
+    border-top: 7px solid var(--light-theme-text-color);
+    width: 0;
+    height: 0;
 
-        transition: transform 250ms linear;
-    }
+    transition: transform 250ms linear;
+  }
 }
 
-.local-label>input {
-    padding-right: 30px;
+.local-label > input {
+  padding-right: 30px;
 }
 
 .pers-form-group .wrap-for-call {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .pers-form-group .for-call-text {
-    @include font(500, 12px, calc(15px / 12px));
-    color: var(--main-accent-color);
-    @include tablet {
-        @include font(500, 14px, calc(17px / 14px));
-    }
+  @include font(500, 12px, calc(15px / 12px));
+  color: var(--main-accent-color);
+  @include tablet {
+    @include font(500, 14px, calc(17px / 14px));
+  }
 }
 
 .pers-time-flex-wrap {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .pers-time-label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    @include font(500, 14px, calc(17px / 14px));
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  @include font(500, 14px, calc(17px / 14px));
 }
 
 .pers-time-input {
-    display: block;
-    content: "";
-    width: 68px;
-    height: 29px;
-    padding: 6px 16px;
-    border: 1px solid var(--grey);
-    border-radius: 4px;
-    color: var(--main-accent-color);
+  display: block;
+  content: '';
+  width: 68px;
+  height: 29px;
+  padding: 6px 16px;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  color: var(--main-accent-color);
 
-    &::placeholder {
-        color: var(--grey);
-    }
+  &::placeholder {
+    color: var(--grey);
+  }
 }
