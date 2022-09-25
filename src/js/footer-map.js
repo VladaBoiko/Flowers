@@ -294,17 +294,26 @@ function initMap() {
   // first map
   const myMap = new google.maps.Map(document.getElementById('map'), opt);
 
-  const marker = new google.maps.Marker({
-    position: pos,
-    map: myMap,
-    // animation: google.maps.Animation.BOUNCE,
-    title: 'Gvozdika',
-    icon: './img/favicon.png',
-    // icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-  });
-  marker.addListener('click', function () {
-    info.open(myMap, marker);
-  });
+
+    };
+// first map
+    const myMap = new google.maps.Map(document.getElementById("map"), opt);
+   
+    const marker = new google.maps.Marker({
+        
+        position: pos,
+        map: myMap,
+        // animation: google.maps.Animation.BOUNCE,
+        title: "Gvozdika",
+        // icon: './src/img/footer/mark.png'
+        // icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+        
+        
+       
+       });
+       marker.addListener('click', function(){
+        info.open(myMap, marker)
+    })
 
   // second map
   const myMap2 = new google.maps.Map(document.getElementById('map2'), opt);
