@@ -29,7 +29,6 @@
     }
 }
 
-// .first-form-content-flex-wrap-desk 
 .pers-first-form-wrap-desk {
     @include desktop {
         display: flex;
@@ -68,7 +67,6 @@
     height: 40px;
 }
 
-// .pers-flex-wrap-tab
 .pers-first-form-wrap-tab {
     @include tablet {
         display: flex;
@@ -83,8 +81,6 @@
         width: 440px;
     }
 }
-
-// ---------------radio-buttons------------
 
 .pers-radio-wrapper {
     @include tablet {
@@ -134,8 +130,6 @@
         background-position: center;
     }
 }
-
-// -----------------2-nd form group----------
 
 .input-grid-wrap {
     display: grid;

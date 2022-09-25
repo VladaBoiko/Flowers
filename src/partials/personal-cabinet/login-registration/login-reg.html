@@ -1,40 +1,33 @@
 <section class="pers-login" data-login-section>
     <div class="container">
-        <h1 class="login-title">Вхід до особистого кабинету</h1>
-        <form class="login-form" data-login-form>
-            <div class="login-row-wrap">
-                <label class="login-label">
-                    <input 
-                        type="text" 
-                        name="user-tel-or-mail"
-                        class="pers-form-input" 
-                        placeholder="Введіть телефон або електронну пошту" 
-                        required>
-                </label>
-                <label class="login-label close-eye-inside">
-                    <input 
-                        type="password" 
-                        name="user-pwd"
-                        class="pers-form-input" 
-                        placeholder="Введіть пароль" 
-                        required
-                        minlength="6"
-                        maxlength="10">
-                    <svg class="pwd-input-icon" width="32" height="32">
-                        <use href="./img/symbol-defs.svg#eye-off-icon"></use>
-                    </svg>
-                </label>
-            </div>
-            <div class="login-flex-wrap">
-                <a href="">Забули пароль?</a>
-                <div class="login-check-wrap">
-                    <input type="checkbox" id="remmbr-user" class="visually-hidden" name="remmbr-user" value="remmbr-user" checked>
-                    <label for="remmbr-user" class="login-check-label">Запам'ятати мене</label>
+        <div class="login-form-wrap">
+            <h1 class="login-title">Вхід до особистого кабинету</h1>
+            <form class="login-form" data-login-form>
+                <div class="login-row-wrap">
+                    <label class="login-label">
+                        <input type="text" name="user-tel-or-mail" class="pers-form-input"
+                            placeholder="Введіть телефон або електронну пошту" required>
+                    </label>
+                    <label class="login-label close-eye-inside">
+                        <input type="password" name="user-pwd" class="pers-form-input" placeholder="Введіть пароль" required
+                            minlength="6" maxlength="10">
+                        <svg class="pwd-input-icon" width="32" height="32">
+                            <use href="./img/symbol-defs.svg#eye-off-icon"></use>
+                        </svg>
+                    </label>
                 </div>
-            </div>
-            <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
-            <button type="submit" class="login-btn button dark">Вхід</button>
-        </form>
+                <div class="login-flex-wrap">
+                    <a href="">Забули пароль?</a>
+                    <div class="login-check-wrap">
+                        <input type="checkbox" id="remmbr-user" class="visually-hidden" name="remmbr-user" value="remmbr-user"
+                            checked>
+                        <label for="remmbr-user" class="login-check-label">Запам'ятати мене</label>
+                    </div>
+                </div>
+                <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
+                <button type="submit" class="login-btn button dark">Вхід</button>
+            </form>
+        </div>
     </div>
 </section>
 <div class="backdrop" data-reg-modal>
