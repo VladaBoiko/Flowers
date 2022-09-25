@@ -27,7 +27,7 @@ export const createMarkup = data => {
           <div class="product__overlay">
             <p class="product__status ${keyStatus}">${status}</p>
             <button type="button" class="product__favorite ${isFav(id)}">
-              <svg width="28" height="25">
+              <svg width="34" height="34">
                 <use href="${icons}#icon-fav"></use>
               </svg>
             </button>
