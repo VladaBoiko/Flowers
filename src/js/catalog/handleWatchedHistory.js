@@ -8,8 +8,7 @@ export function handleWatchedHistory() {
 
   products.forEach(product =>
     product.addEventListener('click', evt => {
-      // console.log(evt.target);
-      event.preventDefault();
+      // event.preventDefault();
       const productId = product.id;
       if (
         !(
