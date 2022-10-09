@@ -107,6 +107,7 @@ body.show-modal .modal {
 .modal-title {
     text-align: center;
     margin-bottom: 30px;
+    pointer-events: none;
 
     @include font(500, 24px, calc(31px / 24px));
     color: var(--main-accent-color);
