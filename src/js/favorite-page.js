@@ -1,4 +1,4 @@
-import { APIGetData } from './catalog/fetch-cards';
+import { APIGetData } from './api/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { handleFavorite } from './catalog/favoriteHandle';

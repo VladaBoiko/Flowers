@@ -1,4 +1,4 @@
-import { APIGetData } from './catalog/fetch-cards';
+import { APIGetData } from './api/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { filterData, filterWords } from './catalog/filter';
@@ -31,23 +31,49 @@ const catalogData = {
     this.page = 1;
     this.filterParams = {};
   },
+  // async renderData() {
+  //   try {
+  //     const data = await APIGetData.getData();
+
+  //     const filteredData = filterData(data, this.filterParams);
+  //     filteredData.length <= this.offset && loadMoreBtn.hide();
+  //     this.totalPages = filteredData.length / this.offset;
+  //     const slicedData = sliceData(filteredData, this.page, this.offset);
+
+  //     const markup = createMarkup(slicedData);
+
+  //     render(refs.catalogList, markup);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
   async renderData() {
     try {
-      const data = await APIGetData.getData();
+      const prepearedFilterParams = Object.entries(this.filterParams).reduce(
+        (acc, item) => ({ [item[0]]: item[1].join(','), ...acc }),
+        {}
+      );
+      parsePrice(prepearedFilterParams.price);
 
-      const filteredData = filterData(data, this.filterParams);
-      filteredData.length <= this.offset && loadMoreBtn.hide();
-      this.totalPages = filteredData.length / this.offset;
-      const slicedData = sliceData(filteredData, this.page, this.offset);
+      // const data = await APIGetData.getData();
 
-      const markup = createMarkup(slicedData);
+      // const filteredData = filterData(data, this.filterParams);
+      // filteredData.length <= this.offset && loadMoreBtn.hide();
+      // this.totalPages = filteredData.length / this.offset;
+      // const slicedData = sliceData(filteredData, this.page, this.offset);
 
-      render(refs.catalogList, markup);
+      // const markup = createMarkup(slicedData);
+
+      // render(refs.catalogList, markup);
     } catch (error) {
       console.log(error);
     }
   },
 };
+
+function parsePrice(price) {
+  console.log('price', price);
+}
 
 function getCheckedCheckBox() {
   const filterData = {

@@ -1,4 +1,4 @@
-import { APIGetData } from './catalog/fetch-cards';
+import { APIGetData } from './api/fetch-cards';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { createMarkup } from './catalog/markup';
 import { filterBySection, sections } from './catalog/filter';
