@@ -51,6 +51,7 @@
     margin-bottom: 30px;
     margin: 0 auto 30px;
     text-align: center;
+    pointer-events: none;
 
     @include tablet {
         @include font(500, 36px, calc(47px / 36px));

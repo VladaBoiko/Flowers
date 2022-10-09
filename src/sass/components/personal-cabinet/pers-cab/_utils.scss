@@ -1,6 +1,7 @@
 .pers-content-title {
     @include font(600, 20px, calc(26px / 20px));
     color: var(--main-accent-color);
+    pointer-events: none;
 }
 
 // --------rectangular-input---------------

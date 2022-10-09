@@ -29,6 +29,7 @@
     margin-bottom: 5px;
     @include font(500, 16px, calc(21px / 16px));
     color: var(--light-theme-title-color);
+    pointer-events: none;
 }
 
 .pers-notif-label {
@@ -50,7 +51,7 @@
         border-radius: 4px;
         transition: scale var(--main-transition);
 
-        .notif-form-group input:focus+& {
+        .notif-form-group input:focus+&{
             scale: 1.2;
         }
 

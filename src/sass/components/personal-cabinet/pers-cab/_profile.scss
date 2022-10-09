@@ -98,6 +98,7 @@
   margin-bottom: 10px;
   @include font(null, 18px, calc(22px / 18px));
   color: var(--black);
+  pointer-events: none;
 }
 
 .pers-radio-label {
@@ -179,6 +180,7 @@
 .pers-form-group .for-call-text {
   @include font(500, 12px, calc(15px / 12px));
   color: var(--main-accent-color);
+  pointer-events: none;
   @include tablet {
     @include font(500, 14px, calc(17px / 14px));
   }

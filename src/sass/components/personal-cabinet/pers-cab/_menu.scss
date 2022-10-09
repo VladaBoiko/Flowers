@@ -167,7 +167,6 @@
     gap: 5px;
 
     max-width: 320px;
-
     padding: 9px 15px;
 
     font-family: 'PT sans';
@@ -177,6 +176,7 @@
     background-color: var(--white);
     border: 1px solid var(--main-accent-color);
     border-radius: 4px;
+    pointer-events: none;
 
     @include tablet {
         width: 310px;
