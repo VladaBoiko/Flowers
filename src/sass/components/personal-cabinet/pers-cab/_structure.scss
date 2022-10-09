@@ -3,7 +3,7 @@
     padding-top: 30px;
     padding-bottom: 50px;
     border-bottom: 1px solid;
-
+    
     @include tablet {
         padding-bottom: 80px;
     }
@@ -15,6 +15,26 @@
 
     &.is-hidden {
         display: none;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 143px;
+        left: 0;
+
+        width: 222px;
+        height: 810px;
+
+        transform: scaleX(-1);
+        z-index: -1;
+        background: url(../img/reusable/bg-leafs.png) 0px 0px/100% no-repeat;
+
+        @media screen and (min-device-pixel-ratio: 2),
+        (min-resolution: 192px),
+        (min-resolution: 2dppx) {
+            background-image: url(../img/reusable/bg-leafs@2x.png);
+        }
     }
 
     &>.container {

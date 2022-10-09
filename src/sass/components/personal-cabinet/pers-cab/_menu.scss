@@ -12,6 +12,7 @@
             display: block;
         }
     }
+    
     &>.container {
         @include tablet {
             padding: 0;

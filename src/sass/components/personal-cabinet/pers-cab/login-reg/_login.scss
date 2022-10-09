@@ -1,6 +1,14 @@
 .pers-login {
     padding: 50px 0px;
 
+    @include tablet {
+        padding: 80px 0;
+    }
+
+    @include desktop {
+        padding: 100px 0;
+    }
+
     &.is-hidden {
         display: none;
     }
@@ -12,7 +20,32 @@
     }
 }
 
+.login-form-wrap {
+    position: relative;
+    @include desktop {
+        width: 580px;
+        &::after {
+            position: absolute;
+            top: -100px;
+            right: -783px;
+            display: block;
+            content: "";
+            width: 715px;
+            height: 667px;
+            background-image: url('../img/reusable/bg-flower-full.png');
+            
+            @media screen and (min-device-pixel-ratio: 2),
+                (min-resolution: 192px),
+                (min-resolution: 2dppx) {
+                    background-image: url('../img/reusable/bg-flower-full-2x.png');
+                }
+        }
+    }
+    
+}
+
 .login-title {
+    position: relative;
     @include font(500, 24px, calc(31px / 24px));
     color: var(--main-accent-color);
     margin-bottom: 30px;
@@ -38,7 +71,7 @@
 
     @include tablet {
         width: 580px;
-        padding: 50px 70px;
+        padding: 70px;
     }
 
     &::before {
@@ -50,7 +83,7 @@
         left: 1px;
         width: 124px;
         height: 74px;
-        background-image: url(../img/reusable/leaf-top-left-124.png);
+        background-image: url('../img/reusable/leaf-top-left-124.png');
         background-repeat: no-repeat;
     }
 
@@ -63,7 +96,7 @@
         right: 2px;
         width: 45px;
         height: 47px;
-        background-image: url(../img/reusable/blobs.png);
+        background-image: url('../img/reusable/blobs.png');
         background-repeat: no-repeat;
 
         @include tablet {

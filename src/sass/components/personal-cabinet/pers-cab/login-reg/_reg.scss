@@ -1,3 +1,9 @@
+.reg-modal {
+    @include tablet {
+        padding-bottom: 70px;
+    }
+}
+
 .reg-input-wrap {
     display: grid;
     grid-row-gap: 5px;
