@@ -1,4 +1,4 @@
-import { handleFavorite } from './favoriteHandle';
+import { handleFavorite } from './handleFavorite';
 import { handleWatchedHistory } from './handleWatchedHistory';
 
 export const render = (selector, markup) => {

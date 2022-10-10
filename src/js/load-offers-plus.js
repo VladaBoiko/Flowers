@@ -1,5 +1,5 @@
 import { APIGetData } from './api/fetch-cards';
-import { handleFavorite } from './catalog/favoriteHandle';
+import { handleFavorite } from './catalog/handleFavorite';
 import { createMarkup } from './catalog/markup';
 import { filterBySection, sections } from './catalog/filter';
 

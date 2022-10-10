@@ -12,9 +12,9 @@ const favoriteList = loadFromLocalStorage('Favorites');
 
 export const createMarkup = data => {
   return data
-    .map(({ id, name, image, price, status }) => {
+    .map(({ _id, name, image, price, status }) => {
       const keyStatus = getKey(status, statuses);
-      return `<li class="offer-list__item product" id="${id}">
+      return `<li class="offer-list__item product" id="${_id}">
         <a href="./good-card.html" class="product__link">
           <img
             loading="lazy"
@@ -26,7 +26,7 @@ export const createMarkup = data => {
           />
           <div class="product__overlay">
             <p class="product__status ${keyStatus}">${status}</p>
-            <button type="button" class="product__favorite ${isFav(id)}">
+            <button type="button" class="product__favorite ${isFav(_id)}">
               <svg width="34" height="34">
                 <use href="${icons}#icon-fav"></use>
               </svg>
