@@ -8,7 +8,6 @@ const statuses = {
   new: 'Новинка',
 };
 const favoriteList = loadFromLocalStorage('Favorites');
-// console.log(favoriteList);
 
 export const createMarkup = data => {
   return data
@@ -49,10 +48,6 @@ export const createMarkup = data => {
     `;
     })
     .join('');
-};
-
-export const clearData = list => {
-  list.innerHTML = '';
 };
 
 function isFav(id) {

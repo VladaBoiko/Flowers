@@ -1,14 +1,12 @@
 import { APIGetData } from './api/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
-import { filterData, filterWords } from './catalog/filter';
+import { filterWords } from './catalog/filter';
 import { smoothScroll } from './catalog/smoothScroll';
 
 import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
-
-// import data from '../products.json';
 
 import getKey from './catalog/getKey';
 
@@ -139,17 +137,3 @@ loadMoreBtn.element.addEventListener('click', () => {
   }
   smoothScroll(refs.catalogList);
 });
-
-function sliceData(data, page, offset) {
-  const totalPages = data.length / offset;
-  const start = page * offset - offset;
-  const end = start + offset;
-
-  if (data.length > offset) {
-    if (page < totalPages) {
-      return data.slice(start, end);
-    }
-    return data.slice(start);
-  }
-  return data;
-}

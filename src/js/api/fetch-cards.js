@@ -1,20 +1,17 @@
 const axios = require('axios').default;
 
 const instance = axios.create({
-  // baseURL: 'https://62f9492f3eab3503d1e324fd.mockapi.io/',
   baseURL: 'https://server-flower.herokuapp.com/',
 });
 
 export const APIGetData = {
-  async getData(params = '') {
-    // const response = await instance.get(`/products/?${params}`);
+  async getData() {
     const response = await instance.get(`/flowers/all`);
     const data = await response.data;
     return data.result;
   },
 
   async getDataByID(id, page = 1, limit = 20, sorting = 'rating,1') {
-    // const response = await instance.get(`/products/`, { params: { id: id } });
     const response = await instance.get(`/flowers/`, {
       params: {
         page,
@@ -28,12 +25,12 @@ export const APIGetData = {
     return data.result;
   },
 
-  async getDataBySection(section) {
+  async getDataBySection(section, page = 1, limit = 8) {
     const response = await instance.get(`/flowers/`, {
       params: {
-        page: 1,
-        limit: 8,
         section,
+        page,
+        limit,
       },
     });
 

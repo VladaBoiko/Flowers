@@ -6,3 +6,7 @@ export const render = (selector, markup) => {
   handleFavorite();
   handleWatchedHistory();
 };
+
+export const clearData = list => {
+  list.innerHTML = '';
+};
