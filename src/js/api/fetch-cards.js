@@ -44,13 +44,7 @@ export const APIGetData = {
   async getDataByFilter(filter, page = 1, limit = 9, sorting = 'rating,1') {
     const response = await instance.get(`/flowers/`, {
       params: {
-        category,
-        sort,
-        color,
-        amount,
-        size,
-        form,
-        price,
+        ...filter,
         page,
         limit,
         sorting,
@@ -58,6 +52,6 @@ export const APIGetData = {
     });
 
     const data = await response.data;
-    return data.result;
+    return data;
   },
 };

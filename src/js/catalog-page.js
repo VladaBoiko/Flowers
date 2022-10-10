@@ -23,57 +23,30 @@ const catalogData = {
   filterParams: {},
   page: 1,
   totalPages: 1,
-  offset: 9,
+  offset: 6,
+  sorting: 'rating,1',
+
   incrementPage() {
     this.page += 1;
   },
+
   resetPage() {
     this.page = 1;
     this.filterParams = {};
   },
-  // async renderData() {
-  //   try {
-  //     const data = await APIGetData.getData();
 
-  //     const filteredData = filterData(data, this.filterParams);
-  //     filteredData.length <= this.offset && loadMoreBtn.hide();
-  //     this.totalPages = filteredData.length / this.offset;
-  //     const slicedData = sliceData(filteredData, this.page, this.offset);
-
-  //     const markup = createMarkup(slicedData);
-
-  //     render(refs.catalogList, markup);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
   async renderData() {
     try {
-      const prepearedFilterParams = Object.entries(this.filterParams).reduce(
-        (acc, item) => ({ [item[0]]: item[1].join(','), ...acc }),
-        {}
-      );
-      parsePrice(prepearedFilterParams.price);
+      const data = await APIGetData.getDataByFilter(this.filterParams, this.page, this.offset, this.sorting);
+      this.totalPages = data.totalPage;
+      const markup = createMarkup(data.result);
 
-      // const data = await APIGetData.getData();
-
-      // const filteredData = filterData(data, this.filterParams);
-      // filteredData.length <= this.offset && loadMoreBtn.hide();
-      // this.totalPages = filteredData.length / this.offset;
-      // const slicedData = sliceData(filteredData, this.page, this.offset);
-
-      // const markup = createMarkup(slicedData);
-
-      // render(refs.catalogList, markup);
+      render(refs.catalogList, markup);
     } catch (error) {
       console.log(error);
     }
   },
 };
-
-function parsePrice(price) {
-  console.log('price', price);
-}
 
 function getCheckedCheckBox() {
   const filterData = {
@@ -92,10 +65,29 @@ function getCheckedCheckBox() {
 
       const key = getKey(param, filterWords);
       const valueFormat = key === 'amount' || key === 'size' ? Number.parseInt(value) : value;
-      filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
+
+      if (key !== 'price') {
+        filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
+      } else {
+        const price = el.value.split(',');
+        filterData[key] = price;
+      }
     }
   });
-  return filterData;
+
+  const prepearedFilterParams = Object.entries(filterData).reduce((acc, item) => {
+    let param = null;
+    if (item[1].length > 0) {
+      if (item[0] !== 'price') {
+        param = { [item[0]]: item[1].join(',') };
+      } else {
+        param = { priseMin: item[1][0], priseMax: item[1][1] };
+      }
+    }
+    return param ? { ...acc, ...param } : { ...acc };
+  }, {});
+
+  return prepearedFilterParams;
 }
 
 refs.form.reset();
