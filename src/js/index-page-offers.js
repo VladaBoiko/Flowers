@@ -4,7 +4,6 @@ import { handleFavorite } from './catalog/handleFavorite';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
-import { addClass, removeClass } from './catalog/utils';
 
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';
@@ -53,4 +52,13 @@ async function renderData() {
   }
   handleFavorite();
   handleWatchedHistory();
+}
+
+// ========================================================================================
+
+function addClass(element, cssClass) {
+  if (!element.classList.contains(cssClass)) element.classList.add(cssClass);
+}
+function removeClass(element, cssClass) {
+  if (element.classList.contains(cssClass)) element.classList.remove(cssClass);
 }
