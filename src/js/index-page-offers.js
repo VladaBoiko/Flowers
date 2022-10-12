@@ -1,5 +1,5 @@
 import { APIGetData } from './api/fetch-cards';
-import { sections } from './catalog/const';
+import { sections } from './catalog/filter';
 import { handleFavorite } from './catalog/handleFavorite';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
@@ -31,15 +31,8 @@ async function renderData() {
       if (sections[offerSection] !== sections.earlierWatched) {
         data = await APIGetData.getDataBySection(sections[offerSection]);
       } else {
-        const localStorageData = loadFromLocalStorage('EarlierWatched');
-
-        if (localStorageData) {
-          const earlierWatchedList = localStorageData.join(',');
-          data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
-          removeClass(refs.earlierWatched.closest('.offer'), 'hidden');
-        } else {
-          addClass(refs.earlierWatched.closest('.offer'), 'hidden');
-        }
+        const earlierWatchedList = loadFromLocalStorage('EarlierWatched').join(',');
+        data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
       }
 
       if (data) {
@@ -47,18 +40,9 @@ async function renderData() {
         refs[offerSection].insertAdjacentHTML('beforeend', markup);
       }
     } catch (error) {
-      console.log('render-data on index-page', error);
+      console.log(error);
     }
   }
   handleFavorite();
   handleWatchedHistory();
-}
-
-// ========================================================================================
-
-function addClass(element, cssClass) {
-  if (!element.classList.contains(cssClass)) element.classList.add(cssClass);
-}
-function removeClass(element, cssClass) {
-  if (element.classList.contains(cssClass)) element.classList.remove(cssClass);
 }

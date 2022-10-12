@@ -2,7 +2,6 @@ import { APIGetData } from './api/fetch-cards';
 import { createMarkup } from './catalog/markup';
 import { render, clearData } from './catalog/render';
 import { loadFromLocalStorage } from './catalog/localStorage';
-import { addClass, removeClass } from './catalog/utils';
 
 export const loadDataFavoritePage = () => {
   if (document.querySelector('.favorites.offer')) {
@@ -12,7 +11,7 @@ export const loadDataFavoritePage = () => {
       list: document.querySelector('.offer__list--fav'),
     };
 
-    const favotireListFromLocalStorage = loadFromLocalStorage('Favorites');
+    const favotireListFromLocalStorage = loadFromLocalStorage('Favorites').join(',');
 
     if (!favotireListFromLocalStorage) {
       clearData(refs.list);
@@ -34,7 +33,7 @@ export const loadDataFavoritePage = () => {
 
     async function renderData() {
       try {
-        data = await APIGetData.getDataByID(favotireListFromLocalStorage.join(','));
+        data = await APIGetData.getDataByID(favotireListFromLocalStorage);
         const markup = createMarkup(data);
         clearData(refs.list);
         render(refs.list, markup);
@@ -46,3 +45,12 @@ export const loadDataFavoritePage = () => {
 };
 
 loadDataFavoritePage();
+
+// ========================================================================================
+
+function addClass(element, cssClass) {
+  if (!element.classList.contains(cssClass)) element.classList.add(cssClass);
+}
+function removeClass(element, cssClass) {
+  if (element.classList.contains(cssClass)) element.classList.remove(cssClass);
+}

@@ -1,8 +1,12 @@
 import { loadFromLocalStorage } from './localStorage';
-import { statuses } from './const';
-import { getKey } from './utils';
+import getKey from './getKey';
 import icons from '../../img/catalog/icon-fav.svg';
 
+const statuses = {
+  hit: 'Xіт продажу',
+  absent: 'Немає в наявності',
+  new: 'Новинка',
+};
 const favoriteList = loadFromLocalStorage('Favorites');
 
 export const createMarkup = data => {
