@@ -2,7 +2,8 @@ import { refs } from "./helpers/refs";
 import { logIn } from '../auth';
 import {goToUserCab } from './helpers/helpers';
 
-export let TOKEN = 'token';
+
+export let TOKEN = 'token'; //просто ключ-рядок
 
 refs.loginForm.addEventListener('submit', onLoginSubmit)
 
