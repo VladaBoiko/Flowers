@@ -1,10 +1,9 @@
-import { APIGetData } from './api/fetch-cards';
-import { sections } from './catalog/const';
-import { handleFavorite } from './catalog/handleFavorite';
+import { APIGetData } from './catalog/fetch-cards';
+import { filterBySection, sections } from './catalog/filter';
+import { handleFavorite } from './catalog/favoriteHandle';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
-import { addClass, removeClass } from './catalog/utils';
 
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';
@@ -22,35 +21,25 @@ const refs = {
   earlierWatched: document.querySelector('.offer--earlier-watched .offer__list'),
 };
 
+const earlierWatchedList = loadFromLocalStorage('EarlierWatched');
+
 renderData();
 
 async function renderData() {
-  for (const offerSection in sections) {
-    try {
-      let data = null;
+  try {
+    const data = await APIGetData.getData();
 
-      if (sections[offerSection] !== sections.earlierWatched) {
-        data = await APIGetData.getDataBySection(sections[offerSection]);
-      } else {
-        const localStorageData = loadFromLocalStorage('EarlierWatched');
-
-        if (localStorageData) {
-          const earlierWatchedList = localStorageData.join(',');
-          data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
-          removeClass(refs.earlierWatched.closest('.offer'), 'hidden');
-        } else {
-          addClass(refs.earlierWatched.closest('.offer'), 'hidden');
-        }
-      }
-
-      if (data) {
-        const markup = createMarkup(data);
-        refs[offerSection].insertAdjacentHTML('beforeend', markup);
-      }
-    } catch (error) {
-      console.log('render-data on index-page', error);
+    for (const offerSection in sections) {
+      const filteredData =
+        sections[offerSection] !== sections.earlierWatched
+          ? filterBySection(data, sections[offerSection])
+          : filterBySection(data, sections[offerSection], earlierWatchedList);
+      const markup = createMarkup(filteredData);
+      refs[offerSection].insertAdjacentHTML('beforeend', markup);
     }
+    handleFavorite();
+    handleWatchedHistory();
+  } catch (error) {
+    console.log(error);
   }
-  handleFavorite();
-  handleWatchedHistory();
 }
