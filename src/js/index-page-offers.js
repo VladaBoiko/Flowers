@@ -31,8 +31,12 @@ async function renderData() {
       if (sections[offerSection] !== sections.earlierWatched) {
         data = await APIGetData.getDataBySection(sections[offerSection]);
       } else {
-        const earlierWatchedList = loadFromLocalStorage('EarlierWatched').join(',');
-        data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
+        const localStorageData = loadFromLocalStorage('EarlierWatched');
+        console.log('localStorageData :>> ', localStorageData);
+        if (!localStorageData) {
+          const earlierWatchedList = localStorageData.join(',');
+          data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
+        }
       }
 
       if (data) {

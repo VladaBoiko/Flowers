@@ -1,6 +1,6 @@
 import { APIGetData } from './api/fetch-cards';
-import { createMarkup, clearData } from './catalog/markup';
-import { render } from './catalog/render';
+import { createMarkup } from './catalog/markup';
+import { render, clearData } from './catalog/render';
 import { filterWords } from './catalog/filter';
 import { smoothScroll } from './catalog/smoothScroll';
 
