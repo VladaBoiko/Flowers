@@ -1,0 +1,15 @@
+import { logOut } from '../auth';
+import {TOKEN} from '../auth/login'
+
+
+async function onLogoutBtn() {
+    await logOut();
+    localStorage.removeItem(TOKEN); //?
+    logOutUserCab();
+}
+
+// fn зворотня до goToUserCab from '../personal-cabinet/helpers';
+function logOutUserCab() {
+    refs.loginSection.classList.remove('is-hidden');
+    refs.personalCab.classList.add('is-hidden');
+}
