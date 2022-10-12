@@ -1,16 +1,17 @@
-import { APIGetData } from './catalog/fetch-cards';
-import { createMarkup, clearData } from './catalog/markup';
-import { render } from './catalog/render';
-import { filterData, filterWords } from './catalog/filter';
-import { smoothScroll } from './catalog/smoothScroll';
+import { APIGetData } from './api/fetch-cards';
+import { createMarkup } from './catalog/markup';
+import { render, clearData } from './catalog/render';
+import { filterWords } from './catalog/const';
+import { smoothScroll } from './catalog/utils';
 
 import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
 
-// import data from '../products.json';
+import { getKey } from './catalog/utils';
 
-import getKey from './catalog/getKey';
+// import throttle from 'lodash.throttle';
+// const DELAY = 300;
 
 const refs = {
   resetFormBtn: document.querySelector('.filter-catalog__clear-all-btn'),
@@ -24,27 +25,33 @@ const catalogData = {
   page: 1,
   totalPages: 1,
   offset: 9,
+  sorting: 'rating,1',
+
   incrementPage() {
     this.page += 1;
   },
+
   resetPage() {
     this.page = 1;
     this.filterParams = {};
   },
+
   async renderData() {
     try {
-      const data = await APIGetData.getData();
-
-      const filteredData = filterData(data, this.filterParams);
-      filteredData.length <= this.offset && loadMoreBtn.hide();
-      this.totalPages = filteredData.length / this.offset;
-      const slicedData = sliceData(filteredData, this.page, this.offset);
-
-      const markup = createMarkup(slicedData);
+      const data = await APIGetData.getDataByFilter(this.filterParams, this.page, this.offset, this.sorting);
+      this.totalPages = data.totalPage;
+      const markup = createMarkup(data.result);
 
       render(refs.catalogList, markup);
+
+      if (this.page >= this.totalPages) {
+        loadMoreBtn.hide();
+      } else {
+        loadMoreBtn.enable();
+        loadMoreBtn.show();
+      }
     } catch (error) {
-      console.log(error);
+      console.log('render data on catalog-page', error);
     }
   },
 };
@@ -66,10 +73,32 @@ function getCheckedCheckBox() {
 
       const key = getKey(param, filterWords);
       const valueFormat = key === 'amount' || key === 'size' ? Number.parseInt(value) : value;
-      filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
+
+      if (key !== 'price') {
+        filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
+      } else {
+        const price = el.value.split(',');
+
+        filterData[key] = price;
+      }
     }
   });
-  return filterData;
+
+  const prepearedFilterParams = Object.entries(filterData).reduce((acc, item) => {
+    let param = null;
+
+    if (item[1].length > 0) {
+      if (item[0] !== 'price') {
+        param = { [item[0]]: item[1].join(',') };
+      } else {
+        param = { priseMin: item[1][0], priseMax: item[1][1] };
+      }
+    }
+
+    return param ? { ...acc, ...param } : { ...acc };
+  }, {});
+
+  return prepearedFilterParams;
 }
 
 refs.form.reset();
@@ -79,18 +108,24 @@ refs.resetFormBtn.addEventListener('click', () => {
   catalogData.resetPage();
   clearData(refs.catalogList);
   refs.form.reset();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
   catalogData.renderData();
 });
 
+// refs.form.addEventListener(
+//   'change',
+//   throttle(() => {
+//     clearData(refs.catalogList);
+//     catalogData.resetPage();
+//     catalogData.filterParams = getCheckedCheckBox();
+//     catalogData.renderData();
+//   }),
+//   DELAY
+// );
 refs.form.addEventListener('change', () => {
   clearData(refs.catalogList);
   catalogData.resetPage();
   catalogData.filterParams = getCheckedCheckBox();
   catalogData.renderData();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
 });
 
 const loadMoreBtn = {
@@ -114,24 +149,6 @@ loadMoreBtn.element.addEventListener('click', () => {
   loadMoreBtn.disable();
   catalogData.incrementPage();
   catalogData.renderData();
-  if (catalogData.page >= catalogData.totalPages) {
-    loadMoreBtn.hide();
-  } else {
-    loadMoreBtn.enable();
-  }
+
   smoothScroll(refs.catalogList);
 });
-
-function sliceData(data, page, offset) {
-  const totalPages = data.length / offset;
-  const start = page * offset - offset;
-  const end = start + offset;
-
-  if (data.length > offset) {
-    if (page < totalPages) {
-      return data.slice(start, end);
-    }
-    return data.slice(start);
-  }
-  return data;
-}
