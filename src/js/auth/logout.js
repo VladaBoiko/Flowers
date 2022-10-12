@@ -14,4 +14,5 @@ async function onLogoutBtn() {
 function logOutUserCab() {
     refs.loginSection.classList.remove('is-hidden');
     refs.personalCab.classList.add('is-hidden');
+    // нюанс: в полях форми є данні, які користувач вводив при вході/рестрації⚠️
 }

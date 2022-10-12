@@ -30,6 +30,8 @@ export async function handleLoginRes(userData, evt) {
     const res = await logIn(userData);
 
     if (res === 401) {
+        // в консолі:
+        // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
         console.log("user does not exist, please, signup first"); // текст-випадашка
         return;
 
