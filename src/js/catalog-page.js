@@ -1,14 +1,17 @@
 import { APIGetData } from './api/fetch-cards';
 import { createMarkup } from './catalog/markup';
 import { render, clearData } from './catalog/render';
-import { filterWords } from './catalog/filter';
-import { smoothScroll } from './catalog/smoothScroll';
+import { filterWords } from './catalog/const';
+import { smoothScroll } from './catalog/utils';
 
 import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
 
-import getKey from './catalog/getKey';
+import { getKey } from './catalog/utils';
+
+import throttle from 'lodash.throttle';
+const DELAY = 300;
 
 const refs = {
   resetFormBtn: document.querySelector('.filter-catalog__clear-all-btn'),
@@ -21,7 +24,7 @@ const catalogData = {
   filterParams: {},
   page: 1,
   totalPages: 1,
-  offset: 6,
+  offset: 9,
   sorting: 'rating,1',
 
   incrementPage() {
@@ -40,8 +43,15 @@ const catalogData = {
       const markup = createMarkup(data.result);
 
       render(refs.catalogList, markup);
+
+      if (this.page >= this.totalPages) {
+        loadMoreBtn.hide();
+      } else {
+        loadMoreBtn.enable();
+        loadMoreBtn.show();
+      }
     } catch (error) {
-      console.log(error);
+      console.log('render data on catalog-page', error);
     }
   },
 };
@@ -68,6 +78,7 @@ function getCheckedCheckBox() {
         filterData[key].indexOf(value) === -1 && filterData[key].push(valueFormat);
       } else {
         const price = el.value.split(',');
+
         filterData[key] = price;
       }
     }
@@ -75,6 +86,7 @@ function getCheckedCheckBox() {
 
   const prepearedFilterParams = Object.entries(filterData).reduce((acc, item) => {
     let param = null;
+
     if (item[1].length > 0) {
       if (item[0] !== 'price') {
         param = { [item[0]]: item[1].join(',') };
@@ -82,6 +94,7 @@ function getCheckedCheckBox() {
         param = { priseMin: item[1][0], priseMax: item[1][1] };
       }
     }
+
     return param ? { ...acc, ...param } : { ...acc };
   }, {});
 
@@ -95,19 +108,19 @@ refs.resetFormBtn.addEventListener('click', () => {
   catalogData.resetPage();
   clearData(refs.catalogList);
   refs.form.reset();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
   catalogData.renderData();
 });
 
-refs.form.addEventListener('change', () => {
-  clearData(refs.catalogList);
-  catalogData.resetPage();
-  catalogData.filterParams = getCheckedCheckBox();
-  catalogData.renderData();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
-});
+refs.form.addEventListener(
+  'change',
+  throttle(() => {
+    clearData(refs.catalogList);
+    catalogData.resetPage();
+    catalogData.filterParams = getCheckedCheckBox();
+    catalogData.renderData();
+  }),
+  DELAY
+);
 
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),
@@ -130,10 +143,6 @@ loadMoreBtn.element.addEventListener('click', () => {
   loadMoreBtn.disable();
   catalogData.incrementPage();
   catalogData.renderData();
-  if (catalogData.page >= catalogData.totalPages) {
-    loadMoreBtn.hide();
-  } else {
-    loadMoreBtn.enable();
-  }
+
   smoothScroll(refs.catalogList);
 });

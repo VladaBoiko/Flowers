@@ -1,5 +1,5 @@
 import { APIGetData } from './api/fetch-cards';
-import { sections } from './catalog/filter';
+import { sections } from './catalog/const';
 import { handleFavorite } from './catalog/handleFavorite';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
@@ -32,10 +32,13 @@ async function renderData() {
         data = await APIGetData.getDataBySection(sections[offerSection]);
       } else {
         const localStorageData = loadFromLocalStorage('EarlierWatched');
-        console.log('localStorageData :>> ', localStorageData);
-        if (!localStorageData) {
+
+        if (localStorageData) {
           const earlierWatchedList = localStorageData.join(',');
           data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
+          removeClass(refs.earlierWatched.closest('.offer'), 'hidden');
+        } else {
+          addClass(refs.earlierWatched.closest('.offer'), 'hidden');
         }
       }
 
@@ -44,9 +47,18 @@ async function renderData() {
         refs[offerSection].insertAdjacentHTML('beforeend', markup);
       }
     } catch (error) {
-      console.log(error);
+      console.log('render-data on index-page', error);
     }
   }
   handleFavorite();
   handleWatchedHistory();
+}
+
+// ========================================================================================
+
+function addClass(element, cssClass) {
+  if (!element.classList.contains(cssClass)) element.classList.add(cssClass);
+}
+function removeClass(element, cssClass) {
+  if (element.classList.contains(cssClass)) element.classList.remove(cssClass);
 }
