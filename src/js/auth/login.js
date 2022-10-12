@@ -1,6 +1,6 @@
 import { refs } from "./helpers/refs";
 import { logIn } from '../auth';
-import {goToUserCab } from './helpers/helpers';
+import { goToUserCab } from './helpers/helpers';
 
 
 export let TOKEN = 'token'; //просто ключ-рядок
@@ -37,12 +37,14 @@ export async function handleLoginRes(userData, evt) {
         return;
 
         //  if user didn't confirm email:
-    } else if (!res.isActivate) {
-        console.log("please, check your email for confirm");
-        goToUserCab(evt); // <-⚠️прибери потім!!!
     } else {
         goToUserCab(evt);
         localStorage.setItem(TOKEN, res.token);
     }
 }
 // 401 "user does not exist"
+// else if (!res.isActivate) {
+//         console.log("please, check your email for confirm");
+//         goToUserCab(evt); // <-⚠️прибери потім!!!
+//         localStorage.setItem(TOKEN, res.token); // <-⚠️прибери потім!!!
+//     } 
