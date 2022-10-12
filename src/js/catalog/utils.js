@@ -17,9 +17,9 @@ export function smoothScroll(cardSection) {
 
 // =======================================
 
-export function addClass(element, cssClass) {
+function addClass(element, cssClass) {
   if (!element.classList.contains(cssClass)) element.classList.add(cssClass);
 }
-export function removeClass(element, cssClass) {
+function removeClass(element, cssClass) {
   if (element.classList.contains(cssClass)) element.classList.remove(cssClass);
 }
