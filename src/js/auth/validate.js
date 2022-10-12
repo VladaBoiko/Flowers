@@ -3,7 +3,7 @@ import { refs } from "./helpers/refs";
 import { token, validate } from "../auth";
 import { TOKEN } from "./login";
 
-loginReload()
+loginReload();
 
 export function loginReload() {
     const localToken = localStorage.getItem('token');
@@ -11,22 +11,23 @@ export function loginReload() {
         return;
     }
     token.set(localToken);
-    // console.log("qweqwe")
+    // console.log("it works")
     handleValidateRes();
 }
 
 async function handleValidateRes() {
     const res = await validate();
-    console.log(res)
+    // console.log(res)
     // console.log(localStorage.setItem('token', res.token))
     if (res === 401) {
-        localStorage.removeItem('token'); //просто ключ-рядок
+        localStorage.removeItem(TOKEN); //просто ключ-рядок
     } else {
-        localStorage.setItem('token', res.data.token);
+        localStorage.setItem(TOKEN, res.data.token);
         showToUserCab();
     }
 }
 
+// ⚠️спрацьовує із затримкою, видно як зникає log-reg.html
 function showToUserCab() {
     refs.loginSection.classList.add('is-hidden');
     refs.personalCab.classList.remove('is-hidden');
