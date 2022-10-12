@@ -1,4 +1,5 @@
 import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
+import { loadDataFavoritePage } from '../favorite-page';
 
 const key = 'Favorites';
 
@@ -26,6 +27,10 @@ export function handleFavorite() {
       }
 
       favoriteBtn.classList.toggle('checked');
+
+      if (!favoriteBtn.classList.contains('checked') && document.querySelector('.favorites.offer')) {
+        loadDataFavoritePage();
+      }
     })
   );
 }

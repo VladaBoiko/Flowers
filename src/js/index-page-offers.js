@@ -1,6 +1,6 @@
-import { APIGetData } from './catalog/fetch-cards';
-import { filterBySection, sections } from './catalog/filter';
-import { handleFavorite } from './catalog/favoriteHandle';
+import { APIGetData } from './api/fetch-cards';
+import { sections } from './catalog/filter';
+import { handleFavorite } from './catalog/handleFavorite';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
@@ -21,25 +21,28 @@ const refs = {
   earlierWatched: document.querySelector('.offer--earlier-watched .offer__list'),
 };
 
-const earlierWatchedList = loadFromLocalStorage('EarlierWatched');
-
 renderData();
 
 async function renderData() {
-  try {
-    const data = await APIGetData.getData();
+  for (const offerSection in sections) {
+    try {
+      let data = null;
 
-    for (const offerSection in sections) {
-      const filteredData =
-        sections[offerSection] !== sections.earlierWatched
-          ? filterBySection(data, sections[offerSection])
-          : filterBySection(data, sections[offerSection], earlierWatchedList);
-      const markup = createMarkup(filteredData);
-      refs[offerSection].insertAdjacentHTML('beforeend', markup);
+      if (sections[offerSection] !== sections.earlierWatched) {
+        data = await APIGetData.getDataBySection(sections[offerSection]);
+      } else {
+        const earlierWatchedList = loadFromLocalStorage('EarlierWatched').join(',');
+        data = await APIGetData.getDataByID(earlierWatchedList, 1, 4);
+      }
+
+      if (data) {
+        const markup = createMarkup(data);
+        refs[offerSection].insertAdjacentHTML('beforeend', markup);
+      }
+    } catch (error) {
+      console.log(error);
     }
-    handleFavorite();
-    handleWatchedHistory();
-  } catch (error) {
-    console.log(error);
   }
+  handleFavorite();
+  handleWatchedHistory();
 }
