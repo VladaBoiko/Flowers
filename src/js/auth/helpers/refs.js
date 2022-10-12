@@ -12,23 +12,7 @@ export const refs = {
     regSubmitBtn: document.querySelector('[data-submit-reg-btn]'),//Зареєструватися
     loginSubmitBtn: document.querySelector('[data-login-btn]'), //Вхід
 
-    // logoutBtn: document.querySelector('[data-logout-btn]'), //Вийти
+    logoutBtn: document.querySelector('[data-logout-btn]'), //Вийти
   
     body: document.querySelector("body"),
 };
-
-// refs.loginForm.addEventListener('submit', goToUserCab);
-// refs.regForm.addEventListener('submit', goToUserCab);
-
-export function goToUserCab(evt) {
-    evt.preventDefault();
-    refs.loginSection.classList.add('is-hidden');
-    refs.personalCab.classList.remove('is-hidden');
-    closeIfModalOpen(refs.body.classList);
-}
-
-function closeIfModalOpen(bodyClasslist) {
-    if (bodyClasslist.contains('show-modal')) {
-        bodyClasslist.remove('show-modal');
-    }
-}

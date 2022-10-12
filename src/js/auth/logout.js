@@ -1,6 +1,8 @@
+import { refs } from "./helpers/refs";
 import { logOut } from '../auth';
-import {TOKEN} from '../auth/login'
+import { TOKEN } from '../auth/login';
 
+refs.logoutBtn.addEventListener('click', onLogoutBtn);
 
 async function onLogoutBtn() {
     await logOut();

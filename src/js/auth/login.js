@@ -1,11 +1,11 @@
+import { refs } from "./helpers/refs";
 import { logIn } from '../auth';
-import { refs, goToUserCab} from '../personal-cabinet/helpers';
+import {goToUserCab } from './helpers/helpers';
 
 export let TOKEN = 'token';
 
 refs.loginForm.addEventListener('submit', onLoginSubmit)
 
-// модалки немає!!!
 function  onLoginSubmit(evt) {
     evt.preventDefault();
     refs.loginSubmitBtn.blur();
@@ -22,7 +22,7 @@ function  onLoginSubmit(evt) {
         return alert('Please fill in all the fields!') // текст-випадашка
     }
     
-    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    // console.log(`Email: ${email.value}, Password: ${password.value}`);
     handleLoginRes(userInfo, evt);
 }
 
@@ -40,7 +40,6 @@ export async function handleLoginRes(userData, evt) {
     } else {
         goToUserCab(evt);
         localStorage.setItem(TOKEN, res.token);
-        // ❗️+додати появу кнопки для logout
     }
 }
 // 401 "user does not exist"

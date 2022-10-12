@@ -1,12 +1,4 @@
-// обережно, тут чисто робота з модалкою
-// не чіпай!!!
-// const refs = {
-//   openModalBtn: document.querySelector("[data-reg-modal-open]"),
-//   closeModalBtn: document.querySelector("[data-reg-modal-close]"),
-//   backdrop: document.querySelector("[data-reg-modal]"),
-//   body: document.querySelector("body"),
-// }
-import { refs } from '../personal-cabinet/helpers';
+import {refs} from '../auth/helpers/refs'
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);

@@ -1,7 +1,8 @@
 // *тут користувач не може зайти в pers-cab
+import { refs } from "./helpers/refs";
 import { signUp } from "../auth";
 import { onCloseModal } from "../personal-cabinet/registration-modal";
-import { refs } from '../personal-cabinet/helpers';
+
 
 refs.regForm.addEventListener('submit', onSignupSubmit)
 
