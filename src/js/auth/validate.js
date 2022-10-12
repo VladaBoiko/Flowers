@@ -18,13 +18,13 @@ export function loginReload() {
 async function handleValidateRes() {
     const res = await validate();
     console.log(res)
-    console.log(localStorage.setItem('token', res.token))
-    // if (res === 401) {
-    //     localStorage.removeItem('token'); //просто ключ-рядок
-    // } else {
-    //     localStorage.setItem('token', res.token);
-    //     showToUserCab();
-    // }
+    // console.log(localStorage.setItem('token', res.token))
+    if (res === 401) {
+        localStorage.removeItem('token'); //просто ключ-рядок
+    } else {
+        localStorage.setItem('token', res.data.token);
+        showToUserCab();
+    }
 }
 
 function showToUserCab() {
