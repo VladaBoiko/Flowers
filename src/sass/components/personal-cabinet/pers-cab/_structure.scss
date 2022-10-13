@@ -91,13 +91,12 @@
 .personal-cabinet .pers-cab-logout-btn {
     position: absolute;
     top: 0;
-    left: 11;
     min-width: 130px;
     height: 40px;
-    
-    @media screen and (min-width: 451px) {
-        left: 0;
+    @media screen and (max-width: 450px) {
+        left: 11px;
     }
+
     @include desktop {
         right: 0;
         height: 36px;

@@ -1,11 +1,11 @@
-// обробити кнопку в header?
-import { refs } from "./helpers/refs";
+import { refs } from './helpers/refs';
 import { logIn } from '../auth';
+import { showAlertText } from './helpers/showAlertText';
 
 
-export let TOKEN = 'token'; //просто ключ-рядок
+export let TOKEN = 'token';
 
-refs.loginForm.addEventListener('submit', onLoginSubmit)
+refs.loginForm.addEventListener('submit', onLoginSubmit);
 
 function  onLoginSubmit(evt) {
     evt.preventDefault();
@@ -18,30 +18,31 @@ function  onLoginSubmit(evt) {
 
     userInfo.email = email.value;
     userInfo.password = password.value;
-
-    if (email.value === '' || password.value === '') {
-        return alert('Please fill in all the fields!') // текст-випадашка
-    }
     
-    // console.log(`Email: ${email.value}, Password: ${password.value}`);
+    if (email.value === '' || password.value === '') {
+        showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
+        return;
+    }
+    refs.loginForm.reset();
     handleLoginRes(userInfo);
 }
 
 export async function handleLoginRes(userData) {
     const res = await logIn(userData);
-
+// треба, щоб бек повнув значення поля name з регістрації
+    // console.log(res) //token
     if (res === 401) {
         // в консолі:
         // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
-        console.log("user does not exist, please, signup first"); // текст-випадашка
+        showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
     } else {
+        // refs.profileForm.name.value =  //(data.name)
         goToUserCab();
         localStorage.setItem(TOKEN, res.token);
     }
 }
 
 function goToUserCab() {
-    // evt.preventDefault();
     refs.loginSection.classList.add('is-hidden');
     refs.personalCab.classList.remove('is-hidden');
     closeIfModalOpen(refs.body.classList);
@@ -52,6 +53,7 @@ function closeIfModalOpen(bodyClasslist) {
         bodyClasslist.remove('show-modal');
     }
 }
+
 // 401 "user does not exist"
 // else if (!res.isActivate) {
 //     console.log("please, check your email for confirm");

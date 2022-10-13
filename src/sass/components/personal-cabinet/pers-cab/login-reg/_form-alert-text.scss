@@ -1,0 +1,40 @@
+.pers-form-alert-text {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 250ms linear;
+    @include font(400, 12px, calc(16px / 12px));
+    color: #ff001b;
+
+    @include tablet {
+        @include font(400, 14px, calc(18px / 14px));
+    }
+}
+
+.pers-form-btn-wrap {
+    position: relative;
+}
+
+.login-form .pers-form-alert-text {
+    top: -26px;
+}
+
+.reg-modal-form .pers-form-alert-text {
+    top: -22px;
+    @include tablet {
+        top: -28px;
+    }
+}
+
+.pers-form-alert-text.global-alert {
+    top: -36px;
+    right: 0;
+    font-weight: 500;
+    @include tablet {
+        top: -40px;
+        right: -74px;
+    }
+    @include desktop {
+        top: -60px;
+        right: -166px;
+    }
+}

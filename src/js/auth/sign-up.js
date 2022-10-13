@@ -1,9 +1,8 @@
-// *тут користувач не може зайти в pers-cab❌
-// це на модалці
-import { refs } from "./helpers/refs";
-import { signUp } from "../auth";
-import { onCloseModal } from "../personal-cabinet/registration-modal";
-
+import { refs } from './helpers/refs';
+import { signUp } from '../auth';
+import { onCloseModal } from '../personal-cabinet/registration-modal';
+import { showAlertText } from './helpers/showAlertText';
+    
 refs.regForm.addEventListener('submit', onSignupSubmit)
 
 function onSignupSubmit(evt) {
@@ -18,42 +17,41 @@ function onSignupSubmit(evt) {
     };
     const {
         elements: { name, email, password, confirmPassword}
-    } = evt.currentTarget; // прописати усі поля?
+    } = evt.currentTarget;
 
     userInfo.name = name.value;
     userInfo.email = email.value;
     userInfo.password = password.value;
     userInfo.confirmPassword = confirmPassword.value;
-
-    // ця перевірка потрібно тут чи в html/required❓
-    if (email.value === '' || password.value === '' || name.value === '') {
-        return console.log('Please fill in all the fields!'); // текст-випадашка
-    }
-
-    // підтвердити password
-    if (password.value !== confirmPassword.value) {
-        console.log('password !== confirmPassword'); // текст-випадашка
+    
+    if (name.value === '' ||
+        email.value === '' ||
+        password.value === '' ||
+        confirmPassword.value === '') {
+        showAlertText(refs.regFormAlertText, 'Будь ласка, заповніть усі поля');
         return;
     }
-    
-    //     console.log(`Name: ${name.value}, Email: ${email.value}, 
-    // Password: ${password.value}, 
-    // confirmPassword: ${confirmPassword.value}`);
 
+    if (password.value !== confirmPassword.value) {
+        showAlertText(refs.regFormAlertText, 'Паролі не співпадають, спробуйте ще раз');
+        return;
+    }
+    refs.regForm.reset();
     onCloseModal();
     handleSignUpRes(userInfo);
 }
 
 async function handleSignUpRes(userInfo) {
     const res = await signUp(userInfo);
+    // console.log(res)
+    // data/result/name
     // тільки 2 вар. дії
     if (res === 409) {
         // в консолі:
         // POST https://server-flower.herokuapp.com/user/signup 409 (Conflict)
-        console.log("Email in use"); // текст-випадашка 
+        showAlertText(refs.alertText, 'Такий користувач вже зареєстрований');
     } else {
-        console.log('To continue registration,please, confirm your email'); // текст-випадашка
+        showAlertText(refs.alertText, 'Для продовження реєстрації, підтвердьте Вашу пошту');
     }
 }
-
 // 409: "Email in use"

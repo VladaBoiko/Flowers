@@ -7,7 +7,7 @@
 .reg-input-wrap {
     display: grid;
     grid-row-gap: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     @include tablet {
         grid-row-gap: 10px;

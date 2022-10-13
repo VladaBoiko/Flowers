@@ -1,19 +1,27 @@
 <section class="pers-login" data-login-section>
     <div class="container">
         <div class="login-form-wrap">
+            <p class="pers-form-alert-text global-alert" data-pers-alert-text></p>
             <h1 class="login-title">Вхід до особистого кабинету</h1>
             <form class="login-form" data-login-form>
                 <div class="login-row-wrap">
                     <label class="login-label">
-                        <input type="text" name="email" class="pers-form-input"
-                            placeholder="Введіть eлектронну пошту">
+                        <input 
+                            type="text" 
+                            name="email" 
+                            class="pers-form-input"
+                            placeholder="Введіть eлектронну пошту"
+                            required
+                            >
                     </label>
                     <label class="login-label close-eye-inside">
                         <input 
                             type="password" 
                             name="password" 
                             class="pers-form-input" 
-                            placeholder="Введіть пароль">
+                            placeholder="Введіть пароль"
+                            required
+                            >
                         <svg class="pwd-input-icon" width="32" height="32">
                             <use href="./img/symbol-defs.svg#eye-off-icon"></use>
                         </svg>
@@ -27,8 +35,11 @@
                         <label for="remmbr-user" class="login-check-label">Запам'ятати мене</label>
                     </div>
                 </div>
-                <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
-                <button type="submit" class="login-btn button dark" data-login-btn>Вхід</button>
+                <div class="pers-form-btn-wrap">
+                    <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
+                    <button type="submit" class="login-btn button dark" data-login-btn>Вхід</button>
+                    <p class="pers-form-alert-text" data-login-alert-text></p>
+                </div>
             </form>
         </div>
     </div>
@@ -50,14 +61,15 @@
                             name="name"
                             class="pers-form-input" 
                             placeholder="Введіть ім’я користувача" 
-                            required>
+                            required
+                            >
                     </label>
                     <label class="close-eye-inside">
                         <input 
                             type="password" 
                             name="password"
                             class="pers-form-input close-eye" 
-                            placeholder="Введіть пароль" 
+                            placeholder="Введіть пароль"
                             required
                             >
                             <svg class="pwd-input-icon" width="32" height="32">
@@ -86,7 +98,10 @@
                             >
                     </label>
                 </div>
-                <button type="submit" class="button dark" data-submit-reg-btn>Зареєструватися</button>
+                <div class="pers-form-btn-wrap">
+                    <button type="submit" class="button dark" data-submit-reg-btn>Зареєструватися</button>
+                    <p class="pers-form-alert-text" data-reg-alert-text></p>
+                </div>
             </form>
         </div>
     </div>
