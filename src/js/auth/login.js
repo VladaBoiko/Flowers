@@ -3,76 +3,78 @@ import { refs } from './helpers/refs';
 import { logIn } from '../auth';
 import { showAlertText } from './helpers/showAlertText';
 
-
 export let TOKEN = 'token';
 const headerUserIcon = document.querySelector('[data-header-pers-link]');
 
-checkActivePage()
+checkActivePage();
 
 export function checkActivePage() {
-    if (refs.loginSection === null) { //костиль
-        return;
-    }
-    refs.loginForm.addEventListener('submit', onLoginSubmit);
+  if (refs.loginSection === null) {
+    //костиль
+    return;
+  }
+  refs.loginForm.addEventListener('submit', onLoginSubmit);
 }
 
-function  onLoginSubmit(evt) {
-    evt.preventDefault();
-    refs.loginSubmitBtn.blur();
+function onLoginSubmit(evt) {
+  evt.preventDefault();
 
-    const userInfo = { email: null, password: null };
-    const {
-        elements: { email, password }
-    } = evt.currentTarget;
+  refs.loginSubmitBtn.blur();
 
-    userInfo.email = email.value;
-    userInfo.password = password.value;
-    
-    if (email.value === '' || password.value === '') {
-        showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
-        // console.log('спрацьовує empty fields condition'); //?
-        return;
-    }
-    handleLoginRes(userInfo);
+  const userInfo = { email: null, password: null };
+  const {
+    elements: { email, password },
+  } = evt.currentTarget;
+
+  userInfo.email = email.value;
+  userInfo.password = password.value;
+
+  if (email.value === '' || password.value === '') {
+    showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
+    // console.log('спрацьовує empty fields condition'); //?
+    return;
+  }
+  handleLoginRes(userInfo);
 }
 
 export async function handleLoginRes(userData) {
-    const res = await logIn(userData);
-    let userName = localStorage.getItem('name');
-    // треба, щоб бек повнув значення поля name з регістрації в log???
-    // console.log(res) //token
-    
-    if (res === 401) {
-        // в консолі:
-        // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
-        showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
-    } else {
-        if (!userName) {
-            return;
-        }
+  const res = await logIn(userData);
+  let userName = localStorage.getItem('name');
+  // треба, щоб бек повнув значення поля name з регістрації в log???
+  // console.log(res) //token
 
-        handleUserName(userName)
-        goToUserCab();
-        localStorage.setItem(TOKEN, res.token);
-        refs.loginForm.reset();
+  if (res === 401) {
+    // в консолі:
+    // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
+    showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
+  } else {
+    if (!userName) {
+      return;
     }
+
+    handleUserName(userName);
+    goToUserCab();
+    localStorage.setItem(TOKEN, res.token);
+    refs.loginForm.reset();
+  }
+
+  console.log(1);
 }
 
 function handleUserName(userName) {
-    userName = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1, userName.length).toLowerCase()}`
-    refs.profileForm.name.value = userName;
+  userName = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1, userName.length).toLowerCase()}`;
+  refs.profileForm.name.value = userName;
 }
 
 function goToUserCab() {
-    refs.loginSection.classList.add('is-hidden');
-    refs.personalCab.classList.remove('is-hidden');
-    headerUserIcon.addEventListener('click', e => e.preventDefault())
+  refs.loginSection.classList.add('is-hidden');
+  refs.personalCab.classList.remove('is-hidden');
+  headerUserIcon.addEventListener('click', e => e.preventDefault());
 }
-
 
 // 401 "user does not exist"
 // else if (!res.isActivate) {
 //     console.log("please, check your email for confirm");
 //     goToUserCab(evt); // <-⚠️прибери потім!!!
 //     localStorage.setItem(TOKEN, res.token); // <-⚠️прибери потім!!!
-// } 
+// }

@@ -1,4 +1,3 @@
-import '../js/auth/validate';
 const navbarMenu = document.querySelector('#menu');
 const burgerMenu = document.querySelector('#burger');
 const headerMenu = document.querySelector('#header');
@@ -27,4 +26,3 @@ window.addEventListener('resize', () => {
     }
   }
 });
-
