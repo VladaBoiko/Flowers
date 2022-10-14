@@ -11,7 +11,8 @@
     height: 50px;
     padding: 16px 17px;
 
-    @include font(400, 14px, calc(17px / 14px));
+    @include font(400, 18px, calc(22px / 18px));
+    
     color: var(--black);
     border: 1px solid var(--grey);
     border-radius: 4px;
@@ -21,6 +22,7 @@
     }
 
     &::placeholder {
+        @include font(400, 14px, calc(17px / 14px));
         color: var(--grey);
     }
 }

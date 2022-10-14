@@ -1,5 +1,5 @@
-// Uncaught SyntaxError: Unexpected token '<' (at helpers.js:1:1)
 export const refs = {
+    headerUserIcon: document.querySelector('[data-header-user-icon]'),
     loginForm: document.querySelector('[data-login-form]'),
     regForm: document.querySelector('[data-reg-form]'),
     loginSection: document.querySelector('[data-login-section]'),
@@ -17,5 +17,5 @@ export const refs = {
     regFormAlertText: document.querySelector('[data-reg-alert-text]'),
     alertText: document.querySelector('[data-pers-alert-text]'),
 
-    // profileForm: document.querySelector('[data-profile-form]'),
+    profileForm: document.querySelector('[data-profile-form]'),
 };

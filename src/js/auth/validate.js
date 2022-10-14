@@ -1,6 +1,7 @@
-import { refs } from "./helpers/refs";
-import { token, validate } from "../auth";
-import { TOKEN } from "./login";
+import { refs } from './helpers/refs';
+import { token, validate } from '../auth';
+import { TOKEN } from './login';
+
 
 loginReload();
 
@@ -15,21 +16,22 @@ export function loginReload() {
 
 async function handleValidateRes() {
     const res = await validate();
-    // console.log(res) // потрібно поле data.name
-    // console.log(localStorage.setItem('token', res.token))
     if (res === 401) {
         localStorage.removeItem(TOKEN);
     } else {
         localStorage.setItem(TOKEN, res.data.token);
-        //
-        showToUserCab();
+        let userName = localStorage.getItem('name');
+        if (refs.loginSection === null) {
+            return
+        }
+        showToUserCab(userName)
     }
 }
 
-// ⚠️спрацьовує із затримкою, видно як зникає log-reg.html
-function showToUserCab() {
+function showToUserCab(userName) {
     refs.loginSection.classList.add('is-hidden');
     refs.personalCab.classList.remove('is-hidden');
+    refs.profileForm.name.value = userName;
+    refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
 }
-
 // 401 "message": "Not authorized"

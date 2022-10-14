@@ -1,62 +1,59 @@
 import { refs } from './helpers/refs';
 import { logIn } from '../auth';
-import { showAlertText } from './helpers/showAlertText';
-
+import { showAlertText } from './helpers/helpers';
 
 export let TOKEN = 'token';
+export let userName = 'name';
 
-refs.loginForm.addEventListener('submit', onLoginSubmit);
+checkActivePage();
 
-function  onLoginSubmit(evt) {
-    evt.preventDefault();
-    refs.loginSubmitBtn.blur();
+export function checkActivePage() {
+  if (refs.loginSection === null) {
+    return;
+  }
+  refs.loginForm.addEventListener('submit', onLoginSubmit);
+}
 
-    const userInfo = { email: null, password: null };
-    const {
-        elements: { email, password }
-    } = evt.currentTarget;
+function onLoginSubmit(evt) {
+  evt.preventDefault();
 
-    userInfo.email = email.value;
-    userInfo.password = password.value;
-    
-    if (email.value === '' || password.value === '') {
-        showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
-        return;
-    }
-    refs.loginForm.reset();
-    handleLoginRes(userInfo);
+  refs.loginSubmitBtn.blur();
+
+  const userInfo = { email: null, password: null };
+  const {
+    elements: { email, password },
+  } = evt.currentTarget;
+
+  userInfo.email = email.value;
+  userInfo.password = password.value;
+
+  if (email.value === '' || password.value === '') {
+    showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
+    return;
+  }
+  handleLoginRes(userInfo);
 }
 
 export async function handleLoginRes(userData) {
-    const res = await logIn(userData);
-// треба, щоб бек повнув значення поля name з регістрації
-    // console.log(res) //token
-    if (res === 401) {
-        // в консолі:
-        // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
-        showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
-    } else {
-        // refs.profileForm.name.value =  //(data.name)
-        goToUserCab();
-        localStorage.setItem(TOKEN, res.token);
-    }
+  const res = await logIn(userData);
+
+  if (res === 401) {
+    showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
+  } else {
+    goToUserCab();
+    localStorage.setItem(TOKEN, res.token);
+    localStorage.setItem(userName, res.name);
+    refs.loginForm.reset();
+  }
 }
 
 function goToUserCab() {
-    refs.loginSection.classList.add('is-hidden');
-    refs.personalCab.classList.remove('is-hidden');
-    closeIfModalOpen(refs.body.classList);
-}
-
-function closeIfModalOpen(bodyClasslist) {
-    if (bodyClasslist.contains('show-modal')) {
-        bodyClasslist.remove('show-modal');
-    }
+  refs.loginSection.classList.add('is-hidden');
+  refs.personalCab.classList.remove('is-hidden');
+  refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
 }
 
 // 401 "user does not exist"
 // else if (!res.isActivate) {
 //     console.log("please, check your email for confirm");
-//     goToUserCab(evt); // <-⚠️прибери потім!!!
-//     localStorage.setItem(TOKEN, res.token); // <-⚠️прибери потім!!!
-// } 
+// }

@@ -1,9 +1,11 @@
 import { refs } from './helpers/refs';
 import { signUp } from '../auth';
 import { onCloseModal } from '../personal-cabinet/registration-modal';
-import { showAlertText } from './helpers/showAlertText';
+import { showAlertText } from './helpers/helpers';
     
-refs.regForm.addEventListener('submit', onSignupSubmit)
+export let userName = 'name';
+
+refs.regForm.addEventListener('submit', onSignupSubmit);
 
 function onSignupSubmit(evt) {
     evt.preventDefault();
@@ -36,6 +38,7 @@ function onSignupSubmit(evt) {
         showAlertText(refs.regFormAlertText, 'Паролі не співпадають, спробуйте ще раз');
         return;
     }
+
     refs.regForm.reset();
     onCloseModal();
     handleSignUpRes(userInfo);
@@ -43,12 +46,8 @@ function onSignupSubmit(evt) {
 
 async function handleSignUpRes(userInfo) {
     const res = await signUp(userInfo);
-    // console.log(res)
-    // data/result/name
-    // тільки 2 вар. дії
+    
     if (res === 409) {
-        // в консолі:
-        // POST https://server-flower.herokuapp.com/user/signup 409 (Conflict)
         showAlertText(refs.alertText, 'Такий користувач вже зареєстрований');
     } else {
         showAlertText(refs.alertText, 'Для продовження реєстрації, підтвердьте Вашу пошту');
