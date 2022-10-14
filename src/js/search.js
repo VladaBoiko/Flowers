@@ -1,7 +1,5 @@
 import debounce from 'lodash.debounce';
-import { search } from './API/apiReviews';
-import { render } from './catalog/render';
-import { filter } from './reviews/filter';
+import { search } from './api/apiReviews';
 
 const form1 = document.querySelector('#search');
 const form2 = document.querySelector('#search2');
@@ -80,6 +78,9 @@ async function change(e) {
   if (data.length === 0) {
     box1.innerHTML = '<span class="search-list__elements">По вашому запиту нічог не знайдено</span>';
     box2.innerHTML = '<span class="search-list__elements">По вашому запиту нічог не знайдено</span>';
+
+    box1.classList.remove('search-box-hidden');
+    box2.classList.remove('search-box-hidden');
     return;
   }
 
