@@ -1,16 +1,29 @@
+<<<<<<< HEAD
 import { APIGetData } from './catalog/fetch-cards';
 import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { filterData, filterWords } from './catalog/filter';
 import { smoothScroll } from './catalog/smoothScroll';
+=======
+import { APIGetData } from './api/fetch-cards';
+import { createMarkup } from './catalog/markup';
+import { render, clearData } from './catalog/render';
+import { filterWords } from './catalog/const';
+import { smoothScroll, getKey } from './catalog/utils';
+>>>>>>> 723618d (fix 4.02)
 
 import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
 
+<<<<<<< HEAD
 // import data from '../products.json';
 
 import getKey from './catalog/getKey';
+=======
+import throttle from 'lodash.throttle';
+const DELAY = 300;
+>>>>>>> 723618d (fix 4.02)
 
 const refs = {
   resetFormBtn: document.querySelector('.filter-catalog__clear-all-btn'),
@@ -84,6 +97,7 @@ refs.resetFormBtn.addEventListener('click', () => {
   catalogData.renderData();
 });
 
+<<<<<<< HEAD
 refs.form.addEventListener('change', () => {
   clearData(refs.catalogList);
   catalogData.resetPage();
@@ -92,6 +106,18 @@ refs.form.addEventListener('change', () => {
   loadMoreBtn.show();
   loadMoreBtn.enable();
 });
+=======
+refs.form.addEventListener(
+  'change',
+  throttle(() => {
+    clearData(refs.catalogList);
+    catalogData.resetPage();
+    catalogData.filterParams = getCheckedCheckBox();
+    catalogData.renderData();
+  }),
+  DELAY
+);
+>>>>>>> 723618d (fix 4.02)
 
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),

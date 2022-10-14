@@ -2,8 +2,11 @@ import { APIGetData } from './catalog/fetch-cards';
 import { filterBySection, sections } from './catalog/filter';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
-import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
+<<<<<<< HEAD
+=======
+import { addClass, removeClass, loadFromLocalStorage } from './catalog/utils';
+>>>>>>> 723618d (fix 4.02)
 
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';

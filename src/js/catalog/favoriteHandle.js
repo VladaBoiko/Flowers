@@ -1,4 +1,9 @@
+<<<<<<< HEAD:src/js/catalog/favoriteHandle.js
 import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
+=======
+import { saveToLocalStorage, loadFromLocalStorage } from './utils';
+// import { loadDataFavoritePage } from '../favorite-page';
+>>>>>>> 723618d (fix 4.02):src/js/catalog/handleFavorite.js
 
 const key = 'Favorites';
 
@@ -11,21 +16,36 @@ export function handleFavorite() {
       const productID = favoriteBtn.closest('.product').id;
 
       if (productID) {
-        const savedListFav = loadFromLocalStorage(key);
+        favoriteBtn.classList.toggle('checked');
 
-        if (savedListFav === 'undefined') {
-          const newListFav = [productID];
+        const savedListFav = loadFromLocalStorage(key);
+        let newListFav = null;
+
+        if (!savedListFav || !Array.isArray(savedListFav)) {
+          newListFav = [productID];
           saveToLocalStorage(key, newListFav);
-        } else if (savedListFav.indexOf(productID) === -1) {
-          savedListFav.push(productID);
-          saveToLocalStorage(key, savedListFav);
-        } else {
-          savedListFav.splice(savedListFav.indexOf(productID), 1);
-          saveToLocalStorage(key, savedListFav);
+          return;
+        }
+
+<<<<<<< HEAD:src/js/catalog/favoriteHandle.js
+      favoriteBtn.classList.toggle('checked');
+=======
+        if (savedListFav.indexOf(productID) === -1) {
+          newListFav = [...savedListFav, productID];
+          saveToLocalStorage(key, newListFav);
+          return;
+        }
+        if (savedListFav.indexOf(productID) > -1) {
+          newListFav = savedListFav.filter(favId => favId !== productID);
+          saveToLocalStorage(key, newListFav);
+
+          if (!favoriteBtn.classList.contains('checked') && document.querySelector('.favorites.offer')) {
+            // loadDataFavoritePage();
+          }
+          return;
         }
       }
-
-      favoriteBtn.classList.toggle('checked');
+>>>>>>> 723618d (fix 4.02):src/js/catalog/handleFavorite.js
     })
   );
 }
