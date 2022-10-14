@@ -1,4 +1,5 @@
 export const refs = {
+    headerUserIcon: document.querySelector('[data-header-user-icon]'),
     loginForm: document.querySelector('[data-login-form]'),
     regForm: document.querySelector('[data-reg-form]'),
     loginSection: document.querySelector('[data-login-section]'),

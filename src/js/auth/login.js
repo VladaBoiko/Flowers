@@ -1,16 +1,14 @@
-// Uncaught SyntaxError: Unexpected token '<' (at helpers.js:1:1)
 import { refs } from './helpers/refs';
 import { logIn } from '../auth';
-import { showAlertText } from './helpers/showAlertText';
+import { showAlertText } from './helpers/helpers';
 
 export let TOKEN = 'token';
-const headerUserIcon = document.querySelector('[data-header-pers-link]');
+export let userName = 'name';
 
 checkActivePage();
 
 export function checkActivePage() {
   if (refs.loginSection === null) {
-    //костиль
     return;
   }
   refs.loginForm.addEventListener('submit', onLoginSubmit);
@@ -31,7 +29,6 @@ function onLoginSubmit(evt) {
 
   if (email.value === '' || password.value === '') {
     showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
-    // console.log('спрацьовує empty fields condition'); //?
     return;
   }
   handleLoginRes(userInfo);
@@ -39,42 +36,24 @@ function onLoginSubmit(evt) {
 
 export async function handleLoginRes(userData) {
   const res = await logIn(userData);
-  let userName = localStorage.getItem('name');
-  // треба, щоб бек повнув значення поля name з регістрації в log???
-  // console.log(res) //token
 
   if (res === 401) {
-    // в консолі:
-    // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
     showAlertText(refs.loginFormAlertText, 'Електронна пошта або пароль невірні');
   } else {
-    if (!userName) {
-      return;
-    }
-
-    handleUserName(userName);
     goToUserCab();
     localStorage.setItem(TOKEN, res.token);
+    localStorage.setItem(userName, res.name);
     refs.loginForm.reset();
   }
-
-  console.log(1);
-}
-
-function handleUserName(userName) {
-  userName = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1, userName.length).toLowerCase()}`;
-  refs.profileForm.name.value = userName;
 }
 
 function goToUserCab() {
   refs.loginSection.classList.add('is-hidden');
   refs.personalCab.classList.remove('is-hidden');
-  headerUserIcon.addEventListener('click', e => e.preventDefault());
+  refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
 }
 
 // 401 "user does not exist"
 // else if (!res.isActivate) {
 //     console.log("please, check your email for confirm");
-//     goToUserCab(evt); // <-⚠️прибери потім!!!
-//     localStorage.setItem(TOKEN, res.token); // <-⚠️прибери потім!!!
 // }

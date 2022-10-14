@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const server = axios.create({
-  baseURL: 'http://localhost:3000/user',
+  baseURL: 'https://server-flower.herokuapp.com/user',
 });
 
 export const token = {
@@ -47,7 +47,7 @@ export const logOut = async () => {
   }
 };
 
-// Перевірка. Користувач авторизований? (токен дійсний чи ні?)
+// Перевірка. Користувач авторизований?
 export const validate = async () => {
   try {
     const response = await server.get('/validate');
