@@ -17,14 +17,14 @@ export function loginReload() {
 
 async function handleValidateRes() {
     const res = await validate();
-    // console.log(res) // потрібно поле data.name
+    // console.log(res) // потрібно поле data.name або, щоб server присилав у res при login
     // console.log(localStorage.setItem('token', res.token))
     if (res === 401) {
         localStorage.removeItem(TOKEN);
     } else {
         localStorage.setItem(TOKEN, res.data.token);
-        let userName = localStorage.getItem('name');
-        userName = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1, userName.length).toLowerCase()}`
+        // let userName = localStorage.getItem('name'); походу, не треба тут???
+        // userName = `${userName.slice(0, 1).toUpperCase()}${userName.slice(1, userName.length).toLowerCase()}`
         // refs.profileForm.name.value = userName; //error
         if (refs.loginSection === null) {
             return

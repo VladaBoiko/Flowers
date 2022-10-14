@@ -1,7 +1,7 @@
-export function showAlertText(ref, text) {
-    ref.textContent = text;
-    ref.style.opacity = 1;
+export function showAlertText(alertRef, textContent) {
+    alertRef.textContent = textContent;
+    alertRef.style.opacity = 1;
     setTimeout(() => {
-    ref.style.opacity = 0;
+    alertRef.style.opacity = 0;
     }, 2500);
 }

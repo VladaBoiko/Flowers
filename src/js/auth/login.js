@@ -30,19 +30,18 @@ function  onLoginSubmit(evt) {
     
     if (email.value === '' || password.value === '') {
         showAlertText(refs.loginFormAlertText, 'Будь ласка, заповніть усі поля');
-        console.log('спрацьовує empty fields condition'); //?
+        // console.log('спрацьовує empty fields condition'); //?
         return;
     }
-    // refs.loginForm.reset();
     handleLoginRes(userInfo);
 }
 
 export async function handleLoginRes(userData) {
     const res = await logIn(userData);
     let userName = localStorage.getItem('name');
-    // console.log('userName', userName)
-    // треба, щоб бек повнув значення поля name з регістрації???
+    // треба, щоб бек повнув значення поля name з регістрації в log???
     // console.log(res) //token
+    
     if (res === 401) {
         // в консолі:
         // POST https://server-flower.herokuapp.com/user/ 401 (Unauthorized)
@@ -67,15 +66,9 @@ function handleUserName(userName) {
 function goToUserCab() {
     refs.loginSection.classList.add('is-hidden');
     refs.personalCab.classList.remove('is-hidden');
-    // closeIfModalOpen(refs.body.classList);
     headerUserIcon.addEventListener('click', e => e.preventDefault())
 }
 
-function closeIfModalOpen(bodyClasslist) {
-    if (bodyClasslist.contains('show-modal')) {
-        bodyClasslist.remove('show-modal');
-    }
-}
 
 // 401 "user does not exist"
 // else if (!res.isActivate) {
@@ -83,7 +76,3 @@ function closeIfModalOpen(bodyClasslist) {
 //     goToUserCab(evt); // <-⚠️прибери потім!!!
 //     localStorage.setItem(TOKEN, res.token); // <-⚠️прибери потім!!!
 // } 
-// else if (localStorage.getItem(TOKEN) === null) { //for test
-//     console.log('sad face')
-//     showAlertText(refs.loginFormAlertText, 'немає token');
-// }

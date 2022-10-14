@@ -46,9 +46,7 @@ function onSignupSubmit(evt) {
 
 async function handleSignUpRes(userInfo) {
     const res = await signUp(userInfo);
-    // console.log(res)
-    // data/result/name
-    // тільки 2 вар. дії
+    
     if (res === 409) {
         // в консолі:
         // POST https://server-flower.herokuapp.com/user/signup 409 (Conflict)
