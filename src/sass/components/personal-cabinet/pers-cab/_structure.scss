@@ -36,14 +36,16 @@
         display: none;
     }
 
-    
-
     &>.container {
         @media screen and (max-width: 767.98px) {
             max-width: 450px;
             padding: 0;
         }
     }
+}
+
+.pers-cab-header-wrap {
+    position: relative;
 }
 
 .pers-cab-title-desk {
@@ -83,6 +85,21 @@
 
     &.is-hidden {
         display: none;
+    }
+}
+
+.personal-cabinet .pers-cab-logout-btn {
+    position: absolute;
+    top: 0;
+    min-width: 130px;
+    height: 40px;
+    @media screen and (max-width: 450px) {
+        left: 11px;
+    }
+
+    @include desktop {
+        right: 0;
+        height: 36px;
     }
 }
 
