@@ -3,13 +3,13 @@
   z-index: 111111111;
 }
 
-#search-box-1 {
+.search-box-1 {
   display: none;
   @include tablet {
     display: grid;
   }
 }
-#search-box-2 {
+.search-box-2 {
   display: grid;
   @include tablet {
     display: none;
@@ -24,16 +24,35 @@
   width: 100%;
 
   border-radius: 0 0 10px 10px;
+  border: 2px solid var(--search-box);
 
-  background-color: red;
+  background-color: #fff;
 }
 
 .search-list__elements {
-  display: block;
+  display: flex;
+  justify-content: left;
+  position: relative;
 
   cursor: pointer;
 
   @include text('Montserrat', 400, 16px, 20px);
 
   color: var(--light-theme-text-color);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 10px;
+
+    transform: translateY(-50%);
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: var(--search-box);
+  }
+}
+
+.search-box-hidden {
+  display: none;
 }

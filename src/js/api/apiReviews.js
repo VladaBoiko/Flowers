@@ -14,10 +14,8 @@ export const add = async newReviews => {
 };
 
 export const search = async string => {
-  console.log('🚀 ~ string', string);
   try {
     const { data } = await axios.get(`${URL}/flowers/search/${string}`);
-    console.log('🚀 ~ data', data);
 
     return data;
   } catch (error) {
