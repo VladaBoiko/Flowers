@@ -1,4 +1,4 @@
-import { loadFromLocalStorage } from './localStorage';
+import { loadFromLocalStorage } from './utils';
 import { statuses } from './const';
 import { getKey } from './utils';
 import icons from '../../img/catalog/icon-fav.svg';
@@ -47,5 +47,5 @@ export const createMarkup = data => {
 };
 
 function isFav(id) {
-  return favoriteList.indexOf(id) === -1 ? '' : 'checked';
+  return !favoriteList || !Array.isArray(favoriteList) || favoriteList.indexOf(id) === -1 ? '' : 'checked';
 }

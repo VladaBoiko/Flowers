@@ -1,5 +1,5 @@
-import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
-import { loadDataFavoritePage } from '../favorite-page';
+import { saveToLocalStorage, loadFromLocalStorage } from './utils';
+// import { loadDataFavoritePage } from '../favorite-page';
 
 const key = 'Favorites';
 
@@ -12,24 +12,31 @@ export function handleFavorite() {
       const productID = favoriteBtn.closest('.product').id;
 
       if (productID) {
+        favoriteBtn.classList.toggle('checked');
+
         const savedListFav = loadFromLocalStorage(key);
+        let newListFav = null;
 
-        if (savedListFav === 'undefined') {
-          const newListFav = [productID];
+        if (!savedListFav || !Array.isArray(savedListFav)) {
+          newListFav = [productID];
           saveToLocalStorage(key, newListFav);
-        } else if (savedListFav.indexOf(productID) === -1) {
-          savedListFav.push(productID);
-          saveToLocalStorage(key, savedListFav);
-        } else {
-          savedListFav.splice(savedListFav.indexOf(productID), 1);
-          saveToLocalStorage(key, savedListFav);
+          return;
         }
-      }
 
-      favoriteBtn.classList.toggle('checked');
+        if (savedListFav.indexOf(productID) === -1) {
+          newListFav = [...savedListFav, productID];
+          saveToLocalStorage(key, newListFav);
+          return;
+        }
+        if (savedListFav.indexOf(productID) > -1) {
+          newListFav = savedListFav.filter(favId => favId !== productID);
+          saveToLocalStorage(key, newListFav);
 
-      if (!favoriteBtn.classList.contains('checked') && document.querySelector('.favorites.offer')) {
-        loadDataFavoritePage();
+          if (!favoriteBtn.classList.contains('checked') && document.querySelector('.favorites.offer')) {
+            // loadDataFavoritePage();
+          }
+          return;
+        }
       }
     })
   );

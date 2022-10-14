@@ -1,5 +1,5 @@
 import { APIGetData } from './api/fetch-cards';
-import { handleFavorite } from './catalog/handleFavorite';
+// import { handleFavorite } from './catalog/handleFavorite';
 import { createMarkup } from './catalog/markup';
 import { sections } from './catalog/const';
 
@@ -15,7 +15,7 @@ async function renderData() {
     const markup = createMarkup(data);
     refs.offerPlus.insertAdjacentHTML('beforeend', markup);
 
-    handleFavorite();
+    // handleFavorite();
   } catch (error) {
     console.log(error);
   }

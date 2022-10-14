@@ -1,10 +1,11 @@
 import { APIGetData } from './api/fetch-cards';
 import { createMarkup } from './catalog/markup';
 import { render, clearData } from './catalog/render';
-import { loadFromLocalStorage } from './catalog/localStorage';
-import { addClass, removeClass } from './catalog/utils';
+import { addClass, removeClass, loadFromLocalStorage } from './catalog/utils';
 
-export const loadDataFavoritePage = () => {
+loadDataFavoritePage();
+
+export function loadDataFavoritePage() {
   if (document.querySelector('.favorites.offer')) {
     const refs = {
       titleWrapper: document.querySelector('.offer__title-wrapper'),
@@ -14,7 +15,11 @@ export const loadDataFavoritePage = () => {
 
     const favotireListFromLocalStorage = loadFromLocalStorage('Favorites');
 
-    if (!favotireListFromLocalStorage) {
+    if (
+      !favotireListFromLocalStorage ||
+      favotireListFromLocalStorage.length === 0 ||
+      !Array.isArray(favotireListFromLocalStorage)
+    ) {
       clearData(refs.list);
 
       refs.titleWrapper.children[0].textContent = 'В обраному поки що нічого нема';
@@ -34,7 +39,7 @@ export const loadDataFavoritePage = () => {
 
     async function renderData() {
       try {
-        data = await APIGetData.getDataByID(favotireListFromLocalStorage.join(','));
+        const data = await APIGetData.getDataByID(favotireListFromLocalStorage.join(','));
         const markup = createMarkup(data);
         clearData(refs.list);
         render(refs.list, markup);
@@ -43,6 +48,4 @@ export const loadDataFavoritePage = () => {
       }
     }
   }
-};
-
-loadDataFavoritePage();
+}

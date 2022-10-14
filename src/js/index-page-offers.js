@@ -2,9 +2,8 @@ import { APIGetData } from './api/fetch-cards';
 import { sections } from './catalog/const';
 import { handleFavorite } from './catalog/handleFavorite';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
-import { loadFromLocalStorage } from './catalog/localStorage';
 import { createMarkup } from './catalog/markup';
-import { addClass, removeClass } from './catalog/utils';
+import { addClass, removeClass, loadFromLocalStorage } from './catalog/utils';
 
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';
