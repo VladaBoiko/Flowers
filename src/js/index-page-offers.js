@@ -3,15 +3,11 @@ import { filterBySection, sections } from './catalog/filter';
 import { handleFavorite } from './catalog/favoriteHandle';
 import { handleWatchedHistory } from './catalog/handleWatchedHistory';
 import { createMarkup } from './catalog/markup';
-<<<<<<< HEAD
-=======
 import { addClass, removeClass, loadFromLocalStorage } from './catalog/utils';
->>>>>>> 723618d (fix 4.02)
 
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';
 import { heroModal } from './hero-modal';
-
 
 heroSwiper.enabled = true;
 reviewsSwiper.enabled = true;

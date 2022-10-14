@@ -16,14 +16,8 @@ import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
 
-<<<<<<< HEAD
-// import data from '../products.json';
-
-import getKey from './catalog/getKey';
-=======
 import throttle from 'lodash.throttle';
 const DELAY = 300;
->>>>>>> 723618d (fix 4.02)
 
 const refs = {
   resetFormBtn: document.querySelector('.filter-catalog__clear-all-btn'),
@@ -97,16 +91,6 @@ refs.resetFormBtn.addEventListener('click', () => {
   catalogData.renderData();
 });
 
-<<<<<<< HEAD
-refs.form.addEventListener('change', () => {
-  clearData(refs.catalogList);
-  catalogData.resetPage();
-  catalogData.filterParams = getCheckedCheckBox();
-  catalogData.renderData();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
-});
-=======
 refs.form.addEventListener(
   'change',
   throttle(() => {
@@ -117,7 +101,7 @@ refs.form.addEventListener(
   }),
   DELAY
 );
->>>>>>> 723618d (fix 4.02)
+
 
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),

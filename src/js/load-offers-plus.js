@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import { APIGetData } from './catalog/fetch-cards';
-import { handleFavorite } from './catalog/favoriteHandle';
-=======
 import { APIGetData } from './api/fetch-cards';
 // import { handleFavorite } from './catalog/handleFavorite';
->>>>>>> 723618d (fix 4.02)
 import { createMarkup } from './catalog/markup';
 import { filterBySection, sections } from './catalog/filter';
 

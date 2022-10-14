@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { loadFromLocalStorage } from './localStorage';
-import getKey from './getKey';
-=======
-import { loadFromLocalStorage } from './utils';
+import { loadFromLocalStorage, getKey } from './utils';
 import { statuses } from './const';
-import { getKey } from './utils';
->>>>>>> 723618d (fix 4.02)
+
 import icons from '../../img/catalog/icon-fav.svg';
 
 const statuses = {
