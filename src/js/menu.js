@@ -1,5 +1,4 @@
-
-import './search';
+// import './search';
 // import '../js/auth/validate';
 const navbarMenu = document.querySelector('#menu');
 const burgerMenu = document.querySelector('#burger');
@@ -29,4 +28,3 @@ window.addEventListener('resize', () => {
     }
   }
 });
-
