@@ -1,5 +1,7 @@
-import { loadFromLocalStorage } from './localStorage';
-import getKey from './getKey';
+import { loadFromLocalStorage } from './utils';
+import { statuses } from './const';
+import { getKey } from './utils';
+>>>>>>> 723618d (fix 4.02)
 import icons from '../../img/catalog/icon-fav.svg';
 
 const statuses = {
@@ -56,5 +58,5 @@ export const clearData = list => {
 };
 
 function isFav(id) {
-  return favoriteList.indexOf(id) === -1 ? '' : 'checked';
+  return !favoriteList || !Array.isArray(favoriteList) || favoriteList.indexOf(id) === -1 ? '' : 'checked';
 }

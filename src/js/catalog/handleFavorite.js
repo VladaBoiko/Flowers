@@ -1,9 +1,5 @@
-<<<<<<< HEAD:src/js/catalog/favoriteHandle.js
-import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
-=======
 import { saveToLocalStorage, loadFromLocalStorage } from './utils';
 // import { loadDataFavoritePage } from '../favorite-page';
->>>>>>> 723618d (fix 4.02):src/js/catalog/handleFavorite.js
 
 const key = 'Favorites';
 
@@ -27,9 +23,6 @@ export function handleFavorite() {
           return;
         }
 
-<<<<<<< HEAD:src/js/catalog/favoriteHandle.js
-      favoriteBtn.classList.toggle('checked');
-=======
         if (savedListFav.indexOf(productID) === -1) {
           newListFav = [...savedListFav, productID];
           saveToLocalStorage(key, newListFav);
@@ -45,7 +38,6 @@ export function handleFavorite() {
           return;
         }
       }
->>>>>>> 723618d (fix 4.02):src/js/catalog/handleFavorite.js
     })
   );
 }

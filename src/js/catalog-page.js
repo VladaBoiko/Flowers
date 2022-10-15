@@ -3,14 +3,18 @@ import { createMarkup, clearData } from './catalog/markup';
 import { render } from './catalog/render';
 import { filterData, filterWords } from './catalog/filter';
 import { smoothScroll } from './catalog/smoothScroll';
+import { APIGetData } from './api/fetch-cards';
+import { createMarkup } from './catalog/markup';
+import { render, clearData } from './catalog/render';
+import { filterWords } from './catalog/const';
+import { smoothScroll, getKey } from './catalog/utils';
 
 import { reviewsSwiper } from './reviews-slider';
 
 reviewsSwiper.enabled = true;
 
-// import data from '../products.json';
-
-import getKey from './catalog/getKey';
+import throttle from 'lodash.throttle';
+const DELAY = 300;
 
 const refs = {
   resetFormBtn: document.querySelector('.filter-catalog__clear-all-btn'),
@@ -84,14 +88,16 @@ refs.resetFormBtn.addEventListener('click', () => {
   catalogData.renderData();
 });
 
-refs.form.addEventListener('change', () => {
-  clearData(refs.catalogList);
-  catalogData.resetPage();
-  catalogData.filterParams = getCheckedCheckBox();
-  catalogData.renderData();
-  loadMoreBtn.show();
-  loadMoreBtn.enable();
-});
+refs.form.addEventListener(
+  'change',
+  throttle(() => {
+    clearData(refs.catalogList);
+    catalogData.resetPage();
+    catalogData.filterParams = getCheckedCheckBox();
+    catalogData.renderData();
+  }),
+  DELAY
+);
 
 const loadMoreBtn = {
   element: document.querySelector('.catalog__btn'),
