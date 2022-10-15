@@ -1,6 +1,6 @@
-import { loadFromLocalStorage, getKey } from './utils';
+import { loadFromLocalStorage } from './utils';
 import { statuses } from './const';
-
+import { getKey } from './utils';
 import icons from '../../img/catalog/icon-fav.svg';
 
 const favoriteList = loadFromLocalStorage('Favorites');
