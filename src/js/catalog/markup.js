@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { loadFromLocalStorage } from './localStorage';
-import getKey from './getKey';
-=======
 import { loadFromLocalStorage } from './utils';
 import { statuses } from './const';
 import { getKey } from './utils';

@@ -100,4 +100,3 @@ export function loadDataFavoritePage() {
     }
   }
 }
->>>>>>> 723618d (fix 4.02)
