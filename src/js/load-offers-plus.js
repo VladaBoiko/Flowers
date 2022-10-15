@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import { APIGetData } from './catalog/fetch-cards';
-import { handleFavorite } from './catalog/favoriteHandle';
-=======
 import { APIGetData } from './api/fetch-cards';
 // import { handleFavorite } from './catalog/handleFavorite';
 import { createMarkup } from './catalog/markup';
