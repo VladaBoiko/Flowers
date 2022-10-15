@@ -1,22 +1,15 @@
 import { loadFromLocalStorage } from './utils';
 import { statuses } from './const';
 import { getKey } from './utils';
->>>>>>> 723618d (fix 4.02)
 import icons from '../../img/catalog/icon-fav.svg';
 
-const statuses = {
-  hit: 'Xіт продажу',
-  absent: 'Немає в наявності',
-  new: 'Новинка',
-};
 const favoriteList = loadFromLocalStorage('Favorites');
-// console.log(favoriteList);
 
 export const createMarkup = data => {
   return data
-    .map(({ id, name, image, price, status }) => {
+    .map(({ _id, name, image, price, status }) => {
       const keyStatus = getKey(status, statuses);
-      return `<li class="offer-list__item product" id="${id}">
+      return `<li class="offer-list__item product" id="${_id}">
         <a href="./good-card.html" class="product__link">
           <img
             loading="lazy"
@@ -28,7 +21,7 @@ export const createMarkup = data => {
           />
           <div class="product__overlay">
             <p class="product__status ${keyStatus}">${status}</p>
-            <button type="button" class="product__favorite ${isFav(id)}">
+            <button type="button" class="product__favorite ${isFav(_id)}">
               <svg width="34" height="34">
                 <use href="${icons}#icon-fav"></use>
               </svg>
@@ -51,10 +44,6 @@ export const createMarkup = data => {
     `;
     })
     .join('');
-};
-
-export const clearData = list => {
-  list.innerHTML = '';
 };
 
 function isFav(id) {
