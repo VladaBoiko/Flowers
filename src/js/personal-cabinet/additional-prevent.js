@@ -1,5 +1,5 @@
 const refs = {
-    profileForm: document.querySelector('[data-profile-form]'),
+    profileForm: document.querySelector('[data-profile]'),
     notifForm: document.querySelector('[data-pers-notif-form]'),
     profileFormBtn: document.querySelector('[data-profile-form-btn]'),
     notifFormBtn: document.querySelector('[data-notif-form-btn]'),

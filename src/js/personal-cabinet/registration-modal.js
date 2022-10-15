@@ -1,4 +1,9 @@
-import { refs } from '../auth/helpers/refs';
+const refs = {
+  openModalBtn: document.querySelector("[data-reg-modal-open]"),
+  closeModalBtn: document.querySelector("[data-reg-modal-close]"),
+  backdrop: document.querySelector("[data-reg-modal]"),
+  body: document.querySelector("body"),
+}
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
@@ -7,13 +12,13 @@ refs.backdrop.addEventListener('click', onBackdropClick);
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
   refs.body.classList.add('show-modal');
-  refs.openModalBtn.classList.add('is-active');
+  refs.openModalBtn.classList.add("is-active");
 }
 
-export function onCloseModal() {
+function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   refs.body.classList.remove('show-modal');
-  refs.openModalBtn.classList.remove('is-active');
+  refs.openModalBtn.classList.remove("is-active");
 }
 
 function onBackdropClick(evt) {
