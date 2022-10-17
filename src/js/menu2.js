@@ -2,12 +2,9 @@ const navbarMenu = document.querySelector('.menu');
 const burgerMenu = document.querySelector('#burger');
 const headerMenu = document.querySelector('#header');
 
-console.log('🚀 ~ navbarMenu', navbarMenu);
-console.log('🚀 ~ burgerMenu', burgerMenu);
 // Open Close Navbar Menu on Click Burger
 if (burgerMenu && navbarMenu) {
   burgerMenu.addEventListener('click', () => {
-    console.log(1);
     burgerMenu.classList.toggle('is-active');
     navbarMenu.classList.toggle('is-active');
   });

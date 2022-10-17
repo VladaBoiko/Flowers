@@ -1,128 +1,77 @@
-<form class="pers-cab-form pers-current-js" data-profile>
-    <div class="pers-form-group" role="group" aria-labelledby="user-personal-data">
-        <p class="pers-content-title" id="user-personal-data" >Особиста інформація</p>
-        <div class="pers-first-form-wrap-desk">
-            <div class="pers-photo">
+<div class="pers-current-js" data-profile>
+    <form class="pers-cab-form" data-profile-form>
+        <div class="pers-form-group" role="group" aria-labelledby="user-personal-data">
+            <p class="pers-content-title" id="user-personal-data">Особиста інформація</p>
+            <div class="pers-first-form-wrap-desk">
+                <div class="pers-photo">
+                    <label>
+                        <input type="file" name="file" accept="image/jpeg,image/png" class="visually-hidden">
+                        <span class="pers-img"></span>
+                    </label>
+                </div>
+                <div class="pers-first-form-wrap-tab">
+                    <div class="input-col-wrap">
+                        <label class="pers-label">
+                            <input type="text" name="name" class="pers-form-input" placeholder="ПІБ">
+                        </label>
+                        <label class="pers-label">
+                            <input type="text" name="userBirth" class="pers-form-input" placeholder="Дата народження">
+                        </label>
+                    </div>
+                    <div class="pers-radio-wrapper">
+                        <p class="pers-form-group-text">Стать</p>
+                        <input type="radio" id="pers-radio-male" name="gender" value="male"
+                            class="pers-radio-input visually-hidden">
+                        <label for="pers-radio-male" class="pers-radio-label">Чоловіча</label>
+                        <input type="radio" id="pers-radio-female" name="gender" value="female"
+                            class="pers-radio-input visually-hidden">
+                        <label for="pers-radio-female" class="pers-radio-label">Жіноча</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pers-form-group" role="group" aria-labelledby="user-availability-data">
+            <p class="pers-content-title" id="user-availability-data">Місцезнаходження і час</p>
+            <div class="input-grid-wrap">
+                <label class="local-label">
+                    <input type="text" name="userTown" class="pers-form-input" placeholder="Місто проживання">
+                </label>
+                <label class="local-label">
+                    <input type="text" name="userLang" class="pers-form-input" placeholder="Мова">
+                </label>
+                <label class="local-label">
+                    <input type="text" name="userTimezone" class="pers-form-input" placeholder="Часовий пояс">
+                </label>
+                <div class="wrap-for-call">
+                    <p class="for-call-text">Період для дзвінків</p>
+                    <div class="pers-time-flex-wrap">
+                        <label class="pers-time-label">З
+                            <input type="text" name="userAccessFrom" class="pers-time-input" placeholder="12:00">
+                        </label>
+                        <label class="pers-time-label">до
+                            <input type="text" name="userAccessTo" class="pers-time-input" placeholder="15:00">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pers-form-group" role="group" aria-labelledby="user-contacts-data">
+            <p class="pers-content-title" id="user-contacts-data">Контактні дані</p>
+            <div class="input-grid-wrap">
                 <label>
-                    <input 
-                        type="file" 
-                        name="file" 
-                        accept="image/jpeg,image/png" 
-                        class="visually-hidden">
-                    <span class="pers-img"></span>
+                    <input type="tel" name="userTel" class="pers-form-input" placeholder="Номер телефону">
+                </label>
+                <label>
+                    <input type="email" name="email" class="pers-form-input" placeholder="Електронна пошта">
+                </label>
+                <label>
+                    <input type="password" name="userPwd" class="pers-form-input" placeholder="Пароль" minlength="6"
+                        maxlength="10">
                 </label>
             </div>
-            <div class="pers-first-form-wrap-tab">
-                <div class="input-col-wrap">
-                    <label class="pers-label">
-                        <input 
-                            type="text" 
-                            name="user-name" 
-                            class="pers-form-input" 
-                            placeholder="ПІБ">
-                    </label>
-                    <label class="pers-label">
-                        <input 
-                            type="text" 
-                            name="user-birth-date" 
-                            class="pers-form-input" 
-                            placeholder="Дата народження">
-                    </label>
-                </div>
-                <div class="pers-radio-wrapper">
-                    <p class="pers-form-group-text">Стать</p>
-                    <input 
-                        type="radio" 
-                        id="pers-radio-male"
-                        name="gender"
-                        value="male"
-                        class="pers-radio-input visually-hidden">
-                    <label for="pers-radio-male" class="pers-radio-label">Чоловіча</label>
-                    <input 
-                        type="radio"
-                        id="pers-radio-female" 
-                        name="gender" 
-                        value="female"
-                        class="pers-radio-input visually-hidden">
-                    <label for="pers-radio-female" class="pers-radio-label">Жіноча</label>
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="pers-form-group" role="group" aria-labelledby="user-availability-data">
-        <p class="pers-content-title" id="user-availability-data" >Місцезнаходження і час</p>
-        <div class="input-grid-wrap">
-            <label class="local-label">
-                <input 
-                    type="text" 
-                    name="user-town"
-                    class="pers-form-input" 
-                    placeholder="Місто проживання">
-            </label>
-            <label class="local-label">
-                <input 
-                    type="text"
-                    name="user-lang" 
-                    class="pers-form-input" 
-                    placeholder="Мова">
-            </label>
-            <label class="local-label">
-                <input 
-                    type="text" 
-                    name="user-time-zone"
-                    class="pers-form-input" 
-                    placeholder="Часовий пояс">
-            </label>
-            <div class="wrap-for-call">
-                <p class="for-call-text">Період для дзвінків</p>
-                <div class="pers-time-flex-wrap">
-                    <label class="pers-time-label">З
-                        <input 
-                            type="text"
-                            name="user-acces-from" 
-                            class="pers-time-input" 
-                            placeholder="12:00">
-                    </label>
-                    <label class="pers-time-label">до
-                        <input 
-                            type="text" 
-                            name="user-acces-to"
-                            class="pers-time-input" 
-                            placeholder="15:00">
-                    </label>
-                </div>
-            </div>
+        <div class="pers-button-wrap">
+            <button type="submit" class="button dark" data-profile-form-btn>Зберегти зміни</button>
         </div>
-    </div>
-    <div class="pers-form-group" role="group" aria-labelledby="user-contacts-data">
-        <p class="pers-content-title" id="user-contacts-data" >Контактні дані</p>
-        <div class="input-grid-wrap">
-            <label>
-                <input 
-                    type="tel" 
-                    name="user-tel"
-                    class="pers-form-input" 
-                    placeholder="Номер телефону">
-            </label>
-            <label>
-                <input 
-                    type="email"
-                    name="user-mail" 
-                    class="pers-form-input" 
-                    placeholder="Електронна пошта">
-            </label>
-            <label>
-                <input 
-                    type="password"
-                    name="user-pwd" 
-                    class="pers-form-input" 
-                    placeholder="Пароль"
-                    minlength="6"
-                    maxlength="10">
-            </label>
-        </div>
-    </div>
-    <div class="pers-button-wrap">
-        <button type="submit" class="button dark" data-profile-form-btn>Зберегти зміни</button>
-    </div>
-</form>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-import './menu';
+import './menu2';
 import './personal-cabinet/menu';
 import './personal-cabinet/registration-modal';
 import './personal-cabinet/additional-prevent';
