@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/js/page/page-delivery.js"],"sourcesContent":["import '../menu2';\nimport '../search';\nimport '../load-offers-plus';\n"],"names":["parcelRequire"],"version":3,"file":"delivery.a2b27374.js.map"}
