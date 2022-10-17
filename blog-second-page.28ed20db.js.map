@@ -1,0 +1,1 @@
+{"mappings":"gfAAAA,EAAA,S","sources":["src/js/page/page-blog-second.js"],"sourcesContent":["import '../menu2';\nimport '../search';\nimport '../load-offers-plus';\n"],"names":["parcelRequire"],"version":3,"file":"blog-second-page.28ed20db.js.map"}
