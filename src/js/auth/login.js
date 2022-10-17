@@ -2,8 +2,8 @@ import { refs } from './helpers/refs';
 import { logIn } from '../auth';
 import { showAlertText } from './helpers/helpers';
 
-export let TOKEN = 'token';
-export let userName = 'name';
+export const TOKEN = 'token';
+export const userName = 'name';
 
 checkActivePage();
 
@@ -43,6 +43,7 @@ export async function handleLoginRes(userData) {
     goToUserCab();
     localStorage.setItem(TOKEN, res.token);
     localStorage.setItem(userName, res.name);
+    refs.profileForm.name.value = res.name;
     refs.loginForm.reset();
   }
 }
