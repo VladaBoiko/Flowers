@@ -8,7 +8,6 @@ const box2 = document.querySelector('#search-box-2');
 
 let data = [];
 
-window.addEventListener('keydown', onClickEnter);
 document.addEventListener('click', onClickToVoid);
 
 if (window.innerWidth > 767.9) {
@@ -57,6 +56,7 @@ async function change(e) {
   }
 
   if (value.length < 3) {
+    window.removeEventListener('keydown', onClickEnter);
     box1.classList.add('search-box-hidden');
     box2.classList.add('search-box-hidden');
 
@@ -98,6 +98,8 @@ async function change(e) {
 
   box1.classList.remove('search-box-hidden');
   box2.classList.remove('search-box-hidden');
+
+  window.addEventListener('keydown', onClickEnter);
 }
 
 function onClick(e) {

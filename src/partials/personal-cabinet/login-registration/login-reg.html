@@ -1,27 +1,16 @@
 <section class="pers-login" data-login-section>
     <div class="container">
         <div class="login-form-wrap">
-            <p class="pers-form-alert-text global-alert" data-pers-alert-text></p>
             <h1 class="login-title">Вхід до особистого кабинету</h1>
             <form class="login-form" data-login-form>
                 <div class="login-row-wrap">
                     <label class="login-label">
-                        <input 
-                            type="text" 
-                            name="email" 
-                            class="pers-form-input"
-                            placeholder="Введіть eлектронну пошту"
-                            required
-                            >
+                        <input type="text" name="user-tel-or-mail" class="pers-form-input"
+                            placeholder="Введіть телефон або електронну пошту" required>
                     </label>
                     <label class="login-label close-eye-inside">
-                        <input 
-                            type="password" 
-                            name="password" 
-                            class="pers-form-input" 
-                            placeholder="Введіть пароль"
-                            required
-                            >
+                        <input type="password" name="user-pwd" class="pers-form-input" placeholder="Введіть пароль" required
+                            minlength="6" maxlength="10">
                         <svg class="pwd-input-icon" width="32" height="32">
                             <use href="./img/symbol-defs.svg#eye-off-icon"></use>
                         </svg>
@@ -35,11 +24,8 @@
                         <label for="remmbr-user" class="login-check-label">Запам'ятати мене</label>
                     </div>
                 </div>
-                <div class="pers-form-btn-wrap">
-                    <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
-                    <button type="submit" class="login-btn button dark" data-login-btn>Вхід</button>
-                    <p class="pers-form-alert-text" data-login-alert-text></p>
-                </div>
+                <button type="button" class="login-btn button light" data-reg-modal-open>Реєстрація</button>
+                <button type="submit" class="login-btn button dark">Вхід</button>
             </form>
         </div>
     </div>
@@ -58,20 +44,20 @@
                     <label>
                         <input 
                             type="text"
-                            name="name"
+                            name="user-nickname"
                             class="pers-form-input" 
                             placeholder="Введіть ім’я користувача" 
-                            required
-                            >
+                            required>
                     </label>
                     <label class="close-eye-inside">
                         <input 
                             type="password" 
-                            name="password"
+                            name="user-pwd"
                             class="pers-form-input close-eye" 
-                            placeholder="Введіть пароль"
+                            placeholder="Введіть пароль" 
                             required
-                            >
+                            minlength="6"
+                            maxlength="10">
                             <svg class="pwd-input-icon" width="32" height="32">
                                 <use href="./img/symbol-defs.svg#eye-off-icon"></use>
                             </svg>
@@ -79,29 +65,41 @@
                     <label class="close-eye-inside">
                         <input 
                             type="password"
-                            name="confirmPassword" 
+                            name="confirm-user-pwd" 
                             class="pers-form-input" 
                             placeholder="Підтвердьте пароль"
                             required
-                            >
+                            minlength="6"
+                            maxlength="10">
                             <svg class="pwd-input-icon" width="32" height="32">
                                 <use href="./img/symbol-defs.svg#eye-off-icon"></use>
                             </svg>
                     </label>
                     <label>
                         <input 
+                            type="text"
+                            name="user-name" 
+                            class="pers-form-input" 
+                            placeholder="ПІБ" 
+                            required>
+                    </label>
+                    <label>
+                        <input 
                             type="email" 
-                            name="email"
+                            name="user-mail"
                             class="pers-form-input" 
                             placeholder="Електронна пошта" 
-                            required
-                            >
+                            required>
+                    </label>
+                    <label>
+                        <input 
+                            type="text"
+                            name="user-client-card" 
+                            class="pers-form-input" 
+                            placeholder="Карта клієнта">
                     </label>
                 </div>
-                <div class="pers-form-btn-wrap">
-                    <button type="submit" class="button dark" data-submit-reg-btn>Зареєструватися</button>
-                    <p class="pers-form-alert-text" data-reg-alert-text></p>
-                </div>
+                <button type="submit" class="button dark">Зареєструватися</button>
             </form>
         </div>
     </div>

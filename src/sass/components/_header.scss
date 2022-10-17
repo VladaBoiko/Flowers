@@ -1,6 +1,6 @@
-#header {
-  // overflow: hidden;
-}
+// #header {
+//   overflow: hidden;
+// }
 
 // HEADER ONE
 
@@ -28,6 +28,7 @@
 }
 
 .location__text {
+  //   margin: 0 9px;
   @include text('PT Sans', 400, 14px, 18px);
 }
 
@@ -323,7 +324,7 @@
     transform: translateY(-50%);
 
     @include tablet {
-      right: 40px;
+      right: 10px;
     }
   }
 

@@ -1,6 +1,6 @@
 .label__search {
   position: relative;
-  z-index: 111111111;
+  z-index: 52;
 }
 
 .search-box-1 {
@@ -9,6 +9,7 @@
     display: grid;
   }
 }
+
 .search-box-2 {
   display: grid;
   @include tablet {
@@ -24,8 +25,8 @@
   width: 100%;
 
   border-radius: 0 0 10px 10px;
-  border: 2px solid var(--search-box);
 
+  border: 2px solid var(--search-box);
   background-color: #fff;
 }
 

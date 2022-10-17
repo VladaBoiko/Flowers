@@ -1,4 +1,4 @@
-import { saveToLocalStorage, loadFromLocalStorage } from './localStorage';
+import { saveToLocalStorage, loadFromLocalStorage } from './utils';
 
 const key = 'EarlierWatched';
 const currentCardId = 'CurrentCardID';
@@ -23,7 +23,7 @@ export function handleWatchedHistory() {
       if (productId) {
         const savedList = loadFromLocalStorage(key);
 
-        if (savedList === 'undefined') {
+        if (!savedList) {
           const newList = [productId];
           saveToLocalStorage(key, newList);
         } else if (savedList.indexOf(productId) === -1) {
