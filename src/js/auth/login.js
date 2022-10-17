@@ -1,6 +1,7 @@
 import { refs } from './helpers/refs';
 import { logIn } from '../auth';
 import { showAlertText } from './helpers/helpers';
+import { inputPwdHandlers, hidePwd } from '../personal-cabinet/show-pwd';
 
 export const TOKEN = 'token';
 export const userName = 'name';
@@ -49,6 +50,7 @@ export async function handleLoginRes(userData) {
 }
 
 function goToUserCab() {
+  hidePwd(inputPwdHandlers.logPwdBtn, inputPwdHandlers.logPwdInput);
   refs.loginSection.classList.add('is-hidden');
   refs.personalCab.classList.remove('is-hidden');
   refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
