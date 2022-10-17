@@ -146,13 +146,21 @@
           </li>
         </ul>
         <label class="label__search">
-          <input id="search" class="search" type="text" name="search" placeholder="Знайти букет..." />
-          <span id="search-box-1" class="search-box-1 search-list-box search-box-hidden"></span>
+          <input
+            autocomplete="off"
+            id="search"
+            class="search"
+            type="text"
+            name="search"
+            placeholder="Знайти букет..."
+          />
+          <span id="search-box-1" class="search-list-box search-box-1 search-box-hidden">
+          </span>
         </label>
 
         <ul class="list-icon">
           <li class="list-icon__elemens">
-            <a href="/src/personal-cabinet.html" class="list-icon__link">
+            <a href="/src/personal-cabinet.html" class="list-icon__link" data-header-user-icon>
               <svg class="list-icon__icon" width="28" height="28">
                 <use href="./img/symbol-defs.svg#user-icon"></use>
               </svg>
@@ -179,8 +187,9 @@
   <div class="search-mobail">
     <div class="container">
       <label class="label__search">
-        <input id="search2" class="search" type="text" name="search" placeholder="Знайти букет..." />
-        <span id="search-box-2" class="search-box-2 search-list-box search-box-hidden"></span>
+        <input autocomplete="off" id="search2" class="search" type="text" name="search" placeholder="Знайти букет..." />
+        <span id="search-box-2" class="search-list-box search-box-2 search-box-hidden">
+        </span>
       </label>
     </div>
   </div>
