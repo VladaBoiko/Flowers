@@ -8,18 +8,23 @@ const refs = {
 
 refs.profileForm.addEventListener('submit', onSubmitProfileForm);
 refs.notifForm.addEventListener('submit', onSubmitNotifForm);
-refs.forgotPwdLink.addEventListener('click', preventReloadPage);
+refs.forgotPwdLink.addEventListener('click', onLinkClick);
 
 function onSubmitProfileForm(evt) {
-    preventReloadPage(evt);
+    onSubmit(evt);
     refs.profileFormBtn.blur();
 }
 
 function onSubmitNotifForm(evt) {
-    preventReloadPage(evt);
+    onSubmit(evt);
     refs.notifFormBtn.blur();
 }
 
-function preventReloadPage(evt) {
+function onLinkClick(evt) {
+    onSubmit(evt);
+    evt.target.blur()   
+}
+
+function onSubmit(evt) {
     evt.preventDefault();
 }
