@@ -3,7 +3,7 @@
     padding-top: 30px;
     padding-bottom: 50px;
     border-bottom: 1px solid;
-    
+
     @include tablet {
         padding-bottom: 80px;
     }
@@ -11,19 +11,20 @@
     @include desktop {
         padding-top: 77px;
         padding-bottom: 100px;
+
         &::before {
             content: '';
             position: absolute;
             top: 143px;
             left: 0;
-    
+
             width: 222px;
             height: 810px;
-    
+
             transform: scaleX(-1);
             z-index: -1;
             background: url(../img/reusable/bg-leafs.png) 0px 0px/100% no-repeat;
-    
+
             @media screen and (min-device-pixel-ratio: 2),
             (min-resolution: 192px),
             (min-resolution: 2dppx) {
@@ -36,14 +37,16 @@
         display: none;
     }
 
-    
-
     &>.container {
         @media screen and (max-width: 767.98px) {
             max-width: 450px;
             padding: 0;
         }
     }
+}
+
+.pers-cab-header-wrap {
+    position: relative;
 }
 
 .pers-cab-title-desk {
@@ -86,7 +89,23 @@
     }
 }
 
-.pers-cab-content-wrap { 
+.personal-cabinet .pers-cab-logout-btn {
+    position: absolute;
+    top: 0;
+    min-width: 130px;
+    height: 40px;
+
+    @media screen and (max-width: 450px) {
+        left: 11px;
+    }
+
+    @include desktop {
+        right: 0;
+        height: 36px;
+    }
+}
+
+.pers-cab-content-wrap {
     @include desktop {
         width: 970px;
     }

@@ -22,8 +22,10 @@
 
 .login-form-wrap {
     position: relative;
+
     @include desktop {
         width: 580px;
+
         &::after {
             position: absolute;
             top: -100px;
@@ -33,15 +35,14 @@
             width: 715px;
             height: 667px;
             background-image: url('../img/reusable/bg-flower-full.png');
-            
+
             @media screen and (min-device-pixel-ratio: 2),
-                (min-resolution: 192px),
-                (min-resolution: 2dppx) {
-                    background-image: url('../img/reusable/bg-flower-full-2x.png');
-                }
+            (min-resolution: 192px),
+            (min-resolution: 2dppx) {
+                background-image: url('../img/reusable/bg-flower-full-2x.png');
+            }
         }
     }
-    
 }
 
 .login-title {
@@ -136,7 +137,7 @@
     @include tablet {
         @include font(400, 14px, calc(18px / 14px));
     }
-    
+
     &:hover,
     &:focus {
         color: var(--main-accent-color);
@@ -163,11 +164,11 @@
         border: 1px solid var(--main-accent-color);
         border-radius: 4px;
         transition: scale var(--main-transition);
-        
+
         .login-check-wrap>input:focus+& {
             scale: 1.2;
         }
-    
+
         .login-check-wrap>input:checked+& {
             background-image: url(../img/personal-cabinet/check.svg);
             background-repeat: no-repeat;
@@ -178,6 +179,7 @@
 
 .login-btn {
     width: 100%;
+
     &:not(:last-child) {
         margin-bottom: 5px;
     }
