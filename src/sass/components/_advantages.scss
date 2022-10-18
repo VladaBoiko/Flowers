@@ -1,0 +1,191 @@
+.advantage {
+    position: relative;
+    padding: 10px 0;
+    background-color: var(--main-accent-color);
+    @include desktop {
+        padding: 50px 0;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+
+        display: block;
+        width: 124px;
+        height: 74px;
+        z-index: 10;
+        background-image: url('../img/reusable/leaf-top-left-124.png');
+        background-repeat: no-repeat;
+        @include desktop {
+            width: 265px;
+            height: 158px;
+            background-image: url('../img/reusable/leaf-top-left-265.png');
+        }
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+
+        display: block;
+        width: 78px;
+        height: 92px;
+        z-index: 10;
+        background-image: url('../img/reusable/leaf-bottom-left-sm.png');
+        background-repeat: no-repeat;
+
+        @include desktop {
+            width: 190px;
+            height: 215px;
+            background-image: url('../img/reusable/leaf-bottom-left-lg.png');
+        }
+    }
+}
+
+.advantage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include desktop {
+        width: 100%;
+        max-width: 1620px;
+    }
+    &::before {
+        display: none;
+
+        @include tablet {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: "";
+
+            display: block;
+            width: 107px;
+            height: 117px;
+            z-index: 10;
+            background-image: url('../img/reusable/leaf-top-right-sm.png');
+            background-repeat: no-repeat;
+        }
+
+        @include desktop {
+            width: 209px;
+            height: 228px;
+            background-image: url('../img/reusable/leaf-top-right-lg.png');
+        }
+    }
+}
+
+.advantage-inner-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border: 5px solid var(--border-color);
+    
+    @media screen and (max-width: 767.98px) {
+        max-width: 340px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1399.98px) {
+        width: 748px;
+    }
+    
+    @include desktop {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 63px;
+        left: 10px;
+        content: "";
+
+        display: block;
+        width: 105px;
+        height: 60px;
+        background-image: url('../img/reusable/pollen-s.svg');
+        background-repeat: no-repeat;
+
+        @include tablet {
+            top: 53px;
+            left: 26px;
+        }
+
+        @include desktop {
+            top: 17px;
+            left: 14px;
+            width: 268px;
+            height: 210px;
+            background-image: url('../img/reusable/pollen-l.svg');
+        }
+    }
+}
+
+.advantage-top-title {
+    margin-bottom: 30px;
+
+    @include font(500, 30px, 1);
+    text-align: center;
+    color: var(--dark-theme-title-color);
+
+    @include tablet {
+        font-size: 36px;
+    }
+}
+
+.advantage-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 20px 30px;
+    }
+}
+
+.advantage-item {
+    width: 320px;
+    padding: 5px;
+
+    text-align: center;
+    color: var(--dark-theme-title-color);
+    z-index: 20;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 345px;
+    }
+
+    @include desktop {
+        width: 400px;
+    }
+}
+
+.advantage-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+    fill: currentColor;
+}
+
+.advantage-title {
+    @include font(600, 20px, calc(24px /20px));
+    margin-bottom: 5px;
+}
+
+.advantage-text {
+    @include font(null, 16px, calc(20px /16px));
+}
