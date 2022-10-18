@@ -1,10 +1,12 @@
 import { refs } from './helpers/refs';
 import { logIn } from '../auth';
 import { showAlertText } from './helpers/helpers';
+import { inputPwdHandlers, hidePwd } from '../personal-cabinet/show-pwd';
 
 export const TOKEN = 'token';
 export const userName = 'name';
 
+refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
 checkActivePage();
 
 export function checkActivePage() {
@@ -49,12 +51,9 @@ export async function handleLoginRes(userData) {
 }
 
 function goToUserCab() {
+  hidePwd(inputPwdHandlers.logPwdBtn, inputPwdHandlers.logPwdInput);
   refs.loginSection.classList.add('is-hidden');
   refs.personalCab.classList.remove('is-hidden');
-  refs.headerUserIcon.addEventListener('click', e => e.preventDefault());
 }
 
 // 401 "user does not exist"
-// else if (!res.isActivate) {
-//     console.log("please, check your email for confirm");
-// }

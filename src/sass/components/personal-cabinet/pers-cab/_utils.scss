@@ -11,7 +11,7 @@
     height: 50px;
     padding: 16px 17px;
 
-    @include font(400, 18px, calc(22px / 18px));
+    @include font(400, 16px, calc(22px / 16px));
 
     color: var(--black);
     border: 1px solid var(--grey);
@@ -52,21 +52,28 @@
 
 // ----------for password security/close-eye-icon------
 
-label.close-eye-inside {
+.close-eye-inside {
+    position: relative;
+}
+.close-eye-inside label{
     &>input {
         padding: 16px 41px 16px 17px;
     }
 }
 
-label.close-eye-inside {
-    position: relative;
+.show-pwd-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 9px;
 
-    & .pwd-input-icon {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 9px;
-        stroke: var(--light-theme-text-color);
-        fill: none;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    background-image: url(../img/personal-cabinet/close-eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    &.show-pwd {
+        background-image: url(../img/personal-cabinet/open-eye.svg);
     }
 }
