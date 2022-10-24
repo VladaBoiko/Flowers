@@ -1,0 +1,168 @@
+.how-works {
+    position: relative;
+    padding: 50px 0 30px;
+    background-color: var(--main-accent-color);
+    @include tablet {
+        padding-bottom: 50px;
+    }
+    @include desktop {
+        padding-bottom: 100px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+
+        display: block;
+        width: 124px;
+        height: 74px;
+        z-index: 10;
+        background-image: url('../img/reusable/leaf-top-left-124.png');
+        background-repeat: no-repeat;
+
+        @include desktop {
+            width: 265px;
+            height: 158px;
+            background-image: url('../img/reusable/leaf-top-left-265.png');
+        }
+    }
+    
+    &::after {
+        display: none;
+
+        @include desktop {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: "";
+            transform: scaleY(-1);
+        
+            display: block;
+            width: 209px;
+            height: 228px;
+            background-image: url('../img/reusable/leaf-top-right-lg.png');
+        }
+    }
+}
+
+.how-works>.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include desktop {
+        position: relative;
+    }
+    
+}
+
+.works-top-title {
+    margin-bottom: 30px;
+    @include font(500, 30px, 1);
+    text-align: center;
+    color: var(--dark-theme-title-color);
+
+    @include tablet {
+        font-size: 36px;
+    }
+
+    @include desktop {
+        margin-bottom: 50px;
+    }
+}
+
+.works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media screen and (max-width: 767.98px) {
+        max-width: 340px;
+    }
+    @include tablet {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+
+        display: block;
+        width: 105px;
+        height: 60px;
+        background-image: url('../img/reusable/pollen-s.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+
+        @include tablet {
+            top: -90px;
+            left: 145px;
+        }
+
+        @include desktop {
+            top: -78%;
+            left: 0;
+            left: 400px;
+            width: 250px;
+            height: 130px;
+            background-image: url('../img/reusable/pollen-l.svg');
+        }
+        @media screen and (min-width: 1800px) {
+            left: 85px;
+        }
+    }
+}
+
+.works-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    color: var(--dark-theme-title-color);
+    border: 3px solid var(--border-color);
+    z-index: 20;
+    @include tablet {
+        width: 354px;
+        height: 176px;
+    }
+    @include desktop {
+        width: 310px;
+        padding-right: 10px;
+    }
+}
+
+.works-item-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.works-item-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 63px;
+    height: 63px;
+    @include font(400, 24px, 1);
+    border: 2px solid var(--dark-theme-title-color);
+    border-radius: 50%;
+}
+
+.works-item-title {
+    @include font(600, 20px, 1);
+    @include desktop {
+        width: 200px;
+    }
+}
+
+.works-item-text {
+    @include font(null, 16px, calc(21px /16px));
+}
