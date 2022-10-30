@@ -48,7 +48,7 @@ window.addEventListener(
 );
 
 async function change(e) {
-  const value = e.target.value.trim();
+  const value = e.target.value;
 
   if (value.length >= 1) {
     form1.value = value;
@@ -121,28 +121,27 @@ function onClickEnter(e) {
 
   const dataId = data.map(x => x._id);
 
-  localStorage(dataId);
-
   if (data.length === 1) {
+    localStorage(dataId);
     redirect('good-card.html');
     return;
   }
 
-  redirect('catalog.html');
+  redirect('catalog.html', dataId.join(','));
 }
 
-function redirect(page) {
+function redirect(page, query) {
   const host = window.location.host.includes('localhost');
 
   if (host) {
-    window.location = `http://localhost:1234/${page}`;
+    window.location = `http://localhost:1234/${page}${query ? `?search=${query}` : ''}`;
   } else {
-    window.location = `https://vladaboiko.github.io/Flowers/${page}`;
+    window.location = `https://vladaboiko.github.io/Flowers/${page}${query ? `?search=${query}` : ''}`;
   }
 }
 
 function localStorage(storage) {
-  window.localStorage.setItem('search', JSON.stringify(storage));
+  window.localStorage.setItem('CurrentCardID', JSON.stringify(storage));
   // window.sessionStorage.setItem('search', JSON.stringify(storage));
 }
 
