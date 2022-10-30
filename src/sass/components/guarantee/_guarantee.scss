@@ -1,0 +1,128 @@
+.guarantee {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    color: var(--light-theme-text-color);
+    @include tablet {
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+    @include desktop {
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
+    
+}
+
+.guar-nav {
+    @media screen and (max-width: 767.98px) {
+        padding-left: 10px;
+    }
+    display: flex;
+    gap: 4px;
+    margin-bottom: 30px;
+}
+
+.guar-nav-item {
+    @include font(500, 14px, calc(17px /14px));
+
+    &:last-child {
+        color: var(--grey);
+        pointer-events: none;
+    }
+    
+    &>a {
+        color: var(--light-theme-text-color);
+    }
+    
+}
+
+.guar-top-title {
+    margin-bottom: 30px;
+    @include font(500, 30px, 1);
+    text-align: center;
+    color: var(--light-theme-title-color);
+
+    @include tablet {
+        font-size: 36px;
+        text-align: left;
+    }
+    @include desktop {
+        margin-bottom: 50px;
+    }
+}
+
+.guar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    @media screen and (max-width: 767.98px) {
+        margin: 0 auto;
+    }
+   
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    @include desktop {
+        position: relative;
+        justify-content: center;
+        gap: 27px 64px;
+        width: 1193px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -163px;
+            right: -510px;
+
+            width: 715px;
+            height: 667px;
+    
+            background-image: url(../img/reusable/bg-flower-full.png);
+            background-repeat: no-repeat;
+
+            @media screen and (min-device-pixel-ratio: 2),
+                (min-resolution: 192px),
+                (min-resolution: 2dppx) {
+                    background-image: url(../img/reusable/bg-flower-full-2x.png);
+                }
+        }
+    }
+}
+
+.guar-item {
+    display: flex;
+    gap: 15px;
+    width: 320px;
+    @include tablet {
+        width: 355px;
+    }
+}
+
+.guar-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.guar-item-info-wrap {
+    width: 230px;
+    @include tablet {
+        width: 284px;
+    }
+}
+
+.guar-item-title {
+    margin-bottom: 10px;
+    @include font(600, 20px, calc(26px /20px));
+    color: var(--light-theme-title-color);
+}
+
+.guar-item-text {
+    @include font(null, 16px, calc(20px /16px));
+    @include tablet {
+        @include font(null, 18px, calc(23px /18px));
+    }
+}
