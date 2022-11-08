@@ -1,0 +1,284 @@
+.return-section {
+    position: relative;
+    padding: 10px 0 50px;
+    @include font(null, 16px, calc(21px /16px));
+
+    @include tablet {
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    @include desktop {
+        padding-top: 30px;
+        padding-bottom: 100px;
+        @include font(null, 20px, calc(26px /20px));
+    }
+
+    &>.container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 356px;
+        }
+        
+        &::before {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+
+            content: '';
+            position: absolute;
+            right: -90px;
+            top: 0;
+    
+            background-image: url(../img/main-page/filter-bg-img.png);
+            background-repeat: no-repeat;
+            width: 620px;
+            height: 667px;
+
+            @media screen and (min-width: 1750px) {
+                right: 0;
+            }
+        }
+        
+        
+    }
+
+    &::before {
+        display: none;
+        
+        @include desktop {
+            display: block;
+        }
+
+        content: '';
+        position: absolute;
+        top: 140px;
+        left: -120px;
+
+        width: 222px;
+        height: 810px;
+
+        transform: scaleX(-1);
+        z-index: -1;
+        background: url(../img/reusable/bg-leafs.png) 0px 0px/100% no-repeat;
+        @media screen and (min-device-pixel-ratio: 2),
+        (min-resolution: 192px),
+        (min-resolution: 2dppx) {
+            background-image: url(../img/reusable/bg-leafs@2x.png);
+        }
+
+        @media screen and (min-width: 1700px) {//1700
+            left: -20px;
+            left: 0;
+        }
+    }
+}
+.return-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 767.98px) {
+        padding-left: 10px;
+    }
+}
+
+.return-nav-item {
+    @include font(500, 14px, calc(17px /14px));
+    color: var(--light-theme-text-color);
+    
+    &:last-child {
+        color: var(--grey);
+        pointer-events: none;
+    }
+
+    &>a {
+        color: var(--light-theme-text-color);
+    }
+}
+
+.return-top-title {
+    margin-bottom: 30px;
+    @include font(500, 30px, 1);
+    color: var(--light-theme-title-color);
+
+    @include tablet {
+        font-size: 36px;
+        text-align: left;
+    } 
+}
+.return-top-text {
+    margin-bottom: 10px;
+    @include font(600, 24px, calc(31px /24px));
+    color: var(--main-accent-color);
+    
+    @include desktop {
+        margin-bottom: 30px;
+    }
+}
+
+.return-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+    color: var(--light-theme-text-color);
+    .return-second-title {
+        @include font(600, 20px, calc(26px /20px));
+    }
+}
+
+// ---------------return-exception-------------------
+
+.return-exception {
+    position: relative;
+    padding: 50px 0;
+    max-width: 1300px;
+    background-color: var(--main-accent-color);
+    color: var(--dark-theme-text-color);
+    border-radius: 4px;
+
+    background-image: url('../img/reusable/blobs-32.png'),
+            url('../img/reusable/blobs-32.png'),
+            url('../img/reusable/blobs-32.png');
+    background-repeat: no-repeat;
+    background-size: 32px, 29px, 29px;
+    background-position: top 8px left 107px,
+        top 160px right 8px,
+        bottom -50px right 0;
+
+    @include tablet {
+        background-position: top 8px left 90px,
+            top 120px right 118px,
+            bottom 38px right 218px;
+    }
+
+    @include desktop {
+        margin: 0 auto;
+        background-position: top 158px left 107px,
+            top 120px right 218px,
+            bottom 29px right 270px;;
+    }
+
+    .container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 340px;
+        }
+        @include tablet {
+            width: 725px;
+        }
+        @include desktop {
+            width: 897px;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+
+        display: block;
+        width: 91px;
+        height: 54px;
+        background-image: url('../img/reusable/leaf-top-left-124.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include desktop {
+            width: 191px;
+            height: 114px;
+            background-image: url('../img/reusable/leaf-top-left-265.png');
+        }
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: "";
+        transform: scaleY(-1);
+        display: block;
+        width: 90px;
+        height: 98px;
+        background-image: url('../img/reusable/leaf-top-right-sm.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include desktop {
+            width: 158px;
+            height: 172px;
+            background-image: url('../img/reusable/leaf-top-right-lg.png');
+        }
+    }
+}
+
+.return-exception-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.return-text {
+    z-index: 5;
+}
+
+.return-exception-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 30px;
+    z-index: 5;
+
+    @include desktop {
+        gap: 15px;
+    }
+}
+
+.return-exception-item {
+    position: relative;
+    z-index: 5;
+
+    &::before {
+        position: absolute;
+        top: 4px;
+        left: -30px;
+        
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: var(--green-light);
+        border-radius: 4px;
+    }
+}
+
+// -------------------return-details-----------------
+
+.return-details {
+    padding-top: 30px;
+    @include tablet {
+        padding-top: 50px;
+    }
+
+    &>.container {
+        @media screen and (max-width: 767.98px) {
+            max-width: 356px;
+        }
+    }
+}
+
+.return-details-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--light-theme-text-color);
+    @include desktop {
+        width: 970px;
+    }
+}
+
