@@ -130,6 +130,7 @@
         @include font(600, 18px, calc(23px /18px));
     }
 }
+
 .help-list details[open] {
     & summary {
         margin-bottom: 15px;
