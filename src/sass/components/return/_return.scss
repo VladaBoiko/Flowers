@@ -146,16 +146,16 @@
         bottom -50px right 0;
 
     @include tablet {
-        background-position: top 8px left 90px,
-            top 120px right 118px,
-            bottom 38px right 218px;
+        background-position: top 8px left 107px,
+            top 120px right 16px,
+            bottom 38px right 208px;
     }
 
     @include desktop {
         margin: 0 auto;
-        background-position: top 158px left 107px,
-            top 120px right 218px,
-            bottom 29px right 270px;;
+        background-position: top 158px left 90px,
+            top 120px right 118px,
+            bottom 29px right 270px;
     }
 
     .container {
