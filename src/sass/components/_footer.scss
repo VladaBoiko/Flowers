@@ -465,7 +465,9 @@ margin-bottom: 10px;
   }
   #myBtn {
     display: none; /* Hidden by default */
+    position: fixed;
     transition: color 250ms linear;
+    
     @include desktop{
         display: block;
         position: fixed; /* Fixed/sticky position */
