@@ -1,0 +1,172 @@
+.help-page {
+    padding: 10px 0 50px;
+    @include font(null, 14px, calc(18px /14px));
+    color: var(--light-theme-text-color);
+    
+    @include tablet {
+        padding-top: 20px;
+        padding-bottom: 80px;
+        @include font(null, 16px, calc(21px /16px));
+    }
+
+    @include desktop {
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+
+    &>.container {
+        position: relative;
+        @media screen and (max-width: 767.98px) {
+            max-width: 356px;
+        }
+        &::before {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -390px;
+            
+            background-image: url('../img/reusable/bg-flower-full.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 715px;
+            height: 649px;
+        }
+    }
+}
+
+.help-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 767.98px) {
+        padding-left: 10px;
+    }
+}
+
+.help-nav-item {
+    @include font(500, 14px, calc(17px /14px));
+    color: var(--light-theme-text-color);
+
+    &:last-child {
+        color: var(--grey);
+        pointer-events: none;
+    }
+
+    &>a {
+        color: var(--light-theme-text-color);
+    }
+}
+
+.help-top-title {
+    margin-bottom: 30px;
+    @include font(500, 30px, 1);
+    color: var(--light-theme-title-color);
+
+    @include tablet {
+        font-size: 36px;
+    }
+}
+
+.help-list {
+    padding-left: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.help-item {
+    position: relative;
+}
+
+.summary-list-style {
+    position: absolute;
+    top: 0;
+    left: -45px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 2px;
+        height: 16px;
+        background-color: var(--main-accent-color);
+        border-radius: 2px;
+    }
+
+    &::after {
+        display: block;
+        content: "";
+        width: 16px;
+        height: 2px;
+        background-color: var(--main-accent-color);
+        border-radius: 2px;
+    }
+}
+
+.help-list details[open] + .summary-list-style::before{
+    display: none;
+}
+
+.help-list summary {
+    padding: 10px 0;
+    @include font(600, 16px, calc(21px /16px));
+    list-style: none;
+    color: var(--light-theme-title-color);
+    cursor: pointer;
+
+    @include tablet {
+        @include font(600, 18px, calc(23px /18px));
+    }
+}
+
+.help-list details[open] {
+    & summary {
+        margin-bottom: 15px;
+    }
+}
+
+.help-text {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+
+    @include tablet {
+        margin-left: 14px;
+    }
+
+    & a {
+        font-weight: 500;
+        color: var(--main-accent-color);
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+        content: "";
+        width: 2px;
+        height: 100%;
+        border-radius: 1px;
+        background-color: var(--light-theme-text-color);
+    }
+}
+
+.help-item:last-of-type {
+    & .help-text {
+        margin-bottom: 0;
+    }
+}
