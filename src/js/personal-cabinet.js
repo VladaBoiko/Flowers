@@ -4,6 +4,7 @@ import './personal-cabinet/menu';
 import './personal-cabinet/registration-modal';
 import './personal-cabinet/additional-prevent';
 import './personal-cabinet/show-pwd';
+import './personal-cabinet/profile';
 import './auth/sign-up';
 import './auth/login';
 import './auth/logout';
