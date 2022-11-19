@@ -14,7 +14,7 @@ function uploadFile(file) {
     }
     var reader = new FileReader();
     reader.onload = function (e) {
-        formPreview.innerHTML = `<img src="${e.target.result}" alt="Avatar" loading="lazy">`;
+        formPreview.innerHTML = `<img src="${e.target.result}" alt="Avatar">`;
     }
     reader.readAsDataURL(file);
 }
