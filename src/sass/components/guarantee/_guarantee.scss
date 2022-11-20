@@ -101,15 +101,8 @@
 }
 
 .guar-icon {
-    width: 56px;
     height: 56px;
-}
-
-.guar-item-info-wrap {
-    width: 230px;
-    @include tablet {
-        width: 284px;
-    }
+    flex: 0 0 56px;
 }
 
 .guar-item-title {
