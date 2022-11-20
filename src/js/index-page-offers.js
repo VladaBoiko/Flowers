@@ -9,9 +9,11 @@ import { addClass, removeClass, loadFromLocalStorage } from './catalog/utils';
 import { heroSwiper } from './hero-slider';
 import { reviewsSwiper } from './reviews-slider';
 import { heroModal } from './hero-modal';
+import {instagramSwiper} from './insta'
 
 heroSwiper.enabled = true;
 reviewsSwiper.enabled = true;
+instagramSwiper.enabled = true;
 heroModal(heroSwiper);
 
 const refs = {
