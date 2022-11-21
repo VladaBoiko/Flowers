@@ -81,7 +81,8 @@
     
             background-image: url(../img/reusable/bg-flower-full.png);
             background-repeat: no-repeat;
-
+            background-size: contain;
+            
             @media screen and (min-device-pixel-ratio: 2),
                 (min-resolution: 192px),
                 (min-resolution: 2dppx) {

@@ -30,12 +30,18 @@
             position: absolute;
             top: -30px;
             right: -390px;
+
+            width: 715px;
+            height: 649px;
             
             background-image: url('../img/reusable/bg-flower-full.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 715px;
-            height: 649px;
+            @media screen and (min-device-pixel-ratio: 2),
+            (min-resolution: 192px),
+            (min-resolution: 2dppx) {
+                background-image: url('../img/reusable/bg-flower-full-2x.png');
+            }
         }
     }
 }

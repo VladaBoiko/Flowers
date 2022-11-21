@@ -30,11 +30,13 @@
             position: absolute;
             right: -90px;
             top: 0;
+
+            width: 620px;
+            height: 667px;
     
             background-image: url('../img/main-page/filter-bg-img.png');
             background-repeat: no-repeat;
-            width: 620px;
-            height: 667px;
+            background-size: contain;
 
             @media screen and (min-width: 1750px) {
                 right: 0;
