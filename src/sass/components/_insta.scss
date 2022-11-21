@@ -8,13 +8,10 @@
     }
 
     .container {
-        overflow: hidden;
         padding-right: 0;
         width: 100%;
-        max-width: 1360px;
-
         @include desktop {
-            // margin: 0 auto;
+            width: 1340px;
             padding-right: 20px;
         }
     }
@@ -35,10 +32,9 @@
     }
 }
 
-.insta-swiper-slide.swiper-slide {
+.insta-swiper-slide {
     width: 310px;
     height: 310px;
-    margin-right: 10px;
 }
 
 .insta-swiper-wrapper {
@@ -49,7 +45,6 @@
 .insta-image-wrapper {
     width: 310px;
     height: 310px;
-    text-align: center;
     & img {
         max-width: 100%;
         background-color: rgb(253, 220, 251);
