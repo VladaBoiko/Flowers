@@ -137,7 +137,8 @@
 
 .pers-radio-label::before {
   content: '';
-  width: 24px;
+  align-self: flex-start;
+  flex: 0 0 24px;
   height: 24px;
   margin-right: 10px;
   border-radius: 50%;

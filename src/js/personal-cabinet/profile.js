@@ -8,7 +8,7 @@ formImage.addEventListener('change', () => {
 function uploadFile(file) {
     console.log(1)
     if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-        alert('Only image can be load')
+        alert('Only image can be load');
         formImage.value = '';
         return;
     }
