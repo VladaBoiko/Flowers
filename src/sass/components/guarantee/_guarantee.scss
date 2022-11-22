@@ -81,7 +81,8 @@
     
             background-image: url(../img/reusable/bg-flower-full.png);
             background-repeat: no-repeat;
-
+            background-size: contain;
+            
             @media screen and (min-device-pixel-ratio: 2),
                 (min-resolution: 192px),
                 (min-resolution: 2dppx) {
@@ -101,15 +102,8 @@
 }
 
 .guar-icon {
-    width: 56px;
     height: 56px;
-}
-
-.guar-item-info-wrap {
-    width: 230px;
-    @include tablet {
-        width: 284px;
-    }
+    flex: 0 0 56px;
 }
 
 .guar-item-title {

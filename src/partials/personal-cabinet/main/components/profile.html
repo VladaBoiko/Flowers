@@ -3,11 +3,13 @@
         <div class="pers-form-group" role="group" aria-labelledby="user-personal-data">
             <p class="pers-content-title" id="user-personal-data">Особиста інформація</p>
             <div class="pers-first-form-wrap-desk">
-                <div class="pers-photo">
+                <div class="pers-photo-wrap">
                     <label>
-                        <input type="file" name="file" accept="image/jpeg,image/png" class="visually-hidden">
-                        <span class="pers-img"></span>
+                        <input id="profileFormImage" type="file" name="file" accept="image/jpeg,image/png,image/gif">
                     </label>
+                    <div id="profileFormPreview" class="profile-img-preview">
+                        <span class="pers-img-blank"></span>
+                    </div>
                 </div>
                 <div class="pers-first-form-wrap-tab">
                     <div class="input-col-wrap">

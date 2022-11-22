@@ -29,7 +29,6 @@
   }
 }
 
-// .first-form-content-flex-wrap-desk
 .pers-first-form-wrap-desk {
   @include desktop {
     display: flex;
@@ -38,20 +37,45 @@
   }
 }
 
-.pers-photo > label {
+.pers-photo-wrap > label {
+  position: relative;
   display: block;
   width: 80px;
 }
 
-.pers-img {
-  display: block;
+.pers-photo-wrap input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 80px;
   cursor: pointer;
+  opacity: 0;
+  font-size: 0;
+}
 
+.profile-img-preview {
+  display: block;
   width: 80px;
   height: 80px;
   margin-bottom: 10px;
-
   border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.pers-img-blank {
+  display: block;
+  width: 100%;
+  height: 100%;
+
   background-color: var(--dark-theme-text-color);
   background-image: url('../img/personal-cabinet/camera.svg');
   background-repeat: no-repeat;
@@ -71,26 +95,16 @@
 .pers-first-form-wrap-tab {
   @include tablet {
     display: flex;
+    gap: 95px;
+  }
+  @include desktop {
+    gap: 15px;
   }
 }
 
 .input-col-wrap {
   display: grid;
   grid-row-gap: 10px;
-
-  @include desktop {
-    width: 440px;
-  }
-}
-
-.pers-radio-wrapper {
-  @include tablet {
-    margin-left: 95px;
-  }
-
-  @include desktop {
-    margin-left: 15px;
-  }
 }
 
 .pers-form-group-text {
@@ -101,7 +115,14 @@
   pointer-events: none;
 }
 
+.pers-radio-input {
+  &:checked + .pers-radio-label::after{
+    transform: scale(1);
+  }
+}
+
 .pers-radio-label {
+  position: relative;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -116,21 +137,24 @@
 
 .pers-radio-label::before {
   content: '';
-  display: block;
-  width: 24px;
+  align-self: flex-start;
+  flex: 0 0 24px;
   height: 24px;
   margin-right: 10px;
-
   border-radius: 50%;
   border: 1px solid var(--grey);
+}
 
-  .pers-radio-input:focus + &,
-  .pers-radio-input:checked + & {
-    border: 1px solid var(--main-accent-color);
-    background-image: url(../img/personal-cabinet/Radiobutton.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+.pers-radio-label::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--main-accent-color);
+  transform: scale(0);
 }
 
 .input-grid-wrap {

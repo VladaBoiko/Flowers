@@ -149,7 +149,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 63px;
+    align-self: flex-start;
+    flex: 0 0 63px;
     height: 63px;
     @include font(400, 24px, 1);
     border: 2px solid var(--dark-theme-title-color);
@@ -158,9 +159,6 @@
 
 .works-item-title {
     @include font(600, 20px, 1);
-    @include desktop {
-        width: 200px;
-    }
 }
 
 .works-item-text {
