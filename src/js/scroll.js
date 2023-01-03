@@ -1,10 +1,15 @@
-window.onscroll = function() {scrollFunction()};
+const goTopButton = document.getElementById("myBtn");
+window.onscroll = () => scrollFunction();
+
+goTopButton.addEventListener("click", topFunction)
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        if (window.innerWidth >= 1340) {
+            goTopButton.style.display = "block";
+        }
     } else {
-        document.getElementById("myBtn").style.display = "none";
+        goTopButton.style.display = "none";
     }
 }
 
