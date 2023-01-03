@@ -1,0 +1,2 @@
+const goTopButton=document.getElementById("myBtn");function scrollFunction(){document.body.scrollTop>500||document.documentElement.scrollTop>500?window.innerWidth>=1340&&(goTopButton.style.display="block"):goTopButton.style.display="none"}function topFunction(){document.body.scrollTop=0,document.documentElement.scrollTop=0}window.onscroll=()=>scrollFunction(),goTopButton.addEventListener("click",topFunction);
+//# sourceMappingURL=favorites.30f859a1.js.map
