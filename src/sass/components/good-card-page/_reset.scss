@@ -1,4 +1,8 @@
 // -------------------------скидання стилів по брейкам
+.wrapper-activities.tablet {
+  display: none;
+}
+
 @include tablet {
   .wrapper-tablet {
     display: flex;
@@ -18,6 +22,9 @@
   }
   .wrapper-activities.desktop {
     display: none;
+  }
+  .wrapper-activities.tablet {
+    display: block;
   }
 }
 @include desktop {
