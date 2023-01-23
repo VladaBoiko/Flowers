@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { BASE_URL } from './base';
 
 const instance = axios.create({
-  baseURL: 'https://server-flower.herokuapp.com/',
+  baseURL: BASE_URL,
 });
 
 export const APIGetData = {

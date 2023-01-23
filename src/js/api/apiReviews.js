@@ -1,21 +1,19 @@
 import axios from 'axios';
-
-const URL = 'https://server-flower.herokuapp.com';
-// const URL = 'http://localhost:3000';
+import { BASE_URL } from './base';
 
 export const getAll = async () => {
-  const data = await axios.get(`${URL}/reviews`);
+  const data = await axios.get(`${BASE_URL}/reviews`);
   return data;
 };
 
 export const add = async newReviews => {
-  const data = await axios.post(`${URL}/reviews`, newReviews);
+  const data = await axios.post(`${BASE_URL}/reviews`, newReviews);
   return data;
 };
 
 export const search = async string => {
   try {
-    const { data } = await axios.get(`${URL}/flowers/search/${string}`);
+    const { data } = await axios.get(`${BASE_URL}/flowers/search/${string}`);
 
     return data;
   } catch (error) {
