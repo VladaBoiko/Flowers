@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { BASE_URL } from './api/base';
 
 export const server = axios.create({
-  baseURL: 'https://server-flower.herokuapp.com/user',
+  baseURL: BASE_URL,
 });
 
 export const token = {
